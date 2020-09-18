@@ -1,11 +1,11 @@
-* All goes weel. More customers onboard
-* Running same websites differnt domains
-* Hevay load
+* All goes well. More customers onboard
+* Running same websites different domains
+* Heavy load
 * Zero downtime / Rolling Update
 
 # Learning Objectives
 
-* High Availablibulty
+* High Availability
 * Ingress/Load Balancing
 * Scaling out and scaling up
 

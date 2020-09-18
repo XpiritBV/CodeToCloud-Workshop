@@ -11,8 +11,6 @@
 * Set up CosmosDB with IaC
 * Setup AKS with IaC
 * Run IaC from pipeline
-* Setup Github registrey/ACR ?? @@@
-* Modify CI to publish to ACR
 * Run Container in Cluster (manually)
 
 

@@ -45,13 +45,13 @@ When you are done with the design, review your design, considering the following
 
 
 ## Links
-[Azure Kubernetes Services (AKS)](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes/)
-[Kubernetes](https://kubernetes.io/docs/home/)
-[AKS FAQ](https://docs.microsoft.com/en-us/azure/aks/faq)
-[Autoscaling AKS](https://github.com/kubernetes/autoscaler)
-[AKS Cluster Autoscaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler)
-[Upgrading an AKS cluster](https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster)
-[Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/)
-[Container Security](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-image-security/)
-[Image Quarantine](https://github.com/Azure/acr/tree/master/docs/preview/quarantine/)
-[Container Monitoring Solution](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/containers)
+* [Azure Kubernetes Services (AKS)](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes/)
+* [Kubernetes](https://kubernetes.io/docs/home/)
+* [AKS FAQ](https://docs.microsoft.com/en-us/azure/aks/faq)
+* [Autoscaling AKS](https://github.com/kubernetes/autoscaler)
+* [AKS Cluster Autoscaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler)
+* [Upgrading an AKS cluster](https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster)
+* [Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/)
+* [Container Security](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-image-security/)
+* [Image Quarantine](https://github.com/Azure/acr/tree/master/docs/preview/quarantine/)
+* [Container Monitoring Solution](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/containers)
