@@ -1,27 +1,30 @@
 # Running the application locally
 
-## Storyline
-* You get in as a consultant
-* You want to know what they have
-* They run a shared development database with all kinds of permissions
-* You decide to setup a Mongo DB Docker container to easily set up the database
-* You get the sources from a location
+Fabrikam already run their conference websites in their on-premises data center. To get a quick glance of how such an application looks like, you and your team start by running one of the customer implementations. This will also serve as the pilot project to move towards the cloud. The conference website uses a MongoDB database. For development purposes Fabrikam runs a few MongoDB instance on their local network as well. But, now that there is so much demand from different customers there are not enough MongoDB instances and developers are sharing databases for different customers. This results in all kinds of strange behavior because the data structures differ. You and your team decides to solve this issue first.
 
 ## Challenge
-* Get the sources from a location
-* Setup the MongoDB in a docker container run it on port 27017
-* Fill the database with initial data
-* Test the DB 
-* Run the API
-* Run the WEB App
+In this challenge you are going to Dockerize the MongoDB and fill this with initial data. This container can then serve as the clean starter database for the conference website. In your [CodeToCloud-Source] repository, you will use the content-init files to fill a new MongoDB that runs in a Docker container and writes the contents of the database to your host. After that you can start new Mongo containers with the same volume mapping to use as a starting point for your conference API and website that you can then run locally.
 
+## Validation
+- A new Docker Network called [fabrikam] has been created
+- A Mongo instance runs in a Docker called [mongo] on the [fabrikam] network on port 27017
+- The MongoDB data folder is mapped to the /data folder on the host system 
+- The DB has been filled with data from the content-init folder
+- The website and API are both started locally
 
-## Links
-* [Get Sources from Github]()
+> Tips and Hints
+> Create the /data folder on the host in the root of the [CodeToCloud-Source] repository
+> Run a Mongo container (from the root) with the command `docker run -ti --name mongo --network fabrikam -p 27017:27017 -v ./data:/data/db mongo`
+> Build and start the content-init by using `npm install` and `node .\server.js`
+> Build and start the content-api by using `npm install` and `node .\server.js`
+> Build and start the content-web by using `npm install` and `node .\app.js`
+> Build the web application using `npm install` and `ng build` (Angular)
+
+## Links & Information
+* [Create a Docker Network](https://docs.docker.com/engine/reference/commandline/network_create/)
 * [Connect to MongoDB from another Docker container](https://hub.docker.com/_/mongo)
-* [Install NodeJS]()
-* [Run a Node JS application]()
+* [Install NodeJS](https://nodejs.org/en/download/)
+* [Install Angular CLI](https://cli.angular.io/)
 
 ## Step by Step Explanation
-
-To read or view a step by step explanation of this challenge, please visit [this page](../Step-By-Step/DEVWF-SBS002.md)
+To read or view a step by step explanation of this challenge, please visit [this page]()

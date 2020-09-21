@@ -1,17 +1,32 @@
-* creating a new instance takes time
-* dev not same as production
-* code is not reviewed
-* Security issues
+# Improving the Developer Workflow
+
+One of the goals of Susan is to improve the Developer Workflow. When the developer workflow runs smoothly developers can focus on creating business value instead of repetitive tasks or disruptions caused by their environment. There are many areas of improvement and you and your team interview the people from the company. A general conclusion is that there is a lot of manual tasks, recurring quality and security issues, and a lot of dependencies between the developers and work that they do.
+
+After some interviews you find that there are some major improvements possible by using the tools more effectively. And many of the resolutions are quite simple to achieve. Together with your team you start working wit the developers to increase the developer workflow and bring back the joy in their daily work.
+
+## Learning Objectives
+
+In this module you will learn to:
+
+* Create a backlog of work with Azure Boards and relate that to your code
+* Use Docker to containerize your code, to enable a consistent environment
+* Use the GitHub workflow to work together on the same codebase
+* Use Pull Requests to improve the quality of your code
+* Set up a Continuous Integration build to quickly get feedback
+* Use GitHub Security scanning tools to shift left security issues
+* Use Docker Compose to create a environment that consists of multiple components
+
+## Tasks
+* [Get started with the work and create visibility](.\Tasks\DEVWF-T001.md)
+* [Running the application locally](.\Tasks\DEVWF-T002.md)
+* [Containerize the Application](.\Tasks\DEVWF-T003.md)
+* [Optimize containers with a multi staged Docker File](.\Tasks\DEVWF-T004.md)
+* [Catching Security Vulnerabilities](.\Tasks\DEVWF-T005.md)
+* [Setting up a local infrastrcuture](.\Tasks\DEVWF-T006.md)
+* [Set up CI and push to Github REgistry](.\Tasks\DEVWF-T007.md)
 
 
-# Learning Objectives
 
-* Containerize solution to run locally
-* Use the Github workflow to work together on the same codebase
-* Learn about Pull Requests
-* Learn how to trace work back to the commits you made
-* Set up a Contiuous Integration build to quickly get feedback
-* do security scanning with github / dependabot in actions
 
 
 # Exercises
