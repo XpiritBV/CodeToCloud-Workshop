@@ -1,17 +1,23 @@
-# Running the application locally
+# Get started with the work and create visibility
 
-## Storyline
-* You get in as a consultant
-* Fabrikam wants to have visibility in Azure Boards. 
-* Connect the board and create some tasks
+All developers at Fabrikam work for various customers at the same time. Many of them work on customizing and deploying the customer specific websites for the conferences. During the interviews it seemed that there is no central place for all the work that needs to be done or is in progress. This makes it very hard to see the status of a specific project or, in the current context, the status of the cloud transformation.
+
+To overcome this lack of visibility the decision is made to create a separate repository for all the cloud transformation work and connect this with a KanBan board that contains all the work that needs to be done. To provide traceability between the requirements and the actual code changes, there needs to be an integration between the planned work and the commits in the Git repository.of what code changes are done
 
 ## Challenge
-* Go to marketplace and hook p Azure Boards to a new project called Fabrikam-CloudJourney
-* Complete the Pull Reqeust
-* Create 4 issues. Exercise 1, Exercise 2 Exercise 3 and Exercise 4 in Azure Boards
+In this challenge you are going to create a new repository containing a copy of the current on-premises application. This needs to be connected with an Azure Board in Azure DevOps to provide visibility about the work at hand. To ensure everything works a commit in the Git Repository (for example in the readme file) needs to be visible in the Work Item in Azure Boards and vice versa.
 
+## Validation
+- Git Repo [CodeToCloud-Source] created with original application source. This can be found @@@here 
+> Tip: You can use the fork option in Git to create a copy of the repo in your own account
+- New Project in Azure DevOps called [CodeToCloud-Boards] has been created
+- Azure Boards connected to the [CodeToCloud-Source] Git repository
+- 4 work items created in Azure Boards. Call them [Module 1], [Module 2], [Module 3] and [Module 4]
+- 1 commit in the Git repository linked to a work item 
+> Use AB#<WorkItemID> in the commit message or description to link a work item
 
-## Links
-* https://github.com/marketplace/azure-boards
-* https://docs.microsoft.com/en-us/azure/devops/boards/github/install-github-app?view=azure-devops
+## Links & Information
+* [Connect Azure Boards to GitHub Repository](https://github.com/marketplace/azure-boards)
+* [Install and configure the Azure Boards app for GitHub](https://docs.microsoft.com/en-us/azure/devops/boards/github/install-github-app?view=azure-devops)
+* [Link GitHub commits, pull requests, and issues to work items](https://docs.microsoft.com/en-us/azure/devops/boards/github/link-to-from-github?view=azure-devops)
 

@@ -1,0 +1,17 @@
+version: "3.4"
+services:
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - ./data:/data/db
+
+  api:
+    build: ./content-api
+    image: content-api
+    depends_on:
+      - mongo
+    environment:
+      MONGODB_CONNECTION: mongodb://mongo:27017/contentdb
+    ports:
+      - "3001:3001"
