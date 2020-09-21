@@ -22,8 +22,8 @@ In this module you will learn to:
 * [Containerize the Application](.\Tasks\DEVWF-T003.md)
 * [Optimize containers with a multi staged Docker File](.\Tasks\DEVWF-T004.md)
 * [Catching Security Vulnerabilities](.\Tasks\DEVWF-T005.md)
-* [Setting up a local infrastrcuture](.\Tasks\DEVWF-T006.md)
-* [Set up CI and push to Github REgistry](.\Tasks\DEVWF-T007.md)
+* [Setting up a local infrastructure](.\Tasks\DEVWF-T006.md)
+* [Set up Continuous Integration to push container images to GitHub Registry](.\Tasks\DEVWF-T007.md)
 
 
 

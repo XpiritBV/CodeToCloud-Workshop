@@ -4,7 +4,7 @@ services:
     image: mongo
     restart: always
     volumes:
-      - ./data:/data/db
+      - /data:/data/db
 
   api:
     build: ./content-api

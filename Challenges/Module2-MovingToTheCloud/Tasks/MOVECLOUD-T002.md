@@ -1,7 +1,10 @@
-# Running container in a cluster
+# Running containers in a cluster
+Our cluster and database are running and the DevOps team has successfully automated the deployment of these Azure Resources. Now it is time to start running the application in the cloud. The container have already been pushed to the GitHub Container Registry so they can get started with the cluster right away.
 
-now that we have a cluster we need to test if it works and run our web application
+## Challenge
+In this challenge you will run the WEB and API application on the cluster, while it connects with the CosmosDB. You will use the kubectl commands to deploy it.
 
-# challenge
-* Create the API deployment with Kubectl
-* Create the Web Deployment with Kubectl
+## Validation
+* Web site showing data from the API
+* API showing data from the CosmosDB
+* Web site is accessible via Public IP address

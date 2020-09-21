@@ -1,20 +1,26 @@
 # Moving to the Cloud
 
-* Local is fine.. Now in cloud
-* Containers need to land somewhere 
-* Setup a database and a cluster
-* Deploy containers to cluster
+Now that the Developer Workflow improved dramatically, Susan wants to take the follow-up step. Now that the application is already running in containers, the goal to improve the overall architecture is already progressing. With this well-isolated architecture a cloud implementation would be a great addition. Instead of running a container cluster on-premises, it should run in the cloud. This way costs could be reduced and the cluster can be scaled when this is necessary. 
+
+Susan asks you and your team to lead the way to the cloud. Since Fabrikam is moving to DevOps, she wants the development teams to be responsible for the infrastructure as well. It is up to you to help and guide the team to run the containerized application in a cluster in the cloud!
+
+## Learning Objectives
+
+In this module you will learn to:
+* Use Infrastructure as Code to set up idempotent infrastructure in the cloud
+* Set up a resource group in Azure and assign permissions
+* Set up a CosmosDB via automation scripts
+* Set up an Azure Kubernetes Service Cluster via automation scripts
+* Set up a pipeline that deploys the infrastructure on demand
+* Run a container in the cluster 
+
+## Tasks
+* [Setting up a cloud infrastructure](.\Tasks\MOVECLOUD-T001.md)
+* [Running containers in a cluster](.\Tasks\MOVECLOUD-T002.md)
+* [Task 3](.\Tasks\MOVECLOUD-T003.md)
 
 
-# Learning Objectives
-
-* Set up CosmosDB with IaC
-* Setup AKS with IaC
-* Run IaC from pipeline
-* Run Container in Cluster (manually)
-
-
-# Exercises
+# excerices
  * Ex-2
     * Task 2
     * task 3
