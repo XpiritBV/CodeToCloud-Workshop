@@ -1,6 +1,6 @@
 $studentprefix = "rvo"
 $resourcegroupName = "CodeToCloud-" + $studentprefix
-$cosmosDBName = "fabmedicaldb-" + $studentprefix
+$cosmosDBName = "fabmedicalcdb-" + $studentprefix
 $aksName = "fabmedical-" + $studentprefix
 
 
@@ -16,6 +16,7 @@ $resultCosmos = az cosmosdb create --name $cosmosDBName `
 --locations regionName=westeurope failoverPriority=0 isZoneRedundant=False `
 --locations regionName=northeurope failoverPriority=1 isZoneRedundant=True `
 --enable-multiple-write-locations `
+--kind MongoDB `
 | ConvertFrom-Json
 
 #Create an AKS cluster

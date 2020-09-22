@@ -14,7 +14,7 @@ In this challenge you will set up an Azure Resource Group containing a CosmosDB 
 
 > Tips
 > * Use the `az ad sp create-for-rbac --name GitHubWorkshop` to create an SPN and save the appId and secret
-> * Create an CosmosDB woth 2 locations using the following syntax in the Azure CLI 
+> * Create an CosmosDB with 2 locations using the following syntax in the Azure CLI 
 >```
 >--locations regionName=westeurope failoverPriority=0 isZoneRedundant=False --locations regionName=northeurope failoverPriority=1 >isZoneRedundant=True enable-multiple-write-locations 
 >```
@@ -34,7 +34,7 @@ In this challenge you will set up an Azure Resource Group containing a CosmosDB 
 > *  Use the `az aks browse -n $aksName -g $resourcegroupName` to browse to the cluster dashboard
 
 ## Links
-* [Install the Azure CLLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+* [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 * [Manage Resource Group with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest)
 * [Manage CosmosDB with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/cosmosdb?view=azure-cli-latest)
 * [Manage AKS with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest)
