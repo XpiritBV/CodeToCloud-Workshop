@@ -3,7 +3,7 @@ Title: YAML Front Matter
 Branch: yolo
 CommitMessage: Adding privacy Policy
 ---
-# "Privacy Policy"
+# "Privacy Policy" 
 We're working hard to protect your privacy, while delivering software that brings you the performance, power and convenience you desire. This privacy statement explains many of the data collection and use practices for this extension. This isn't intended to be an exhaustive list and does only apply to this extension.
 ## Security of Your Information
 We are committed to protecting the security of your information. No data is stored by the extension.
