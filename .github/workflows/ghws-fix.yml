@@ -1,4 +1,4 @@
-name: Publish base-ghws-pwsh
+name: Publish ghws-fix
 
 on:
   push:
