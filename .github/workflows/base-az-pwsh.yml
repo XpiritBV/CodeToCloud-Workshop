@@ -7,6 +7,7 @@ on:
       - master
     paths:
       - 'Containers/base-az-pwsh/**'
+      - '.github/workflows/base-az-pwsh.yml'
 
 
     # Publish `v1.2.3` tags as releases.
