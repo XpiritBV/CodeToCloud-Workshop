@@ -5,6 +5,8 @@ on:
     # Publish `master` as Docker `latest` image.
     branches:
       - master
+    paths:
+      - 'Containers/base-ghws-pwsh/**'
 
     # Publish `v1.2.3` tags as releases.
     tags:
