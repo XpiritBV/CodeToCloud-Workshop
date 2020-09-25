@@ -1,4 +1,4 @@
-name: Publish ghws-fix
+name: Publish base-ghws-pwsh
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - master
     paths:
       - 'Containers/ghws-fix/**'
-
+      - '.github/workflows/ghws-fix.yml'
 
     # Publish `v1.2.3` tags as releases.
     tags:
