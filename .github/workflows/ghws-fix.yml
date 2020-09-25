@@ -5,6 +5,9 @@ on:
     # Publish `master` as Docker `latest` image.
     branches:
       - master
+    paths:
+      - 'Containers/ghws-fix/**'
+
 
     # Publish `v1.2.3` tags as releases.
     tags:
