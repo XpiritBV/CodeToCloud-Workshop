@@ -1,4 +1,4 @@
-FROM ghcr.io/XpiritBV/base-az-pwsh:latest
+FROM ghcr.io/xpiritbv/base-az-pwsh:latest
 ARG file
 ENV settingsLocation=$file
 WORKDIR ghws
