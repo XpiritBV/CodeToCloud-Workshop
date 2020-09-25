@@ -1,0 +1,12 @@
+{
+    "AzureOwnerSPN":"",
+    "AzureOwnerSPNSecret":"",
+    "TenantID":"",
+    "AzDoPAT":"",
+    "AzDoOrganization":"",
+    "StudentNickName":"",
+    "ResourceGroupLocation":"westeurope",
+    "ResourceGroupName":"fabmedical-",
+    "GithubToken":""
+    "TargetRepo":"https://github.com/jessehouwing/test/"
+}

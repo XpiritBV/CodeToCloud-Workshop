@@ -1,8 +1,27 @@
-# Storyline
+# Getting insights in to your application
+After the customer called with some issues, the DevOps team is extra alert on issues with this application. And indeed, now they monitor this closely (manually), they see that the web application is not always showing up, or is very slow from time to time. However, the reason is unclear and needs top be investigated.
 
-Web application is running but throws errors. We have no idea what is going on
+## Challenge
+In this challenge you will set up Application Insights to monitor your application and underlying infrastructure. You need to create an Application Insights Azure resource by adding this to your Infrastructure as Code scripts and connect this to your cluster. Furthermore, you need to add Application Insights in your Web Application to gain insights in usage.
 
-# challenge
+## Validation
+* Application Insights SDK added to the content-web application
+* Application Insights resource created in resource group
+
+> Tips
+> * The Azure CLI for application insights resides in an extension az extension add application-insights
+> * Create an application Insights resource using the az monitor app-insights component create command
+> * Add the SDK by running `npm install applicationinsights --save` in the content-web folder
+> * Add the following lines of code below `express` in the app.js
+>```
+> const appInsights = require("applicationinsights");
+> appInsights.setup("[YOUR APPINSIGHTS KEY]");
+> appInsights.start();
+> ```
+> Re-deploy the web application by deleting the pod. Kubernetes will automatically pull the latest version `kubectl delete pods <pod >name>`
+
+
+
 * Set up Container Monitoring
 * Look at dashboards
 * Application Insights in Node??? --> https://github.com/microsoft/MCW-Cloud-native-applications/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Cloud-native%20applications%20-%20Developer%20edition.md#task-4-perform-a-rolling-update

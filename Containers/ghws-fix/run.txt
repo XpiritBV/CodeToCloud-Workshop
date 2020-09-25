@@ -1,0 +1,2 @@
+docker build -t ghws-fix .
+docker run -ti  -e settingsLocation=/settings/settings.json -v .:/settings ghws-fix

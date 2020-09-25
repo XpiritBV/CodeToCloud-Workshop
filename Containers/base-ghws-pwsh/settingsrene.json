@@ -1,0 +1,10 @@
+{
+    "AzureOwnerSPN":"748d775f-1e08-4a76-9d8f-49836fd7c68b",
+    "AzureOwnerSPNSecret":"16f91474-7128-40a6-a0ca-6cd127249409",
+    "TenantID":"ed6acf0d-9ed3-4a2a-a1b1-97384cdaa08b",
+    "AzDoPAT":"",
+    "AzDoOrganization":"",
+    "StudentNickName":"rvo",
+    "ResourceGroupLocation":"westeurope",
+    "ResourceGroupName":"fabmedical-"
+}

@@ -1,0 +1,2 @@
+docker build -t setuppre .
+docker run -ti  -e settingsLocation=/settings/settingsrene.json -v C:\Users\rvano\source\repos\github\Cloud-Native-In-a-Day\Prerequisites\Containers\base-ghws-pwsh:/settings setuppre
