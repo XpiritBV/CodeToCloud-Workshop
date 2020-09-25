@@ -18,7 +18,7 @@ on:
 env:
   # TODO: Change variable to your image's name.
   IMAGE_NAME: base-ghws-pwsh
-  dockerfilePath: './Containers/base-ghws-pwsh'  
+  dockerfilePath: 'Containers/base-ghws-pwsh'  
 
 jobs:
   # Push image to GitHub Packages.
