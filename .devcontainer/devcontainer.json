@@ -58,5 +58,5 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "sudo curl -L \"https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose &&  sudo chmod +x /usr/local/bin/docker-compose &&  npm install -g ng && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 && sudo apt-add-repository -u https://cli.github.com/packages && sudo apt install gh &&  az extension add --name azure-devops && az extension add --name application-insights && az extension add --name portal"
+    "postCreateCommand": "sudo curl -L \"https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose &&  sudo chmod +x /usr/local/bin/docker-compose && npm install -g @angular/cli && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 && sudo apt-add-repository -u https://cli.github.com/packages && sudo apt install gh &&  az extension add --name azure-devops && az extension add --name application-insights && az extension add --name portal"
 }
