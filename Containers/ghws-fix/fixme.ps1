@@ -97,7 +97,9 @@ function Get-PullRequestProperties {
     [CmdletBinding()]
     param(
         [parameter()]
-        [string] $fileName
+        [string] $fileName,
+
+        $settings
     )
 
     $message = ((gc $fileName))
@@ -111,9 +113,17 @@ function Get-PullRequestProperties {
         $properties = ConvertFrom-Yaml $frontmatter
     }
 
+    $content = Get-PullRequestBody $fileName
+    
+    if ($properties.linkedworkitem)
+    {
+        $workitemid = $settings.$("WorkItemId$($properties.LinkedWorkItem)")
+        $content = "$content`n`nLinked to AB#$workitemid"
+    }
+
     $markdown = @{
         Properties = $properties
-        Content = Get-PullRequestBody $fileName
+        Content = $content
         FileName = $fileName
     }
 
@@ -157,7 +167,7 @@ function Run {
         throw "Missing markdown file, expected here: $markdownPath"
     }
 
-    $markDown = Get-PullRequestProperties $markdownPath
+    $markDown = Get-PullRequestProperties $markdownPath $settings
     $branch = $markDown.Properties.Branch
 
     Invoke-GitHub repo clone $targetRepo $targetRepoFolder
