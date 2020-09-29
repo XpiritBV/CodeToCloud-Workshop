@@ -118,6 +118,10 @@ function Get-PullRequestProperties {
     if ($properties.linkedworkitem)
     {
         $workitemid = $settings.$("WorkItemId$($properties.LinkedWorkItem)")
+        if (-not ($workitemid ))
+        {
+            throw "WorkitemId: $("WorkItemId$($properties.LinkedWorkItem)") not specified in settings file."
+        }
         $content = "$content`n`nLinked to AB#$workitemid"
     }
 
