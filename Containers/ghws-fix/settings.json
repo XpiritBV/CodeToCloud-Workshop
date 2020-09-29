@@ -7,6 +7,10 @@
     "StudentNickName":"",
     "ResourceGroupLocation":"westeurope",
     "ResourceGroupName":"fabmedical-",
-    "GithubToken":""
-    "TargetRepo":"https://github.com/jessehouwing/test/"
+    "GithubToken":"",
+    "TargetRepo":"https://github.com/jessehouwing/test/",
+    "WorkItemIdModule1": "3007",
+    "WorkItemIdModule2": "3008",
+    "WorkItemIdModule3": "3009",
+    "WorkItemIdModule4": "3010"
 }
