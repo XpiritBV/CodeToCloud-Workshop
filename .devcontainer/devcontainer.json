@@ -3,7 +3,8 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			"INSTALL_DOCKER": "true"
+			"INSTALL_DOCKER": "true",
+			"ENABLE_NONROOT_DOCKER": "true"
 		}
 	},
 	"settings": {
@@ -50,13 +51,12 @@
         "ms-kubernetes-tools.vscode-kubernetes-tools",
         "ms-vscode.typescript-javascript-grammar",
         "ms-vscode.powershell",
-        "redhat.vscode-yaml",
-        "cschleiden.vscode-github-actions",
-	],
+        "redhat.vscode-yaml"
+	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "sudo curl -L \"https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose &&  sudo chmod +x /usr/local/bin/docker-compose && npm install -g @angular/cli && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 && sudo apt-add-repository -u https://cli.github.com/packages && sudo apt install gh &&  az extension add --name azure-devops && az extension add --name application-insights && az extension add --name portal"
+    //"postCreateCommand": "sudo curl -L \"https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose &&  sudo chmod +x /usr/local/bin/docker-compose && npm install -g @angular/cli && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 && sudo apt-add-repository -u https://cli.github.com/packages && sudo apt install gh &&  az extension add --name azure-devops && az extension add --name application-insights && az extension add --name portal"
 }

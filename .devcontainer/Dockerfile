@@ -12,9 +12,21 @@ RUN if [ "${INSTALL_DOCKER}" = "true" ]; then \
     fi \
     && rm -rf /var/lib/apt/lists/* /tmp/library-scripts/
 
+RUN export DEBIAN_FRONTEND=noninteractive \
+    && apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 \
+    && sudo apt-add-repository -u https://cli.github.com/packages \
+    && apt-get update \
+    && apt-get -y install --no-install-recommends gh 
+
+RUN SOURCE_SOCKET=${2:-"/var/run/docker-host.sock"} \
+    && TARGET_SOCKET=${3:-"/var/run/docker.sock"} \
+    && sudo touch "${SOURCE_SOCKET}" \
+    && sudo ln -s "${SOURCE_SOCKET}" "${TARGET_SOCKET}"
+
 USER codespace
 
-# ** [Optional] Uncomment this section to install additional packages. **
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends <your-package-list-here>
-
+RUN npm install -g @angular/cli 
+    
+RUN az extension add --name azure-devops \
+    && az extension add --name application-insights \
+    && az extension add --name portal
