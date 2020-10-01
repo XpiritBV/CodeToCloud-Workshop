@@ -3,6 +3,8 @@ param
     [bool] $isDebug = $false
 )
 
+$ProgressPreference="SilentlyContinue"
+
 if (-not (Get-Module -Name powershell-yaml))
 {
     Install-Module -Name powershell-yaml -Force -Repository PSGallery -Scope CurrentUser
@@ -150,7 +152,14 @@ function Run {
     $sourceRepoFolder = Join-Path -path $pwd "source"
     $targetRepoFolder = Join-Path -path $pwd "target"
 
-    $token | gh auth login --with-token 
+
+    $env:GIT_USER="."
+    $env:GIT_PASS=$token
+    Invoke-Git config --global credential.helper "!f() { echo \`"username=`${GIT_USER}`npassword=`${GIT_PASS}\`"; }; f"
+
+    $env:GITHUB_TOKEN = $token
+    Invoke-GitHub config set prompt disabled
+    Invoke-GitHub config set -h github.com oauth_token $token
 
     if (Test-Path -PathType Container $sourceRepoFolder) {
         Remove-Item $sourceRepoFolder -Recurse -Force
@@ -163,8 +172,8 @@ function Run {
 
     # Find the right folder based on **/action/exercise/
     $markdownPathRoot = Get-ChildItem -Path $sourceRepoFolder -Include pr.md -File -Recurse | 
-        where-object { $_.DirectoryName -like "*`\$action`\$exercise*" } | 
-        select-object -ExpandProperty "DirectoryName" { $_.DirectoryNamey } 
+        where-object { $_.DirectoryName -like "*?$action?$exercise*" } | 
+        select-object -ExpandProperty "DirectoryName" { $_.DirectoryName } 
 
     $markdownPath = Join-Path -path $markdownPathRoot "pr.md" 
     if (-not (Test-Path -Path $markdownPath)) {
