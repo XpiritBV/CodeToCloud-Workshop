@@ -5,4 +5,4 @@ ENV SOURCEREPO="https://github.com/XpiritBV/CodeToCloud-Workshop"
 ENV ACTION=${action}
 ENV EXERCISE=${exercise}
 ADD ./fixme.ps1 .
-CMD ["pwsh" ,"./fixme.ps1", "-Verbose"]
+CMD ["/usr/bin/pwsh" ,"fixme.ps1", "-Verbose"]
