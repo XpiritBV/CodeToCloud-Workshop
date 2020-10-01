@@ -1,6 +1,8 @@
 # Dockerfile for content-web
 # This is the base image that can be used
 FROM node:dubnium AS build
+#This is the environment variable with connection to the API. Can be overriden in the docker run command with the -e switch
+ENV CONTENT_API_URL=http://api:3001
 # This is the port that the container exposes
 EXPOSE 3000
 # Run the NPM install command to install Angular

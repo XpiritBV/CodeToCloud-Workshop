@@ -1,11 +1,8 @@
-FROM node:dubnium-alpine AS base
-RUN apk -U add curl
+FROM node:alpine AS base
 WORKDIR /usr/src/app
-EXPOSE 3000
+ENV MONGODB_CONNECTION=mongodb://mongo:27017/contentdb
 
-FROM node:dubnium AS build
-RUN npm install -g @angular/cli@~8.3.4
-
+FROM node:argon AS build
 WORKDIR /usr/src/app
 
 # Install app dependencies
@@ -14,9 +11,8 @@ RUN npm install
 
 # Bundle app source
 COPY . /usr/src/app
-RUN ng build 
 
 FROM base as final
 WORKDIR /usr/src/app
 COPY --from=build /usr/src/app .
-CMD [ "node", "app.js" ]
+CMD [ "npm", "start" ]

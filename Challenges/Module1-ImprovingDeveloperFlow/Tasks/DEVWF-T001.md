@@ -5,14 +5,11 @@ All developers at Fabrikam work for various customers at the same time. Many of 
 To overcome this lack of visibility the decision is made to create a separate repository for all the cloud transformation work and connect this with a KanBan board that contains all the work that needs to be done. To provide traceability between the requirements and the actual code changes, there needs to be an integration between the planned work and the commits in the Git repository.of what code changes are done
 
 ## Challenge
-In this challenge you are going to create a new repository containing a copy of the current on-premises application [CodeToCloud-Source](http://link). This needs to be connected with an Azure Board in Azure DevOps to provide visibility about the work at hand. To ensure everything works a commit in the Git Repository (for example in the readme file) needs to be visible in the Work Item in Azure Boards and vice versa.
+In this challenge you are going to use your [CodeToCloud-Source] repository that contains a copy of the current on-premises. This needs to be connected with an Azure Board in Azure DevOps to provide visibility about the work at hand. To ensure everything works a commit in the Git Repository (for example in the readme file) needs to be visible in the Work Item in Azure Boards and vice versa.
 
 ## Validation
-- Git Repo [CodeToCloud-Source] created with original application source. This can be found @@@here 
-> Tip: You can use the fork option in Git to create a copy of the repo in your own account
-- New Project in Azure DevOps called [CodeToCloud-Boards] has been created. Ceate 
 - Azure Boards connected to the [CodeToCloud-Source] Git repository with [this extension](https://github.com/marketplace/azure-boards)
-- 4 work items created in Azure Boards. Call them [Module 1], [Module 2], [Module 3] and [Module 4]
+- 4 work items are present in Azure Boards. These are called [Module 1], [Module 2], [Module 3] and [Module 4]
 - 1 commit in the Git repository linked to a work item 
 > Use AB#<WorkItemID> in the commit message or description to link a work item
 
