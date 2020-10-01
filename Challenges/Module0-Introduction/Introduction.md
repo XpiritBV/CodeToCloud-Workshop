@@ -4,7 +4,7 @@ Fabrikam Medical Conferences provides conference web site services tailored to t
 
 Websites for medical conferences are typically low budget web sites because the conferences usually have between 100 to 1500 attendees. At the same time, the conference owners have significant customization and change demands that require turnaround on a dime to the live sites. These changes can impact various aspects of the system from UI through to the back end, including conference registration and payment terms.
 
-The VP of Engineering at Fabrikam, Susan Withers,  has a team of 12 developers who handle all aspects of development, testing, deployment, and operational management of their customer sites. Due to customer demands, they have issues with the efficiency and reliability the conference websites. This mainly caused by an inefficient development and operations workflow.
+The VP of Engineering at Fabrikam, Susan Withers, has a team of 12 developers who handle all aspects of development, testing, deployment, and operational management of their customer sites. Due to customer demands, they have issues with the efficiency and reliability the conference websites. This mainly caused by an inefficient development and operations workflow.
 
 In the current situation, the conference sites are hosted on-premises with the following topology and platform implementation:
 * The conference web sites are built with the MEAN stack (Mongo, Express, Angular, Node.js).

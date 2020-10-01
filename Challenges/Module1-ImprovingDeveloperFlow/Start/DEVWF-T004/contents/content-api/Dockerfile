@@ -2,6 +2,7 @@ FROM node:alpine AS base
 RUN apk -U add curl
 WORKDIR /usr/src/app
 EXPOSE 3001
+ENV MONGODB_CONNECTION=mongodb://mongo:27017/contentdb
 
 FROM node:argon AS build
 WORKDIR /usr/src/app

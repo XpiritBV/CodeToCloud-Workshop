@@ -1,7 +1,12 @@
-FROM node:alpine AS base
+FROM node:dubnium-alpine AS base
+RUN apk -U add curl
 WORKDIR /usr/src/app
+EXPOSE 3000
+ENV CONTENT_API_URL=http://api:3001
 
-FROM node:argon AS build
+FROM node:dubnium AS build
+RUN npm install -g @angular/cli@~8.3.4
+
 WORKDIR /usr/src/app
 
 # Install app dependencies
@@ -10,8 +15,9 @@ RUN npm install
 
 # Bundle app source
 COPY . /usr/src/app
+RUN ng build 
 
 FROM base as final
 WORKDIR /usr/src/app
 COPY --from=build /usr/src/app .
-CMD [ "npm", "start" ]
+CMD [ "node", "app.js" ]

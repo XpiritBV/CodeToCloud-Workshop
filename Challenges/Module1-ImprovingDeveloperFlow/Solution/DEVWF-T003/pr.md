@@ -1,23 +1,37 @@
 ---
-title: Fix for Exercise DEVWF-003
-branch: c2c-devwf-003
-commitmessage: "Created 2 Dockerfiles for API and WEB"
-committer: Katrina Spade
-committeremail: KatrinaSpade@FabrikamMedical.example.org
+title: Dockerfiles for the content-web, content-api and content-init application
+branch: users/maria/application-docker-files
+commitmessage: "Created 3 Dockerfiles :whale: for API, WEB and INIT"
+committer: Maria Santos
+committeremail: MariaSantos@FabrikamMedical.example.org
+linktoworkitem: Module1
 ---
 # Instructions to Fix the exercise
-I added these 2 Docker files. I was so excited about this Docker stuff, that I created these 2 files for both the API and the WEB application. I think it can be improved, but let's first check if this works!
+Added these 3 Docker files. I was so excited about this Docker stuff, that I created these 3 files for the API, WEB and INIT application. I think it can be improved, but let's first check if this works!
  
 To build this
 ```
+cd content-web
 docker build -t content-web .
+
+cd ../content-init
+docker build -t content-init .
+
+cd ../content-api
 docker build -t content-api .
+```
+
+> Before you run the api make sure your MongoDB is running
+```
+docker network create fabrikam
+docker run --name mongo --net fabrikam -p 27017:27017 -d mongo
 ```
 
 To run it 
 ```
-docker run -ti --network fabrikam content-api
-docker run -ti --network fabrikam content-web
+docker run -ti --network fabrikam fabrikam-init
+docker run -d --name api -p 3001:3001 --network fabrikam fabrikam-api
+docker run -d --name web -p 3000:3000 --network fabrikam fabrikam-web
 ```
 
 

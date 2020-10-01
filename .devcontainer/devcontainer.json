@@ -1,12 +1,6 @@
 {
 	"name": "GitHub Codespaces (Default)",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"INSTALL_DOCKER": "true",
-			"ENABLE_NONROOT_DOCKER": "true"
-		}
-	},
+	"image": "ghcr.io/renevanosnabrugge/fabrikam-codespace:latest",
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"go.useGoProxyToCheckForToolUpdates": false,
