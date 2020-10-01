@@ -21,7 +21,7 @@ You also decide it is convenient to have a container for the Initialization of t
 > Make sure the 3 containers run on the same network
 > You can access another container on the same network by name. For example: If you call your running container `api` you can access this by navigating to `http://api` in another container
 
-## Links
+## Links & Information
 * [Build and Run your image](https://docs.docker.com/get-started/part2/)
 * [docker build](https://docs.docker.com/engine/reference/commandline/build/)
 * [docker run](https://docs.docker.com/engine/reference/run/)

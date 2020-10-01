@@ -5,7 +5,7 @@ Currently all deployments are done manually using the Kubernetes command line to
 In this challenge your are going to create a continuous deployment pipeline that triggers after the Continuous Integration build has been completed. The latest version (use the version number) of the containers should be pushed to the cluster using the helm chart
 
 # Challenge
-* Create release pipeline in Azure DevOps that deploys the container from the Github repo
+* Create release pipeline in Azure DevOps that deploys the container from the GitHub repo
 
 https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/github-actions?view=azure-devops
 

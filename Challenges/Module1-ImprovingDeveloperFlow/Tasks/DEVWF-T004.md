@@ -19,7 +19,7 @@ In this challenge you will merge the Pull Request [Example for Multi-Staged Dock
 > Use the `docker rm` command to remove containers that have run earlier
 > Link a Work item to a Pull Request or Commit by adding AB#<workitemid> to your title or description.
 
-## Links
+## Links & Information
 * [Link GitHub commits, pull requests, and issues to work items](https://docs.microsoft.com/en-us/azure/devops/boards/github/link-to-from-github?view=azure-devops)
 * [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
 * [Creating a Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
