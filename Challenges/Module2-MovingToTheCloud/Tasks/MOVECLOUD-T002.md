@@ -1,16 +1,20 @@
 # Running containers in a cluster
-Our cluster and database are running and the DevOps team has successfully automated the deployment of these Azure Resources. Now it is time to start running the application in the cloud. The container have already been pushed to the GitHub Container Registry so they can get started with the cluster right away. 
+The cluster and database are running and the DevOps team has successfully automated the deployment of these Azure Resources. Now it is time to start running the application in the cloud. The container have already been pushed to the GitHub Container Registry so they can get started with the cluster right away. 
 
 ## Challenge
-In this challenge you will run the WEB and API application on the cluster, while it connects with the CosmosDB. You will use the kubectl commands and YAML files to deploy them. 
+In this challenge you will run the WEB and API application on the cluster, while it connects with the CosmosDB. The INIT container, that was pushed to the registry as well, can be used to populate the CosmosDB. You will use the kubectl commands and YAML files to deploy them. 
 
-To deploy a container to AKS you can use the `kubectl apply -f file.yml` command. The file to deploy needs to be a [Deployment file](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment). 
+In your repository create a new folder called AKS, that will contain all files that you create to deploy your resources to the cluster
 
-To be able to pull a container from the GitHub Container Registry in to the AKS cluster, you need to configure a pull secret in AKS. You can do this by running the `kubectl create secret` command. [This blog post](https://roadtoalm.com/2020/09/22/using-the-github-container-registry-with-azure-kubernetes-service-aks/) describes how to configure you deployments to pull from GHCR.
+1. To deploy a container to AKS you can use the `kubectl apply -f file.yml` command. The file to deploy needs to be a [Deployment file](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment). 
 
-To expose a container to the outside world or reachable on the cluster, you need to [add a service in AKS](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service). 
+2. To be able to pull a container from the GitHub Container Registry in to the AKS cluster, you need to configure a pull secret in AKS. You can do this by running the `kubectl create secret` command. [This blog post](https://roadtoalm.com/2020/09/22/using-the-github-container-registry-with-azure-kubernetes-service-aks/) describes how to configure you deployments to pull from GHCR.
 
-Your API container needs to connect to the CosmosDB that you deployed. You can add the connectionstring to the CosmosDB in a Kubernetes Secret using `kubectl create secret generic cosmosdb --from-literal=db=mongoDBconnectionstring` Make sure you add the name contentdb in the connectionstring --> `mongodb://cosmosdbaccount:KEY@cosmosdbaccount.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb`
+3. To expose a container to the outside world or reachable on the cluster, you need to [add a service in AKS](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service). 
+
+4. Your API container needs to connect to the CosmosDB that you deployed. You can add the connectionstring to the CosmosDB in a Kubernetes Secret using `kubectl create secret generic cosmosdb --from-literal=db=mongoDBconnectionstring` 
+
+5. Make sure you add the name contentdb in the connectionstring --> `mongodb://cosmosdbaccount:KEY@cosmosdbaccount.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb`
 
 ## Validation
 * Pull Secret created in AKS

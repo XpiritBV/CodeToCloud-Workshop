@@ -1,14 +1,15 @@
 $studentprefix = "rvo"
-$resourcegroupName = "CodeToCloud-" + $studentprefix
-$cosmosDBName = "fabmedicalcdb-" + $studentprefix
-$aksName = "fabmedical-" + $studentprefix
-
+$resourcegroupName = "fabmedical-rg-" + $studentprefix
+$cosmosDBName = "fabmedical-cdb-" + $studentprefix
+$aksName = "fabmedical-aks-" + $studentprefix
+$location1 = "westeurope"
+$location2 = "northeurope"
 
 #Create an App Registration to use with AKS
 $resultSPN = az ad sp create-for-rbac --name GitHubWorkshop | ConvertFrom-Json
 
 #First create a group
-$resultRG = az group create --name $resourcegroupName | ConvertFrom-Json
+$resultRG = az group create --name $resourcegroupName --location $location1 | ConvertFrom-Json
 
 #Then create a CosmosDB
 $resultCosmos = az cosmosdb create --name $cosmosDBName `
@@ -38,6 +39,9 @@ az aks get-credentials --name $aksName --resource-group $resourcegroupName
 #remove and set rights
 kubectl delete clusterrolebinding kubernetes-dashboard 
 kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard --user=clusterUser
+
+## get the bearer token for the dashboard
+cat ~/.kube/config
 
 ## Browse
 az aks browse --name $aksName --resource-group $resourcegroupName
