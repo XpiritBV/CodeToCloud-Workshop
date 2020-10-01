@@ -6,9 +6,9 @@ You and your team of consultants see that Docker containers are truly embraced. 
 ## Challenge 
 In this challenge you are going to create a new Docker Compose file that contains the MongoDB, the API and the Web Application. 
 
-The Pull Request called [Docker compose file for running API and MongoDB (DEVWF-T006)] contains 2 docker compose files that were created by one of your peers. Only the web application needs to be added here. 
+The Pull Request called `Docker compose file for running API and MongoDB (DEVWF-T006)` contains 2 docker compose files that were created by one of your peers. Only the web application needs to be added here. 
 
-# Validation 
+## Validation 
 * Docker compose files are merged to the master branch
 * Docker compose file builds and runs the MongoDB, the API and the Web Application
 * Application can be started via `docker-compose up`
@@ -16,3 +16,7 @@ The Pull Request called [Docker compose file for running API and MongoDB (DEVWF-
 > Tips
 > Run the command `docker rm -f` to remove running containers that have a port already in use
 > Set the environment variable CONTENT_API_URL for the web container to `http://api:3001`
+
+## Links & Information
+* [Overview of Docker Compose](https://docs.docker.com/compose/)
+* [Extending files with Docker Compose](https://docs.docker.com/compose/extends/)

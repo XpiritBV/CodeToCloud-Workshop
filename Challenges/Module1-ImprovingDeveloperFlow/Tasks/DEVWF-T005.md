@@ -18,7 +18,7 @@ In this challenge you will enable two important security features. DependaBot an
 > Find the [http-proxy] alert in the Dependabot alerts under the security Tab and Create Dependabot Security Update.
 > Dependabot creates a Pull Request that you can merge
 
-## Links
+## Links & Information
 * [About Code Scanning](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/about-code-scanning)
 * [How DependaBot Works](https://dependabot.com/#how-it-works)
 * [Enable Code Scanning](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/enabling-code-scanning-for-a-repository)

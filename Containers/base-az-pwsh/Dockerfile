@@ -15,7 +15,7 @@ RUN apk add --no-cache \
     curl
 RUN apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
-# Download 7 install Github CLI
+# Download 7 install GitHub CLI
 RUN curl -L https://github.com/cli/cli/releases/download/v1.0.0/gh_1.0.0_linux_amd64.tar.gz -o /tmp/gh_1.0.0_linux_amd64.tar.gz
 RUN mkdir -p /opt/github/cli/1
 RUN tar zxf /tmp/gh_1.0.0_linux_amd64.tar.gz -C /opt/github/cli/

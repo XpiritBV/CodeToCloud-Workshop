@@ -38,7 +38,7 @@ In this module you will learn to:
 * Azure boards integration
 * Pull Request + Review
 * Dependabot / actions
-* Github secuirty features
+* GitHub secuirty features
 
 # Video
 

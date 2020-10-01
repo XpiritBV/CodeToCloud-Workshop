@@ -1,11 +1,14 @@
-name: Fabrikam-Init
+name: Fabrikam Web Build
 
 on:
   push:
+    # Publish `main` as Docker `latest` image.
     branches:
-    - master
+      - main
     paths:
-    - 'content-init/**'
+      - 'content-web/**'
+      - '.github/workflows/fabrikam-web.yml'
+      
 
     # Publish `v1.2.3` tags as releases.
     tags:
@@ -16,14 +19,12 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: fabrikam-init
-  dockerfilePath: './content-init'  
+  IMAGE_NAME: fabrikam-web
 
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   push:
-    # Ensure test job passes before pushing image.
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
 
@@ -31,15 +32,14 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build image
-        working-directory: ${{ env.dockerfilePath }}
+        working-directory: content-web
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Log into GitHub Container Registry
-        working-directory: ${{ env.dockerfilePath }}
         run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Push image to GitHub Container Registry
-        working-directory: ${{ env.dockerfilePath }}
+        working-directory: content-web
         run: |
           IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
 
@@ -53,7 +53,7 @@ jobs:
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
 
           # Use Docker `latest` tag convention
-          [ "$VERSION" == "master" ] && VERSION=latest
+          [ "$VERSION" == "main" ] && VERSION=latest
 
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION

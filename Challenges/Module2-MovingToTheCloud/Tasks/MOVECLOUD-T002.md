@@ -6,7 +6,7 @@ In this challenge you will run the WEB and API application on the cluster, while
 
 To deploy a container to AKS you can use the `kubectl apply -f file.yml` command. The file to deploy needs to be a [Deployment file](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment). 
 
-To be able to pull a container from the Github Container Registry in to the AKS cluster, you need to configure a pull secret in AKS. You can do this by running the `kubectl create secret` command. [This blog post](https://roadtoalm.com/2020/09/22/using-the-github-container-registry-with-azure-kubernetes-service-aks/) describes how to configure you deployments to pull from GHCR.
+To be able to pull a container from the GitHub Container Registry in to the AKS cluster, you need to configure a pull secret in AKS. You can do this by running the `kubectl create secret` command. [This blog post](https://roadtoalm.com/2020/09/22/using-the-github-container-registry-with-azure-kubernetes-service-aks/) describes how to configure you deployments to pull from GHCR.
 
 To expose a container to the outside world or reachable on the cluster, you need to [add a service in AKS](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service). 
 
