@@ -17,7 +17,7 @@ In this module you will learn to:
 * Use Docker Compose to create a environment that consists of multiple components
 
 ## Tasks
-* [Get started with the work and create visibility](.\Tasks\DEVWF-T001.md)
+* [Get started with the work and create visibility](Tasks/DEVWF-T001.md)
 * [Running the application locally](.\Tasks\DEVWF-T002.md)
 * [Containerize the Application](.\Tasks\DEVWF-T003.md)
 * [Optimize containers with a multi staged Docker File](.\Tasks\DEVWF-T004.md)
