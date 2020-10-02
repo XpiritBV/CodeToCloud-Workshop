@@ -1,6 +1,12 @@
 # Running containers in a cluster
 The cluster and database are running and the DevOps team has successfully automated the deployment of these Azure Resources. Now it is time to start running the application in the cloud. The container have already been pushed to the GitHub Container Registry so they can get started with the cluster right away. 
 
+## Before you start this challenge
+This challenge needs some prerequisites. Run the following command in your Terminal windows of you GitHub Codespace to set this up.
+```
+.workshop/workshop-step.ps1  Start "MOVETOCLOUD-T002"
+```
+
 ## Challenge
 In this challenge you will run the WEB and API application on the cluster, while it connects with the CosmosDB. The INIT container, that was pushed to the registry as well, can be used to populate the CosmosDB. You will use the kubectl commands and YAML files to deploy them. 
 

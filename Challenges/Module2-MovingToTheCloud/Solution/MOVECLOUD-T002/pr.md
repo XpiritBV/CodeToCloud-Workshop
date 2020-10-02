@@ -9,7 +9,7 @@ linkedworkitem: module2
 # Instructions to Fix the exercise
 Added all kubernetes files to deploy INIT, WEB and API. 
 
-You need to add 2 secrets to kubernetes. One for the CosmosDB and one for the Github Container Registry. Make sure you add the /contentdb part to the mongoDB connectionstring. You can get the connectionstring from the Azure Portal
+You need to add 2 secrets to kubernetes. One for the CosmosDB and one for the GitHub Container Registry. Make sure you add the /contentdb part to the mongoDB connectionstring. You can get the connectionstring from the Azure Portal
 
 ```
 $mongodbConnectionString="mongodb://<mongoDBConnectionstring>:10255/contentdb?ssl=true&replicaSet=globaldb"
