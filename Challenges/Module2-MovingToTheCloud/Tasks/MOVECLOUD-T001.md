@@ -2,6 +2,12 @@
 
 Susan wants to move to the cloud. An Azure subscription has been created and known to the developers. Since Fabrikam is doing DevOps, setting up the infrastructure and deploying this to the cloud also needs to be automated. Furthermore, it is the responsibility of the developers (a.ka. DevOps Team) to operate this infrastructure. Fortunately, Azure has a advanced automation engine to automate the roll-out of the infrastructure and advanced features to operate it. Besides that, the people that operate the current-on-premises infrastructure have a vast knowledge of infrastructure and scripting and are eager to move to the cloud as well.
 
+## Before you start this challenge
+Run 
+```
+.workshop/workshop-step.ps1  Start "MOVECLOUD-T001"
+```
+
 ## Challenge
 In this challenge you will set up an Azure Resource Group containing a CosmosDB and an Azure Kubernetes Cluster. This needs to accessed with an Azure Service Principal for RBAC. To simplify automation you can use the Azure CLI to set this up. The script that you create, needs to be saved in an [infrastructure] folder of the [CodeToCloud-Source] repository to ensure repeatability and the possibility to run this from within the pipeline
 

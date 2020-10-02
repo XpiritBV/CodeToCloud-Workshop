@@ -16,9 +16,11 @@ az login
 
 ```Powershell
 $studentprefix = "your-name-here"
-$resourcegroupName = "FabmedicalRG-" + $studentprefix
-$cosmosDBName = "FabmedicalCDB-" + $studentprefix
-$aksName = "FabmedicalAKS-" + $studentprefix
+$resourcegroupName = "fabmedical-rg-" + $studentprefix
+$cosmosDBName = "fabmedical-cdb-" + $studentprefix
+$aksName = "fabmedical-aks-" + $studentprefix
+$location1 = "westeurope"
+$location2 = "northeurope"
 ```
 
 When browsing to the Kubernetes Dashboard from your CodeSpace, paste `/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login` after the url that CodeSpaces generates for you
