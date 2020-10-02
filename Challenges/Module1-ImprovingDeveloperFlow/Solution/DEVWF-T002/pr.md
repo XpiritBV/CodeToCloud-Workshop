@@ -1,7 +1,7 @@
 ---
 title: Updated Build Instructions (DEVWF-T002)
 branch: users/josh/update-build-instruction
-commitmessage: :rocket: Added instructions to build and run the application. 
+commitmessage: ":rocket: Added instructions to build and run the application. "
 committer: Josh Almond
 committeremail: JoshAlmond@FabrikamMedical.example.org
 linktoworkitem: Module1
