@@ -44,7 +44,7 @@ When you are done with the design, review your design, considering the following
 * Determine how you will respond to the customer's objections.
 
 
-## Links
+## Links & Information
 * [Azure Kubernetes Services (AKS)](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes/)
 * [Kubernetes](https://kubernetes.io/docs/home/)
 * [AKS FAQ](https://docs.microsoft.com/en-us/azure/aks/faq)

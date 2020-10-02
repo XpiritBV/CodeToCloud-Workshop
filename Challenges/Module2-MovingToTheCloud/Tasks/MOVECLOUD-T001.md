@@ -34,7 +34,7 @@ In this challenge you will set up an Azure Resource Group containing a CosmosDB 
 > ```
 > *  Use the `az aks browse -n $aksName -g $resourcegroupName` to browse to the cluster dashboard
 
-## Links
+## Links & Information
 * [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 * [Manage Resource Group with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest)
 * [Manage CosmosDB with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/cosmosdb?view=azure-cli-latest)

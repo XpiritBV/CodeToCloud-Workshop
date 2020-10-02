@@ -14,8 +14,8 @@ $resultRG = az group create --name $resourcegroupName --location $location1 | Co
 #Then create a CosmosDB
 $resultCosmos = az cosmosdb create --name $cosmosDBName `
 --resource-group $resourcegroupName `
---locations regionName=westeurope failoverPriority=0 isZoneRedundant=False `
---locations regionName=northeurope failoverPriority=1 isZoneRedundant=True `
+--locations regionName=$location1 failoverPriority=0 isZoneRedundant=False `
+--locations regionName=$location2 failoverPriority=1 isZoneRedundant=True `
 --enable-multiple-write-locations `
 --kind MongoDB `
 | ConvertFrom-Json
