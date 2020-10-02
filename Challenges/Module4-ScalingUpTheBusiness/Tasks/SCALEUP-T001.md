@@ -19,6 +19,13 @@ In this challenge you will use the scaling possibilities of Kubernetes to scale 
 * [Kubectl Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 * [Kubectl Scaling Resources](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#scaling-resources)
 
+## Solution
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+
+```
+.workshop/workshop-step.ps1 Solution "SCALEUP-T001"
+```
+
 * https://github.com/microsoft/MCW-Cloud-native-applications/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Cloud-native%20applications%20-%20Developer%20edition.md#task-1-increase-service-instances-from-the-kubernetes-dashboard
 
 * https://github.com/microsoft/MCW-Cloud-native-applications/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Cloud-native%20applications%20-%20Developer%20edition.md#task-2-increase-service-instances-beyond-available-resources

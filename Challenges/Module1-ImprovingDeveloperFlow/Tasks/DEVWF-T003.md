@@ -26,5 +26,12 @@ You also decide it is convenient to have a container for the Initialization of t
 * [docker build](https://docs.docker.com/engine/reference/commandline/build/)
 * [docker run](https://docs.docker.com/engine/reference/run/)
 
+## Solution
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+
+```
+.workshop/workshop-step.ps1 Solution "DEVWF-T003"
+```
+
 ## Step by Step Explanation
 To read or view a step by step explanation of this challenge, please visit [this page](../Step-By-Step/DEVWF-SBS002.md)

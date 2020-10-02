@@ -24,6 +24,12 @@ The steps that need to be followed are:
 * [Install Cert Manager](https://cert-manager.io/docs/installation/kubernetes/)
 * [Install and configure Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 
+## Solution
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+
+```
+.workshop/workshop-step.ps1 Solution "SCALEUP-T002"
+```
 
 ## Extra
 We need 1 enttrypoint

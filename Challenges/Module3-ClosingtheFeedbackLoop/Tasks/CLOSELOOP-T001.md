@@ -20,6 +20,18 @@ In this challenge you will set up Application Insights to monitor your applicati
 > ```
 > Re-deploy the web application by deleting the pod. Kubernetes will automatically pull the latest version `kubectl delete pods <pod >name>`
 
+## Links & Information
+* [What is Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview#:~:text=Application%20Insights%2C%20a%20feature%20of,to%20monitor%20your%20live%20applications.&text=It%20can%20monitor%20and%20analyze,with%20Visual%20Studio%20App%20Center.)
+* [Azure CLI for Application Insights](https://docs.microsoft.com/en-us/cli/azure/ext/application-insights/monitor/app-insights?view=azure-cli-latest)
+
+
+## Solution
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+
+```
+.workshop/workshop-step.ps1 Solution "CLOSELOOP-T001"
+```
+
 
 
 * Set up Container Monitoring

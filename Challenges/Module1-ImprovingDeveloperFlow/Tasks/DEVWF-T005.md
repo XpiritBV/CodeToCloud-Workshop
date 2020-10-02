@@ -24,3 +24,10 @@ In this challenge you will enable two important security features. DependaBot an
 * [Enable Code Scanning](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/enabling-code-scanning-for-a-repository)
 
 ![](/assets/2020-09-17-13-13-35.png)
+
+## Solution
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+
+```
+.workshop/workshop-step.ps1 Solution "DEVWF-T005"
+```

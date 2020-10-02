@@ -18,3 +18,10 @@ In this challenge you are going to create a Helm chart for both the WEB and API 
 * [What is a Helm Chart](https://www.coveros.com/what-is-a-helm-chart-a-beginners-guide/)
 * [Helm Create](https://helm.sh/docs/helm/helm_create/)
 * [Helm Documentation](https://helm.sh/)
+
+## Solution
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+
+```
+.workshop/workshop-step.ps1 Solution "SCALEUP-T003"
+```
