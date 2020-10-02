@@ -1,5 +1,5 @@
 ---
-title: "GitHub Actions for publishing Docker Containers to Github CR (DEVWF-T007)"
+title: "GitHub Actions for publishing Docker Containers to GitHub CR (DEVWF-T007)"
 branch: users/nolan/github-actions-ci
 commitmessage: "Created GitHub Actions for WEB, API and INIT :octocat:"
 committer: Nolan Johnson

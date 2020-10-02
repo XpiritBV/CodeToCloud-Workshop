@@ -5,6 +5,12 @@ You and your team advice to start using multi staged Docker files. This way you 
 
 To help them out your team creates a Pull Request that contains the multi staged Docker file for the WEB, API and INIT applications.
 
+## Before you start this challenge
+This challenge needs some prerequisites. Run the following command in your Terminal windows of you GitHub Codespace to set this up.
+```
+.workshop/workshop-step.ps1  Start "DEVWF-T004"
+```
+
 ## Challenge
 In this challenge you will merge the Pull Request [Example for Multi-Staged Docker Files :whale: (DEVWF-T004)] to the main branch and link this to the Azure Boards Work Item [Module 1]. This PR contains 3 multi staged Docker file. Re-Build the WEB, API and INIT application and run the WEB and API container and check the differences. Also run `docker images` to see the difference in image size.
 

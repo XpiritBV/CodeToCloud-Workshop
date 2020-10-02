@@ -9,7 +9,7 @@ linkedworkitem: module2
 # Instructions to Start the exercise
 Added Kubernetes files to deploy API. 
 
-You need to add 2 secrets to kubernetes. One for the CosmosDB and one for the Github Container Registry. Make sure you add the /contentdb part to the MongoDB connectionstring. You can get the connectionstring from the Azure Portal
+You need to add 2 secrets to kubernetes. One for the CosmosDB and one for the GitHub Container Registry. Make sure you add the /contentdb part to the MongoDB connectionstring. You can get the connectionstring from the Azure Portal
 
 ```
 $mongodbConnectionString="mongodb://<mongoDBConnectionstring>:10255/contentdb?ssl=true&replicaSet=globaldb"
