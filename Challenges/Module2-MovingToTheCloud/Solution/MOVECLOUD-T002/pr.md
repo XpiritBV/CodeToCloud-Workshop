@@ -6,6 +6,7 @@ committer: Patrick O'Conell
 committeremail: patrickoconnell@FabrikamMedical.example.org
 linkedworkitem: module2
 ---
+
 # Instructions to Fix the exercise
 Added all kubernetes files to deploy INIT, WEB and API. 
 

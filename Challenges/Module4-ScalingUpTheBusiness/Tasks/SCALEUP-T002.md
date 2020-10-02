@@ -2,9 +2,9 @@
 The final step in the cloud journey is to make the cluster the single point of entry for Fabrikam Medical. To be a true multi-tenant application, Susan want to run all the websites of customers under the fabrikam domain. (e.g. https://fabrikam.com/customerx, https://fabrikam.com/customery), and all websites need to be secured with https. 
 
 ## Challenge
-Susan asks you for one final advice. She needs to have the cluster set up in such a way, that it uses one IP address and DNS name and that all sites running on it are using https. You need to create a NGINX ingress controller on the cluster that receives a public IP address. The DNS of this IP address (fabrikam-<suffix>.region.cloudapp.azure.com) needs to be used as entry point for all application and customers. 
+Susan asks you for one final advice. She needs to have the cluster set up in such a way, that it uses one IP address and DNS name and that all sites running on it are using https. You need to create a NGINX ingress controller on the cluster that receives a public IP address. The DNS of this IP address (fabrikam-<dnsname>.region.cloudapp.azure.com) needs to be used as entry point for all application and customers. 
 
-The website needs to be reached under https://fabrikam-<suffix>.region.cloudapp.azure.com and the api under fabrikam-<suffix>.region.cloudapp.azure.com/content-api. To be able to serve the sites as https, you need to use the cert-manager to issue certificates. One of the infrastructure consultants already made a start with the installation scripts.
+The website needs to be reached under https://fabrikam-<dnsname>.region.cloudapp.azure.com and the api under fabrikam-<dnsname>.region.cloudapp.azure.com/content-api. To be able to serve the sites as https, you need to use the cert-manager to issue certificates. One of the infrastructure consultants already made a start with the installation scripts.
 
 The steps that need to be followed are:
 * Set up Helm repositories to get access to nginx and cert-manager helm charts
@@ -13,15 +13,13 @@ The steps that need to be followed are:
     * `helm repo add jetstack https://charts.jetstack.io`
     * `helm repo update`
 * Install NGINX in the kube-system workspace
-* In Azure create a DNS name for your NGINX public IP (fabrikam-<suffix>.region.cloudapp.azure.com)
+* In Azure create a DNS name for your NGINX public IP (fabrikam-<dnsname>.region.cloudapp.azure.com)
 * Install the cert-manager helm chart in the cert-manager namespace
 * Deploy the Certificate Authority that can issue certificates for the whole cluster
-* Create a certificate for the DNS address (fabrikam-<suffix>.region.cloudapp.azure.com)
+* Create a certificate for the DNS address (fabrikam-<dnsname>.region.cloudapp.azure.com)
 * Assign the certificates and routes to your application
 
-As proof that we can be a true multi-tenant provider, we want to deploy a new instance of the web application under the name customerx. By copying the values.yml of content-web and change the name to web-customerx and port to 8080 and run `helm install web-customerx ./content-web -f newvalues.yml` you can deploy a new instance. Update the paths on the ingress controller to reflect this.
-
-## Links
+## Links & Information
 * [Install Nginx](https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx)
 * [Install Cert Manager](https://cert-manager.io/docs/installation/kubernetes/)
 * [Install and configure Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)

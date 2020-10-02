@@ -1,5 +1,7 @@
-$resourcegroupName = "CodeToCloud-RvO"
+$studentprefix = "your-name-here"
+$resourcegroupName = "fabmedical-rg-" + $studentprefix
 $dnsEntryName = "<dnsName>"
+
 
 #Set up rights Helm repos
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
@@ -17,7 +19,7 @@ kubectl get service --namespace kube-system
 #then get the Public IP resource in Azure
 az network public-ip list -o table
 #and update the label of the IP Address
-az network public-ip update --name <nameofpublicIP> -g $resourcegroupName --dns-name $dnsEntryName
+az network public-ip update --name <nameofpublicIP> -g <nameofresourcegroup> --dns-name $dnsEntryName
 
 
 # Install the cert-manager
@@ -28,13 +30,13 @@ helm install cert-manager jetstack/cert-manager --namespace cert-manager --versi
 kubectl get pods --namespace cert-manager
 
 # Deploy the Certificate Authority that can issue certificates for the whole cluster
-kubectl apply -f .\cluster-Issuer.yml
+kubectl apply -f cluster-Issuer.yml
 
 # Create a certificate for the dns address (dnsEntryName.region.cloudapp.azure.com)
-kubectl apply -f .\certificate.yml
+kubectl apply -f certificate.yml
 
 # Apply the certificate to the web app and api
-kubectl apply -f .\content-ingress.yml
+kubectl apply -f content-ingress.yml
 
 # Check if certificate is issued
 kubectl describe certificate tls-secret

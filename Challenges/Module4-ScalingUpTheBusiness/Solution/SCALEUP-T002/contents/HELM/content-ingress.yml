@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
     - hosts:
-      - testrvo.westeurope.cloudapp.azure.com
+      - <dnsName>.westeurope.cloudapp.azure.com
       secretName: tls-secret
   rules:
-    - host: testrvo.westeurope.cloudapp.azure.com
+    - host: <dnsName>.westeurope.cloudapp.azure.com
       http:
         paths:
           - path: /(.*)

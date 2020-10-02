@@ -14,7 +14,7 @@ In this challenge you are going to create a Helm chart for both the WEB and API 
 * API application uses the CosmosDB 
 * Helm charts committed to the Git Repository and merged to master in a `charts` folder
 
-## Links
+## Links & Information
 * [What is a Helm Chart](https://www.coveros.com/what-is-a-helm-chart-a-beginners-guide/)
 * [Helm Create](https://helm.sh/docs/helm/helm_create/)
 * [Helm Documentation](https://helm.sh/)

@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-      app: api
-  name: api
+      app: init
+  name: init
 spec:
   replicas: 1
   selector:
       matchLabels:
-        app: api
+        app: init
   strategy:
       rollingUpdate:
         maxSurge: 1
@@ -17,11 +17,11 @@ spec:
   template:
       metadata:
         labels:
-            app: api
-        name: api
+            app: init
+        name: init
       spec:
         containers:
-        - image: ghcr.io/renevanosnabrugge/fabrikam-api:latest 
+        - image: ghcr.io/<yourgithubaccount>/fabrikam-init:latest 
           env:
             - name: MONGODB_CONNECTION
               valueFrom:
@@ -37,14 +37,14 @@ spec:
             timeoutSeconds: 10
             failureThreshold: 3
           imagePullPolicy: Always
-          name: api
+          name: init
           ports:
             - containerPort: 3000
               hostPort: 80
               protocol: TCP
           resources:
             requests:
-                cpu: 1000m
+                cpu: 125m
                 memory: 128Mi
           securityContext:
             privileged: false
