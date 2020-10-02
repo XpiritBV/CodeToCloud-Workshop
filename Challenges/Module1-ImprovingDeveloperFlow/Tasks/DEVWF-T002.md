@@ -27,5 +27,13 @@ In this challenge you are going to Dockerize the MongoDB and fill this with init
 * [Install Angular CLI](https://cli.angular.io/)
 * [Port Forwarding in Codespaces](https://code.visualstudio.com/docs/remote/containers#_forwarding-or-publishing-a-port)
 
+
+## Solution
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+
+```
+.workshop/workshop-step.ps1 Solution "DEVWF-T002"
+```
+
 ## Step by Step Explanation
 To read or view a step by step explanation of this challenge, please visit [this page]()

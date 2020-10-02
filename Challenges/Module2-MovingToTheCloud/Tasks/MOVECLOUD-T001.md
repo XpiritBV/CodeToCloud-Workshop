@@ -39,3 +39,10 @@ In this challenge you will set up an Azure Resource Group containing a CosmosDB 
 * [Manage Resource Group with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest)
 * [Manage CosmosDB with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/cosmosdb?view=azure-cli-latest)
 * [Manage AKS with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest)
+
+## Solution
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+
+```
+.workshop/workshop-step.ps1 Solution "MOVECLOUD-T001"
+```

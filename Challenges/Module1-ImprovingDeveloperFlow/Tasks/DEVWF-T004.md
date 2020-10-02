@@ -30,4 +30,9 @@ In this challenge you will merge the Pull Request [Example for Multi-Staged Dock
 * [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
 * [Creating a Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
 
+## Solution
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
+```
+.workshop/workshop-step.ps1 Solution "DEVWF-T004"
+```

@@ -49,3 +49,15 @@ In your repository create a new folder called AKS, that will contain all files t
 >            name: cosmosdb
 >            key: db     
 >```
+
+## Links & Information
+* [Kubernetes Deployment file](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment)
+* [Creating Github Container Registry Pull Secret](https://roadtoalm.com/2020/09/22/using-the-github-container-registry-with-azure-kubernetes-service-aks/)
+* [Create a Kubernetes Service](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service)
+
+## Solution
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+
+```
+.workshop/workshop-step.ps1 Solution "MOVECLOUD-T002"
+```
