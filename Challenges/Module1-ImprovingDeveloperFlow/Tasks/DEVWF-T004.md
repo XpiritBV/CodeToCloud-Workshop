@@ -1,4 +1,4 @@
-## Optimize containers with a multi staged Docker File
+# DEVWF-T004 Optimize containers with a multi staged Docker File
 Now that the complete application runs in Docker containers, development speeds is ramping up. Developers run multiple versions of the application side by side and they build new versions when needed. One of the developers notices that the size of the Docker images are quite large. After some investigation it seems that the images contain the complete SDK and supporting files to build the application. During runtime these files are not needed. Besides that, the container images contains many SDK files that contain security vulnerabilities. 
 
 You and your team advice to start using multi staged Docker files. This way you can use containers to build the application and use a lighter version of the container to run the application. Besides that, you advice the team to start working with Pull Requests to share and review code, instead of the Gists that were shared earlier.
@@ -33,6 +33,7 @@ In this challenge you will merge the Pull Request [Example for Multi-Staged Dock
 ## Solution
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
-```
-.workshop/workshop-step.ps1 Solution "DEVWF-T004"
-```
+To read or view a step by step explanation of this challenge, please visit [this page]()
+
+### Next Step
+When you are done, move to the [next challenge](DEVWF-T005.md)

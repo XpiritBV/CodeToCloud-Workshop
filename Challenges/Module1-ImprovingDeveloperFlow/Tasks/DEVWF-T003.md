@@ -1,4 +1,4 @@
-# Containerize the Application
+# DEVWF-T003 Containerize the Application
 One of the biggest complaints the developers had during the round of interviews is that is very hard to run the application locally and to get started. Because there are so many changes for the various customers, the code base changes a lot. To quickly get started with a stable version for a customer, to test some things or to add minor features takes too much time. Furthermore, once the application is deployed, unknown issues occur because production is so different from the development environment.
 
 In the proposed solution architecture Fabrikam wants to move towards the Azure Cloud and start using Azure Kubernetes Service. This allows them to run a cloud-native architecture without a lock-in to a specific cloud because of the use of containers. Therefore the team decides to start using Docker containers for their local development too. Since they already run the MongoDB in a container, now it is time to move the rest as well. 
@@ -33,5 +33,8 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 .workshop/workshop-step.ps1 Solution "DEVWF-T003"
 ```
 
-## Step by Step Explanation
-To read or view a step by step explanation of this challenge, please visit [this page](../Step-By-Step/DEVWF-SBS002.md)
+To read or view a step by step explanation of this challenge, please visit [this page]()
+
+
+### Next Step
+When you are done, move to the [next challenge](DEVWF-T004.md)

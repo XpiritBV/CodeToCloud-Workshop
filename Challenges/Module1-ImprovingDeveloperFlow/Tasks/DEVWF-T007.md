@@ -1,4 +1,4 @@
-# Set up Continuous Integration to push container images to GitHub Registry
+# DEVWF-T007 Set up Continuous Integration to push container images to GitHub Registry
 Developers are working locally with their images to quickly develop the software. However, when they published their containers to start testing, the team notices that there is a lot of differences with their development environments. 
 
 After some research, they find that small bugs occur because the latest version was not used. Main reason is that everybody is building their own container images, and there is not a "golden image" that can be used for testing purposes. You and your team suggest to implement Continuous Integration and to push the latest version of the container image to a Container Registry hosted on GitHub after every change. This container registry can then serve as the repository that contains the latest images to use and deploy on the various environments for testing etc.
@@ -39,3 +39,7 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 ```
 .workshop/workshop-step.ps1 Solution "DEVWF-T007"
 ```
+To read or view a step by step explanation of this challenge, please visit [this page]()
+
+### Next Step
+When you are done, move to the [next challenge](/Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
