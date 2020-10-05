@@ -4,7 +4,7 @@ In this task, you will create 3 Dockerfiles that will be used to build and run t
 
 
 1. From your GitHub repository open your Codespace
-![](OpenCodeSpace.png)
+![](images/OpenCodeSpace.png)
 
 2. In the Terminal window, open a PowerShell Terminal by typing `pwsh`
 
@@ -40,7 +40,7 @@ cd content-api
 
 10. Now that the images have been successfully built, you should be able to see them in your terminal window, when executing the `docker images` command.
 
-![In this screenshot of the terminal window, docker images has been typed and it shows the 3 containers that were built.](DockerImages-Fabrikam.png)
+![In this screenshot of the terminal window, docker images has been typed and it shows the 3 containers that were built.](images/DockerImages-Fabrikam.png)
 
 Now that you have created 3 Docker images for your application, it is time to run the application.
 
@@ -72,11 +72,11 @@ docker run -d --name web -p 3000:3000 --net fabrikam fabrikam-web
 
 15. In your GitHub Codespace, navigate to the Remote Explorer and forward the ports `3000` and `3001` to make them available on the web. Click the Globe Icon to navigate to the Web Application (port 3000).
 
-![![Screen showing the remote explorer where ports 3000 and 3001 are forwarded.]](OpenBrowser.png)
+![![Screen showing the remote explorer where ports 3000 and 3001 are forwarded.]](images/OpenBrowser.png)
 
 16. In the web application, click the Speakers Menu items, to validate if data is loaded from the API and the Database, both running in a container.
 
-![Screen showing data in the Neuro Web application](neuroconf-screen.png)
+![Screen showing data in the Neuro Web application](images/neuroconf-screen.png)
 
 17. When you are done, commit and push your changes to your GitHub repository.
-![](commitandpush.png)
+![](images/commitandpush.png)
