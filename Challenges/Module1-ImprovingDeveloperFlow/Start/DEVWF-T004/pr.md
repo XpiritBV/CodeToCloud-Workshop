@@ -3,8 +3,8 @@ title: "Example for Multi-Staged Docker Files (DEVWF-T004)"
 branch: users/catherine/multi-staged-dockerfiles
 commitmessage: ":whale: Improved Docker files to be Multi-Staged"
 committer: Catherine Rogers
-committeremail: cathering@consultancyfirm.example.org
-linkedworkitem: module1
+committeremail: catherine@consultancyfirm.example.org
+linkedworkitem: WorkItemIdModule1
 ---
 # Instructions to Fix the exercise
 Cool! After I dove in a little bit more, I learned that the docker containers can be smaller and leaner. Multi-Staged files FTW. I created the Dockerfiles for all applications. Please make sure you really check if is OK before approving.
