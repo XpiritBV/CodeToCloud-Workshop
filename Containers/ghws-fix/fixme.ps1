@@ -172,7 +172,8 @@ function Run {
 
     # Find the right folder based on **/action/exercise/
     $markdownPathRoot = Get-ChildItem -Path $sourceRepoFolder -Include pr.md -File -Recurse | 
-        where-object { $_.DirectoryName -like "*?$action?$exercise*" } | 
+    where-object { $_.DirectoryName -like "*?$action*" } | 
+    where-object { $_.DirectoryName -like "*?$exercise*" } | 
         select-object -ExpandProperty "DirectoryName" { $_.DirectoryName } 
 
     $markdownPath = Join-Path -path $markdownPathRoot "pr.md" 
