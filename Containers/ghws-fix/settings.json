@@ -1,16 +1,13 @@
 {
-    "AzureOwnerSPN":"",
-    "AzureOwnerSPNSecret":"",
-    "TenantID":"",
-    "AzDoPAT":"",
-    "AzDoOrganization":"",
-    "StudentNickName":"",
-    "ResourceGroupLocation":"westeurope",
-    "ResourceGroupName":"fabmedical-",
-    "GithubToken":"",
-    "TargetRepo":"https://github.com/jessehouwing/test/",
-    "WorkItemIdModule1": "3007",
-    "WorkItemIdModule2": "3008",
-    "WorkItemIdModule3": "3009",
-    "WorkItemIdModule4": "3010"
-}
+    "Student": "rvosbs",
+    "AzDoPAT": "o4fhhvc7b352g62rz4lbcszcnbbf5yb2gocpza3cncoo6t5a5qwa",
+    "AzDoOrganization": "osnabrugge",
+    "AzDoProject": "CodeToCloud-SBS",
+    "TargetRepo": "https://github.com/renevanosnabrugge/CodeToCloud-Source-SBS",
+    "GithubToken": "7eccf1eeaed987f719d7bba6c0f856c08ae9d6f3",
+    "WorkItemIdModule1": 3012,
+    "WorkItemIdModule2": 3013,
+    "WorkItemIdModule3": 3014,
+    "WorkItemIdModule4": 3015
+  }
+  

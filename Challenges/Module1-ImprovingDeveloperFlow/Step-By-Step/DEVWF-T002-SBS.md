@@ -75,13 +75,13 @@
     ![In this screenshot, nodejs ./server.js & has been typed and run at the command prompt, which starts the API as a background process.](/assets/image47.png)
 
 1. Test the API using your browser. In the GitHub Codespace navigate to the Remote Explorer and create a new Forwarded Port
-![](PortForward.png)
+![](images/PortForward.png)
 
 1. Next to the Forwarded Port, click the the global icon. The forwarded website api will be opened in a new browser window
 
 1. Add `/speakers` to the url. 
 
-    ![In this screenshot, made a request to view speakers.](![](SpeakersAPI.png)
+    ![In this screenshot, made a request to view speakers.](![](images/SpeakersAPI.png)
 
 1. Navigate to the web application directory, run `npm install` and `ng build`.
 
@@ -101,7 +101,7 @@
 
 1. Test the web application using the port forward method. In the Remote Explorer, forward port 3000 and open the browser by clicking the globe icon next to the port. 
 
-![](OpenBrowser.png)
+![](images/OpenBrowser.png)
 
 1. Your application should show data in the Speakers menu item
-![](neuroconf-screen.png)
+![](images/neuroconf-screen.png)
