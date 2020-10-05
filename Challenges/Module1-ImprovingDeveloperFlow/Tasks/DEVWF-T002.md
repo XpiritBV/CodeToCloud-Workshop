@@ -13,11 +13,17 @@ In this challenge you are going to Dockerize the MongoDB and fill this with init
 
 > Tips and Hints
 > Create the /data folder on the host in the root of the [CodeToCloud-Source] repository
+>
 > Run a Mongo container (from the root) with the command `docker run -ti --name mongo --network fabrikam -p 27017:27017 mongo`
+>
 > Build and start the content-init by using `npm install` and `node .\server.js`
+>
 > Build and start the content-api by using `npm install` and `node .\server.js`
+>
 > Build the web application using `npm install` and `ng build` (Angular)
+>
 > Build and start the content-web by using `npm install` and `node .\app.js`
+>
 > Make sure your that Port forwarding is working in your Codespace for port 3000 and 3001 (Remote Explorer -> Port Forwarding)
 
 ## Links & Information

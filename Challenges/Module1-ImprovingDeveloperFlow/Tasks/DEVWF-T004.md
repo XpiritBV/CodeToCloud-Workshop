@@ -22,7 +22,9 @@ In this challenge you will merge the Pull Request [Example for Multi-Staged Dock
 
 > Tip
 > Use the `docker ps -a` command to see which containers are running and stopped on your system
+>
 > Use the `docker rm` command to remove containers that have run earlier
+>
 > Link a Work item to a Pull Request or Commit by adding AB#<workitemid> to your title or description.
 
 ## Links & Information
