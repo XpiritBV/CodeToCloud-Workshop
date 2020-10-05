@@ -1,4 +1,4 @@
-# Setting up a local infrastructure
+# DEVWF-T006 Setting up a local infrastructure
 The entire application is now running in containers. Developers gained a lot of speed with development, but they also notice that changes often occur in both WEB and API. When this happens, they need to build both containers and run them again, which delays them. 
 
 You and your team of consultants see that Docker containers are truly embraced. You find the time right to introduce the possibility to run a entire application that consists of multiple components at once. For that, you introduce `docker-compose` to the DevOps team. This allows the team to define a composition of containers, that can be build, started, and stopped all at once.
@@ -33,3 +33,8 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 ```
 .workshop/workshop-step.ps1 Solution "DEVWF-T006"
 ```
+
+To read or view a step by step explanation of this challenge, please visit [this page]()
+
+### Next Step
+When you are done, move to the [next challenge](DEVWF-T007.md)

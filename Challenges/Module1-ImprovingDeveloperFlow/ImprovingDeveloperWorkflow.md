@@ -17,13 +17,13 @@ In this module you will learn to:
 * Use Docker Compose to create a environment that consists of multiple components
 
 ## Tasks
-* [Get started with the work and create visibility](Tasks/DEVWF-T001.md)
-* [Running the application locally](Tasks/DEVWF-T002.md)
-* [Containerize the Application](Tasks/DEVWF-T003.md)
-* [Optimize containers with a multi staged Docker File](Tasks/DEVWF-T004.md)
-* [Catching Security Vulnerabilities](Tasks/DEVWF-T005.md)
-* [Setting up a local infrastructure](Tasks/DEVWF-T006.md)
-* [Set up Continuous Integration to push container images to GitHub Registry](Tasks/DEVWF-T007.md)
+* [DEVWF-T001 Get started with the work and create visibility](Tasks/DEVWF-T001.md)
+* [DEVWF-T002 Running the application locally](Tasks/DEVWF-T002.md)
+* [DEVWF-T003 Containerize the Application](Tasks/DEVWF-T003.md)
+* [DEVWF-T004 Optimize containers with a multi staged Docker File](Tasks/DEVWF-T004.md)
+* [DEVWF-T005 Catching Security Vulnerabilities](Tasks/DEVWF-T005.md)
+* [DEVWF-T006 Setting up a local infrastructure](Tasks/DEVWF-T006.md)
+* [DEVWF-T007 Set up Continuous Integration to push container images to GitHub Registry](Tasks/DEVWF-T007.md)
 
 
 

@@ -1,4 +1,4 @@
-# Catching Security Vulnerabilities
+# DEVWF-T005 Catching Security Vulnerabilities
 The team has implemented the multi staged Docker files. One of the reasons being a reduction of security risks. When you and your team browse through the source code and run it manually, you notice many security vulnerabilities that are reported by NPM. Many of them are because of old versions of NPM packages. Luckily a large number of them are innocent, but there are some really tricky vulnerabilities found as well.
 
 Fixing security bugs once the application is in production is expensive, and takes a lot of time. You want to make sure that security issues like these are caught as soon as possible. GitHub offers some out of the box features to help you with that, and you advice the team to implement these features as quick as they can.
@@ -31,3 +31,8 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 ```
 .workshop/workshop-step.ps1 Solution "DEVWF-T005"
 ```
+
+To read or view a step by step explanation of this challenge, please visit [this page]()
+
+### Next Step
+When you are done, move to the [next challenge](DEVWF-T006.md)

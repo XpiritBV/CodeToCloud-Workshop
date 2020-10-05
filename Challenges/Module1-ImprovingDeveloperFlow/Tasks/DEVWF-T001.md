@@ -1,4 +1,4 @@
-# Get started with the work and create visibility
+# DEVWF-T001 Get started with the work and create visibility
 
 All developers at Fabrikam work for various customers at the same time. Many of them work on customizing and deploying the customer specific websites for the conferences. During the interviews it seemed that there is no central place for all the work that needs to be done or is in progress. This makes it very hard to see the status of a specific project or, in the current context, the status of the cloud transformation.
 
@@ -24,3 +24,8 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 ```
 .workshop/workshop-step.ps1 Solution "DEVWF-T001"
 ```
+
+To read or view a step by step explanation of this challenge, please visit [this page]()
+
+### Next Step
+When you are done, move to the [next challenge](DEVWF-T002.md)
