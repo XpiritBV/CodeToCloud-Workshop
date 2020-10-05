@@ -26,12 +26,6 @@ In this challenge you will enable two important security features. DependaBot an
 ![](/assets/2020-09-17-13-13-35.png)
 
 ## Solution
-If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
-
-```
-.workshop/workshop-step.ps1 Solution "DEVWF-T005"
-```
-
 To read or view a step by step explanation of this challenge, please visit [this page]()
 
 ### Next Step

@@ -1,4 +1,4 @@
-# Moving to the Cloud
+#  Module 2 - Moving to the Cloud
 
 Now that the Developer workflow improved dramatically, the VP of Engineering at Fabrikam, Susan Withers, wants to take the next step. Now that the application is already running in containers, the goal to improve the overall architecture is already progressing. With this well-isolated architecture a cloud implementation would be a great addition. Instead of running a container cluster on-premises, it should run in the cloud. This way costs can be reduced and the cluster can be scaled when this is necessary. 
 

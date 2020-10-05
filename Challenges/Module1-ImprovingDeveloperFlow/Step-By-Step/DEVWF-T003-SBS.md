@@ -77,3 +77,6 @@ docker run -d --name web -p 3000:3000 --net fabrikam fabrikam-web
 16. In the web application, click the Speakers Menu items, to validate if data is loaded from the API and the Database, both running in a container.
 
 ![Screen showing data in the Neuro Web application](neuroconf-screen.png)
+
+17. When you are done, commit and push your changes to your GitHub repository.
+![](commitandpush.png)
