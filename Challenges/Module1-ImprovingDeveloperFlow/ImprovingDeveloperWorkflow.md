@@ -1,4 +1,4 @@
-# Improving the Developer Workflow
+#  Module 1 - Improving the Developer Workflow
 
 One of the goals of Susan is to improve the Developer Workflow. When the developer workflow runs smoothly developers can focus on creating business value instead of repetitive tasks or disruptions caused by their environment. There are many areas of improvement and you and your team interview the people from the company. A general conclusion is that there is a lot of manual tasks, recurring quality and security issues, and a lot of dependencies between the developers and work that they do.
 

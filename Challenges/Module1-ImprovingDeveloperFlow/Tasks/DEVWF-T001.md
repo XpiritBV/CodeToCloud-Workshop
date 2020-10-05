@@ -19,12 +19,6 @@ In this challenge you are going to use your [CodeToCloud-Source] repository that
 * [Link GitHub commits, pull requests, and issues to work items](https://docs.microsoft.com/en-us/azure/devops/boards/github/link-to-from-github?view=azure-devops)
 
 ## Solution
-If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
-
-```
-.workshop/workshop-step.ps1 Solution "DEVWF-T001"
-```
-
 To read or view a step by step explanation of this challenge, please visit [this page]()
 
 ### Next Step
