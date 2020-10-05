@@ -16,9 +16,13 @@ You also decide it is convenient to have a container for the Initialization of t
 
 > Tip
 > Use the `docker build` command to build a container in your Codespace
+>
 > Use the `docker images` command to check if the images are built
+>
 > Use the `docker run` command to run a container in your Codespace. Use the `--name ` and `--network` switches to name them. Name the web application container `web` and the api container `api`. Use the `-p` switch to port forward the port 3000 and 3001 to your local system 
+>
 > Make sure the 3 containers run on the same network
+>
 > You can access another container on the same network by name. For example: If you call your running container `api` you can access this by navigating to `http://api` in another container
 
 ## Links & Information
