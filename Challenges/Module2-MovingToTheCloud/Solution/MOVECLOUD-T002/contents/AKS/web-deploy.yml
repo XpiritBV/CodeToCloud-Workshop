@@ -21,7 +21,7 @@ spec:
         name: web
       spec:
         containers:
-        - image: ghcr.io/renevanosnabrugge/fabrikam-web:latest 
+        - image: ghcr.io/<yourgithubaccount>/fabrikam-web:latest 
           env:
             - name: CONTENT_API_URL
               value: http://api:3001
