@@ -9,19 +9,19 @@ There are 2 possible scenarios for this Step by Step
 1. On the GitHub Marketplace, find the [Azure Boards Integration App](https://github.com/marketplace/azure-boards). 
 2. On the bottom of the page, select Install it for free.   
 
-![](images/newABIntegration.png)
+![](/Assets/newABIntegration.png)
 
 3. In the next page, Click "Complete order and begin installation"
 
-![](images/CompleteOrder.png)
+![](/Assets/CompleteOrder.png)
 
 4. Select the [CodeToCloud-Source] repository and click Install & Authorize.
 
-![](images/ABSelectrepo.png)
+![](/Assets/ABSelectrepo.png)
 
 5. Login to your Azure DevOps Organization, and select the Team Project that you created in the Prerequisite setup.
 
-![](images/2020-10-05-11-24-19.png)
+![](/Assets/2020-10-05-11-24-19.png)
 
 6. When the integration succeeded, you will be taken to the Azure Board. 4 Work items are present and you see a "Success" message
 
@@ -30,32 +30,32 @@ When you already used the Azure Boards integration, you need to manually link th
 
 1. In your GitHub Repository, navigate to your profile and choose [Settings]. In the Settings page, navigate to the [Applications] tab and choose the [Configure] Button for the Azure Boards application.
 
-![](images/2020-10-05-11-42-34.png)
+![](/Assets/2020-10-05-11-42-34.png)
 
 2. In the [Repository Access] section, choose your repository and hit Save
 
-![](images/2020-10-05-11-43-21.png)
+![](/Assets/2020-10-05-11-43-21.png)
 
 3. Login to your Azure DevOps Organization, and select the Team Project that you created in the Prerequisite setup.
 
-![](images/2020-10-05-11-24-19.png)
+![](/Assets/2020-10-05-11-24-19.png)
 
 4. When the integration succeeded, you will be taken to the Azure Board. 4 Work items are present and you see a "Success" message
 
 ## Test Intgegration
 1. In the Azure Board, create an Issue called [Test]. Remember the Work Item ID that was assigned when you save the work item.
 
-![](images/2020-10-05-11-28-12.png)
+![](/Assets/2020-10-05-11-28-12.png)
 
 2. In your GitHub Repository, open the Readme.md file and choose Edit.
 
-![](images/2020-10-05-11-30-12.png)
+![](/Assets/2020-10-05-11-30-12.png)
 
 3. Make a textual change, and commit the change with a message that contains the Azure Boards Work Item ID, in the following format AB#WorkItemID
 
-![](images/2020-10-05-11-32-09.png)
+![](/Assets/2020-10-05-11-32-09.png)
 
 4. In Azure Boards, find the work item, and see that the code commit has been linked to the work item
 
-![](images/2020-10-05-11-33-26.png)
+![](/Assets/2020-10-05-11-33-26.png)
 
