@@ -1,5 +1,5 @@
 ---
-title: "Added Infrastructure as Code file to provision Cloud Infra (MOVETOCLOUD-T001 Solution)"
+title: "Added Infrastructure as Code file to provision Cloud Infra (MOVECLOUD-T001 Solution)"
 branch: users/sharon/infrastructure-as-code
 commitmessage: "Added Infrastructure as Code file to provision Cloud Infra :cloud:"
 committer: Sharon Wang

@@ -15,9 +15,8 @@ In this module you will learn to:
 * Run a container in the cluster 
 
 ## Tasks
-* [Setting up a cloud infrastructure](Tasks/MOVECLOUD-T001.md)
-* [Running containers in a cluster](Tasks/MOVECLOUD-T002.md)
-* [Task 3](Tasks/MOVECLOUD-T003.md)
+* [MOVECLOUD-T001 Setting up a cloud infrastructure](Tasks/MOVECLOUD-T001.md)
+* [MOVECLOUD-T002 Running containers in a cluster](Tasks/MOVECLOUD-T002.md)
 
 # excerices
  * Ex-2

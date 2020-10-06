@@ -1,5 +1,5 @@
 ---
-title: "Added Kubernetes files to deploy applications (MOVETOCLOUD-T002 Solution)"
+title: "Added Kubernetes files to deploy applications (MOVECLOUD-T002 Solution)"
 branch: users/patrick/kubernetes-files
 commitmessage: "Added Kubernetes files to deploy applications"
 committer: Patrick O'Conell
