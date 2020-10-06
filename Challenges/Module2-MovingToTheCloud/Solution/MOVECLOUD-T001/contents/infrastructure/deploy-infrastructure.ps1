@@ -26,7 +26,7 @@ az aks create --resource-group $resourcegroupName `
   --dns-name-prefix $aksName `
   --client-secret $($resultSPN.password) `
   --service-principal $($resultSPN.appId) `
-  --generate-ssh-keys --location westeurope --node-count 3 `
+  --generate-ssh-keys --location $location1 --node-count 3 `
   --kubernetes-version 1.18.8 --max-pods 100
 
 az aks enable-addons -a monitoring -n $aksName -g $resourcegroupName

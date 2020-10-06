@@ -4,7 +4,7 @@ The cluster and database are running and the DevOps team has successfully automa
 ## Before you start this challenge
 This challenge needs some prerequisites. Run the following command in your Terminal windows of you GitHub Codespace to set this up.
 ```
-.workshop/workshop-step.ps1  Start "MOVETOCLOUD-T002"
+.workshop/workshop-step.ps1  Start "MOVECLOUD-T002"
 ```
 
 ## Challenge
@@ -61,3 +61,6 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 ```
 .workshop/workshop-step.ps1 Solution "MOVECLOUD-T002"
 ```
+
+### Next Step
+When you are done, move to the [next challenge](/Challenges/Module3-ClosingtheFeedbackLoop/ClosingTheFeedbackLoop.md)
