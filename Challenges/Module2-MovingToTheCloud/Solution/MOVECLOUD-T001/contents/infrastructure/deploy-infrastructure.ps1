@@ -1,4 +1,4 @@
-$studentprefix = "rvo"
+$studentprefix = "your abbreviation here"
 $resourcegroupName = "fabmedical-rg-" + $studentprefix
 $cosmosDBName = "fabmedical-cdb-" + $studentprefix
 $aksName = "fabmedical-aks-" + $studentprefix
