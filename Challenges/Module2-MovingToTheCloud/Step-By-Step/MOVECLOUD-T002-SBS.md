@@ -14,19 +14,19 @@ In this task you will run the WEB and API application on the cluster, while it c
 
 2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with DEVWF-T004 in the title
 
-![Shows the menu item for navigating to the Pull Request](pullrequestmovecloudt002.png)
+![Shows the menu item for navigating to the Pull Request](/Assets/pullrequestmovecloudt002.png)
 
 3. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
 
 4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
 
-![Shows the button for merging a Pull Request in GitHub](images/mergePullRequest.png)
+![Shows the button for merging a Pull Request in GitHub](/Assets/mergePullRequest.png)
 
 Now your repository contains 3 new "multi-staged" docker file.
 
 6. In your GitHub Codespace, update your files to the latest version by pulling them.
 
-![](images/2020-10-05-12-10-11.png)
+![](/Assets/2020-10-05-12-10-11.png)
 
 7. To be able to pull a container from the GitHub Container Registry in to the AKS cluster, you need to configure a pull secret in AKS. You can do this by running the kubectl create secret command. Retrieve the GitHub Personal Access Token, that you also used in [DEVWF-T007](/Challenges/Module1-ImprovingDeveloperFlow/Tasks/DEVWF-T007.md). In your PowerShell terminal create a variable called $ghToken and use this token as value
 
@@ -70,7 +70,7 @@ kubectl apply -f api-service.yml
 
 13. Login to the Kubernetes Dashboard to see if the pods successfully deployed. Use the command `az aks browse --name $aksName --resource-group $resourcegroupName` to open the Dashboard.
 
-![](k8sDashboard.png)
+![](/Assets/k8sDashboard.png)
 
 14. In the AKS folder, create a file called web-deploy.yml. Fill the file with the following content. Update <yourgithubaccount> with your GitHub account name.
 
@@ -162,7 +162,7 @@ kubectl apply -f web-service.yml
 
 17. In your Kubernetes Dashboard, navigate to the Services Tab. You will find the Web Service with an external IP. Click the IP address and find that the website shows up, without any data.
 
-![](2020-10-06-14-07-53.png)
+![](/Assets/2020-10-06-14-07-53.png)
 
 18. Add a file called init-deploy.yml to your AKS folder, and set the contents to the snippet below. Update <yourgithubaccount> with your GitHub account name.
 
