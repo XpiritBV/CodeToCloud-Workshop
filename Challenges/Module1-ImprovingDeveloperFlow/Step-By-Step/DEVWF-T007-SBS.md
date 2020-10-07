@@ -8,7 +8,7 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
 
 3. Select the [New secret] button.
 
-    ![Settings link, Secrets link, and New secret button are highlighted.](../../../Assets/2020-08-24-21-45-42.png "GitHub Repository secrets")
+    ![Settings link, Secrets link, and New secret button are highlighted.](/Assets/2020-08-24-21-45-42.png "GitHub Repository secrets")
 
 4. In the [New secret] form, enter the name `CR_PAT` and for the value, paste in a GitHub Personal Access Token, with the following scopes.
 
