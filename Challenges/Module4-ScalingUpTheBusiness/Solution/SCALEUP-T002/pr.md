@@ -7,7 +7,7 @@ committeremail: dianaoluo@FabrikamMedical.example.org
 linkedworkitem: module4
 ---
 
-Updated files to install the Kubernetes Ingress Solution and generate certficates.
+Updated files to install the Kubernetes Ingress Solution and generate certificates.
 
 Please update the <dnsName> and <studentprefix> variables in all the files.
 
