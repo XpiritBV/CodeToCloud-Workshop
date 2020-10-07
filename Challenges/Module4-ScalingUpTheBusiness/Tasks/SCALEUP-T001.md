@@ -4,7 +4,7 @@ One of the customers of Fabrikam has launched a new vaccine and is organizing co
 After looking at the deployed application, you notice that the web application and API are running as a a single instance with a low allocation of memory. Time to get this under control.
 
 ## Challenge
-In this challenge you will use the scaling possibilities of Kubernetes to scale out your API and WEB application. Furthermore you will use the Helm charts to start an application with multiple pods. 
+In this challenge you will use the scaling possibilities of Kubernetes to scale out your API and WEB application. Furthermore you will use the Kubernetes deployment files to start an application with multiple pods. 
 
 ## Validation
 * Scale up API to 5 pods

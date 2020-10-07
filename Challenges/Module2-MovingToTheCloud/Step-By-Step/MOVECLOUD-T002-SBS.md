@@ -200,7 +200,7 @@ spec:
           livenessProbe:
             httpGet:
                 path: /
-                port: 3000
+                port: 3001
             initialDelaySeconds: 30
             periodSeconds: 20
             timeoutSeconds: 10
@@ -208,7 +208,7 @@ spec:
           imagePullPolicy: Always
           name: init
           ports:
-            - containerPort: 3000
+            - containerPort: 3001
               hostPort: 80
               protocol: TCP
           resources:
