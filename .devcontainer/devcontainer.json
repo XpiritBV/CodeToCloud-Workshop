@@ -35,28 +35,31 @@
 	"overrideCommand": false,
 	"workspaceMount": "source=${localWorkspaceFolder},target=/home/codespace/workspace,type=bind,consistency=cached",
 	"workspaceFolder": "/home/codespace/workspace",
-	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
-	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
-
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
+	],
+	"runArgs": [
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined"
+	],
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"GitHub.vscode-pull-request-github",
 		"MS-vsliveshare.vsliveshare",
-        "VisualStudioExptTeam.vscodeintellicode",
-        "angular.ng-template",
-        "ms-vscode.azure-account",
-        "ms-vscode.azurecli",
-        "ms-azure-devops.azure-pipelines",
-        "ms-azuretools.vscode-docker",
-        "ms-kubernetes-tools.vscode-kubernetes-tools",
-        "ms-vscode.typescript-javascript-grammar",
-        "ms-vscode.powershell",
-        "redhat.vscode-yaml"
+		"VisualStudioExptTeam.vscodeintellicode",
+		"angular.ng-template",
+		"ms-vscode.azure-account",
+		"ms-vscode.azurecli",
+		"ms-azure-devops.azure-pipelines",
+		"ms-azuretools.vscode-docker",
+		"ms-kubernetes-tools.vscode-kubernetes-tools",
+		"ms-vscode.typescript-javascript-grammar",
+		"ms-vscode.powershell",
+		"redhat.vscode-yaml"
 	]
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
-    //"postCreateCommand": "sudo curl -L \"https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose &&  sudo chmod +x /usr/local/bin/docker-compose && npm install -g @angular/cli && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 && sudo apt-add-repository -u https://cli.github.com/packages && sudo apt install gh &&  az extension add --name azure-devops && az extension add --name application-insights && az extension add --name portal"
+	//"postCreateCommand": "sudo curl -L \"https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose &&  sudo chmod +x /usr/local/bin/docker-compose && npm install -g @angular/cli && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 && sudo apt-add-repository -u https://cli.github.com/packages && sudo apt install gh &&  az extension add --name azure-devops && az extension add --name application-insights && az extension add --name portal"
 }
