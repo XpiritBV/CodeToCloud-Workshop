@@ -1,18 +1,6 @@
 # Step by Step SCALEUP-T002
 In this task you need to set up the cluster set up in such a way, that it uses one IP address and DNS name and that all sites running on it are using https. You need to create a NGINX ingress controller on the cluster that receives a public IP address. The DNS of this IP address (fabrikam-<dnsname>.region.cloudapp.azure.com) needs to be used as entry point for all application and customers. 
 
-* Set up Helm repositories to get access to nginx and cert-manager helm charts
-  * `helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx`
-  * `helm repo add stable https://kubernetes-charts.storage.googleapis.com/`
-  * `helm repo add jetstack https://charts.jetstack.io`
-  * `helm repo update`
-* Install NGINX in the kube-system workspace
-* In Azure create a DNS name for your NGINX public IP (`fabrikam-<dnsname>.region.cloudapp.azure.com`)
-* Install the cert-manager helm chart in the cert-manager namespace
-* Deploy the Certificate Authority that can issue certificates for the whole cluster
-* Create a certificate for the DNS address (`fabrikam-<dnsname>.region.cloudapp.azure.com`)
-* Assign the certificates and routes to your application
-
 1. Setting up an Ingress Controller and Certificate Manager can be done using standard packages and software that can be configured to serve your needs. A good way to serve pre-defined packages on a Kubernetes cluster are Helm charts. A Helm chart contains the containers, services and configuration that is needed to run a specific service. To be able to access Helm packages your need to configure the Helm CLI tool to access repositories where the Helm charts are stored. By default this is the official Helm "stable" repository. To add the default repository you can always use
 
 > ```
@@ -40,19 +28,19 @@ helm install ingress-nginx/ingress-nginx --generate-name --namespace kube-system
 kubectl get service --namespace kube-system
 ```
 
-![](IngressIP.png)
+![](/Assets/IngressIP.png)
 
 5. When you have found the IP Address, you need to link this Public IP Address to a DNS name in Azure. You can do this by using the Azure Portal. In the Azure Portal, navigate to your resource group where the AKS cluster is really deployed. In the resource group view, search for your abbreviated name, you used when creating the Azure Resources. 
 
-![](2020-10-07-15-18-37.png)
+![](/Assets/2020-10-07-15-18-37.png)
 
 There you see 2 resource group. The resource group your created, and a "automatically created" resource group, that contains all cluster resources, like virtual machines, networks and public IP addresses. Open the "automatically created" resource group called something like `MC_fabmedical-rg-....` and open it. Find the resource of type Public IP{ Address and check it the IP is the same as you found in step 4.
 
-![](publicIP.png)
+![](/Assets/publicIP.png)
 
 Click on Configuration, and configure the DNS Name label to set to your abbreviation 
 
-![](publicIPDNS.png)
+![](/Assets/publicIPDNS.png)
 
 6. Now that you have created a DNS name, making the cluster IP something like `yourname.westeurope.cloudapp.azure.com` you can link a certificate manager to issue certificates for this domain. In this step by step we use the cert-manager service that uses Let's Encrypt to issue certificates. Install the cert-manager on your cluster using the following commands.
 
@@ -67,7 +55,7 @@ kubectl get pods --namespace cert-manager
 ```
 
 The result should look similar like this
-![](cert-manager-pods.png)
+![](/Assets/cert-manager-pods.png)
 
 8. Now that we have the cert-manager running, we need to deploy a Certificate Authority that can issue certificates for the whole cluster. In your Codespace create a new folder HELM and create a new file called cluster-issuer.yml. Add the following contents to this file. Replace the email address that you want to use with Let's Encrypt.
 
@@ -158,7 +146,7 @@ kubectl apply -f content-ingress.yml
 ```
 kubectl describe certificate tls-secret
 ```
-![](certs.png)
+![](/Assets/certs.png)
 
 13.
 > When you do not want to type all commands try the solution Pull Request by running

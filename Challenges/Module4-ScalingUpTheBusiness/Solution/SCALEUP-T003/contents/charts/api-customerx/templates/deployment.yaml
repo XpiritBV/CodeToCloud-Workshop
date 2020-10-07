@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "content-api.fullname" . }}
+  name: {{ include "api-customerx.fullname" . }}
   labels:
-    {{- include "content-api.labels" . | nindent 4 }}
+    {{- include "api-customerx.labels" . | nindent 4 }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
 {{- end }}
   selector:
     matchLabels:
-      {{- include "content-api.selectorLabels" . | nindent 6 }}
+      {{- include "api-customerx.selectorLabels" . | nindent 6 }}
   template:
     metadata:
     {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       labels:
-        {{- include "content-api.selectorLabels" . | nindent 8 }}
+        {{- include "api-customerx.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "content-api.serviceAccountName" . }}
+      serviceAccountName: {{ include "api-customerx.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -42,7 +42,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: cosmosdb
-                  key: db              
+                  key: db    
           livenessProbe:
             httpGet:
               path: /
@@ -54,7 +54,7 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
-      nodeSelector: 
+      nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.affinity }}

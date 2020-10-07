@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "content-web.fullname" . }}
+  name: {{ include "web-customerx.fullname" . }}
   labels:
-    {{- include "content-web.labels" . | nindent 4 }}
+    {{- include "web-customerx.labels" . | nindent 4 }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
 {{- end }}
   selector:
     matchLabels:
-      {{- include "content-web.selectorLabels" . | nindent 6 }}
+      {{- include "web-customerx.selectorLabels" . | nindent 6 }}
   template:
     metadata:
     {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       labels:
-        {{- include "content-web.selectorLabels" . | nindent 8 }}
+        {{- include "web-customerx.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "content-web.serviceAccountName" . }}
+      serviceAccountName: {{ include "web-customerx.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           env:
             - name: CONTENT_API_URL
-              value: http://api:3001
+              value: http://api-customerx:8081              
           livenessProbe:
             httpGet:
               path: /
