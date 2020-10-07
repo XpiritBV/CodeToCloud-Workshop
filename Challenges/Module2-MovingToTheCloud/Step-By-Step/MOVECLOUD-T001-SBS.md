@@ -13,13 +13,13 @@ We can create all these resources manually, but since we want to do this "the De
 ## Prepare your Codespace
 
 1. From your GitHub repository open your Codespace
-   ![](../../../Assets/OpenCodeSpace.png)
+   ![](/Assets/OpenCodeSpace.png)
 
 2. In the file explorer, create a new folder called [**infrastructure**]
 
 3. Create a new file called [**deploy-infrastructure.ps1**]
 
-   ![](../../../Assets/newfolderinfra.png)
+   ![](/Assets/newfolderinfra.png)
 
 4. To make automation of all resources a bit easier, add these variables in the [**deploy-infrastructure.ps1**] file
 
@@ -46,7 +46,7 @@ Create an Azure Resource Group to hold the resources that you create in this han
 
 2. When this completes, the Azure Portal shows your Resource Group.
 
-   ![In this screenshot of the Azure Portal, the fabmedical- Resource group is listed.](../../../Assets/b4-image8.png)
+   ![In this screenshot of the Azure Portal, the fabmedical- Resource group is listed.](/Assets/b4-image8.png)
 
 ### Create a Service Principal
 
@@ -187,7 +187,7 @@ To be able to see containers and perform administrative tasks, you need to conne
    ```
 
 2. You will see output like this. Copy the value of the AKS token for later use.
-   ![In this screenshot you see the output of the .kube.config file and show the value of the token](../../../Assets/AKSToken.png)
+   ![In this screenshot you see the output of the .kube.config file and show the value of the token](/Assets/AKSToken.png)
 
 3. Open the dashboard by running the following command in your terminal
 
@@ -196,7 +196,7 @@ To be able to see containers and perform administrative tasks, you need to conne
    ```
 
 4. In the remote explorer, find the forwarded port 8001 and click the globe icon to open the dashboard.
-   ![](../../../Assets/forwardedKubePort.png)
+   ![](/Assets/forwardedKubePort.png)
 
 5. When browsing to the Kubernetes Dashboard from your Codespace, the browser shows plain json output. Paste `/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login` after the URL that CodeSpaces generates for you. The URL looks like this 
 
@@ -205,12 +205,12 @@ To be able to see containers and perform administrative tasks, you need to conne
    ```
 
 6. In the login window, paste the AKS token you retrieved from the `.kube.config` file
-   ![](../../../Assets/loginaks.png)
+   ![](/Assets/loginaks.png)
 
 ### Using Codespaces
 
 1. You can also log in to AKS from your Codespace. Open the Kubernetes Add-On in your Codespace
-   ![](../../../Assets/codespaceaks.png)
+   ![](/Assets/codespaceaks.png)
 
 2. When your cluster does not appear, run the following command to add the cluster to your `.kube.config`
 
