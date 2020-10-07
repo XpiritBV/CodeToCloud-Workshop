@@ -1,6 +1,6 @@
 # Limit of Public IP Addresses
 
-The final step in the cloud journey is to make the cluster the single point of entry for Fabrikam Medical. To be a true multi-tenant application, Susan want to run all the websites of customers under the fabrikam domain. (e.g. https://fabrikam.com/customerx, https://fabrikam.com/customery), and all websites need to be secured with https. 
+The final step in the cloud journey is to make the cluster the single point of entry for Fabrikam Medical. To be a true multi-tenant application, Susan want to run all the websites of customers under the Fabrikam domain. (e.g. https://fabrikam.com/customerx, https://fabrikam.com/customery), and all websites need to be secured with https. 
 
 ## Challenge
 

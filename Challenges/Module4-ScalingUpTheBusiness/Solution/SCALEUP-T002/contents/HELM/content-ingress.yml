@@ -23,7 +23,3 @@ spec:
             backend:
               serviceName: api
               servicePort: 3001
-          - path: /customerx/(.*)
-            backend:
-              serviceName: web-customerx
-              servicePort: 8080              

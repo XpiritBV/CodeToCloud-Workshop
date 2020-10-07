@@ -15,7 +15,7 @@ helm install ingress-nginx/ingress-nginx --generate-name --namespace kube-system
 #Create a DNS name for your NGINX public IP
 
 #first get the IP address of the NGINX controller
-kubectl get service --namespace kube-system
+    kubectl get service --namespace kube-system
 #then get the Public IP resource in Azure
 az network public-ip list -o table
 #and update the label of the IP Address
@@ -30,7 +30,7 @@ helm install cert-manager jetstack/cert-manager --namespace cert-manager --versi
 kubectl get pods --namespace cert-manager
 
 # Deploy the Certificate Authority that can issue certificates for the whole cluster
-kubectl apply -f cluster-Issuer.yml
+kubectl apply -f cluster-issuer.yml
 
 # Create a certificate for the dns address (dnsEntryName.region.cloudapp.azure.com)
 kubectl apply -f certificate.yml
