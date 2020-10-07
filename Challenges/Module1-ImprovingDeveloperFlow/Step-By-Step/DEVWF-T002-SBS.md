@@ -2,7 +2,7 @@
 1. From your GitHub repository open your Codespace
 ![](OpenCodeSpace.png)
 
-1. In the Terminal window, open a Powershell Terminal by typing `pwsh`
+1. In the Terminal window, open a PowerShell Terminal by typing `pwsh`
 
 1. Type the following command to create a Docker network named `fabmedical`:
 
@@ -10,7 +10,7 @@
    docker network create fabrikam
    ```
 
-1. Run an instance of Mongodb to use for local testing.
+1. Run an instance of MongoDB to use for local testing.
 
    ```bash
    docker run -d --name mongo --net fabrikam -p 27017:27017 mongo
@@ -79,7 +79,7 @@
 
 1. Next to the Forwarded Port, click the the global icon. The forwarded website api will be opened in a new browser window
 
-1. Add `/speakers` to the url. 
+1. Add `/speakers` to the URL. 
 
     ![In this screenshot, made a request to view speakers.](![](/Assets/SpeakersAPI.png)
 

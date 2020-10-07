@@ -29,7 +29,7 @@ In this challenge you will prepare a 15-minute chalk-talk style presentation to 
     * What options does the customer have for a Docker image registry and container scanning, and what would you recommend?
 
 * Scalability considerations
-    * Explain how we run all customer websites under their own url on the default ports (80/443) 
+    * Explain how we run all customer websites under their own URL on the default ports (80/443) 
     * Explain how we deal with websites that are getting high-traffic or have peak traffic
 
 * DevOps workflows
@@ -48,8 +48,8 @@ When you are done with the design, review your design, considering the following
 * [Azure Kubernetes Services (AKS)](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes/)
 * [Kubernetes](https://kubernetes.io/docs/home/)
 * [AKS FAQ](https://docs.microsoft.com/en-us/azure/aks/faq)
-* [Autoscaling AKS](https://github.com/kubernetes/autoscaler)
-* [AKS Cluster Autoscaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler)
+* [Auto scaling AKS](https://github.com/kubernetes/autoscaler)
+* [AKS Cluster Auto scaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler)
 * [Upgrading an AKS cluster](https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster)
 * [Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/)
 * [Container Security](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-image-security/)

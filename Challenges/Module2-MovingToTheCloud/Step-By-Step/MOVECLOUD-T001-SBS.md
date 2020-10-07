@@ -22,7 +22,7 @@ We can create all these resources manually, but since we want to do this "the De
 
 4. To make automation of all resources a bit easier, add these variables in the [**deploy-infrastructure.ps1**] file
 
-```Powershell
+```PowerShell
 $studentprefix = "Your 3 letter abbreviation here"
 $resourcegroupName = "fabmedical-rg-" + $studentprefix
 $cosmosDBName = "fabmedical-cdb-" + $studentprefix
@@ -37,7 +37,7 @@ Create an Azure Resource Group to hold the resources that you create in this han
 
 1. In the [**deploy-infrastructure.ps1**] file add a Azure CLI command to create a resource group 
 
-   ```Powershell
+   ```PowerShell
    az group create -l $location1 -n $resourcegroupName
    ```
 
@@ -55,7 +55,7 @@ Azure Kubernetes Service requires an Azure Active Directory service principal to
 
 1. To create a service principal, add the following command in the [**deploy-infrastructure.ps1**] file. The output of this command will be stored in a variable for later use.
 
-```Powershell
+```PowerShell
 $resultSPN = az ad sp create-for-rbac --name GitHubWorkshop | ConvertFrom-Json
 Write-Host $resultSPN
 ```
@@ -72,7 +72,7 @@ tenant      : ed6acf0d-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 3. To get the service principal object id, type the following command, replacing {appId} with your service principal appId:
 
-   ```Powershell
+   ```PowerShell
    #Get SPN Object ID
    $spnObjectID = az ad sp show --id $($resultSPN.appId) --query "{objectId:@.objectId}" | ConvertFrom-Json
    

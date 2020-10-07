@@ -8,7 +8,7 @@ In this task, you will enable the GitHub security features for your repository.
 
 2. In the Dependabot features, enable Dependabot Alerts and Dependabot security updates
 
-3. In the Code Scanning features, select the CodeQL Analyis workflow. This workflow is a GitHub Action that runs every time you check in some code to the main branch
+3. In the Code Scanning features, select the CodeQL Analysis workflow. This workflow is a GitHub Action that runs every time you check in some code to the main branch
 
 ![](/Assets/CodeQLAction.png)
 

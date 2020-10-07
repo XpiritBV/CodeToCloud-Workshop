@@ -11,7 +11,7 @@ You also decide it is convenient to have a container for the Initialization of t
 ## Validation
 * Dockerfile that builds and runs the API is part of the content-api folder. Call the Docker image [fabrikam-api]
 * Dockerfile that builds and runs the WEB app is part of the content-web folder. Call the Docker image [fabrikam-web]
-* Dockerfile that builds and runs the Init app is part of the content-iniy folder. Call the Docker image [fabrikam-init]
+* Dockerfile that builds and runs the INIT app is part of the content-init folder. Call the Docker image [fabrikam-init]
 * API accesses the MongoDB in the container
 
 > Tip

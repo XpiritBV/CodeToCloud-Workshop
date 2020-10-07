@@ -42,7 +42,7 @@ When you already used the Azure Boards integration, you need to manually link th
 
 4. When the integration succeeded, you will be taken to the Azure Board. 4 Work items are present and you see a "Success" message
 
-## Test Intgegration
+## Test Integration
 1. In the Azure Board, create an Issue called [Test]. Remember the Work Item ID that was assigned when you save the work item.
 
 ![](/Assets/2020-10-05-11-28-12.png)

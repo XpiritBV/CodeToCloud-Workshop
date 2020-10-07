@@ -72,7 +72,7 @@ env:
 11. Commit the file to the repository
 12. The GitHub Action is now running and automatically builds and pushes the container
 
-![Screen that shows that the GitHub action build suceeded](/Assets/buildsucceed.png)
+![Screen that shows that the GitHub action build succeeded](/Assets/buildsucceed.png)
 
 13. Next, setup the `content-api` workflow and the `content-init` workflow. Call the files `fabrikam-api.yml` and `fabrikam-init.yml` and change the container names also to `fabrikam-api` and `fabrikam-init`
 

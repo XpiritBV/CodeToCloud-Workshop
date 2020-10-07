@@ -10,7 +10,7 @@ To enable Application Insights we need an Application Insights Resource in our r
 
 2. Add this code snippet to the file
 
-```Powershell
+```PowerShell
 $studentsuffix = "your abbreviated name"
 $resourcegroupName = "fabmedical-rg-" + $studentsuffix
 $location1 = "westeurope"
@@ -55,7 +55,7 @@ Write-Host "AI Instrumentation Key=$($ai.instrumentationKey)"
 
 1. When the GitHub Action CI completed, (re)deploy the web container to the cluster. Re-deploy the web application by deleting the pod(s). Kubernetes will automatically pull the latest version.
 
-```powershell
+```PowerShell
 kubectl get pods
 #Find the web pods
 kubectl delete pods web-6cdb....-l...
