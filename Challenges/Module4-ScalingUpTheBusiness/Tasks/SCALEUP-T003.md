@@ -6,7 +6,7 @@ Helm charts are used for deploying third-party services, but the team suggests t
 
 ## Challenge
 
-In this challenge you are going to create a Helm chart for both the WEB and API Microservice. For that you need to use Helm. In a newly created folder charts, run the `helm create` command to start you work on a chart. Start by updating the `values.yaml` file and after that update the `deployment.yaml` and `service.yaml` to configure some specific values for this microservices. Finally take a look at the `Chart.yaml` to set your version. When done configuring the application, remove the already running WEB and API application, and deploy your service by running the `helm install <name> <folder>` command.
+In this challenge you are going to create a Helm chart for both the WEB and API Microservice. For that you need to use Helm. In a newly created folder [**charts**], run the `helm create` command to start you work on a chart. Start by updating the `values.yaml` file and after that update the `deployment.yaml` and `service.yaml` to configure some specific values for this microservices. Finally take a look at the `Chart.yaml` to set your version. When done configuring the application, remove the already running WEB and API application, and deploy your service by running the `helm install <name> <folder>` command.
 
 > Tip: Take a look at the previously created deploy and service.yml files to see the setting that need to be added to the helm chart
 
