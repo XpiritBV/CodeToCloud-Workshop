@@ -1,6 +1,8 @@
-## Step by Step DEVWF-T002
+# Step by Step DEVWF-T002
+
 1. From your GitHub repository open your Codespace
-![](OpenCodeSpace.png)
+
+    ![](../../../Assets/OpenCodeSpace.png)
 
 1. In the Terminal window, open a Powershell Terminal by typing `pwsh`
 
@@ -25,7 +27,7 @@
    docker logs mongo
    ```
 
-   ![In this screenshot of the console window, docker container list has been typed and run at the command prompt, and the “api” container is in the list. Below this the log output is shown.](/assets/Ex1-Task1.4.png)
+   ![In this screenshot of the console window, docker container list has been typed and run at the command prompt, and the “api” container is in the list. Below this the log output is shown.](../../../Assets/Ex1-Task1.4.png)
 
 1. To initialize the local database with test content, first navigate to the content-init directory and run npm install.
 
@@ -33,12 +35,14 @@
    cd ~/content-init
    npm install
    ```
+
 1. Initialize the database.
 
    ```bash
    nodejs server.js
    ```
-   ![This screenshot of the console window shows output from running the database initialization.](/assets/Ex1-Task1.7.png)
+
+   ![This screenshot of the console window shows output from running the database initialization.](../../../Assets/Ex1-Task1.7.png)
 
 1. Confirm that the database now contains test data by connecting to the docker container. You can open a new terminal window if needed
 
@@ -58,7 +62,7 @@
 
    This should produce output similar to the following:
 
-   ![This screenshot of the console window shows the data output.](/assets/Ex1-Task1.8.png)
+   ![This screenshot of the console window shows the data output.](../../../Assets/Ex1-Task1.8.png)
 
 1. Now navigate to the `content-api` directory and run npm install.
 
@@ -72,16 +76,18 @@
     ```bash
     nodejs ./server.js &
     ```
-    ![In this screenshot, nodejs ./server.js & has been typed and run at the command prompt, which starts the API as a background process.](/assets/image47.png)
+
+    ![In this screenshot, nodejs ./server.js & has been typed and run at the command prompt, which starts the API as a background process.](../../../Assets/image47.png)
 
 1. Test the API using your browser. In the GitHub Codespace navigate to the Remote Explorer and create a new Forwarded Port
-![](/Assets/PortForward.png)
+
+    ![](../../../Assets/PortForward.png)
 
 1. Next to the Forwarded Port, click the the global icon. The forwarded website api will be opened in a new browser window
 
 1. Add `/speakers` to the url. 
 
-    ![In this screenshot, made a request to view speakers.](![](/Assets/SpeakersAPI.png)
+    ![In this screenshot, made a request to view speakers.](![](../../../Assets/SpeakersAPI.png)
 
 1. Navigate to the web application directory, run `npm install` and `ng build`.
 
@@ -91,7 +97,7 @@
     ng build
     ```
 
-    ![In this screenshot, after navigating to the web application directory, nodejs ./server.js & has been typed and run at the command prompt, which runs the application as a background process as well.](/assets/image48.png)
+   ![In this screenshot, after navigating to the web application directory, nodejs ./server.js & has been typed and run at the command prompt, which runs the application as a background process as well.](../../../Assets/image48.png)
 
 1. Now run the content-web application in the background.
 
@@ -101,7 +107,8 @@
 
 1. Test the web application using the port forward method. In the Remote Explorer, forward port 3000 and open the browser by clicking the globe icon next to the port. 
 
-![](/Assets/OpenBrowser.png)
+    ![](../../../Assets/OpenBrowser.png)
 
 1. Your application should show data in the Speakers menu item
-![](/Assets/neuroconf-screen.png)
+
+    ![](../../../Assets/neuroconf-screen.png)
