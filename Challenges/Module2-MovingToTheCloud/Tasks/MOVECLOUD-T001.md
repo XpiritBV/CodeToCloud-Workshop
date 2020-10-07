@@ -17,7 +17,7 @@ In this challenge you will set up an Azure Resource Group containing a CosmosDB 
 > * Use a three letter abbreviation of your name as <studentsuffix> 
 > * Use the `az ad sp create-for-rbac --name GitHubWorkshop` to create an SPN and save the appId and secret
 > * Create an CosmosDB with 2 locations using the following syntax in the Azure CLI 
->```Powershell
+>```PowerShell
 >--locations regionName=westeurope failoverPriority=0  isZoneRedundant=False --locations regionName=northeurope failoverPriority=1 isZoneRedundant=True  enable-multiple-write-locations 
 >```
 >* Enable 2 add-ons on the cluster after creation 
@@ -35,7 +35,7 @@ In this challenge you will set up an Azure Resource Group containing a CosmosDB 
 > ```
 > *  Use the `az aks browse -n $aksName -g $resourcegroupName` to browse to the cluster dashboard
 >
->* When browsing to the Kubernetes Dashboard from your Codespace, paste `/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login` after the url that CodeSpaces generates for you
+>* When browsing to the Kubernetes Dashboard from your Codespace, paste `/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login` after the URL that CodeSpaces generates for you
 
 ## Links & Information
 * [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)

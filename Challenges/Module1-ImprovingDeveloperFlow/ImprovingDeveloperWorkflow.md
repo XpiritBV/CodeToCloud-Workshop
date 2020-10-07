@@ -26,19 +26,3 @@ In this module you will learn to:
 * [DEVWF-T007 Set up Continuous Integration to push container images to GitHub Registry](Tasks/DEVWF-T007.md)
 
 
-
-
-
-# Exercises
- * Ex-1
-    * Task 1 to 6
-    * task 8
-    * https://github.com/XpiritBV/BuildingModernWebApplicationsWorkshop/blob/master/docs/Lab8-Docker101.md
-    * https://github.com/XpiritBV/ContainerWorkshop/blob/master/Lab5-Environments.md (compose)
-* Azure boards integration
-* Pull Request + Review
-* Dependabot / actions
-* GitHub secuirty features
-
-# Video
-

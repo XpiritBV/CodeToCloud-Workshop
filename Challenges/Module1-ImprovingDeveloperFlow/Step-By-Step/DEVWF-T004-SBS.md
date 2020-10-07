@@ -1,12 +1,12 @@
 ## Step by Step DEVWF-T004
 
-In this task, you will merge the Pull Request containing create 3 multi-staged Dockerfiles to your main branch, while linking to an Azure Boards project. The multi-staged Docker files will be used to build a new version of your WEB, API and INIT container.
+In this task, you will merge the Pull Request containing create 3 multi-staged Docker files to your main branch, while linking to an Azure Boards project. The multi-staged Docker files will be used to build a new version of your WEB, API and INIT container.
 
 >This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
 >
 > In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prequisites/RunThroughSetup.md) first!
 
-1. In your GitHub Codespace, open a Powershell Terminal and run the starter solution. A Pull Request with 3 Dockerfiles will be created
+1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 3 Docker files will be created
 
 ```
 .workshop/workshop-step.ps1  Start "DEVWF-T004"

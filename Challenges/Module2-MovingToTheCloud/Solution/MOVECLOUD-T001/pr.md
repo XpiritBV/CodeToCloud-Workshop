@@ -14,7 +14,7 @@ Don't forget to login first in your cloud environment
 az login
 ```
 
-```Powershell
+```PowerShell
 $studentprefix = "your-name-here"
 $resourcegroupName = "fabmedical-rg-" + $studentprefix
 $cosmosDBName = "fabmedical-cdb-" + $studentprefix
@@ -23,7 +23,7 @@ $location1 = "westeurope"
 $location2 = "northeurope"
 ```
 
-When browsing to the Kubernetes Dashboard from your Codespace, paste `/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login` after the url that CodeSpaces generates for you
+When browsing to the Kubernetes Dashboard from your Codespace, paste `/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login` after the URL that CodeSpaces generates for you
 
 To login to your cluster you can use the bearer token. Use the command `cat ~/.kube/config` to show the contents of your Kubernetes configuration. You can find the token at the bottom of the file (`token: e07dcfb4...`)1
 

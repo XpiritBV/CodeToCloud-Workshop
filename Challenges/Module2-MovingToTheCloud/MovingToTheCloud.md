@@ -18,13 +18,3 @@ In this module you will learn to:
 * [MOVECLOUD-T001 Setting up a cloud infrastructure](Tasks/MOVECLOUD-T001.md)
 * [MOVECLOUD-T002 Running containers in a cluster](Tasks/MOVECLOUD-T002.md)
 
-# excerices
- * Ex-2
-    * Task 2
-    * task 3
-    * task 7
-* IaC / ARM / CLI
-
-
-# Video
-

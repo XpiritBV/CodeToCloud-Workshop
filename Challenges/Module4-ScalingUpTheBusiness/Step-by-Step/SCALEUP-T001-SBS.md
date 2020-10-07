@@ -7,9 +7,9 @@ At this point, you have deployed a single instance of the web and API service co
 
 In this task, you will increase the number of instances for the API deployment in the Kubernetes management dashboard. While it is deploying, you will observe the changing status.
 
-1. From your Codespace, start the tunnel to the Kubernetes cluster by using the following command, and navigate to the url `https://<guid>.apps.codespaces.githubusercontent.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login`. Use the `cat ~/.kube/config` to get your bearer token  
+1. From your Codespace, start the tunnel to the Kubernetes cluster by using the following command, and navigate to the URL `https://<guid>.apps.codespaces.githubusercontent.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login`. Use the `cat ~/.kube/config` to get your bearer token  
 
-```Powershell
+```PowerShell
 az aks browse --name $aksName --resource-group $resourcegroupName
 ```
 2. From the navigation menu, select **Workloads** -\> **Deployments**, and then select the **API** deployment.
@@ -116,3 +116,7 @@ kubectl apply -f web-deploy.yml
 kubectl apply -f api-deploy.yml
 ```
 
+> When you do not want to type all commands try the solution Pull Request by running
+```
+.workshop/workshop-step.ps1  Solution "SCALEUP-T001"
+```

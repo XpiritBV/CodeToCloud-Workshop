@@ -13,7 +13,7 @@ if (-not (Get-Module -Name powershell-yaml))
 function Invoke-GitHub {
 <#
 .Synopsis
-Wrapper function that deals with Powershell's peculiar error output when Git uses the error stream.
+Wrapper function that deals with PowerShell's peculiar error output when Git uses the error stream.
 
 .Example
 Invoke-GitHub ThrowError
@@ -45,7 +45,7 @@ $LASTEXITCODE
 function Invoke-Git {
 <#
 .Synopsis
-Wrapper function that deals with Powershell's peculiar error output when Git uses the error stream.
+Wrapper function that deals with PowerShell's peculiar error output when Git uses the error stream.
 
 .Example
 Invoke-Git ThrowError

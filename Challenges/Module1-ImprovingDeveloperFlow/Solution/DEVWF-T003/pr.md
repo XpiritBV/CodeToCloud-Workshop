@@ -1,7 +1,7 @@
 ---
-title: Dockerfiles for the content-web, content-api and content-init application
+title: Docker files for the content-web, content-api and content-init application
 branch: users/maria/application-docker-files
-commitmessage: "Created 3 Dockerfiles :whale: for API, WEB and INIT"
+commitmessage: "Created 3 Docker files :whale: for API, WEB and INIT"
 committer: Maria Santos
 committeremail: MariaSantos@FabrikamMedical.example.org
 linktoworkitem: Module1

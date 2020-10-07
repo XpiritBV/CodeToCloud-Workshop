@@ -7,7 +7,7 @@ committeremail: catherine@consultancyfirm.example.org
 linkedworkitem: Module1
 ---
 # Instructions to Fix the exercise
-Cool! After I dove in a little bit more, I learned that the docker containers can be smaller and leaner. Multi-Staged files FTW. I created the Dockerfiles for all applications. Please make sure you really check if is OK before approving.
+Cool! After I dove in a little bit more, I learned that the docker containers can be smaller and leaner. Multi-Staged files FTW. I created the Docker files for all applications. Please make sure you really check if is OK before approving.
 
 When you approved the PR, you can run the Docker build and run commands again to get it going
 
