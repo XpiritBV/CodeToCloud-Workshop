@@ -7,8 +7,9 @@ committeremail: nolanjohnson@FabrikamMedical.example.org
 linkedworkitem: module1
 ---
 # Instructions to Fix the exercise
+
 Added these 3 GitHub Actions. They trigger automatically when a new commit happens in the files associated to the build.
 
->One thing to Do. 
+> One thing to Do.
 >
->Create a new GitHub Secret called `CR_PAT` that contains your Personal Access Token with write:packages and read:packages permissions
+> Create a new GitHub Secret called `CR_PAT` that contains your Personal Access Token with write:packages and read:packages permissions

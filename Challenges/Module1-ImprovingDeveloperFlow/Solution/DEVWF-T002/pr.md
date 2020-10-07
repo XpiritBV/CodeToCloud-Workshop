@@ -7,8 +7,3 @@ committeremail: JoshAlmond@FabrikamMedical.example.org
 linktoworkitem: Module1
 ---
 In order to build and run the application this worked for me. Please follow the instructions mentioned in the [InstructionsToBuild.md](InstructionsToBuild.md). :rocket:
-
-
-
- 
- 

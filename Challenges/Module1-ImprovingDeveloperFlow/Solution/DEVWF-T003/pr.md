@@ -7,10 +7,12 @@ committeremail: MariaSantos@FabrikamMedical.example.org
 linktoworkitem: Module1
 ---
 # Instructions to Fix the exercise
+
 Added these 3 Docker files. I was so excited about this Docker stuff, that I created these 3 files for the API, WEB and INIT application. I think it can be improved, but let's first check if this works!
- 
+
 To build this
-```
+
+```bash
 cd content-web
 docker build -t content-web .
 
@@ -22,16 +24,16 @@ docker build -t content-api .
 ```
 
 > Before you run the api make sure your MongoDB is running
-```
+
+```bash
 docker network create fabrikam
 docker run --name mongo --net fabrikam -p 27017:27017 -d mongo
 ```
 
-To run it 
-```
+To run it
+
+```bash
 docker run -ti --network fabrikam fabrikam-init
 docker run -d --name api -p 3001:3001 --network fabrikam fabrikam-api
 docker run -d --name web -p 3000:3000 --network fabrikam fabrikam-web
 ```
-
-

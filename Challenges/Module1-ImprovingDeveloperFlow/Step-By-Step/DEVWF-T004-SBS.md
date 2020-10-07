@@ -1,10 +1,10 @@
-## Step by Step DEVWF-T004
+# Step by Step DEVWF-T004
 
 In this task, you will merge the Pull Request containing create 3 multi-staged Docker files to your main branch, while linking to an Azure Boards project. The multi-staged Docker files will be used to build a new version of your WEB, API and INIT container.
 
 >This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
 >
-> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prequisites/RunThroughSetup.md) first!
+> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites]../../../Challenges/Prequisites/RunThroughSetup.md) first!
 
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 3 Docker files will be created
 
@@ -14,19 +14,19 @@ In this task, you will merge the Pull Request containing create 3 multi-staged D
 
 2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with DEVWF-T004 in the title
 
-![Shows the menu item for navigating to the Pull Request](/Assets/PullRequestDEVWF-T004.png)
+![Shows the menu item for navigating to the Pull Request](../../../Assets/PullRequestDEVWF-T004.png)
 
 3. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
 
 4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
 
-![Shows the button for merging a Pull Request in GitHub](/Assets/mergePullRequest.png)
+![Shows the button for merging a Pull Request in GitHub](../../../Assets/mergePullRequest.png)
 
 Now your repository contains 3 new "multi-staged" docker file.
 
 6. In your GitHub Codespace, update your files to the latest version by pulling them.
 
-![](/Assets/2020-10-05-12-10-11.png)
+![](../../../Assets/2020-10-05-12-10-11.png)
 
 
 7. Open your PowerShell terminal window. From the content-api folder containing the API application files and the new Dockerfile, type the following command to create a Docker image for the API application. This command does the following:
@@ -64,4 +64,4 @@ docker run -d --name web -p 3000:3000 --net fabrikam fabrikam-web
 ```
 
 11. When you are done, commit and push your changes to your GitHub repository.
-![](/Assets/commitandpush.png)
+![](../../../Assets/commitandpush.png)

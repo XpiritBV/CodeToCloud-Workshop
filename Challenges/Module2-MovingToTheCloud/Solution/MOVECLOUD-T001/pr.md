@@ -7,10 +7,12 @@ committeremail: sharonwang@FabrikamMedical.example.org
 linkedworkitem: module2
 ---
 # Instructions to Fix the exercise
+
 Added a PowerShell file to provision the cloud infrastructure. Please update the variables on top of the file so we do no conflict with each other
 
 Don't forget to login first in your cloud environment
-```
+
+```powershell
 az login
 ```
 
@@ -29,4 +31,3 @@ To login to your cluster you can use the bearer token. Use the command `cat ~/.k
 
 > Tip:
 > You can use the Kubernetes extension in VSCode as well to see your AKS cluster resources
-
