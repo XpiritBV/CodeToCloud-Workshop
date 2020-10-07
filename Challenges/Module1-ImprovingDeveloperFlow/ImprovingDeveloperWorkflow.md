@@ -1,4 +1,4 @@
-#  Module 1 - Improving the Developer Workflow
+# Module 1 - Improving the Developer Workflow
 
 One of the goals of Susan is to improve the Developer Workflow. When the developer workflow runs smoothly developers can focus on creating business value instead of repetitive tasks or disruptions caused by their environment. There are many areas of improvement and you and your team interview the people from the company. A general conclusion is that there is a lot of manual tasks, recurring quality and security issues, and a lot of dependencies between the developers and work that they do.
 
@@ -17,6 +17,7 @@ In this module you will learn to:
 * Use Docker Compose to create a environment that consists of multiple components
 
 ## Tasks
+
 * [DEVWF-T001 Get started with the work and create visibility](Tasks/DEVWF-T001.md)
 * [DEVWF-T002 Running the application locally](Tasks/DEVWF-T002.md)
 * [DEVWF-T003 Containerize the Application](Tasks/DEVWF-T003.md)
@@ -25,11 +26,8 @@ In this module you will learn to:
 * [DEVWF-T006 Setting up a local infrastructure](Tasks/DEVWF-T006.md)
 * [DEVWF-T007 Set up Continuous Integration to push container images to GitHub Registry](Tasks/DEVWF-T007.md)
 
+## Exercises
 
-
-
-
-# Exercises
  * Ex-1
     * Task 1 to 6
     * task 8
