@@ -30,7 +30,7 @@ In this challenge you will enable two important security features. DependaBot an
 * [How DependaBot Works](https://dependabot.com/#how-it-works)
 * [Enable Code Scanning](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/enabling-code-scanning-for-a-repository)
 
-![](../../../Assets/2020-09-17-13-13-35.png)
+![](/Assets/2020-09-17-13-13-35.png)
 
 ## Solution
 

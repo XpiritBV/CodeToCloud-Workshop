@@ -75,4 +75,4 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 
 ### Next Step
 
-When you are done, move to the [next challenge](../../../Challenges/Module3-ClosingtheFeedbackLoop/ClosingTheFeedbackLoop.md)
+When you are done, move to the [next challenge](/Challenges/Module3-ClosingtheFeedbackLoop/ClosingTheFeedbackLoop.md)

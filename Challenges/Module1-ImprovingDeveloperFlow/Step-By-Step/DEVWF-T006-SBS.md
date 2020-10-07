@@ -4,7 +4,7 @@ In this task you are going to create a new Docker Compose file that contains the
 
 >This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
 >
-> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites]../../../Challenges/Prequisites/RunThroughSetup.md) first!
+> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites]/Challenges/Prequisites/RunThroughSetup.md) first!
 
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 2 Docker compose files will be created
 
@@ -18,13 +18,13 @@ In this task you are going to create a new Docker Compose file that contains the
 
 4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
 
-    ![Shows the button for merging a Pull Request in GitHub](../../../Assets/mergePullRequest.png)
+    ![Shows the button for merging a Pull Request in GitHub](/Assets/mergePullRequest.png)
 
 Now your repository contains 2 new "Docker Compose" files.
 
 6. In your GitHub Codespace, update your files to the latest version by pulling them.
 
-    ![](../../../Assets/2020-10-05-12-10-11.png)
+    ![](/Assets/2020-10-05-12-10-11.png)
 
 7. Open your PowerShell terminal window. From the root folder, start the application.
 
@@ -56,11 +56,11 @@ Now your repository contains 2 new "Docker Compose" files.
 
 10. Test the web application using the port forward method. In the Remote Explorer, forward port 3000 and open the browser by clicking the globe icon next to the port. 
 
-    ![](../../../Assets/OpenBrowser.png)
+    ![](/Assets/OpenBrowser.png)
 
 11. When you are done, commit and push your changes to your GitHub repository.
 
-    ![](../../../Assets/commitandpush.png)
+    ![](/Assets/commitandpush.png)
 
 
     - Executes the Docker build command to produce the image
@@ -96,4 +96,4 @@ Now your repository contains 2 new "Docker Compose" files.
 
 11. When you are done, commit and push your changes to your GitHub repository.
 
-    ![](../../../Assets/commitandpush.png)
+    ![](/Assets/commitandpush.png)

@@ -20,15 +20,15 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
     >
     > To generate a new GitHub Personal Access Token, please follow the steps described [on this webpage](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token).
 
-    ![A screen that show how to add a new secret](../../../Assets/newsecret.png)
+    ![A screen that show how to add a new secret](/Assets/newsecret.png)
 
 5. Navigate to the GitHub Actions in your repository and select [New Workflow]
 
-    ![A screen that shows how to start a new Workflow for GitHub Actions](../../../Assets/newworkflow.png)
+    ![A screen that shows how to start a new Workflow for GitHub Actions](/Assets/newworkflow.png)
 
 6. Under the Continuous Integration Workflows, find the [Publish Docker Container] workflow and choose [Set up this workflow]
 
-    ![A screenshot of the GitHub Action for Publishing Docker Files](../../../Assets/PublishDocker.png)
+    ![A screenshot of the GitHub Action for Publishing Docker Files](/Assets/PublishDocker.png)
 
 7. Rename the file to `fabrikam-web.yml`
 8. Change the image name to fabrikam-web. This is the name of the container image that will be pushed to the GitHub Container Registry
@@ -74,9 +74,9 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
 11. Commit the file to the repository
 12. The GitHub Action is now running and automatically builds and pushes the container
 
-    ![Screen that shows that the GitHub action build succeeded](../../../Assets/buildsucceed.png)
+    ![Screen that shows that the GitHub action build succeeded](/Assets/buildsucceed.png)
 
 13. Next, setup the `content-api` workflow and the `content-init` workflow. Call the files `fabrikam-api.yml` and `fabrikam-init.yml` and change the container names also to `fabrikam-api` and `fabrikam-init`
 
 14. Navigate to the packages in your GitHub account and see if the container images are present.
-![Overview of all packages of a GitHub account](../../../Assets/packages.png)
+![Overview of all packages of a GitHub account](/Assets/packages.png)
