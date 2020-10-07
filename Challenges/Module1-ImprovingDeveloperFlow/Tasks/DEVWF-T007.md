@@ -48,4 +48,4 @@ To read or view a step by step explanation of this challenge, please visit [this
 
 ### Next Step
 
-When you are done, move to the [next challenge]/Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
+When you are done, move to the [next challenge](/Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
