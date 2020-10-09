@@ -15,14 +15,14 @@ In this task, you will create 3 Dockerfiles that will be used to build and run t
 5. In your Terminal window, navigate to the `content-api` directory
 
     ```bash
-    cd content-api
+    pushd content-api
     ```
 
 6. From the content-api folder containing the API application files and the new Dockerfile you created, type the following command to create a Docker image for the API application. This command does the following:
 
    - Executes the Docker build command to produce the image
-   - Tags the resulting image with the name content-api (-t)
-   - The final dot (".") indicates to use the Dockerfile in this current directory context. By default, this file is expected to have the name "Dockerfile" (case sensitive).
+   - Tags the resulting image with the name `fabrikam-api` (-t)
+   - The final dot (`.`) indicates to use the Dockerfile in this current directory context. By default, this file is expected to have the name "Dockerfile" (case sensitive).
 
    ```bash
    docker build -t fabrikam-api .
@@ -80,4 +80,4 @@ Now that you have created 3 Docker images for your application, it is time to ru
 
 17. When you are done, commit and push your changes to your GitHub repository.
 
-    ![](/Assets/commitandpush.png)
+    ![Commit and purh your container to the registry](/Assets/commitandpush.png)
