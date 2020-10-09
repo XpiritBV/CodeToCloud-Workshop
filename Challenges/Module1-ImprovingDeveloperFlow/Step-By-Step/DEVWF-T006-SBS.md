@@ -16,7 +16,7 @@ In this task you are going to create a new Docker Compose file that contains the
 
 3. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
 
-4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
+4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing `AB#` followed by the workitem id for Module 1 (example: `AB#123`) in the title or description of the Pull Request Commit Message. 
 
     ![Shows the button for merging a Pull Request in GitHub](/Assets/mergePullRequest.png)
 
@@ -37,14 +37,14 @@ Now your repository contains 2 new "Docker Compose" files.
 
     ```YAML
       web:
-      build: ./content-web
-      image: content-web
-      depends_on:
-        - api
-      environment:
-        CONTENT_API_URL: http://api:3001
-      ports:
-        - "3000:3000" 
+        build: ./content-web
+        image: content-web
+        depends_on:
+            - api
+        environment:
+            CONTENT_API_URL: http://api:3001
+        ports:
+            - "3000:3000" 
     ```
 
 9. Build and run the docker-compose file again 
@@ -96,4 +96,4 @@ Now your repository contains 2 new "Docker Compose" files.
 
 11. When you are done, commit and push your changes to your GitHub repository.
 
-    ![](/Assets/commitandpush.png)
+    ![](/Assets/2020-10-05-12-10-11.png)
