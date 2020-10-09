@@ -195,7 +195,7 @@ function Run {
     if (-not (Test-Path -PathType Container $solutionContentsPath)) {
         throw "Missing solution content, expected here: $solutionContentsPath"
     }
-    Copy-Item (Join-Path -path $solutionContentsPath "*") $targetRepoFolder -Recurse
+    Copy-Item (Join-Path -path $solutionContentsPath "*") $targetRepoFolder -Recurse -Force
 
     Invoke-Git config user.name "$($markDown.Properties.Committer)"
     Invoke-Git config user.email "$($markDown.Properties.CommitterEmail)"
