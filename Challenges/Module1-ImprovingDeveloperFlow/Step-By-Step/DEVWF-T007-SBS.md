@@ -42,34 +42,35 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
 9. Add a working directory to the [Build Image] and [Push image to GitHub Container Registry] step. This ensure the Docker file can be found
 
     ```YAML
-        - name: Build image
-        working-directory: content-web
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME
+            - name: Build image
+                working-directory: content-web
+                run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
-        - name: Push image to GitHub Container Registry
-        working-directory: content-web
+            - name: Push image to GitHub Container Registry
+                working-directory: content-web
     ```
 
 10. Remove the test job from YAML since we do not need it. Also remove the dependency in the push stage `needs: test`
-
+    <s>
     ```YAML
-      # Run tests.
-      # See also https://docs.docker.com/docker-hub/builds/automated-testing/
-      test:
-      runs-on: ubuntu-latest
+    # Run tests.
+    # See also https://docs.docker.com/docker-hub/builds/automated-testing/
+    test:
+        runs-on: ubuntu-latest
 
-      steps:
+    steps:
         - uses: actions/checkout@v2
 
         - name: Run tests
-        run: |
-          if [ -f docker-compose.test.yml ]; then
-          docker-compose --file docker-compose.test.yml build
-          docker-compose --file docker-compose.test.yml run sut
-          else
-          docker build . --file Dockerfile
-          fi
+            run: |
+            if [ -f docker-compose.test.yml ]; then
+                docker-compose --file docker-compose.test.yml build
+                docker-compose --file docker-compose.test.yml run sut
+            else
+                docker build . --file Dockerfile
+            fi
     ```
+    </s>
 
 11. Commit the file to the repository
 12. The GitHub Action is now running and automatically builds and pushes the container
@@ -79,4 +80,8 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
 13. Next, setup the `content-api` workflow and the `content-init` workflow. Call the files `fabrikam-api.yml` and `fabrikam-init.yml` and change the container names also to `fabrikam-api` and `fabrikam-init`
 
 14. Navigate to the packages in your GitHub account and see if the container images are present.
-![Overview of all packages of a GitHub account](/Assets/packages.png)
+    ![Overview of all packages of a GitHub account](/Assets/packages.png)
+
+15. When you are done, pull the changes from your GitHub repository.
+
+    ![](/Assets/2020-10-05-12-10-11.png)
