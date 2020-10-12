@@ -79,13 +79,13 @@ Now your repository contains 3 new "multi-staged" docker file.
     kind: Deployment
     metadata:
       labels:
-          app: api
-      name: api
+          app: web
+      name: web
     spec:
       replicas: 1
       selector:
           matchLabels:
-            app: api
+            app: web
       strategy:
           rollingUpdate:
             maxSurge: 1
@@ -94,34 +94,30 @@ Now your repository contains 3 new "multi-staged" docker file.
       template:
           metadata:
             labels:
-                app: api
-            name: api
+                app: web
+            name: web
           spec:
             containers:
-            - image: ghcr.io/<yourgithubaccounthere>/fabrikam-api:latest 
+            - image: ghcr.io/<yourgithubaccount>/fabrikam-web:latest 
               env:
-                - name: MONGODB_CONNECTION
-                  valueFrom:
-                    secretKeyRef:
-                      name: cosmosdb
-                      key: db              
+                - name: CONTENT_API_URL
+                  value: http://api:3001
               livenessProbe:
                 httpGet:
                     path: /
-                    port: 3001
+                    port: 3000
                 initialDelaySeconds: 30
                 periodSeconds: 20
                 timeoutSeconds: 10
                 failureThreshold: 3
               imagePullPolicy: Always
-              name: api
+              name: web
               ports:
-                - containerPort: 3001
-                  hostPort: 80
+                - containerPort: 3000
                   protocol: TCP
               resources:
                 requests:
-                    cpu: 1000m
+                    cpu: 125m
                     memory: 128Mi
               securityContext:
                 privileged: false
@@ -133,7 +129,7 @@ Now your repository contains 3 new "multi-staged" docker file.
             securityContext: {}
             terminationGracePeriodSeconds: 30
             imagePullSecrets:
-            - name: pullsecret  
+            - name: pullsecret   
     ```
 
 14. In the AKS folder, create a file called web-service.yml. Fill the file with the following content
@@ -143,18 +139,18 @@ Now your repository contains 3 new "multi-staged" docker file.
     kind: Service
     metadata:
       labels:
-        app: api
-      name: api
+        app: web
+      name: web
     spec:
       ports:
-        - name: api-traffic
-          port: 3001
+        - name: web-traffic
+          port: 80
           protocol: TCP
-          targetPort: 3001
+          targetPort: 3000
       selector:
-        app: api
+        app: web
       sessionAffinity: None
-      type: ClusterIP
+      type: LoadBalancer
     ```
 
 15. Deploy the Web deployment and web service with the following command
