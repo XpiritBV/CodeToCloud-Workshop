@@ -8,7 +8,7 @@ In this task you will run the WEB and API application on the cluster, while it c
 
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 2 YAML files will be created
 
-    ```
+    ```powershell
     .workshop/workshop-step.ps1  Start "MOVECLOUD-T002"
     ```
 
@@ -26,7 +26,7 @@ Now your repository contains 3 new "multi-staged" docker file.
 
 5. In your GitHub Codespace, update your files to the latest version by pulling them.
 
-    ![](/Assets/2020-10-05-12-10-11.png)
+    ![Pull latest changes into Visual Studio Code](/Assets/2020-10-05-12-10-11.png)
 
 6. To be able to pull a container from the GitHub Container Registry in to the AKS cluster, you need to configure a pull secret in AKS. You can do this by running the kubectl create secret command. Retrieve the GitHub Personal Access Token, that you also used in [DEVWF-T007]/Challenges/Module1-ImprovingDeveloperFlow/Tasks/DEVWF-T007.md). In your PowerShell terminal create a variable called $ghToken and use this token as value
 
@@ -79,57 +79,61 @@ Now your repository contains 3 new "multi-staged" docker file.
     kind: Deployment
     metadata:
       labels:
-        app: web
-      name: web
+          app: api
+      name: api
     spec:
       replicas: 1
       selector:
-        matchLabels:
-        app: web
+          matchLabels:
+            app: api
       strategy:
-        rollingUpdate:
-        maxSurge: 1
-        maxUnavailable: 1
-        type: RollingUpdate
+          rollingUpdate:
+            maxSurge: 1
+            maxUnavailable: 1
+          type: RollingUpdate
       template:
-        metadata:
-        labels:
-          app: web
-        name: web
-        spec:
-        containers:
-        - image: ghcr.io/<yourgithubaccount>/fabrikam-web:latest 
-          env:
-          - name: CONTENT_API_URL
-            value: http://api:3001
-          livenessProbe:
-          httpGet:
-            path: /
-            port: 3000
-          initialDelaySeconds: 30
-          periodSeconds: 20
-          timeoutSeconds: 10
-          failureThreshold: 3
-          imagePullPolicy: Always
-          name: web
-          ports:
-          - containerPort: 3000
-            protocol: TCP
-          resources:
-          requests:
-            cpu: 125m
-            memory: 128Mi
-          securityContext:
-          privileged: false
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-        dnsPolicy: ClusterFirst
-        restartPolicy: Always
-        schedulerName: default-scheduler
-        securityContext: {}
-        terminationGracePeriodSeconds: 30
-        imagePullSecrets:
-        - name: pullsecret  
+          metadata:
+            labels:
+                app: api
+            name: api
+          spec:
+            containers:
+            - image: ghcr.io/<yourgithubaccounthere>/fabrikam-api:latest 
+              env:
+                - name: MONGODB_CONNECTION
+                  valueFrom:
+                    secretKeyRef:
+                      name: cosmosdb
+                      key: db              
+              livenessProbe:
+                httpGet:
+                    path: /
+                    port: 3001
+                initialDelaySeconds: 30
+                periodSeconds: 20
+                timeoutSeconds: 10
+                failureThreshold: 3
+              imagePullPolicy: Always
+              name: api
+              ports:
+                - containerPort: 3001
+                  hostPort: 80
+                  protocol: TCP
+              resources:
+                requests:
+                    cpu: 1000m
+                    memory: 128Mi
+              securityContext:
+                privileged: false
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+            dnsPolicy: ClusterFirst
+            restartPolicy: Always
+            schedulerName: default-scheduler
+            securityContext: {}
+            terminationGracePeriodSeconds: 30
+            imagePullSecrets:
+            - name: pullsecret  
     ```
 
 14. In the AKS folder, create a file called web-service.yml. Fill the file with the following content
@@ -139,18 +143,18 @@ Now your repository contains 3 new "multi-staged" docker file.
     kind: Service
     metadata:
       labels:
-      app: web
-      name: web
+        app: api
+      name: api
     spec:
       ports:
-      - name: web-traffic
-        port: 80
-        protocol: TCP
-        targetPort: 3000
+        - name: api-traffic
+          port: 3001
+          protocol: TCP
+          targetPort: 3001
       selector:
-      app: web
+        app: api
       sessionAffinity: None
-      type: LoadBalancer
+      type: ClusterIP
     ```
 
 15. Deploy the Web deployment and web service with the following command
