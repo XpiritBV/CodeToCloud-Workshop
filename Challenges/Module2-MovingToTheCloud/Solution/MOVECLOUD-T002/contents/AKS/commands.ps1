@@ -1,5 +1,5 @@
 $mongodbConnectionString="mongodb://<mongoDBConnectionstring>:10255/contentdb?ssl=true&replicaSet=globaldb"
-$ghpat="<fill in your github PAT here>"
+$ghpat=Read-Host -Prompt "Github Personal Access Token"
 
 kubectl create secret docker-registry pullsecret --docker-server=https://ghcr.io/ --docker-username=notneeded --docker-password=$ghpat
 kubectl create secret generic cosmosdb --from-literal=db=$mongodbConnectionString
