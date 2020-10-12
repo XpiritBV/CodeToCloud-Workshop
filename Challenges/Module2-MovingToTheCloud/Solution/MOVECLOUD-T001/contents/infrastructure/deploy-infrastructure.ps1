@@ -6,7 +6,7 @@ $location1 = "westeurope"
 $location2 = "northeurope"
 
 #Create an App Registration to use with AKS
-$resultSPN = az ad sp create-for-rbac --name GitHubWorkshop | ConvertFrom-Json
+$resultSPN = az ad sp create-for-rbac --name http://GitHubWorkshop | ConvertFrom-Json
 
 #First create a group
 $resultRG = az group create --name $resourcegroupName --location $location1 | ConvertFrom-Json
@@ -19,6 +19,14 @@ $resultCosmos = az cosmosdb create --name $cosmosDBName `
 --enable-multiple-write-locations `
 --kind MongoDB `
 | ConvertFrom-Json
+
+# Reset credentials to make sure the credentials match the ones that were reset above.
+az aks update-credentials `
+--resource-group $resourcegroupName `
+--name $aksName `
+--reset-service-principal `
+--service-principal $($resultSPN.appId) `
+--client-secret $($resultSPN.password)
 
 #Create an AKS cluster
 az aks create --resource-group $resourcegroupName `
