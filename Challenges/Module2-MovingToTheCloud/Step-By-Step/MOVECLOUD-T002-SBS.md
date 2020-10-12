@@ -175,64 +175,65 @@ Now your repository contains 3 new "multi-staged" docker file.
     kind: Deployment
     metadata:
       labels:
-        app: init
+          app: init
       name: init
     spec:
       replicas: 1
       selector:
-        matchLabels:
-        app: init
+          matchLabels:
+            app: init
       strategy:
-        rollingUpdate:
-        maxSurge: 1
-        maxUnavailable: 1
-        type: RollingUpdate
+          rollingUpdate:
+            maxSurge: 1
+            maxUnavailable: 1
+          type: RollingUpdate
       template:
-        metadata:
-        labels:
-          app: init
-        name: init
-        spec:
-        containers:
-        - image: ghcr.io/<yourgithubaccount>/fabrikam-init:latest 
-          env:
-          - name: MONGODB_CONNECTION
-            valueFrom:
-            secretKeyRef:
-              name: cosmosdb
-              key: db        
-          livenessProbe:
-            httpGet:
-                path: /
-                port: 3001
-            initialDelaySeconds: 30
-            periodSeconds: 20
-            timeoutSeconds: 10
-            failureThreshold: 3
-          imagePullPolicy: Always
-          name: init
-          ports:
-            - containerPort: 3001
-              hostPort: 80
-              protocol: TCP
-          resources:
-          requests:
-            cpu: 125m
-            memory: 128Mi
-          securityContext:
-          privileged: false
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-        dnsPolicy: ClusterFirst
-        restartPolicy: Always
-        schedulerName: default-scheduler
-        securityContext: {}
-        terminationGracePeriodSeconds: 30
-        imagePullSecrets:
-        - name: pullsecret  
+          metadata:
+            labels:
+                app: init
+            name: init
+          spec:
+            containers:
+            - image: ghcr.io/<yourgithubaccount>/fabrikam-init:latest 
+              env:
+                - name: MONGODB_CONNECTION
+                  valueFrom:
+                    secretKeyRef:
+                      name: cosmosdb
+                      key: db              
+              imagePullPolicy: Always
+              name: init
+              ports:
+                - containerPort: 3000
+                  hostPort: 80
+                  protocol: TCP
+              resources:
+                requests:
+                    cpu: 125m
+                    memory: 128Mi
+              securityContext:
+                privileged: false
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+            dnsPolicy: ClusterFirst
+            restartPolicy: Always
+            schedulerName: default-scheduler
+            securityContext: {}
+            terminationGracePeriodSeconds: 30
+            imagePullSecrets:
+            - name: pullsecret  
+    ```
+18. Deploy the content initializer with the following command
+
+    ```bash
+    kubectl apply -f init-deploy.yml
     ```
 
-18. In your Kubernetes Dashboard, navigate to the Services Tab. You will find the Web Service with an external IP. Click the IP address and find that the website shows up, but now the Speaker and Session pages show data.
+19. When you are done, commit and push your changes to your GitHub repository.
+
+    ![](/Assets/2020-10-05-12-10-11.png)
+
+20. In your Kubernetes Dashboard, navigate to the Services Tab. You will find the Web Service with an external IP. Click the IP address and find that the website shows up, but now the Speaker and Session pages show data.
 
 > When you do not want to type all commands try the solution Pull Request by running
 
