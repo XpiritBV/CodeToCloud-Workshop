@@ -1,4 +1,5 @@
 # Step by Step SCALEUP-T001
+
 In this task you will use the scaling possibilities of Kubernetes to scale out your API and WEB application. Furthermore you will use the Kubernetes deployment files to start an application with multiple pods. 
 
 At this point, you have deployed a single instance of the web and API service containers. Now you will increase the number of container instances for the web service and scale the front-end on the existing cluster.
@@ -9,9 +10,10 @@ In this task, you will increase the number of instances for the API deployment i
 
 1. From your Codespace, start the tunnel to the Kubernetes cluster by using the following command, and navigate to the URL `https://<guid>.apps.codespaces.githubusercontent.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login`. Use the `cat ~/.kube/config` to get your bearer token  
 
-```PowerShell
-az aks browse --name $aksName --resource-group $resourcegroupName
-```
+   ```PowerShell
+   az aks browse --name $aksName --resource-group $resourcegroupName
+   ```
+
 2. From the navigation menu, select **Workloads** -\> **Deployments**, and then select the **API** deployment.
 
 2. Select **SCALE**.
@@ -60,63 +62,66 @@ az aks browse --name $aksName --resource-group $resourcegroupName
 
    - Refresh the page in the browser, and you can see the hostName change between the two API service instances. The letters after "api-{number}-" in the hostname will change.
 
- ## Increase WEB and API instances from the command line
- 1. In your Codespace terminal type the following command to find all deployments on your Kubernetes cluster
+## Increase WEB and API instances from the command line
 
- ```
- kubectl get deployments
- ```
+1. In your Codespace terminal type the following command to find all deployments on your Kubernetes cluster
+
+   ```
+   kubectl get deployments
+   ```
 
 2. To scale the API deployment to 5 instances, type the following command
 
-```
-kubectl scale --replicas=5 deployment web
-kubectl scale --replicas=5 deployment api
-```
+   ```
+   kubectl scale --replicas=5 deployment web
+   kubectl scale --replicas=5 deployment api
+   ```
 
 3. In the Kubernetes dashboard navigate to **Deployments** -\> **Pods** and check the api (or web depending on sequence of actions). It shows it dies not have enough CPU available. 
 
-![](/Assets/NoCPU.png)
+   ![](/Assets/NoCPU.png)
 
 4. Scale down to 2 instances 
 
-```
-kubectl scale --replicas=2 deployment web
-kubectl scale --replicas=2 deployment api
-```
+   ```
+   kubectl scale --replicas=2 deployment web
+   kubectl scale --replicas=2 deployment api
+   ```
 
 ## Increase WEB and API instances from the deployment file
+
 1. Open the web-deploy.yml file from the AKS folder
 2. Update the following yaml snippet to set the number of replicas
 
-```YAML
-spec:
-  replicas: 5
-  selector:
-      matchLabels:
-        app: web
-  strategy:
-```
+   ```YAML
+   spec:
+     replicas: 5
+     selector:
+     matchLabels:
+       app: web
+     strategy:
+   ```
 
 3. Update the following snippet to update the CPU usage
 
-```YAML
-resources:
-   requests:
-      cpu: 125m
-      memory: 128Mi
-```
+   ```YAML
+   resources:
+      requests:
+        cpu: 125m
+        memory: 128Mi
+   ```
 
 4. Perform step 1-3 for api-deploy.yml as well
 5. Check in your sources. The GitHub Action CI will trigger, and the new version will be deployed with the Continuous Delivery pipeline
 6. To deploy the new version of the WEB and API manually, use the following command
 
-```
-kubectl apply -f web-deploy.yml
-kubectl apply -f api-deploy.yml
-```
+   ```
+   kubectl apply -f web-deploy.yml
+   kubectl apply -f api-deploy.yml
+   ```
 
 > When you do not want to type all commands try the solution Pull Request by running
+
 ```
 .workshop/workshop-step.ps1  Solution "SCALEUP-T001"
 ```
