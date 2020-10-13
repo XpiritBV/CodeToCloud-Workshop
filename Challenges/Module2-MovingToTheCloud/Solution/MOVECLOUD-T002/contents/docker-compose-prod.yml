@@ -1,9 +1,5 @@
 version: "3.4"
 services:
-  mongo:
-    image: mongo
-    restart: always
-
   web:
     image: <your github account>/fabrikam-web
     depends_on: 
@@ -15,7 +11,5 @@ services:
 
   api:
     image: <your github account>/fabrikam-api
-    depends_on: 
-      - mongo
     environment:
       MONGODB_CONNECTION: <your mongo connectionstring>
