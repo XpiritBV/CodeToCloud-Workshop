@@ -4,7 +4,9 @@ FROM node:dubnium AS build
 #This is the environment variable with connection to the API. Can be overriden in the docker run command with the -e switch
 ENV CONTENT_API_URL=http://api:3001
 # This is the port that the container exposes
-EXPOSE 3000
+ENV PORT=80
+# This is the port that the container exposes
+EXPOSE 80
 # Run the NPM install command to install Angular
 RUN npm install -g @angular/cli@~8.3.4
 # This is the directory within the container where commands will be executed

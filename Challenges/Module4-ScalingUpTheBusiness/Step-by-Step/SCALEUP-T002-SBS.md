@@ -1,166 +1,238 @@
 # Step by Step SCALEUP-T002
 
-In this task you need to set up the cluster set up in such a way, that it uses one IP address and DNS name and that all sites running on it are using https. You need to create a NGINX ingress controller on the cluster that receives a public IP address. The DNS of this IP address (`fabrikam-<dnsname>.region.cloudapp.azure.com`) needs to be used as entry point for all application and customers. 
+In this task you will run the WEB and API application on the cluster, while it connects with the CosmosDB. The INIT container, that was pushed to the registry as well, can be used to populate the CosmosDB. You will use the kubectl commands and YAML files to deploy them.
 
-1. Setting up an Ingress Controller and Certificate Manager can be done using standard packages and software that can be configured to serve your needs. A good way to serve pre-defined packages on a Kubernetes cluster are Helm charts. A Helm chart contains the containers, services and configuration that is needed to run a specific service. To be able to access Helm packages your need to configure the Helm CLI tool to access repositories where the Helm charts are stored. By default this is the official Helm "stable" repository. To add the default repository you can always use
+>This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
+>
+> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prequisites/RunThroughSetup.md) first!
 
-    > ```
-    > helm repo add stable https://kubernetes-charts.storage.googleapis.com/
-    > ```
-
-2. Add additional Helm repositories that contain the ingress controller and certificate manager. Open your terminal in your Codespace and execute the following command.
+1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 2 YAML files will be created
 
     ```powershell
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    helm repo add stable https://kubernetes-charts.storage.googleapis.com/
-    helm repo add jetstack https://charts.jetstack.io
-    helm repo update
+    .workshop/workshop-step.ps1  Start "SCALEUP-T002"
     ```
 
-3. First we need to install the Ingress Controller, that allows us to route traffic to the internal containers, using the same shared public IP address. To install the NGINX Ingress controller in the `kube-system` namespace, execute the following commands in your terminal.
+2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with DEVWF-T004 in the title
 
-    ```
-    helm install ingress-nginx/ingress-nginx --generate-name --namespace kube-system
-    ```
+    ![Shows the menu item for navigating to the Pull Request](/Assets/pullrequestmovecloudt002.png)
 
-4. When the Ingress controller has been installed successfully, you need to map the public IP address of the Ingress controller, to the DNS name of your cluster. First you need to find the Public IP Address (`EXTERNAL-IP`)of the Ingress Controller. You can do this by running the following command.
+3. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
 
-    ```
-    kubectl get service --namespace kube-system
-    ```
+4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
 
-    ![](/Assets/IngressIP.png)
+    ![Shows the button for merging a Pull Request in GitHub](/Assets/mergePullRequest.png)
 
-5. When you have found the IP Address, you need to link this Public IP Address to a DNS name in Azure. You can do this by using the Azure Portal. In the Azure Portal, navigate to your resource group where the AKS cluster is really deployed. In the resource group view, search for your abbreviated name, you used when creating the Azure Resources. 
+Now your repository contains 3 new "multi-staged" docker file.
 
-    ![](/Assets/2020-10-07-15-18-37.png)
+5. In your GitHub Codespace, update your files to the latest version by pulling them.
 
-    There you see 2 resource group. The resource group your created, and a "automatically created" resource group, that contains all cluster resources, like virtual machines, networks and public IP addresses. Open the "automatically created" resource group called something like `MC_fabmedical-rg-....` and open it. Find the resource of type Public IP Address and check the IP is the same as you found in step 4.
+    ![Pull latest changes into Visual Studio Code](/Assets/2020-10-05-12-10-11.png)
 
-    ![](/Assets/publicIP.png)
+6. To be able to pull a container from the GitHub Container Registry in to the AKS cluster, you need to configure a pull secret in AKS. You can do this by running the kubectl create secret command. Retrieve the GitHub Personal Access Token, that you also used in [DEVWF-T007]/Challenges/Module1-ImprovingDeveloperFlow/Tasks/DEVWF-T007.md). In your PowerShell terminal create a variable called $ghToken and use this token as value
 
-    Click on Configuration, and configure the DNS Name label to set to your abbreviation 
-
-    ![](/Assets/publicIPDNS.png)
-
-6. Now that you have created a DNS name, making the cluster IP something like `yourname.westeurope.cloudapp.azure.com` you can link a certificate manager to issue certificates for this domain. In this step by step we use the cert-manager service that uses Let's Encrypt to issue certificates. Install the cert-manager on your cluster using the following commands.
-
-    ```
-    kubectl create namespace cert-manager
-    helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.0.1 --set installCRDs=true
+    ```powershell
+    $ghToken = "9ad18...xxxx"
     ```
 
-7. Before we continue we need to check if all cert-manager pods are installed and running. Use the following command to check this
+7. Create a new Kubernetes secret called `pullsecret` that uses this variable to pull from your GitHub Container Registry. Execute this command in your terminal window
 
     ```
-    kubectl get pods --namespace cert-manager
+    kubectl create secret docker-registry pullsecret --docker-server=https://ghcr.io/ --docker-username=notneeded --docker-password=$ghToken
     ```
 
-The result should look similar like this
+8. To be able to access the CosmosDB, you need to add the connectionstring as a Kubernetes Secret. Retrieve the connectionstring to the CosmosDB in the portal or use the following command and use the Primary MongoDB ConnectionString.
 
-    ![](/Assets/cert-manager-pods.png)
+    ```
+    az cosmosdb keys list -n $cosmosDBName -g $resourceGroupName --type connection-strings
+    ```
 
-8. Now that we have the cert-manager running, we need to deploy a Certificate Authority that can issue certificates for the whole cluster. In your Codespace create a new folder HELM and create a new file called cluster-issuer.yml. Add the following contents to this file. Replace the email address that you want to use with Let's Encrypt.
+9. Add the contentdb database as part of the connectionstring and add it as as a Kubernetes secret. `....documents.azure.com:10255/contentdb?ssl=true`
+
+    ```
+    $mongodbConnectionString="connectionString=mongodb://xxx.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb"
+    kubectl create secret generic cosmosdb --from-literal=db=$mongodbConnectionString
+    ```
+
+10. Now that both secrets are added, modify the api-deploy.yml file. Update the following snippet to retrieve your own image
 
     ```YAML
-    apiVersion: cert-manager.io/v1
-    kind: ClusterIssuer
-    metadata:
-      name: letsencrypt-prod
-    spec:
-      acme:
-        # You must replace this email address with your own.
-        # Let's Encrypt will use this to contact you about expiring
-        # certificates, and issues related to your account.
-        email: ca@fabrikammedical.com
-        server: https://acme-v02.api.letsencrypt.org/directory
-        privateKeySecretRef:
-          # Secret resource that will be used to store the account's private key.
-          name: letsencrypt-prod
-        # Add a single challenge solver, HTTP01 using nginx
-        solvers:
-        - http01:
-            ingress:
-              class: nginx
+        spec:
+        containers:
+        - image: ghcr.io/<yourgithubaccount>/fabrikam-api:latest 
     ```
 
-9. Deploy the issuer by running the following command
+11. Deploy the API Deployment and Service to Kubernetes
 
-    ```
-    kubectl apply -f cluster-issuer.yml
+    ```bash
+    kubectl apply -f api-deploy.yml
+    kubectl apply -f api-service.yml
     ```
 
-10. Now that we have a Certificate Authority, we need to create a certificate for our web application `yourname.westeurope.cloudapp.azure.com`). In the HELM folder, create a new file called `certificate.yml` and add the following contents. Change the dnsNames to your DNS name. 
+12. Login to the Kubernetes Dashboard to see if the pods successfully deployed. Use the command `az aks browse --name $aksName --resource-group $resourcegroupName` to open the Dashboard.
+
+    ![](/Assets/k8sDashboard.png)
+
+13. In the AKS folder, create a file called web-deploy.yml. Fill the file with the following content. Update <yourgithubaccount> with your GitHub account name.
 
     ```YAML
-    apiVersion: cert-manager.io/v1
-    kind: Certificate
+    apiVersion: apps/v1
+    kind: Deployment
     metadata:
-      name: tls-secret
+      labels:
+          app: web
+      name: web
     spec:
-      secretName: tls-secret
-      dnsNames:
-      - <dnsName>.westeurope.cloudapp.azure.com
-      issuerRef:
-        name: letsencrypt-prod
-        kind: ClusterIssuer
+      replicas: 1
+      selector:
+          matchLabels:
+            app: web
+      strategy:
+          rollingUpdate:
+            maxSurge: 1
+            maxUnavailable: 1
+          type: RollingUpdate
+      template:
+          metadata:
+            labels:
+                app: web
+            name: web
+          spec:
+            containers:
+            - image: ghcr.io/<yourgithubaccount>/fabrikam-web:latest 
+              env:
+                - name: CONTENT_API_URL
+                  value: http://api:3001
+              livenessProbe:
+                httpGet:
+                    path: /
+                    port: 3000
+                initialDelaySeconds: 30
+                periodSeconds: 20
+                timeoutSeconds: 10
+                failureThreshold: 3
+              imagePullPolicy: Always
+              name: web
+              ports:
+                - containerPort: 80
+                  protocol: TCP
+              resources:
+                requests:
+                    cpu: 125m
+                    memory: 128Mi
+              securityContext:
+                privileged: false
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+            dnsPolicy: ClusterFirst
+            restartPolicy: Always
+            schedulerName: default-scheduler
+            securityContext: {}
+            terminationGracePeriodSeconds: 30
+            imagePullSecrets:
+            - name: pullsecret   
     ```
 
-    Deploy the file using the command 
-
-    ```
-    kubectl apply -f certificate.yml
-    ```
-
-11. Finally, you need to add the generated certificate to the Web Application and API in order to make the HTTPS. Create a new file called `content-ingress.yml` and add the following contents. Change the **hosts** and **host** to your DNS name. In the paths section you can see that the api can now be reached under the route `content-api`
+14. In the AKS folder, create a file called web-service.yml. Fill the file with the following content
 
     ```YAML
-    apiVersion: networking.k8s.io/v1beta1
-    kind: Ingress
+    apiVersion: v1
+    kind: Service
     metadata:
-      name: content-ingress
-      annotations:
-        kubernetes.io/ingress.class: nginx
-        certmanager.k8s.io/cluster-issuer: letsencrypt-prod
-        nginx.ingress.kubernetes.io/rewrite-target: /$1
+      labels:
+        app: web
+      name: web
     spec:
-      tls:
-        - hosts:
-          - <dnsName>.westeurope.cloudapp.azure.com
-          secretName: tls-secret
-      rules:
-        - host: <dnsName>.westeurope.cloudapp.azure.com
-          http:
-            paths:
-              - path: /(.*)
-                backend:
-                  serviceName: web
-                  servicePort: 80
-              - path: /content-api/(.*)
-                backend:
-                  serviceName: api
-                  servicePort: 3001         
+      ports:
+        - name: web-traffic
+          port: 80
+          protocol: TCP
+          targetPort: 80
+      selector:
+        app: web
+      sessionAffinity: None
+      type: LoadBalancer
     ```
 
-    Deploy the file using the command 
+15. Deploy the Web deployment and web service with the following command
 
-    ```
-    kubectl apply -f content-ingress.yml
-    ```
-
-12. Check if your certificates gets issues by executing the following command
-
-    ```
-    kubectl describe certificate tls-secret
+    ```bash
+    kubectl apply -f web-deploy.yml
+    kubectl apply -f web-service.yml
     ```
 
-    ![](/Assets/certs.png)
+16. In your Kubernetes Dashboard, navigate to the Services Tab. You will find the Web Service with an external IP. Click the IP address and find that the website shows up, without any data.
 
-13.
-    > When you do not want to type all commands try the solution Pull Request by running
-    
+    ![](/Assets/2020-10-06-14-07-53.png)
+
+17. Add a file called init-deploy.yml to your AKS folder, and set the contents to the snippet below. Update <yourgithubaccount> with your GitHub account name.
+
+    ```YAML
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      labels:
+          app: init
+      name: init
+    spec:
+      replicas: 1
+      selector:
+          matchLabels:
+            app: init
+      strategy:
+          rollingUpdate:
+            maxSurge: 1
+            maxUnavailable: 1
+          type: RollingUpdate
+      template:
+          metadata:
+            labels:
+                app: init
+            name: init
+          spec:
+            containers:
+            - image: ghcr.io/<yourgithubaccount>/fabrikam-init:latest 
+              env:
+                - name: MONGODB_CONNECTION
+                  valueFrom:
+                    secretKeyRef:
+                      name: cosmosdb
+                      key: db              
+              imagePullPolicy: Always
+              name: init
+              ports:
+                - containerPort: 80
+                  hostPort: 80
+                  protocol: TCP
+              resources:
+                requests:
+                    cpu: 125m
+                    memory: 128Mi
+              securityContext:
+                privileged: false
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+            dnsPolicy: ClusterFirst
+            restartPolicy: Always
+            schedulerName: default-scheduler
+            securityContext: {}
+            terminationGracePeriodSeconds: 30
+            imagePullSecrets:
+            - name: pullsecret  
     ```
-    .workshop/workshop-step.ps1  Solution "SCALEUP-T002"
+18. Deploy the content initializer with the following command
+
+    ```bash
+    kubectl apply -f init-deploy.yml
     ```
 
-    > Troubleshoot the issuing of certificates https://cert-manager.io/docs/faq/troubleshooting/
+19. When you are done, commit and push your changes to your GitHub repository.
+
+    ![](/Assets/2020-10-05-12-10-11.png)
+
+20. In your Kubernetes Dashboard, navigate to the Services Tab. You will find the Web Service with an external IP. Click the IP address and find that the website shows up, but now the Speaker and Session pages show data.
+
+> When you do not want to type all commands try the solution Pull Request by running
+
+```
+.workshop/workshop-step.ps1  Solution "SCALEUP-T002"
+```

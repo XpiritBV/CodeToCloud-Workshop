@@ -1,7 +1,8 @@
 FROM node:dubnium-alpine AS base
 RUN apk -U add curl
 WORKDIR /usr/src/app
-EXPOSE 3000
+ENV PORT=80
+EXPOSE 80
 ENV CONTENT_API_URL=http://api:3001
 
 FROM node:dubnium AS build

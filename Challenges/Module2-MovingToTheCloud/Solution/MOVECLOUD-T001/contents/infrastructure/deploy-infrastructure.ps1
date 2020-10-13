@@ -1,12 +1,10 @@
 $studentprefix = "your abbreviation here"
 $resourcegroupName = "fabmedical-rg-" + $studentprefix
 $cosmosDBName = "fabmedical-cdb-" + $studentprefix
-$aksName = "fabmedical-aks-" + $studentprefix
+$webappName = "fabmedical-web-" + $studentprefix
+$planName = "fabmedical-plan-" + $studentprefix
 $location1 = "westeurope"
 $location2 = "northeurope"
-
-#Create an App Registration to use with AKS
-$resultSPN = az ad sp create-for-rbac --name http://GitHubWorkshop | ConvertFrom-Json
 
 #First create a group
 $resultRG = az group create --name $resourcegroupName --location $location1 | ConvertFrom-Json
@@ -20,36 +18,8 @@ $resultCosmos = az cosmosdb create --name $cosmosDBName `
 --kind MongoDB `
 | ConvertFrom-Json
 
-# Reset credentials to make sure the credentials match the ones that were reset above.
-az aks update-credentials `
---resource-group $resourcegroupName `
---name $aksName `
---reset-service-principal `
---service-principal $($resultSPN.appId) `
---client-secret $($resultSPN.password)
+#Create a Azure App Service Plan
+az appservice plan create --name $planName --resource-group $resourcegroupName --sku S1 --is-linux
 
-#Create an AKS cluster
-az aks create --resource-group $resourcegroupName `
-  --name $aksName `
-  --dns-name-prefix $aksName `
-  --client-secret $($resultSPN.password) `
-  --service-principal $($resultSPN.appId) `
-  --generate-ssh-keys --location $location1 --node-count 3 `
-  --kubernetes-version 1.18.8 --max-pods 100
-
-az aks enable-addons -a monitoring -n $aksName -g $resourcegroupName
-az aks enable-addons -a kube-dashboard -n $aksName -g $resourcegroupName
-
-
-## Get Credentials
-az aks get-credentials --name $aksName --resource-group $resourcegroupName
-
-#remove and set rights
-kubectl delete clusterrolebinding kubernetes-dashboard 
-kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard --user=clusterUser
-
-## get the bearer token for the dashboard
-cat ~/.kube/config
-
-## Browse
-az aks browse --name $aksName --resource-group $resourcegroupName
+#Create a Azure Web App with NGINX container
+az webapp create --resource-group $resourcegroupName --plan $planName --name $webappName -i nginx
