@@ -1,27 +1,57 @@
-# Scaling up the application
+# Setting up a cloud infrastructure
 
-One of the customers of Fabrikam has launched a new vaccine and is organizing conferences all over the world. Because of the publicity around this new vaccine the number of people visiting the Conference websites are sky rocketing. This leads to unexpected behavior, downtime and slowness of the application. 
-
-After looking at the deployed application, you notice that the web application and API are running as a a single instance with a low allocation of memory. Time to get this under control.
+Susan wants to move to the cloud. An Azure subscription has been created and known to the developers. Since Fabrikam is doing DevOps, setting up the infrastructure and deploying this to the cloud also needs to be automated. Furthermore, it is the responsibility of the developers (a.ka. DevOps Team) to operate this infrastructure. Fortunately, Azure has a advanced automation engine to automate the roll-out of the infrastructure and advanced features to operate it. Besides that, the people that operate the current-on-premises infrastructure have a vast knowledge of infrastructure and scripting and are eager to move to the cloud as well.
 
 ## Challenge
-In this challenge you will use the scaling possibilities of Kubernetes to scale out your API and WEB application. Furthermore you will use the Kubernetes deployment files to start an application with multiple pods. 
+
+In this challenge you will set up an Azure Resource Group containing a CosmosDB and an Azure Kubernetes Cluster. This needs to accessed with an Azure Service Principal for RBAC. To simplify automation you can use the Azure CLI to set this up. The script that you create, needs to be saved in an [**infrastructure**] folder of the [**CodeToCloud-Source**] repository to ensure repeatability and the possibility to run this from within the pipeline
 
 ## Validation
 
-* Scale up API to 5 pods
-* Scale up WEB to 5 pods
-* Change the API Kubernetes deployment file to create 3 pods after deployment and deploy this
+* New folder [**infrastructure**] in Codespace with automation script
+* Azure Service Principal for RBAC to use with AKS cluster
+* Resource group [**fabmedical-rg-<studentsuffix>**] has been created
+* Resource group contains a CosmosDB called [**fabmedical-cdb-<studentsuffix>**]
+* Resource group contains a AKS cluster called [**fabmedical-aks-<studentsuffix>**]
+* Dashboard is visible when browsing with the `az aks browse` command
 
 > Tips
 >
-> * Visit the Web application URL (public IP) `/stats` and refresh to see the IP address of the API change
-> * Change the replicaCount to change number of pods 
+> * Use a three letter abbreviation of your name as <studentsuffix> 
+> * Use the `az ad sp create-for-rbac --name GitHubWorkshop` to create an SPN and save the appId and secret
+> * Create an CosmosDB with 2 locations using the following syntax in the Azure CLI 
+>
+>    ```Powershell
+>    --locations regionName=westeurope failoverPriority=0  isZoneRedundant=False --locations regionName=northeurope failoverPriority=1 isZoneRedundant=True  enable-multiple-write-locations 
+>    ```
+>
+>* Enable 2 add-ons on the cluster after creation
+>
+>    ```Powershell
+>    az aks enable-addons -a monitoring -n $aksName -g $resourcegroupName
+>
+>    az aks enable-addons -a kube-dashboard -n $aksName -g $resourcegroupName
+>    ```
+>
+> * Use the `az aks get-credentials` to update your credentials in kube.config
+> * Use these commands to set permissions for the dashboard
+> 
+>    ```powershell
+>    kubectl delete clusterrolebinding kubernetes-dashboard 
+>
+>    kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard --user=clusterUser
+>     ```
+>
+> * Use the `az aks browse -n $aksName -g $resourcegroupName` to browse to the cluster dashboard
+>
+> * When browsing to the Kubernetes Dashboard from your Codespace, paste `/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login` after the url that CodeSpaces generates for you
 
 ## Links & Information
 
-* [Kubectl Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
-* [Kubectl Scaling Resources](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#scaling-resources)
+* [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+* [Manage Resource Group with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest)
+* [Manage CosmosDB with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/cosmosdb?view=azure-cli-latest)
+* [Manage AKS with Azure CLI](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest)
 
 ## Solution
 
@@ -31,8 +61,5 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 .workshop/workshop-step.ps1 Solution "SCALEUP-T001"
 ```
 
-* https://github.com/microsoft/MCW-Cloud-native-applications/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Cloud-native%20applications%20-%20Developer%20edition.md#task-1-increase-service-instances-from-the-kubernetes-dashboard
-
-* https://github.com/microsoft/MCW-Cloud-native-applications/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Cloud-native%20applications%20-%20Developer%20edition.md#task-2-increase-service-instances-beyond-available-resources
-
-* https://github.com/microsoft/MCW-Cloud-native-applications/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Cloud-native%20applications%20-%20Developer%20edition.md#task-3-restart-containers-and-test-ha
+### Next Step
+When you are done, move to the [next challenge](SCALEUP-T002.md)

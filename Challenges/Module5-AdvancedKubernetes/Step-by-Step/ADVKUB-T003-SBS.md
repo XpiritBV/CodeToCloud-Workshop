@@ -71,7 +71,7 @@ In this task you are going to create a Helm chart for both the WEB and API Micro
 
     ```
 
-4. Update the `deployment.yaml` file to add the Environment variable to point to the API. Change the Container port to 3000, since that is the port where the web application is running
+4. Update the `deployment.yaml` file to add the Environment variable to point to the API. Change the Container port to 80, since that is the port where the web application is running
 
     ```YAML
     apiVersion: apps/v1
@@ -111,7 +111,7 @@ In this task you are going to create a Helm chart for both the WEB and API Micro
               imagePullPolicy: {{ .Values.image.pullPolicy }}
               ports:
                 - name: http
-                  containerPort: 3000
+                  containerPort: 80
                   protocol: TCP
               env:
                 - name: CONTENT_API_URL
@@ -294,6 +294,6 @@ In this task you are going to create a Helm chart for both the WEB and API Micro
 > When you do not want to type all commands try the solution Pull Request by running
 
 ```
-.workshop/workshop-step.ps1  Solution "SCALEUP-T003"
+.workshop/workshop-step.ps1  Solution "ADVKUB-T003"
 ```
 

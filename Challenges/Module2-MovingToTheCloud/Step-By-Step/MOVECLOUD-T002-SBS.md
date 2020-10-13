@@ -105,7 +105,7 @@ Now your repository contains 3 new "multi-staged" docker file.
               livenessProbe:
                 httpGet:
                     path: /
-                    port: 3000
+                    port: 80
                 initialDelaySeconds: 30
                 periodSeconds: 20
                 timeoutSeconds: 10
@@ -113,7 +113,7 @@ Now your repository contains 3 new "multi-staged" docker file.
               imagePullPolicy: Always
               name: web
               ports:
-                - containerPort: 3000
+                - containerPort: 80
                   protocol: TCP
               resources:
                 requests:
@@ -200,7 +200,7 @@ Now your repository contains 3 new "multi-staged" docker file.
               imagePullPolicy: Always
               name: init
               ports:
-                - containerPort: 3000
+                - containerPort: 80
                   hostPort: 80
                   protocol: TCP
               resources:

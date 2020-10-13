@@ -35,5 +35,5 @@ To run it
 ```bash
 docker run -ti --network fabrikam fabrikam-init
 docker run -d --name api -p 3001:3001 --network fabrikam fabrikam-api
-docker run -d --name web -p 3000:3000 --network fabrikam fabrikam-web
+docker run -d --name web -p 3000:80 --network fabrikam fabrikam-web
 ```
