@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-      app: web
-  name: web
+      app: init
+  name: init
 spec:
   replicas: 1
   selector:
       matchLabels:
-        app: web
+        app: init
   strategy:
       rollingUpdate:
         maxSurge: 1
@@ -17,26 +17,22 @@ spec:
   template:
       metadata:
         labels:
-            app: web
-        name: web
+            app: init
+        name: init
       spec:
         containers:
-        - image: ghcr.io/<yourgithubaccount>/fabrikam-web:latest 
+        - image: ghcr.io/<yourgithubaccount>/fabrikam-init:latest 
           env:
-            - name: CONTENT_API_URL
-              value: http://api:3001
-          livenessProbe:
-            httpGet:
-                path: /
-                port: 3000
-            initialDelaySeconds: 30
-            periodSeconds: 20
-            timeoutSeconds: 10
-            failureThreshold: 3
+            - name: MONGODB_CONNECTION
+              valueFrom:
+                secretKeyRef:
+                  name: cosmosdb
+                  key: db              
           imagePullPolicy: Always
-          name: web
+          name: init
           ports:
-            - containerPort: 3000
+            - containerPort: 80
+              hostPort: 80
               protocol: TCP
           resources:
             requests:

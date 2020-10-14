@@ -1,21 +1,28 @@
 ---
-title: "Added Kubernetes files to deploy applications (MOVECLOUD-T002 Solution)"
-branch: users/patrick/kubernetes-files
-commitmessage: "Added Kubernetes files to deploy applications"
+title: "Added Docker Compose files to deploy applications to Azure Web App (MOVECLOUD-T002 Solution)"
+branch: users/patrick/docker-compose-webapp
+commitmessage: "Added Docker Compose files to deploy applications to Azure Web App"
 committer: Patrick O'Conell
 committeremail: patrickoconnell@FabrikamMedical.example.org
 linkedworkitem: module2
 ---
 
 # Instructions to Fix the exercise
-Added all Kubernetes files to deploy INIT, WEB and API. 
-
-You need to add 2 secrets to Kubernetes. One for the CosmosDB and one for the GitHub Container Registry. Make sure you add the /contentdb part to the mongoDB connectionstring. You can get the connectionstring from the Azure Portal
+Added a new docker-compose file (docker-compose-prod) to configure the multi-container web application. To deply this file, update the name of the container registry and change the CosmosDB connectionstring
 
 ```powershell
-$mongodbConnectionString="mongodb://<mongoDBConnectionstring>:10255/contentdb?ssl=true&replicaSet=globaldb"
+$studentprefix = "your abbreviation here"
+$resourcegroupName = "fabmedical-rg-" + $studentprefix
+$webappName = "fabmedical-web-" + $studentprefix
+
 $ghpat=Read-Host -Prompt "Github Personal Access Token"
 
-kubectl create secret docker-registry pullsecret --docker-server=https://ghcr.io/ --docker-username=notneeded --docker-password=$ghpat
-kubectl create secret generic cosmosdb --from-literal=db=$mongodbConnectionString
+az webapp config container set `
+--docker-registry-server-password $ghpat `
+--docker-registry-server-url https://ghcr.io `
+--docker-registry-server-user notapplicable `
+--multicontainer-config-file docker-compose-prod.yml `
+--multicontainer-config-type COMPOSE `
+--name $webappName `
+--resource-group $resourcegroupName 
 ```

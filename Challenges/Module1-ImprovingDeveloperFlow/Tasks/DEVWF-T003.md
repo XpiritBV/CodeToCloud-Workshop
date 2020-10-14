@@ -2,7 +2,7 @@
 
 One of the biggest complaints the developers had during the round of interviews is that is very hard to run the application locally and to get started. Because there are so many changes for the various customers, the code base changes a lot. To quickly get started with a stable version for a customer, to test some things or to add minor features takes too much time. Furthermore, once the application is deployed, unknown issues occur because production is so different from the development environment.
 
-In the proposed solution architecture Fabrikam wants to move towards the Azure Cloud and start using Azure Kubernetes Service. This allows them to run a cloud-native architecture without a lock-in to a specific cloud because of the use of containers. Therefore the team decides to start using Docker containers for their local development too. Since they already run the MongoDB in a container, now it is time to move the rest as well. 
+In the proposed solution architecture Fabrikam wants to move towards the Azure Cloud. Because of the already existing on-premises application, they want to move to the cloud with as little as possible changes to the on-premises application. You and your team advice to start using Docker. This allows them to package the existing application, including all (older) frameworks in a container and run this as a web application. Using container also allows Fabrikam to run a cloud-native architecture without a lock-in to a specific cloud because of the use of containers. Therefore the team decides to start using Docker containers for their local development too. Since they already run the MongoDB in a container, now it is time to move the rest as well. 
 
 ## Challenge
 
@@ -23,7 +23,7 @@ You also decide it is convenient to have a container for the Initialization of t
 >
 > Use the `docker images` command to check if the images are built
 >
-> Use the `docker run` command to run a container in your Codespace. Use the `--name ` and `--network` switches to name them. Name the web application container `web` and the api container `api`. Use the `-p` switch to port forward the port 3000 and 3001 to your local system 
+> Use the `docker run` command to run a container in your Codespace. Use the `--name ` and `--network` switches to name them. Name the web application container `web` and the api container `api`. Use the `-p` switch to port forward the port 80 and 3001 to your local system 
 >
 > Make sure the 3 containers run on the same network
 >

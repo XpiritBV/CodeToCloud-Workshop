@@ -1,24 +1,22 @@
-# Module 4 - Scaling up the business
+# Module 4 - Scaling up The business
 
-Looking back at the goals Susan envisioned at the start of the cloud journey, things are looking great. The overall architecture has been dramatically improved, the development workflow is fast and efficient, and the quality increased because of the automation and review process. New tenants are easily added, because of the container setup and roll-out to the cluster. 
+Now that the Developer workflow improved dramatically, the VP of Engineering at Fabrikam, Susan Withers, wants to take the next step. Now that the application is already running in containers, the goal to improve the overall architecture is already progressing. With this well-isolated architecture a cloud implementation would be a great addition. Instead of running a container cluster on-premises, it should run in the cloud. This way costs can be reduced and the cluster can be scaled when this is necessary.
 
-After a while, one of the customers of Fabrikam Medical made an announcement that they developed a new vaccine. They also announced that they started to organize big conferences where they explain and promote this vaccine. When the first website went live, things went wrong. Because of the heavy traffic the site went down and stayed down. Furthermore, updates that were pushed to production, took down the website for a few minutes. These issues need to be resolved. Last but not least, the customer wants to run their conference websites on different subdomains. For every region where they organize a conference they want to run it within a subdomain.
-
-You and your team saw this coming and advice Susan to move into some more advanced Kubernetes tech. You advice to start doing rolling updates, build a possibility to scale up and out and allow the customers to run subdomains.
+Susan asks you and your team to lead the way to the cloud. Since Fabrikam is moving to DevOps, she wants the development teams to be responsible for the infrastructure as well. It is up to you to help and guide the team to run the containerized application in a cluster in the cloud!
 
 ## Learning Objectives
 
-In this modules you will learn to:
-* Build High Availability in to your cluster and application
-* Use Kubernetes Ingress Control to run multiple websites on the same cluster
-* Scale out and scale up the cluster
-* Deal with load and limited resources
-* Do Zero-down deployments with rolling updates
-* Create helm charts for your own application to facilitate easier deployment
+In this module you will learn to:
 
+* Use Infrastructure as Code to set up idempotent infrastructure in the cloud
+* Set up a resource group in Azure and assign permissions
+* Set up a CosmosDB via automation scripts
+* Set up an Azure Kubernetes Service Cluster via automation scripts
+* Set up a pipeline that deploys the infrastructure on demand
+* Run a container in the cluster 
 
-# Exercises
- * Ex-3/ 4
+## Tasks
 
-# Video
+* [SCALEUP-T001 Setting up a cloud infrastructure](Tasks/SCALEUP-T001.md)
+* [SCALEUP-T002 Running containers in a cluster](Tasks/SCALEUP-T002.md)
 
