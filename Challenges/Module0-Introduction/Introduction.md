@@ -9,8 +9,8 @@ The VP of Engineering at Fabrikam, Susan Withers, has a team of 12 developers wh
 In the current situation, the conference sites are hosted on-premises with the following topology and platform implementation:
 
 * The conference web sites are built with the MEAN stack (Mongo, Express, Angular, Node.js).
-* Web sites and APIs are hosted on Windows Server machines.
-* MongoDB is also running on a separate cluster of Windows Server machines.
+* Web sites and APIs are hosted on Linux machines.
+* MongoDB is also running on a separate cluster of Linux machines.
 
 Customers are considered "tenants", and each tenant is treated as a unique deployment whereby the following happens:
 
@@ -32,7 +32,7 @@ Susan is looking to take a step in this direction with the following goals in mi
 * Improve the overall architecture
   * While multi-tenancy is a goal for the code base, even with this in place, Susan believes there will always be the need for custom copies of code for a particular tenant who requires a one-off custom implementation. Susan feels that Docker containers may be a good solution to support their short-term DevOps and development agility needs, while also being the right direction once they reach a majority multi-tenant application solution.
   * One of the issues with the code base is that it has many dependencies across features. Seemingly simple changes to an area of code introduce issues with layout, responsiveness, registration functionality, content refresh, and more. To avoid this, she would like to rework the core code base so that registration, email notifications and templates, content and configuration are cleanly separated from each other and from the front end.
-  * Move towards a cloud native implementation of their conference solution, to ensure more cost efficiency and scalability.
+  * Move towards a cloud native implementation of their conference solution, without a lot of rework, to ensure more cost efficiency and scalability.
 * Improve the Development workflow
   * The time it takes to setup a development environment that resembles production is far too long
   * Feedback loops about the code quality need to be fast and frequent
@@ -60,12 +60,8 @@ To address the issues and progress towards the goals, Susan asks a high-end cons
 * Migrate data from MongoDB on-premises to CosmosDB with the least change possible to the application code.
 * Use Git repositories for source control and integrate into a CICD workflow.
 * Embed code review and security scanning in to the development workflow
-* Prefer a complete suite of operational management tools with:
-  * UI for manual deployment and management during development and initial POC work.
-  * APIs for integrated CICD automation.
-  * Container scheduling and orchestration.
-  * Health monitoring and alerts, visualizing status.
-  * Container image scanning.
+* Solution that does not incur a direct vendor-lock in
+* As much re-use of existing code base
 * Complete an implementation of the proposed solution for a single tenant to train the team and perfect the process.
 
 ## Tasks
