@@ -40,7 +40,7 @@ In this challenge you will merge the Pull Request [Example for Multi-Staged Dock
 
 ## Solution
 
-To read or view a step by step explanation of this challenge, please visit [this page]()
+To read or view a step by step explanation of this challenge, please visit [this page](/Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/DEVWF-T004-SBS.md)
 
 ### Next Step
 
