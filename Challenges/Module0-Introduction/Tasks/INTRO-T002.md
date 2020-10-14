@@ -14,4 +14,5 @@ Tables switch roles and repeat.
 ## Objection questions
 
 * There are many ways to deploy Docker containers on Azure. How do those options compare and what are motivations for each?
-* Is there an option in Azure that provides container orchestration platform features that are easy to manage and migrate to, that can also handle our scale and management workflow requirements?
+* Why should we choose GitHub Actions instead of Azure DevOps?
+* Why should we choose Azure DevOps instead of GitHub Actions?
