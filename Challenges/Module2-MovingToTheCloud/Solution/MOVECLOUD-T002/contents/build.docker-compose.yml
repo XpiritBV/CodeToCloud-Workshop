@@ -2,8 +2,6 @@ version: "3.4"
 services:
   web:
     build: ./content-web
-    image: fabrikam-web
 
   api:
     build: ./content-api
-    image: fabrikam-api

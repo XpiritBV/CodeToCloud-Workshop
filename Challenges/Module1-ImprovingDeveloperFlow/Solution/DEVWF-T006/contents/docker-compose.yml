@@ -5,7 +5,6 @@ services:
     restart: always
 
   web:
-    build: ./content-web
     image: content-web
     depends_on:
       - api
@@ -15,7 +14,6 @@ services:
       - "3000:80"
 
   api:
-    build: ./content-api
     image: content-api
     depends_on:
       - mongo
