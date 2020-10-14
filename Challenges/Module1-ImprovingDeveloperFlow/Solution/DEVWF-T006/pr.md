@@ -1,5 +1,5 @@
 ---
-title: "Docker compose files for running WEB, API and MongoDB (DEVWF-T006 Solution)"
+title: "Docker compose files for running WEB, API and MongoDB (DEVWF-T006)"
 branch: users/tyrone/docker-compose-api
 commitmessage: "Created Docker Compose file for API and MongoDB"
 committer: Tyrone Mullett

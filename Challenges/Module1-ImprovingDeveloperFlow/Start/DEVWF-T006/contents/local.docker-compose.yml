@@ -6,10 +6,3 @@ services:
 
   api:
     build: ./content-api
-    image: fabrikam-api
-    depends_on:
-      - mongo
-    environment:
-      MONGODB_CONNECTION: mongodb://mongo:27017/contentdb
-    ports:
-      - "3001:3001"
