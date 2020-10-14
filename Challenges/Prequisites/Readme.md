@@ -10,11 +10,11 @@ The workshop builds upon an existing code base. Before you start the workshop, t
 The workshop is built with and targeted at development with GitHub Codespace. A full featured IDE in the cloud. In order to start working you need to create a Codespace.
 
 1. Navigate to your forked repository on GitHub
-1. Create a Code Space in your forked repo
+2. Create a Code Space in your forked repo
 
 ![](CodeSpace.png)
 
-1. Your GitHub Codespace will be created
+3. Your GitHub Codespace will be created
 
 ![](Codespace-creation.png)
 
@@ -40,7 +40,7 @@ To set this up, you need to perform these steps
 ### Setup your settings file and PowerShell Profile
 1. Open your GitHub Codespace 
 1. In the terminal type `pwsh`
-1. Then run .workshop/setup.ps1 
+1. Then run `.workshop/setup.ps1`
     1. As part of the workflow you'll be asked to create a Personal Access Token for GitHub. For more information, see below.
     2. As part of the workflow you'll be asked to create a Personal Access Token for Azure DevOps. For more information, see below.
 1. A local `settings.json` file has been created in the .workshop folder (DO NOT COMMIT THIS TO YOUR REPO!. Already in .gitignore file)
@@ -53,6 +53,7 @@ When you go through the challenges or step by steps, you will see something like
 ```
 .workshop/workshop-step.ps1  Start "DEVWF-T00X"
 ```
+When you see this, execute the following steps
 
 * In your Codespace, open a `pwsh` terminal
 * Navigate to the root of your repository 
@@ -60,4 +61,7 @@ When you go through the challenges or step by steps, you will see something like
 * A Pull Request with scripts and instructions will be created for you.
 
 ## Variables
-* In some scripts we use variables like $resourceGroupName and $webappName. Based on the settings.json file, that is stored in you.workshop folder, we generated a PowerShell Profile for you. This profile contains the PowerShell variables that are used with the values you provide in the settings.json
+In some scripts we use variables like `$resourceGroupName` and `$webappName`. Based on the settings.json file, that is stored in your .workshop folder, we generated a PowerShell Profile for you. This profile contains the PowerShell variables that are used with the values you provide in the settings.json
+
+### Next Step
+When you are done, move to the [first challenge](Challenges/Module0-Introduction/Introduction.md)
