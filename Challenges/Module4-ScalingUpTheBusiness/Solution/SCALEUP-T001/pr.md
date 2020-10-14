@@ -10,7 +10,7 @@ linkedworkitem: module2
 
 Added a PowerShell file to provision the cloud infrastructure. Please update the variables at top of the file so we do no conflict with each other
 
-Don't forget to login first in your cloud environment
+Don't forget to first logon to your cloud environment
 
 ```powershell
 az login
