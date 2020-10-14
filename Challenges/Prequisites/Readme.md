@@ -64,4 +64,4 @@ When you see this, execute the following steps
 In some scripts we use variables like `$resourceGroupName` and `$webappName`. Based on the settings.json file, that is stored in your .workshop folder, we generated a PowerShell Profile for you. This profile contains the PowerShell variables that are used with the values you provide in the settings.json
 
 ### Next Step
-When you are done, move to the [first challenge](Challenges/Module0-Introduction/Introduction.md)
+When you are done, move to the [first challenge](/Challenges/Module0-Introduction/Introduction.md)
