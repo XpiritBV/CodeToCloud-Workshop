@@ -30,4 +30,4 @@ When browsing to the Kubernetes Dashboard from your Codespace, paste `/api/v1/na
 To logon to your cluster you can use a bearer token. Use the command `cat ~/.kube/config` to show the contents of your Kubernetes configuration. You can find the token at the bottom of the file (`token: e07dcfb4...`)1
 
 > Tip:
-> You can use the Kubernetes extension in VSCode as well to see your AKS cluster resources
+> You can also use the Kubernetes extension in VSCode to see your AKS cluster resources
