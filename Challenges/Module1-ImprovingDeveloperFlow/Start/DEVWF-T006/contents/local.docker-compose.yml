@@ -5,7 +5,8 @@ services:
     restart: always
 
   api:
-    image: content-api
+    build: ./content-api
+    image: fabrikam-api
     depends_on:
       - mongo
     environment:

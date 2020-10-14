@@ -45,7 +45,7 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 .workshop/workshop-step.ps1 Solution "DEVWF-T002"
 ```
 
-To read or view a step by step explanation of this challenge, please visit [this page]()
+To read or view a step by step explanation of this challenge, please visit [this page](/Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/DEVWF-T002-SBS.md)
 
 ### Next Step
 
