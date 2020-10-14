@@ -44,7 +44,7 @@ Now your repository contains 2 new "Docker Compose" files.
         environment:
             CONTENT_API_URL: http://api:3001
         ports:
-            - "3000:3000" 
+            - "3000:80" 
     ```
 
 9. Build and run the docker-compose file again 
@@ -91,7 +91,7 @@ Now your repository contains 2 new "Docker Compose" files.
 
     ```bash
     docker run -d --name api -p 3001:3001 --net fabrikam fabrikam-api
-    docker run -d --name web -p 3000:3000 --net fabrikam fabrikam-web
+    docker run -d --name web -p 3000:80 --net fabrikam fabrikam-web
     ```
 
 11. When you are done, commit and push your changes to your GitHub repository.

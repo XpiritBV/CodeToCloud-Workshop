@@ -12,7 +12,7 @@ In this challenge you are going to create a Helm chart for both the WEB and API 
 
 ## Validation
 
-* Web application deployed using Helm and running in the cluster on internal port 3000 and external port 80
+* Web application deployed using Helm and running in the cluster on internal port 80 and external port 80
 * API application deployed using Helm and running in the cluster on internal port 3001
 * API application uses the CosmosDB 
 * Helm charts committed to the Git Repository and merged to master in a `charts` folder

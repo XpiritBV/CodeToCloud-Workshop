@@ -1,14 +1,21 @@
 ---
-title: "Added Helm Files for Ingress Solution"
-branch: users/diana/helm-files-ingress
-commitmessage: "Added Helm files for ingress solution"
-committer: Diana Oluo
-committeremail: dianaoluo@FabrikamMedical.example.org
-linkedworkitem: module4
+title: "Added Kubernetes files to deploy applications (SCALEUP-T002 Solution)"
+branch: users/patrick/kubernetes-files
+commitmessage: "Added Kubernetes files to deploy applications"
+committer: Patrick O'Conell
+committeremail: patrickoconnell@FabrikamMedical.example.org
+linkedworkitem: module2
 ---
 
-Updated files to install the Kubernetes Ingress Solution and generate certificates.
+# Instructions to Fix the exercise
+Added all Kubernetes files to deploy INIT, WEB and API. 
 
-Please update the <dnsName> and <studentprefix> variables in all the files.
+You need to add 2 secrets to Kubernetes. One for the CosmosDB and one for the GitHub Container Registry. Make sure you add the /contentdb part to the mongoDB connectionstring. You can get the connectionstring from the Azure Portal
 
-The commands that should be executed can be found in the `install-cert-manager.ps1` file
+```powershell
+$mongodbConnectionString="mongodb://<mongoDBConnectionstring>:10255/contentdb?ssl=true&replicaSet=globaldb"
+$ghpat=Read-Host -Prompt "Github Personal Access Token"
+
+kubectl create secret docker-registry pullsecret --docker-server=https://ghcr.io/ --docker-username=notneeded --docker-password=$ghpat
+kubectl create secret generic cosmosdb --from-literal=db=$mongodbConnectionString
+```

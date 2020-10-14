@@ -5,7 +5,7 @@ metadata:
       app: web
   name: web
 spec:
-  replicas: 5
+  replicas: 1
   selector:
       matchLabels:
         app: web
@@ -21,7 +21,7 @@ spec:
         name: web
       spec:
         containers:
-        - image: ghcr.io/renevanosnabrugge/fabrikam-web:latest 
+        - image: ghcr.io/<yourgithubaccount>/fabrikam-web:latest 
           env:
             - name: CONTENT_API_URL
               value: http://api:3001
@@ -36,7 +36,7 @@ spec:
           imagePullPolicy: Always
           name: web
           ports:
-            - containerPort: 3000
+            - containerPort: 80
               protocol: TCP
           resources:
             requests:

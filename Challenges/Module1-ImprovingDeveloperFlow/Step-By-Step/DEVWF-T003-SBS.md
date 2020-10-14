@@ -67,7 +67,7 @@ Now that you have created 3 Docker images for your application, it is time to ru
 
     ```bash
     docker run -d --name api -p 3001:3001 --net fabrikam fabrikam-api
-    docker run -d --name web -p 3000:3000 --net fabrikam fabrikam-web
+    docker run -d --name web -p 3000:80 --net fabrikam fabrikam-web
     ```
 
 15. In your GitHub Codespace, navigate to the Remote Explorer and forward the ports `3000` and `3001` to make them available on the web. Click the Globe Icon to navigate to the Web Application (port 3000).
