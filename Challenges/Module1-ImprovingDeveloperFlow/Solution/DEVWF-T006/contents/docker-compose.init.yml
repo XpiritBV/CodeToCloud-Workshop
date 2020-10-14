@@ -3,7 +3,7 @@ version: "3.4"
 services:
   init:
     build: ./content-init
-    image: content-init
+    image: fabrikam-init
     depends_on:
       - mongo
     environment:
