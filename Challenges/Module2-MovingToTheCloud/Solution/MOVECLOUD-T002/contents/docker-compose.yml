@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   web:
-    image: <your github account>/fabrikam-web
+    image: <your github account>/fabrikam-web:latest
     depends_on: 
       - api
     environment:
@@ -10,6 +10,6 @@ services:
       - "3500:80"      
 
   api:
-    image: <your github account>/fabrikam-api
+    image: <your github account>/fabrikam-api:latest
     environment:
       MONGODB_CONNECTION: <your mongo connectionstring>
