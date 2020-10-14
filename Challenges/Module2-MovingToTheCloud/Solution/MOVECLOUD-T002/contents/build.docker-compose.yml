@@ -1,0 +1,7 @@
+version: "3.4"
+services:
+  web:
+    build: ./content-web
+
+  api:
+    build: ./content-api

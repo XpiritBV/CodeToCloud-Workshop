@@ -1,0 +1,23 @@
+version: "3.4"
+services:
+  mongo:
+    image: mongo
+    restart: always
+
+  api:
+    build: ./content-api
+    image: fabrikam-api
+    depends_on:
+      - mongo
+    environment:
+      MONGODB_CONNECTION: mongodb://mongo:27017/contentdb
+    ports:
+      - "3001:3001"
+
+  web:
+    build: ./content-web
+    image: fabrikam-web
+    environment:
+      CONTENT_API_URL: http://api:3001
+    ports:
+      - "80:3000"

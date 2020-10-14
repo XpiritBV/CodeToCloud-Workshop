@@ -14,9 +14,9 @@ When you approved the PR, you can run the Docker build and run commands again to
 To build this
 
 ```bash
-docker build -t content-web .
-docker build -t content-init .
-docker build -t content-api .
+docker build -t fabrikam-web .
+docker build -t fabrikam-init .
+docker build -t fabrikam-api .
 ```
 
 To run it

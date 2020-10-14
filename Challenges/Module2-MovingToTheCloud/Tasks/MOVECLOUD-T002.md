@@ -2,14 +2,6 @@
 
 The database is running and the team found out that you can run multi-container application in an Azure Web App as well. The DevOps team has successfully automated the deployment of these Azure Resources. Now it is time to start running the application in the cloud. The team already uses docker compose to build the containers, to test the application locally and to push them to the GitHub Container Registry. Now it is time to run the application in the cloud without redoing all the work!
 
-## ??Before you start this challenge
-
-This challenge needs some prerequisites. Run the following command in your Terminal windows of you GitHub Codespace to set this up.
-
-```powershell
-.workshop/workshop-step.ps1  Start "MOVECLOUD-T002"
-```
-
 ## Challenge
 
 In this challenge you will run the WEB and API application in an Azure Web App, using the multi-container Web App, while it connects with the CosmosDB. The INIT container, that was pushed to the registry as well, can be run from your codespace while connected to the CosmosDB to populate the CosmosDB. 

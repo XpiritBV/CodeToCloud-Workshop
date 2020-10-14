@@ -14,13 +14,13 @@ To build this
 
 ```bash
 cd content-web
-docker build -t content-web .
+docker build -t fabrikam-web .
 
 cd ../content-init
-docker build -t content-init .
+docker build -t fabrikam-init .
 
 cd ../content-api
-docker build -t content-api .
+docker build -t fabrikam-api .
 ```
 
 > Before you run the api make sure your MongoDB is running

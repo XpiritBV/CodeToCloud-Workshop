@@ -32,7 +32,6 @@
 1. To initialize the local database with test content, first navigate to the content-init directory and run npm install.
 
    ```bash
-   pushd ./content-init
    npm install
    ```
 
@@ -67,8 +66,7 @@
 1. Now navigate to the `content-api` directory and run npm install.
 
    ```bash
-   popd
-   pushd content-api
+   cd content-api
    npm install
    ```
 
@@ -93,15 +91,11 @@
 1. Navigate to the web application directory, run `npm install` and `ng build`.
 
    ```bash
-   popd
-   pushd content-api
    cd content-web
    npm install
    ng build
    ```
-
-   ![In this screenshot, after navigating to the web application directory, node ./server.js & has been typed and run at the command prompt, which runs the application as a background process as well.](/Assets/image48.png)
-
+   
 1. Now run the content-web application in the background.
 
     ```bash

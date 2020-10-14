@@ -30,10 +30,6 @@ In this challenge you will prepare a 15-minute chalk-talk style presentation to 
     * The Release Process.
   * What options does the customer have for a Docker image registry and container scanning, and what would you recommend?
 
-* Scalability considerations
-    * Explain how we run all customer websites under their own URL on the default ports (80/443) 
-    * Explain how we deal with websites that are getting high-traffic or have peak traffic
-
 * DevOps workflows
   * Describe how to set up continuous integration and deployment workflows 
   * Describe how to Infrastructure as Code can help Fabrikam to meet customer demand
@@ -47,13 +43,12 @@ When you are done with the design, review your design, considering the following
 
 ## Links & Information
 
-* [Azure Kubernetes Services (AKS)](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes/)
-* [Kubernetes](https://kubernetes.io/docs/home/)
-* [AKS FAQ](https://docs.microsoft.com/en-us/azure/aks/faq)
-* [Auto scaling AKS](https://github.com/kubernetes/autoscaler)
-* [AKS Cluster Auto scaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler)
-* [Upgrading an AKS cluster](https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster)
+* [What is a Container?](https://www.docker.com/resources/what-container)
+* [Web Apps in Containers](https://azure.microsoft.com/en-us/services/app-service/containers/)
+* [GitHub Actions](https://github.com/features/actions)
+* [GitHub Security Features](https://github.com/features/security)
+* [GitHub Flow](https://guides.github.com/introduction/flow/)
+* [GitHub Packages](https://github.com/features/packages)
+* [GitHub Container Registry](https://docs.github.com/en/free-pro-team@latest/packages/getting-started-with-github-container-registry/about-github-container-registry)
 * [Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/)
-* [Container Security](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-image-security/)
-* [Image Quarantine](https://github.com/Azure/acr/tree/master/docs/preview/quarantine/)
 * [Container Monitoring Solution](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/containers)
