@@ -38,7 +38,7 @@ In this challenge you will run the WEB and API application in an Azure Web App, 
 >      CONTENT_API_URL: http://api:3001
 >    ```
 >
-> * Make sure you add the environment variable `MONGODB_CONNECTION` to the api service  in the docker compose file
+> * Make sure you add the environment variable `MONGODB_CONNECTION` to the API service  in the docker compose file
 >
 >    ```
 >    environment:
