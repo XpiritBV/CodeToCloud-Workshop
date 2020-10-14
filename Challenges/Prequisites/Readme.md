@@ -11,8 +11,11 @@ The workshop is built with and targeted at development with GitHub Codespace. A 
 
 1. Navigate to your forked repository on GitHub
 1. Create a Code Space in your forked repo
+
 ![](CodeSpace.png)
+
 1. Your GitHub Codespace will be created
+
 ![](Codespace-creation.png)
 
 ## Set up workshop scripts
