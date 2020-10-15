@@ -49,6 +49,8 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 .workshop/workshop-step.ps1 Solution "MOVECLOUD-T002"
 ```
 
+To read or view a step by step explanation of this challenge, please visit [this page](/Challenges/Module2-MovingToTheCloud/Step-By-Step/MOVECLOUD-T002-SBS.md)
+
 ### Next Step
 
 When you are done, move to the [next challenge](/Challenges/Module3-ClosingtheFeedbackLoop/ClosingTheFeedbackLoop.md)

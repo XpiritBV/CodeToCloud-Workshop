@@ -4,11 +4,16 @@ In this task you are going to create cloud infrastructure, so that your applicat
 
 * An **Azure Resource Group** that will serve as the container that contains the resources
 * A CosmosDB with Mongo API that can serve as your database
-* An Azure Kubernetes Cluster (AKS) that can serve your application as containers
-* A Service Principal that allow you to connect to the Azure Resources
-* Some Add-Ons to Kubernetes to provide dashboard and monitoring capabilities
+* An Azure Web App and App Service Plan that can serve your application as containers
 
-We can create all these resources manually, but since we want to do this "the DevOps way", we are going to create all resources as Infrastructure as Code. In this Step by Step we chose to create all resources with the Azure CLI.
+We can create all these resources manually, but since we want to do this "the DevOps way", we are going to create all resources as Infrastructure as Code. In this Step by Step we chose to create all resources with the Azure CLI and store it in a file.
+
+Before you run any of the snippets in the terminal, make sure you login to your Azure account with 
+
+```bash 
+az login
+az account set --subscription <your subscription guid>
+```
 
 ## Prepare your Codespace
 
@@ -25,12 +30,13 @@ We can create all these resources manually, but since we want to do this "the De
 4. To make automation of all resources a bit easier, add these variables in the `deploy-infrastructure.ps1`file
 
    ```Powershell
-   $studentprefix = "Your 3 letter abbreviation here"
+   $studentprefix = "your 3 letter abbreviation here"
    $resourcegroupName = "fabmedical-rg-" + $studentprefix
    $cosmosDBName = "fabmedical-cdb-" + $studentprefix
-   $aksName = "fabmedical-aks-" + $studentprefix
-   $location1 = "westeurope" #change if needed
-   $location2 = "northeurope" #change if needed
+   $webappName = "fabmedical-web-" + $studentprefix
+   $planName = "fabmedical-plan-" + $studentprefix
+   $location1 = "westeurope"
+   $location2 = "northeurope"
    ```
 
 ## Create an Azure Resource Group
@@ -42,9 +48,6 @@ Create an Azure Resource Group to hold the resources that you create in this han
    ```PowerShell
    az group create -l $location1 -n $resourcegroupName
    ```
-
-   - **Location:** Choose a region where all CosmosDB and AKS SKUs are available. , which is currently: Canada Central, Canada East, North Central US, Central US, South Central US, East US, East US 2, West US, West US 2, West Central US, France Central, UK South, UK West, North Europe, West Europe, Australia East, Australia Southeast, Brazil South, Central India, South India, Japan East, Japan West, Korea Central, Southeast Asia, East Asia, and remember this for future steps so that the resources you create in Azure are all kept within the same region.
-
 2. Save the powershell file and run it from the terminal:
 
       ```powershell
@@ -54,36 +57,9 @@ Create an Azure Resource Group to hold the resources that you create in this han
 
 3. When this completes, the Azure Portal shows your Resource Group.
 
-   ![Resouce group created](/Assets/2020-10-09_16-36-24.png) 
+   ![Resource group created](/Assets/2020-10-09_16-36-24.png) 
 
    ![In this screenshot of the Azure Portal, the fabmedical- Resource group is listed.](/Assets/b4-image8.png)
-
-### Create a Service Principal
-
-Azure Kubernetes Service requires an Azure Active Directory service principal to interact with Azure APIs. The service principal is needed to dynamically manage resources such as user-defined routes and the Layer 4 Azure Load Balancer. 
-
-> **Note**: To complete this task, ensure your account is an [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) built-in role for the subscription you use and is a [Member](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions#member-and-guest-users) user in the Azure AD tenant you use. You may have trouble creating a service principal if you do not meet these requirements.
-
-1. To create a service principal, add the following command in the `deploy-infrastructure.ps1` file. The output of this command will be stored in a variable for later use.
-
-   ```Powershell
-   $resultSPN = az ad sp create-for-rbac --name http://GitHubWorkshop | ConvertFrom-Json
-   $resultSPN
-   ```
-
-2. Run the powershell again. The command produces output like this. Save this for later use.
-
-   ```powershell
-   ./deploy-infrastructure.ps1
-   ```
-
-   ```bash
-   appId     : 272c402c-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-   displayName : GitHubWorkshop
-   name    : http://GitHubWorkshop
-   password  : xxxxXXXX.xxxx0000XXXX0000xxxx00
-   tenant    : ed6acf0d-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-   ```
 
 ### Create a CosmosDB
 
@@ -93,13 +69,12 @@ Azure CosmosDB is a geo-replicated database service running in Azure. This can a
 
    ```powershell
    #Then create a CosmosDB
-   $resultCosmos = az cosmosdb create --name $cosmosDBName `
+   az cosmosdb create --name $cosmosDBName `
    --resource-group $resourcegroupName `
    --locations regionName=$location1 failoverPriority=0 isZoneRedundant=False `
    --locations regionName=$location2 failoverPriority=1 isZoneRedundant=True `
    --enable-multiple-write-locations `
-   --kind MongoDB `
-   | ConvertFrom-Json
+   --kind MongoDB 
    ```
 
    > This creates a CosmosDB with 2 failover location with a MongoDB API. 
