@@ -48,7 +48,7 @@ Create an Azure Resource Group to hold the resources that you create in this han
    ```PowerShell
    az group create -l $location1 -n $resourcegroupName
    ```
-2. Save the powershell file and run it from the terminal:
+2. Save the PowerShell file and run it from the terminal:
 
       ```powershell
       pushd infrastructure
@@ -79,135 +79,58 @@ Azure CosmosDB is a geo-replicated database service running in Azure. This can a
 
    > This creates a CosmosDB with 2 failover location with a MongoDB API. 
 
-2. The command produces output like this. 
+2. Save the PowerShell file and run it from the terminal:
 
-   ```bash
-   apiProperties            : @{serverVersion=3.2}
-   capabilities             : {}
-   connectorOffer           : 
-   consistencyPolicy          : @{defaultConsistencyLevel=Session; maxIntervalInSeconds=5; maxStalenessPrefix=100}
-   cors                 : {}
-   databaseAccountOfferType       : Standard
-   disableKeyBasedMetadataWriteAccess : False
-   documentEndpoint           : https://fabmedical-cdb-sbs.documents.azure.com:443/
-   ...
-   ```
+      ```powershell
+      pushd infrastructure
+      ./deploy-infrastructure.ps1
+      ```
 
-### Create a Azure Kubernetes Service cluster
+### Create an Azure Web App and App Service Plan
 
-In this section, you create and configure an Azure Kubernetes Services (AKS) cluster with the Azure CLI command line tool.
+In this section, you create and configure an App Service Plan and an Azure Web App that hosts a NGINX container with the Azure CLI command line tool.
 
-1. In your `deploy-infrastructure.ps1` file add the following command
+1. In your `deploy-infrastructure.ps1` file add the following command to create an App Service Plan. The App service plan is basically the pricing tier. Based on the size and features of the chosen plan you pay a certain price. To run containers in an Azure WebApp the plan needs to be a Linux based plan
 
    ```powershell
-   #Then create a CosmosDB
-   az aks create --resource-group $resourcegroupName `
-   --name $aksName `
-   --dns-name-prefix $aksName `
-   --client-secret $($resultSPN.password) `
-   --service-principal $($resultSPN.appId) `
-   --generate-ssh-keys --location $location1 --node-count 3 `
-   --kubernetes-version 1.18.8 --max-pods 100
+   #Create a Azure App Service Plan
+   az appservice plan create --name $planName --resource-group $resourcegroupName --sku S1 --is-linux
    ```
 
-   > This creates an AKS cluster in your resourcegroup containing 3 worker nodes. It uses the appID and secret of the SPN that was created earlier in the step by step. The version of the cluster is 1.18.8. To update to a later version run the command `az aks get-versions` to see the available versions in your region.
+2. In your `deploy-infrastructure.ps1` file add the following command to create an Web App. The Web App can be an application running as files a container, or a multi-container application. To create the Web App initially, create it with a single, NGINX container.
 
-2. Because `az ad sp create-for-rbac` resets the credentials each time it's run, we need to update the credentials on the cluster in case you re-run the script. Add the command to reset the credentials **above** the `az aks create` command you've just added.
-
-   ```powershell
-   # Reset credentials to make sure the credentials match the ones that were reset above.
-   az aks update-credentials `
-   --resource-group $resourcegroupName `
-   --name $aksName `
-   --reset-service-principal `
-   --service-principal $($resultSPN.appId) `
-   --client-secret $($resultSPN.password)
+   ```
+   #Create a Azure Web App with NGINX container
+   az webapp create --resource-group $resourcegroupName --plan $planName --name $webappName -i nginx
    ```
 
-## Configure the cluster
+3. Save the PowerShell file and run it from the terminal:
 
-In this task, you will gather the information you need about your Azure Kubernetes Service cluster to connect to the cluster and execute commands to connect to the Kubernetes management dashboard.
-
-1. First you need to install 2 add-ons to the cluster to enable monitoring and dashboards. Add the following commands to the `deploy-infrastructure.ps1` file to install the add-ons.
-
-   ```powershell
-   az aks enable-addons -a monitoring -n $aksName -g $resourcegroupName
-   az aks enable-addons -a kube-dashboard -n $aksName -g $resourcegroupName
-   ```
-
-   > *Note: The kube-dashboard is deprecated and is partially replaced by the Azure Portal. You can also use the Kubernetes extension in your Codespace to connect to the cluster or use a third-party tool like "Lens". For clarity and backward compatibility we will use the kube-dashboard add-on in this step by step.
-
-2. To be able to connect to the cluster, credentials to connect, should be added to your local `.kube.config`. When you use the GitHub Codespace, this is the `.kube.config` within the Codespace. To store the credentials in your `.kube.config` add the following command to the `deploy-infrastructure.ps1` file
-
-   ```powershell
-   az aks get-credentials --name $aksName --resource-group $resourcegroupName
-   ```
-
-3. After installing the plugins, permissions need to be set to the dashboard. Add the following command to the `deploy-infrastructure.ps1` file
-
-   ```powershell
-   kubectl delete clusterrolebinding kubernetes-dashboard 
-   kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard --user=clusterUser
-   ```
+      ```powershell
+      pushd infrastructure
+      ./deploy-infrastructure.ps1
+      ```
 
 ## Create the infrastructure from script
+
+You have already run the separate steps from the steps a number of times. The fact you can do this over and over again, is called idempotency. If you have not run all the lines in the `deploy-infrastructure.ps1` file, run it now.
 
 1. In your terminal window of the Codespace, open a PowerShell terminal by typing `pwsh` and run the `az login` command to login to your azure subscription
 
    ```powershell
    az login
+   az account set --subscription <your subscription guid>
    ```
 
 2. After logging in, run the `deploy-infrastructure.ps1` file.
 
    ```powershell
-   ./infrastructure/deploy-infrastructure.ps1
+      pushd infrastructure
+      ./deploy-infrastructure.ps1
    ```
 
-## Connect to the cluster
+## Browse to the Azure Portal
 
-To be able to see containers and perform administrative tasks, you need to connect to the cluster. 
+1. Open the Azure Portal, and validate if the CosmosDB, the App Service Plan and Azure Web App have been created. 
 
-### Using the Kubernetes dashboard
-
-1. To login to the dashboard, you need a bearer authentication token. This is stored in the `.kube.config` file. To retrieve the token, open your terminal in your Codespace and type
-
-   ```bash
-   cat ~/.kube/config
-   ```
-
-2. You will see output like this. Copy the value of the AKS token for later use.
-   ![In this screenshot you see the output of the .kube.config file and show the value of the token](/Assets/AKSToken.png)
-
-3. Open the dashboard by running the following command in your terminal
-
-   ```powershell
-   az aks browse --name $aksName --resource-group $resourcegroupName
-   ```
-
-4. In the remote explorer, find the forwarded port 8001 and click the globe icon to open the dashboard.
-   ![](/Assets/forwardedKubePort.png)
-
-5. When browsing to the Kubernetes Dashboard from your Codespace, the browser shows plain json output. Paste `/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login` after the URL that CodeSpaces generates for you. The URL looks like this 
-
-   ```
-   https://<guid>-8001.apps.codespaces.githubusercontent.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login
-   ```
-
-6. In the login window, paste the AKS token you retrieved from the `.kube.config` file
-   ![](/Assets/loginaks.png)
-
-### Using Codespaces
-
-1. You can also log in to AKS from your Codespace. Open the Kubernetes Add-On in your Codespace
-   ![](/Assets/codespaceaks.png)
-
-2. When your cluster does not appear, run the following command to add the cluster to your `.kube.config`
-
-   ```powershell
-   az aks get-credentials --name $aksName --resource-group $resourcegroupName
-   ```
-
-3. When you are done, commit and push your changes to your GitHub repository.
-
-    ![](/Assets/2020-10-05-12-10-11.png)
+![Resources created in Azure](/Assets/2020-10-15-10-32-42.png)
