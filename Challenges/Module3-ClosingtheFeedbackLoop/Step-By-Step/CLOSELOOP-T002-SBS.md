@@ -4,6 +4,10 @@ In this task your are going to create a continuous deployment pipeline that trig
 
 Adcanced validation and approvals (a more enterprisey feature) is currently found in Azure Pipelines and hasn'g ade its way into GitHub yet. Luckily most of the build logic is caputured on our Docker-Compose files, so migrating the pipeline isn't very complex.
 
+# Disable your actions
+
+ * Turn off your actions by deleting your docker yml files and committing those changes.
+
 # Connect GitHub to Azure DevOps
 
  * Create service connection of type Docker Container Registy
