@@ -1,23 +1,15 @@
 version: "3.4"
 services:
-  mongo:
-    image: mongo
-    restart: always
-
-  web:
-    image: content-web
-    depends_on:
-      - api
-    environment:
-      CONTENT_API_URL: http://api:3001
-    ports:
-      - "3000:80"
-
   api:
-    image: content-api
-    depends_on:
-      - mongo
-    environment:
-      MONGODB_CONNECTION: mongodb://mongo:27017/contentdb
+    image: ghcr.io/<yourgithubaccount>/fabrikam-api:latest
     ports:
       - "3001:3001"
+
+  web:
+    image: ghcr.io/<yourgithubaccount>/fabrikam-web:latest
+    depends_on:
+        - api
+    environment:
+        CONTENT_API_URL: http://api:3001
+    ports:
+        - "3000:80"       

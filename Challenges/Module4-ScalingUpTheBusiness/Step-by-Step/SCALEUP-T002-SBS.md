@@ -4,7 +4,7 @@ In this task you will run the WEB and API application on the cluster, while it c
 
 >This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
 >
-> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prequisites/RunThroughSetup.md) first!
+> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prerequisites/Readme.md) first!
 
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 2 YAML files will be created
 
