@@ -8,7 +8,7 @@ We can create all these resources manually, but since we want to do this "the De
 
 To enable Application Insights we need an Application Insights Resource in our resource group
 
-1. In your Codespace, create a new file `setup-appinsights.ps1` in your infrastructure folder.
+1. In your Codespace, open the file `deploy-infrastructure.ps1` in your infrastructure folder.
 
 2. Add this code snippet to the file
 
@@ -17,7 +17,7 @@ To enable Application Insights we need an Application Insights Resource in our r
       $resourcegroupName = "fabmedical-rg-" + $studentsuffix
       $location1 = "westeurope"
       $appInsights = "fabmedicalai-" + $studentsuffix
-
+      ```
 
       az extension add --name application-insights
       $ai = az monitor app-insights component create --app $appInsights --location $location1 --kind web -g $resourcegroupName --application-type web --retention-time 120 | ConvertFrom-Json

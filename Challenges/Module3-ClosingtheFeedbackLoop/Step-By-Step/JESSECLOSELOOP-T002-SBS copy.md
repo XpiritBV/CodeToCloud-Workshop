@@ -4,68 +4,6 @@ In this task your are going to create a continuous deployment pipeline that trig
 
 Adcanced validation and approvals (a more enterprisey feature) is currently found in Azure Pipelines and hasn'g ade its way into GitHub yet. Luckily most of the build logic is caputured on our Docker-Compose files, so migrating the pipeline isn't very complex.
 
-## Make a Github action that builds and pushes with docker compose
-
-1. Add a build.docker-compose file
-2. Add a Github Action workflow that includes 2 steps
-..
-```
-name: Docker Compose Build and Deploy
-
-on:
-  push:
-    # Publish `main` as Docker `latest` image.
-    branches:
-      - main
-
-    # Publish `v1.2.3` tags as releases.
-    tags:
-      - v*
-
-  # Run tests for any PRs.
-  pull_request:
-
-jobs:
-  push:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Log into GitHub Container Registry
-        run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
-
-      - name: Build and Push image
-        run: |
-          docker-compose -f docker-compose.yml -f build.docker-compose.yml build
-          docker-compose -f docker-compose.yml -f build.docker-compose.yml push
-```
-
-3. add a deployment stage
-4. use the GH Action https://github.com/marketplace/actions/azure-login
-5. create a sp for rbac
-```
-az ad sp create-for-rbac --name "CodeToCloudWorkshop-$($studentprefix)" --sdk-auth --role contributor --scopes $($rg.id)
-```
-6. create a secrey calle d  AZURE_CREDENTIALS
-
-```
-{
-  "clientId": "499aa4bf-c264-4bed-9cc8-d608c47a8c88",
-  "clientSecret": "5_3kbmIU_lhzlkRwpRk03zwJsW-5dAiqbd",
-  "subscriptionId": "fe243e23-d788-4bf4-a76d-480b957964ac",
-  "tenantId": "ed6acf0d-9ed3-4a2a-a1b1-97384cdaa08b",
-  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
-  "resourceManagerEndpointUrl": "https://management.azure.com/",
-  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
-  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
-  "galleryEndpointUrl": "https://gallery.azure.com/",
-  "managementEndpointUrl": "https://management.core.windows.net/"
-}
-```
-
-
-
 # Connect GitHub to Azure DevOps
 
  * Create service connection of type Docker Container Registy

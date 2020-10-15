@@ -29,7 +29,7 @@ If you rather want to run this as code, you can use the command
 az webapp config appsettings set -n $webappName -g $resourcegroupName --settings MONGODB_CONNECTION="mongodb://xxx.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb"
 ```
 
-5. In the Azure Portal, navigate to the Web Application and open the Container Blade. In the Container blade, elect the Docker Compose Tab. Select Private Registry under Image Source. 
+5. In the Azure Portal, navigate to the Web Application and open the Container Blade. In the Container blade, select the Docker Compose Tab. Select Private Registry under Image Source. 
 
 Fill in the following data:
 * Server URL: https://ghcr.io

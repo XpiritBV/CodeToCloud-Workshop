@@ -13,6 +13,8 @@ In this challenge you will run the WEB and API application in an Azure Web App, 
 
 3. To populate the CosmosDB run the fabrikam-init container with `MONGODB_CONNECTION` environment variable set to the CosmosDB
 
+4. To be able to access the CosmosDB, set an Application Setting `MONGODB_CONNECTION` variable in the Web App Configuration with the connectionstring to the CosmosDB
+
 ## Validation
 
 * Docker compose file deployed to Azure Web App

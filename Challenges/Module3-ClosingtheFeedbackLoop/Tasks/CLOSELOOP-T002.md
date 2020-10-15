@@ -1,10 +1,15 @@
 # Setup Continuous Deployment with GitHub Actions
 
-Currently all deployments are done manually using the Kubernetes command line tool. Although this works very nicely, there are only a few people in the team that are comfortable with doing a new release of the application. Furthermore, there are some steps that need to followed before doing a release that are sometimes forgotten. You and your team advice that is time to set up a Continuous Deployment(CD) pipeline that takes care of the deployment of a new version after the new containers have been built and pushed to the container registry. This CD pipeline should ensure that the latest version of the containers are pushed to the cluster.
+After setting up monitoring, nothing happened. After some investigation it showed that the new container was not used by the Azure Web App, because all deployments are done manually. There are only a few people in the team that are comfortable with doing a new release of the application. You and your team advice that is time to level up the Continuous Integration pipeline to a Continuous Deployment(CD) pipeline. This should take care of the deployment of the infrastructure and of a new version of the containers, when they have been built and pushed to the container registry. The team also finds that instead of creating 3 different pipelines for all containers, the docker-compose files can also be used to build and push the containers all at once.
 
 ## Challenge 
 
-In this challenge your are going to create a continuous deployment pipeline that triggers after the Continuous Integration build has been completed. The latest version (use the version number) of the containers should be pushed to the cluster using the helm chart
+In this challenge your are going to create a continuous deployment pipeline that triggers after the Continuous Integration build has been completed. The CD Pipeline performs the following steps
+* Build a new version of the containers using docker-compose
+* Push the latest version of the containers using docker-compose
+* Tag the containers with a version number 
+* Execute the deploy-infrastructure.ps1 and setup
+
 
 # Challenge
 

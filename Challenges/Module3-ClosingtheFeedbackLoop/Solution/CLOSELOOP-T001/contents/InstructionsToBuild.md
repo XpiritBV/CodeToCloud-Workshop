@@ -38,3 +38,5 @@ node ./app.js
 ```
 
 In app.js change the App Insights Instrumentation Key.
+
+
