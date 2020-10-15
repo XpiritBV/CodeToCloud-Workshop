@@ -41,7 +41,7 @@ In this challenge you are going to shorten the feedback loop and ensure that sta
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
 ```powershell
-.workshop/workshop-step.ps1 Solution "DEVWF-T007"
+workshop-step Solution "DEVWF-T007"
 ```
 
 To read or view a step by step explanation of this challenge, please visit [this page](/Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/DEVWF-T007-SBS.md)

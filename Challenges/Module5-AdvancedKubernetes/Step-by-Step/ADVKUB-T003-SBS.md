@@ -294,6 +294,6 @@ In this task you are going to create a Helm chart for both the WEB and API Micro
 > When you do not want to type all commands try the solution Pull Request by running
 
 ```
-.workshop/workshop-step.ps1  Solution "ADVKUB-T003"
+workshop-step  Solution "ADVKUB-T003"
 ```
 

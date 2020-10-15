@@ -8,7 +8,7 @@ You and your team of consultants see that Docker containers are truly embraced. 
 
 This challenge needs some prerequisites. Run the following command in your Terminal windows of you GitHub Codespace to set this up.
 ```
-.workshop/workshop-step.ps1  Start "DEVWF-T006"
+workshop-step  Start "DEVWF-T006"
 ```
 
 ## Challenge 
@@ -37,7 +37,7 @@ The Pull Request called `Docker compose file for running API and MongoDB (DEVWF-
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
 ```powershell
-.workshop/workshop-step.ps1 Solution "DEVWF-T006"
+workshop-step Solution "DEVWF-T006"
 ```
 
 To read or view a step by step explanation of this challenge, please visit [this page](/Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/DEVWF-T006-SBS.md)

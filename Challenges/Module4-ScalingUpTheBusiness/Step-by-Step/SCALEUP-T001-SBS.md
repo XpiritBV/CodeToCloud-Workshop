@@ -241,5 +241,5 @@ To be able to see containers and perform administrative tasks, you need to conne
 > When you do not want to type all commands try the solution Pull Request by running
 
 ```
-.workshop/workshop-step.ps1  Solution "SCALEUP-T001"
+workshop-step  Solution "SCALEUP-T001"
 ```

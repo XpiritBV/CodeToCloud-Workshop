@@ -9,7 +9,7 @@ In this task you are going to create a new Docker Compose file that contains the
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 2 Docker compose files will be created
 
     ```bash
-    .workshop/workshop-step.ps1  Start "DEVWF-T006"
+    workshop-step  Start "DEVWF-T006"
     ```
 
 2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with DEVWF-T006 in the title
