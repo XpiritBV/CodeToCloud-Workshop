@@ -8,7 +8,7 @@ linkedworkitem: module2
 ---
 
 # Instructions to Fix the exercise
-Added a new docker-compose file (docker-compose-prod) to configure the multi-container web application. To deply this file, update the name of the container registry and change the CosmosDB connectionstring
+Added a new docker-compose file (docker-compose) to configure the multi-container web application. To deploy this file, update the name of the container registry and change the CosmosDB connectionstring
 
 ```powershell
 $studentprefix = "your abbreviation here"
