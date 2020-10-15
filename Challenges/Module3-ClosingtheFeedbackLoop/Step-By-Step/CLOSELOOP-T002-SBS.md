@@ -173,6 +173,10 @@ az ad sp create-for-rbac --name "CodeToCloudWorkshop-$($studentprefix)" --sdk-au
 
 
 
+# Disable your actions
+
+ * Turn off your actions by deleting your docker yml files and committing those changes.
+
 # Connect GitHub to Azure DevOps
 
  * Create service connection of type Docker Container Registy
