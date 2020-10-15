@@ -54,3 +54,88 @@ Adcanced validation and approvals (a more enterprisey feature) is currently foun
    * Container Registries. Ensure all our images are pulled from `ghcr.io`.
 
 Pull all changes into your local repo before continuing to the next task.
+
+```
+trigger:
+- main
+
+pr:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:   
+  WebApp.Name: 'xxxx'
+  WebApp.ResourceGroupName: 'xxxx'
+  WebApp.Plan: 'xxxx'
+
+# Shows up as $(Build.BuildNumber)
+name: '1.0$(rev:.r)'
+
+stages:
+  - stage: build
+    jobs:
+    - job: 'BuildAndpublish'
+      displayName: 'Build and Publish'
+      steps:
+      - checkout: self
+      - task: DockerCompose@0
+        inputs:
+          containerregistrytype: 'Container Registry'
+          dockerRegistryEndpoint: 'My GitHub Container Registry'
+          dockerComposeFile: '**/docker-compose.yml'
+          additionalDockerComposeFiles: '**/build.docker-compose.yml'
+          action: 'Build services'
+          additionalImageTags: '$(Build.BuildNumber)'
+      - task: DockerCompose@0
+        inputs:
+          containerregistrytype: 'Container Registry'
+          dockerRegistryEndpoint: 'My GitHub Container Registry'
+          dockerComposeFile: '**/docker-compose.yml'
+          additionalDockerComposeFiles: '**/build.docker-compose.yml'
+          action: 'Push services'
+          additionalImageTags: '$(Build.BuildNumber)'
+
+  - stage: DeployProd
+    dependsOn: build
+    condition: ne(variables['Build.Reason'], 'PullRequest')
+    jobs:
+    - deployment: infrastructure
+      environment: production
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - checkout: self
+              - task: AzureCLI@2
+                inputs:
+                  azureSubscription: 'Visual Studio Enterprise(2e7b8ca3-042d-49d7-9702-276dcb8cd5ea)'
+                  scriptType: 'pscore'
+                  scriptLocation: 'scriptPath'
+                  scriptPath: './infrastructure/deploy-infrastucture.ps1'
+
+    - deployment: webapp
+      environment: production
+      strategy: 
+        runOnce:
+          deploy:
+            steps:
+              - checkout: self
+              - powershell: (gc .\docker-compose.yml) -replace ':latest',':$(Build.BuildNumber)' | set-content .\docker-compose.yml
+              - task: AzureCLI@2
+                inputs:
+                  azureSubscription: 'Visual Studio Enterprise(2e7b8ca3-042d-49d7-9702-276dcb8cd5ea)'
+                  scriptType: 'pscore'
+                  scriptLocation: 'inlineScript'
+                  inlineScript: |
+                    az webapp create `
+                      --docker-registry-server-password $(GITHUB_PAT)`
+                      --docker-registry-server-url https://ghcr.io `
+                      --docker-registry-server-user notapplicable `
+                      --multicontainer-config-file docker-compose.yml `
+                      --multicontainer-config-type COMPOSE `
+                      --name $(WebApp.Name) `
+                      --resource-group $(WebApp.ResourceGroupName) `
+                      --plan $(WebApp.Plan)
+```
