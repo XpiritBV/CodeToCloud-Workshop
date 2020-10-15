@@ -1,32 +1,22 @@
 # Step by Step MOVECLOUD-T002
 
-In this task you will run the WEB and API application on the cluster, while it connects with the CosmosDB. The INIT container, that was pushed to the registry as well, can be used to populate the CosmosDB. You will use the kubectl commands and YAML files to deploy them.
+In this task you will run the WEB and API application as a multi-container application within an Azure Web App while it connects with the CosmosDB. The INIT container, that was pushed to the registry as well, can be used to populate the CosmosDB. 
 
->This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
->
-> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prequisites/RunThroughSetup.md) first!
+1. To be able to access the CosmosDB, you need to add the connectionstring as environment variable to the Azure Web App. Retrieve the connectionstring to the CosmosDB in the portal or use the following command and use the Primary MongoDB ConnectionString.
 
-1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 2 YAML files will be created
-
-    ```powershell
-    .workshop/workshop-step.ps1  Start "MOVECLOUD-T002"
+    ```
+    az cosmosdb keys list -n $cosmosDBName -g $resourceGroupName --type connection-strings
     ```
 
-2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with DEVWF-T004 in the title
+2. Add the contentdb database as part of the connectionstring and add it as as a Kubernetes secret. `....documents.azure.com:10255/contentdb?ssl=true`
 
-    ![Shows the menu item for navigating to the Pull Request](/Assets/pullrequestmovecloudt002.png)
+ ```
+ $mongodbConnectionString="connectionString=mongodb://xxx.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb"
+ kubectl create secret generic cosmosdb --from-literal=db=$mongodbConnectionString
+ ```
 
-3. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
 
-4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
 
-    ![Shows the button for merging a Pull Request in GitHub](/Assets/mergePullRequest.png)
-
-Now your repository contains 3 new "multi-staged" docker file.
-
-5. In your GitHub Codespace, update your files to the latest version by pulling them.
-
-    ![Pull latest changes into Visual Studio Code](/Assets/2020-10-05-12-10-11.png)
 
 6. To be able to pull a container from the GitHub Container Registry in to the AKS cluster, you need to configure a pull secret in AKS. You can do this by running the kubectl create secret command. Retrieve the GitHub Personal Access Token, that you also used in [DEVWF-T007]/Challenges/Module1-ImprovingDeveloperFlow/Tasks/DEVWF-T007.md). In your PowerShell terminal create a variable called $ghToken and use this token as value
 

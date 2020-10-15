@@ -4,7 +4,7 @@ In this task, you will merge the Pull Request containing 3 multi-staged Docker f
 
 >This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
 >
-> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prequisites/RunThroughSetup.md) first!
+> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prerequisites/Readme.md) first!
 
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 3 Docker files will be created
 

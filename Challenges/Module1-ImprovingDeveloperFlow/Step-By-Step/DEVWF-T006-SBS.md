@@ -4,7 +4,7 @@ In this task you are going to create a new Docker Compose file that contains the
 
 >This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
 >
-> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites]/Challenges/Prerequisites/RunThroughSetup.md) first!
+> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prerequisites/Readme.md) first!
 
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 2 Docker compose files will be created
 
@@ -20,37 +20,38 @@ In this task you are going to create a new Docker Compose file that contains the
 
     ![Shows the button for merging a Pull Request in GitHub](/Assets/mergePullRequest.png)
 
-Now your repository contains 2 new "Docker Compose" files.
+Now your repository contains 3 new "Docker Compose" files.
 
 6. In your GitHub Codespace, update your files to the latest version by pulling them.
 
     ![](/Assets/2020-10-05-12-10-11.png)
 
-7. Open your PowerShell terminal window. From the root folder, start the application.
+7. Change the <yourgithubaccount> in the docker-compose files to your GitHub Account. Open your PowerShell terminal window. From the root folder, start the application.
 
     ```bash
     docker-compose -f docker-compose.yml -f local.docker-compose.yml -f docker-compose.init.yml build
     docker-compose -f docker-compose.yml -f local.docker-compose.yml -f docker-compose.init.yml up
     ```
 
-8. To include the web application to the docker-compose file, add the following YAML snippet to the docker-compose.yml
+8. To include the web application to the docker-compose file, add the following YAML snippet to the `docker-compose.yml`
 
     ```YAML
-      web:
-        image: fabrikam-web
+    web:
+        image: ghcr.io/renevanosnabrugge/fabrikam-web:latest
         depends_on:
             - api
         environment:
             CONTENT_API_URL: http://api:3001
         ports:
-            - "3000:80" 
+            - "3000:80"       
     ```
 
-   and the following YAML snippet to the local.docker-compose.yml
+   and the following YAML snippet to the `local.docker-compose.yml`. That overrides the name of the image
 
     ```YAML
     web:
         build: ./content-web
+        image: local-fabrikam-web
     ```
 
 9. Build and run the docker-compose file again 

@@ -3,7 +3,7 @@ version: "3.4"
 services:
   init:
     build: ./content-init
-    image: content-init
+    image: ghcr.io/<yourgithubaccount>/fabrikam-init:latest
     depends_on:
       - mongo
     environment:

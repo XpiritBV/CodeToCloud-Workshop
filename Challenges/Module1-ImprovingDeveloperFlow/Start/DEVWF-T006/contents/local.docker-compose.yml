@@ -6,3 +6,8 @@ services:
 
   api:
     build: ./content-api
+    image: local-fabrikam-api
+    depends_on:
+      - mongo
+    environment:
+      MONGODB_CONNECTION: mongodb://mongo:27017/contentdb    
