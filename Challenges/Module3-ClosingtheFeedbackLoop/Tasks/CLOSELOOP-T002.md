@@ -17,22 +17,28 @@ In this challenge your are going to create a continuous deployment pipeline that
 * Push the latest version of the containers using docker-compose
 * Execute the deploy-infrastructure.ps1 and setup
 
+## Validation
 
-# Challenge
+* Added a build.docker-compose.yml that can build the containers with docker-compose
+* GitHub Action added that uses docker-compose to build and publish the containers to the Container Registry
+* GitHub secret `AZURE_CREDENTIALS` added that contains the credentials of a Servide Principal to deploy application and infrastructure to Azure
+* Application deployed to Azure with `deploy-infrastructure.ps1` script
 
-* Create release pipeline in Azure DevOps that deploys the container from the GitHub repo
+## Links & Information
 
-https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/github-actions?view=azure-devops
-
-https://medium.com/@mattiaperi/create-a-public-helm-chart-repository-with-github-pages-49b180dbb417
-
-```
-helm repo add rvo https://renevanosnabrugge.github.io/CodeToCloud-Source/ --> GH pages url
-```
+* [Login with AzureCLI in GitHub Actions](https://github.com/marketplace/actions/azure-login)
+* [Docker Compose command line]()
 
 ## Solution
+
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
-```
+```powershell
 Workshop-Step Solution "CLOSELOOP-T002"
 ```
+
+To read or view a step by step explanation of this challenge, please visit [this page](/Challenges/Module3-ClosingTheFeedbackLoop/Step-By-Step/CLOSELOOP-T002-SBS.md)
+
+### Next Step
+
+When you are done, move to the [next challenge](CLOSELOOP-T003)

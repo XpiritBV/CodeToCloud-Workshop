@@ -40,8 +40,8 @@ If you are stuck or you want to progress to the next challenge, there is a solut
 Workshop-Step Solution "CLOSELOOP-T001"
 ```
 
+To read or view a step by step explanation of this challenge, please visit [this page](/Challenges/Module3-ClosingTheFeedbackLoop/Step-By-Step/CLOSELOOP-T001-SBS.md)
 
+### Next Step
 
-* Set up Container Monitoring
-* Look at dashboards
-* Application Insights in Node??? --> https://github.com/microsoft/MCW-Cloud-native-applications/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Cloud-native%20applications%20-%20Developer%20edition.md#task-4-perform-a-rolling-update
+When you are done, move to the [next challenge](CLOSELOOP-T002)

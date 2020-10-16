@@ -1,0 +1,49 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: build
+    jobs:
+    - job: 'BuildAndpublish'
+      displayName: 'Build and Publish'
+      steps:
+            - checkout: self
+            - task: DockerCompose@0
+              inputs:
+                containerregistrytype: 'Container Registry'
+                dockerRegistryEndpoint: 'GitHub Container Registry'
+                dockerComposeFile: '**/docker-compose.yml'
+                additionalDockerComposeFiles: 'build.docker-compose.yml'
+                action: 'Build services'
+                additionalImageTags: '$(Build.BuildNumber)'
+            - task: DockerCompose@0
+              inputs:
+                containerregistrytype: 'Container Registry'
+                dockerRegistryEndpoint: 'GitHub Container Registry'
+                dockerComposeFile: '**/docker-compose.yml'
+                additionalDockerComposeFiles: 'build.docker-compose.yml'
+                action: 'Push services'
+                additionalImageTags: '$(Build.BuildNumber)'
+  - stage: DeployProd
+    jobs:
+    - deployment: infrastructure
+      environment: production
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - checkout: self
+              - powershell: (gc .\docker-compose.yml) -replace ':latest',':$(Build.BuildNumber)' | set-content .\docker-compose.yml
+              - task: AzureCLI@2
+                inputs:
+                  azureSubscription: 'Fabrikam-Azure'
+                  scriptType: 'pscore'
+                  scriptLocation: 'scriptPath'
+                  scriptPath: './infrastructure/deploy-infrastructure.ps1'
+                  arguments: 'tst'
+                env:
+                  CR_PAT: $(CR_PAT)
+                  
