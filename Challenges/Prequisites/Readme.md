@@ -49,7 +49,7 @@ To set this up, you need to perform these steps
 ## Run Start and Solution Scripts
 When you go through the challenges or step by steps, you will see something like this
 
->This challenge needs some prerequisites. Run the following command in your Terminal windows of you GitHub >Codespace to set this up.
+>This challenge needs some prerequisites. Run the following command in your Terminal windows of your GitHub >Codespace to set this up.
 ```
 .workshop/workshop-step.ps1  Start "DEVWF-T00X"
 ```

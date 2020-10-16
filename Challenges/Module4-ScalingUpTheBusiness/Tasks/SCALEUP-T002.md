@@ -4,7 +4,7 @@ The cluster and database are running and the DevOps team has successfully automa
 
 ## Before you start this challenge
 
-This challenge needs some prerequisites. Run the following command in your Terminal windows of you GitHub Codespace to set this up.
+This challenge needs some prerequisites. Run the following command in your Terminal windows of your GitHub Codespace to set this up.
 
 ```powershell
 .workshop/workshop-step.ps1  Start "SCALEUP-T002"

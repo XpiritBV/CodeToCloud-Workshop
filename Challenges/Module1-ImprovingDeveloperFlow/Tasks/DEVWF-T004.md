@@ -8,7 +8,7 @@ To help them out your team creates a Pull Request that contains the multi staged
 
 ## Before you start this challenge
 
-This challenge needs some prerequisites. Run the following command in your Terminal windows of you GitHub Codespace to set this up.
+This challenge needs some prerequisites. Run the following command in your Terminal windows of your GitHub Codespace to set this up.
 
 ```bash
 .workshop/workshop-step.ps1  Start "DEVWF-T004"
