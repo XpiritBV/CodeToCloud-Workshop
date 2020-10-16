@@ -20,7 +20,7 @@ Also modified the GitHub Action so that it deploys the latest version of the con
 ```PowerShell
 $studentprefix ="your abbreviation here"
 $resourcegroupName = "fabmedical-rg-" + $studentprefix 
-$rg = az group show --name $resourcegroupName | COnvertFrom-Json
+$rg = az group show --name $resourcegroupName | ConvertFrom-Json
 az ad sp create-for-rbac --name "codetocloud-$studentprefix" --sdk-auth --role contributor --scopes $($rg.id)
 ```
 
