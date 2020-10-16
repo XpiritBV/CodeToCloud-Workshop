@@ -7,7 +7,7 @@ After setting up monitoring, nothing happened. After some investigation it showe
 This challenge needs some prerequisites. Run the following command in your Terminal windows of your GitHub Codespace to set this up.
 
 ```bash
-.workshop/workshop-step.ps1  Start "CLOSELOOP-T002"
+Workshop-Step Start "CLOSELOOP-T002"
 ```
 
 ## Challenge 
@@ -34,5 +34,5 @@ helm repo add rvo https://renevanosnabrugge.github.io/CodeToCloud-Source/ --> GH
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
 ```
-.workshop/workshop-step.ps1 Solution "CLOSELOOP-T002"
+Workshop-Step Solution "CLOSELOOP-T002"
 ```

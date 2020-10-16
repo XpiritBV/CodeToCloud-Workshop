@@ -9,7 +9,7 @@ In this task, you will merge the Pull Request containing 3 multi-staged Docker f
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 3 Docker files will be created
 
       ```
-      .workshop/workshop-step.ps1  Start "DEVWF-T004"
+      Workshop-Step Start "DEVWF-T004"
       ```
 
 2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with DEVWF-T004 in the title

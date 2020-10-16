@@ -7,7 +7,7 @@ The cluster and database are running and the DevOps team has successfully automa
 This challenge needs some prerequisites. Run the following command in your Terminal windows of your GitHub Codespace to set this up.
 
 ```powershell
-.workshop/workshop-step.ps1  Start "SCALEUP-T002"
+Workshop-Step Start "SCALEUP-T002"
 ```
 
 ## Challenge
@@ -70,7 +70,7 @@ In your repository create a new folder called AKS, that will contain all files t
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
 ```powershell
-.workshop/workshop-step.ps1 Solution "SCALEUP-T002"
+Workshop-Step Solution "SCALEUP-T002"
 ```
 
 ### Next Step

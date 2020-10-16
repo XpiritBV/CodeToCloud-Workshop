@@ -123,5 +123,5 @@ In this task, you will increase the number of instances for the API deployment i
 > When you do not want to type all commands try the solution Pull Request by running
 
 ```
-.workshop/workshop-step.ps1  Solution "ADVKUB-T001"
+Workshop-Step Solution "ADVKUB-T001"
 ```

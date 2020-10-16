@@ -9,7 +9,7 @@ In this task your are going to create a continuous deployment pipeline in GitHub
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with a new `deploy-infrastructure.ps1` will be created
 
       ```
-      .workshop/workshop-step.ps1  Start "CLOSELOOP-T002"
+      Workshop-Step Start "CLOSELOOP-T002"
       ```
 
 2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with CLOSELOOP-T002 in the title

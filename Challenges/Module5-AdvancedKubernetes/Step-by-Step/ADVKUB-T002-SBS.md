@@ -160,7 +160,7 @@ The result should look similar like this
     > When you do not want to type all commands try the solution Pull Request by running
     
     ```
-    .workshop/workshop-step.ps1  Solution "ADVKUB-T002"
+    Workshop-Step Solution "ADVKUB-T002"
     ```
 
     > Troubleshoot the issuing of certificates https://cert-manager.io/docs/faq/troubleshooting/

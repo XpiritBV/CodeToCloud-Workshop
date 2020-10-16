@@ -51,13 +51,13 @@ When you go through the challenges or step by steps, you will see something like
 
 >This challenge needs some prerequisites. Run the following command in your Terminal windows of your GitHub >Codespace to set this up.
 ```
-.workshop/workshop-step.ps1  Start "DEVWF-T00X"
+Workshop-Step Start "DEVWF-T00X"
 ```
 When you see this, execute the following steps
 
 * In your Codespace, open a `pwsh` terminal
 * Navigate to the root of your repository 
-* Run the command `.workshop/workshop-step.ps1  Start "DEVWF-T00X"`
+* Run the command `Workshop-Step Start "DEVWF-T00X"`
 * A Pull Request with scripts and instructions will be created for you.
 
 ## Variables

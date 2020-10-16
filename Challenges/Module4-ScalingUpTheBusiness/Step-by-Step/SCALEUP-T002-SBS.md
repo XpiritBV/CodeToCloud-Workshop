@@ -9,7 +9,7 @@ In this task you will run the WEB and API application on the cluster, while it c
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 2 YAML files will be created
 
     ```powershell
-    .workshop/workshop-step.ps1  Start "SCALEUP-T002"
+    Workshop-Step 
     ```
 
 2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with DEVWF-T004 in the title
@@ -234,5 +234,5 @@ Now your repository contains 3 new "multi-staged" docker file.
 > When you do not want to type all commands try the solution Pull Request by running
 
 ```
-.workshop/workshop-step.ps1  Solution "SCALEUP-T002"
+Workshop-Step EUP-T002"
 ```

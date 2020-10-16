@@ -28,7 +28,7 @@ In this challenge you will use the scaling possibilities of Kubernetes to scale 
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
 ```powershell
-.workshop/workshop-step.ps1 Solution "SCALEUP-T001"
+Workshop-Step Solution "SCALEUP-T001"
 ```
 
 * https://github.com/microsoft/MCW-Cloud-native-applications/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Cloud-native%20applications%20-%20Developer%20edition.md#task-1-increase-service-instances-from-the-kubernetes-dashboard
