@@ -17,5 +17,5 @@ https://github.com/marketplace/azure-pipelines
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
 ```powershell
-.workshop/workshop-step.ps1 Solution "CLOSELOOP-T003"
+workshop-step Solution "CLOSELOOP-T003"
 ```

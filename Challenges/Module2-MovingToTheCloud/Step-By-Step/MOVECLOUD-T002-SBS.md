@@ -58,5 +58,5 @@ az webapp config container set `
 > When you do not want to type all commands try the solution Pull Request by running
 
 ```
-.workshop/workshop-step.ps1  Solution "MOVECLOUD-T002"
+workshop-step  Solution "MOVECLOUD-T002"
 ```

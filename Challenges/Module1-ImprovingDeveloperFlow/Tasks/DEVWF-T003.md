@@ -40,7 +40,7 @@ You also decide it is convenient to have a container for the Initialization of t
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you.
 
 ```powershell
-.workshop/workshop-step.ps1 Solution "DEVWF-T003"
+workshop-step Solution "DEVWF-T003"
 ```
 
 To read or view a step by step explanation of this challenge, please visit [this page](/Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/DEVWF-T003-SBS.md)
