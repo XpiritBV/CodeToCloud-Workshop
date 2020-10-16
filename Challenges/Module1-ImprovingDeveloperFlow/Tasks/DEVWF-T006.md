@@ -6,7 +6,7 @@ You and your team of consultants see that Docker containers are truly embraced. 
 
 ## Before you start this challenge
 
-This challenge needs some prerequisites. Run the following command in your Terminal windows of you GitHub Codespace to set this up.
+This challenge needs some prerequisites. Run the following command in your Terminal windows of your GitHub Codespace to set this up.
 ```
 .workshop/workshop-step.ps1  Start "DEVWF-T006"
 ```

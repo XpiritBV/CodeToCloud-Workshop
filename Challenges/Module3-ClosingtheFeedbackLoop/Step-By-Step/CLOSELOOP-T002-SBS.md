@@ -2,6 +2,30 @@
 
 In this task your are going to create a continuous deployment pipeline in GitHub Actions that triggers after the Continuous Integration build has been completed. 
 
+>This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
+>
+> In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prerequisites/Readme.md) first!
+
+1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with a new `deploy-infrastructure.ps1` will be created
+
+      ```
+      .workshop/workshop-step.ps1  Start "CLOSELOOP-T002"
+      ```
+
+2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with CLOSELOOP-T002 in the title
+
+3. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
+
+4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 3 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
+
+      ![Shows the button for merging a Pull Request in GitHub](/Assets/mergePullRequest.png)
+
+Now your repository contains the new file.
+
+6. In your GitHub Codespace, update your files to the latest version by pulling them.
+
+      ![](/Assets/2020-10-05-12-10-11.png)
+
 ## Create a new GitHub Action Workflow that builds and pushes with Docker Compose
 
 1. When we start to use docker-compose as our mechanism to build and push containers, we need to give docker compose instructions where to find the Docker files that can be used to build the images. We already have a `docker-compose.yml` file in our repository, but this contains the name of the images, and not the instructions to build the containers. 
@@ -78,7 +102,16 @@ Copy the complete JSON output to your clipboard.
 
 ![](secretAZCRED.png)
 
-In a new browser Tab, open the Repository settings, and add a new secret
+8. Back in the GitHub Action workflow, add a new step that uses the [AZURE_CREDENTIALS] secret to login to Azure
+      
+```
+  - name: Login on Azure CLI
+    uses: azure/login@v1.1
+    with:
+      creds: ${{secrets.AZURE_CREDENTIALS}}
+```          
+
+9. In your Codespace, open the `deploy-infrastructure.ps1` file from the [infrastructure] folder and make sure it has the following content, 
 
 1. Add a build.docker-compose file
 2. Add a GitHub Action workflow that includes 2 steps
