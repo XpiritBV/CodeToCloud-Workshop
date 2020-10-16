@@ -1,13 +1,87 @@
 # Step by Step CLOSELOOP-T002
 
-In this task your are going to create a continuous deployment pipeline that triggers after the Continuous Integration build has been completed. The latest version (use the version number) of the containers should be pushed to the cluster using the helm chart.
+In this task your are going to create a continuous deployment pipeline in GitHub Actions that triggers after the Continuous Integration build has been completed. 
 
-Adcanced validation and approvals (a more enterprisey feature) is currently found in Azure Pipelines and hasn'g ade its way into GitHub yet. Luckily most of the build logic is caputured on our Docker-Compose files, so migrating the pipeline isn't very complex.
+## Create a new GitHub Action Workflow that builds and pushes with Docker Compose
 
-## Make a Github action that builds and pushes with docker compose
+1. When we start to use docker-compose as our mechanism to build and push containers, we need to give docker compose instructions where to find the Docker files that can be used to build the images. We already have a `docker-compose.yml` file in our repository, but this contains the name of the images, and not the instructions to build the containers. 
+
+Add a `build.docker-compose.yml` file to the root of your repository and add the following contents
+
+```YAML
+version: "3.4"
+services:
+  api:
+    build: ./content-api
+
+  web:
+    build: ./content-web
+```
+
+2. To use docker compose in our build, we are going to add a new GitHub Action workflow. In your GutHub repository, open the [Actions] Tab and create a new GitHub Action.
+
+![](NewGHAction.png)
+
+3. Select the Simple Workflow and call the new YAML file docker-publish.yml
+
+![](simplewf.png)
+
+4. Change the `name` property to [Docker Compose Build and Deploy]. And add the following code snippet below the  `- uses: actions/checkout@v2` step
+
+```YAML
+  - name: Log into GitHub Container Registry
+    run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
+```
+
+This step logs in to your GitHub Container Registry with the CR_PAT secret that you created earlier
+
+5. Add a script step that uses `docker-compose` to build and push the images to the repository
+
+```YAML
+  - name: Build and Push image
+    run: |  
+      docker-compose -f docker-compose.yml -f build.docker-compose.yml build
+      docker-compose -f docker-compose.yml -f build.docker-compose.yml push
+```
+This step uses the docker-compose.yml and build.docker-compose.yml to build the containers with the Docker files and push it to the GitHub Container Registry
+
+6. Now that the containers have been built and pushed, the Azure Web Application needs to be updated. Before you can interact with Azure, you need to have access to the Azure API with the Azure CLI. Using the Azure Login Task, we can login securely in Azure using a GitHub secret.
+
+In your Codespace terminal, execute the following script to login to Azure, set your subscription and create a Service Principal with access to your resourcegroup.
+
+```PowerShell
+$studentprefix ="your abbreviation here"
+$resourcegroupName = "fabmedical-rg-" + $studentprefix 
+$rg = az group show --name $resourcegroupName | ConvertFrom-Json
+az ad sp create-for-rbac --name "codetocloud-$studentprefix" --sdk-auth --role contributor --scopes $($rg.id)
+```
+
+The output of this command looks like this
+```JSON
+{
+  "clientId": "...",
+  "clientSecret": "...",
+  "subscriptionId": "...",
+  "tenantId": "...",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
+```
+
+Copy the complete JSON output to your clipboard.
+
+7. In your repository settings, navigate to [Secrets] and create a new secret called [AZURE_CREDENTIALS]. Paste the copied value from your clipboard to the value of the secret and save it.
+
+![](secretAZCRED.png)
+
+In a new browser Tab, open the Repository settings, and add a new secret
 
 1. Add a build.docker-compose file
-2. Add a Github Action workflow that includes 2 steps
+2. Add a GitHub Action workflow that includes 2 steps
 ..
 ```
 name: Docker Compose Build and Deploy
@@ -79,9 +153,9 @@ az ad sp create-for-rbac --name "CodeToCloudWorkshop-$($studentprefix)" --sdk-au
 
 # Configure the pipeline
 
-> You can edit your pipeline in the web UI of Azure DevOps using the steps helper, but you can also edit the `azure-pipelines.yml` in vscode and relyon its intellisense feature to guide you.
+> You can edit your pipeline in the web UI of Azure DevOps using the steps helper, but you can also edit the `azure-pipelines.yml` in vscode and rely on its intellisense feature to guide you.
 
- * First lets do ecerything in a single job, like we have with actions.
+ * First lets do everything in a single job, like we have with actions.
  * Add Docker Compose task for build step
  * Add Docker Compose task for publish step
  * Add PS task to run infrastraucture.ps1

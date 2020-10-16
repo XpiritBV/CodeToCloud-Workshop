@@ -7,7 +7,6 @@ After setting up monitoring, nothing happened. After some investigation it showe
 In this challenge your are going to create a continuous deployment pipeline that triggers after the Continuous Integration build has been completed. The CD Pipeline performs the following steps
 * Build a new version of the containers using docker-compose
 * Push the latest version of the containers using docker-compose
-* Tag the containers with a version number 
 * Execute the deploy-infrastructure.ps1 and setup
 
 
