@@ -43,7 +43,7 @@ To set this up, you need to perform these steps
 1. Then run `.workshop/setup.ps1`
     1. As part of the workflow you'll be asked to create a Personal Access Token for GitHub. For more information, see below.
     2. As part of the workflow you'll be asked to create a Personal Access Token for Azure DevOps. For more information, see below.
-1. A local `settings.json` file has been created in the .workshop folder (DO NOT COMMIT THIS TO YOUR REPO!. Already in .gitignore file)
+1. A local `settings.json` file has been created in the `.workshop` folder. **DO NOT COMMIT THIS TO YOUR REPO!**
 1. This file shall be used in later exercises
 
 ## Run Start and Solution Scripts
