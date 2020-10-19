@@ -169,7 +169,7 @@ Now that we have a pipeline that builds and deploys, we can add a manual approva
 > When you do not want to type all commands try the solution Pull Request by running
 
 ```
-Workshop-Step Solution "MOVECLOUD-T003"
+Workshop-Step Solution "CLOSELOOP-T003"
 ```
 
 
