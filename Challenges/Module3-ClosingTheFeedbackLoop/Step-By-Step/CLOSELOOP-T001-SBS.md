@@ -63,7 +63,6 @@ To enable Application Insights we need an Application Insights Resource in our r
 
 2. Visit the website and check Application Insights in the Azure Portal to see instrumentation data.
 
-
 > When you do not want to type all commands try the solution Pull Request by running
 
 ```

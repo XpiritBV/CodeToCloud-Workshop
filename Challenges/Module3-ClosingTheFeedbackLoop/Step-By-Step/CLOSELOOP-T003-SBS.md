@@ -173,26 +173,6 @@ Workshop-Step Solution "MOVECLOUD-T003"
 ```
 
 
- * [Create 2 stages](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml&WT.mc_id=DOP-MVP-5001511). One to build & publish the docker images. One to update the azure app service.
- * In the build stage:
-   * [checkout the sources](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2cparameter-schema&WT.mc_id=DOP-MVP-5001511#checkout), 
-   * [use the dcoker compose task to build the images](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker-compose?view=azure-devops&WT.mc_id=DOP-MVP-5001511#build-service-images),
-   * [use the dcoker compose task to publish the images](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker-compose?view=azure-devops&WT.mc_id=DOP-MVP-5001511#push-service-images)
- * In the deploy stage:
-   * [checkout the sources](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2cparameter-schema&WT.mc_id=DOP-MVP-5001511#checkout), 
-   * set the correct version in the `prod.docker-compose.yml`. You can use a simple powershell script step to replace `:latest` with the `$(Build.BuildNumber)` variable.
-   * [use an Azure CLI step to update the web app service](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-cli?view=azure-devops&WT.mc_id=DOP-MVP-5001511). Be sure to specify `scriptType: pscore` and `scriptLocation: inlineScript`.
-     * If needed, make sure you [authorize the correct Azure Subscription](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure?view=azure-devops&WT.mc_id=DOP-MVP-5001511).
- * [Use the `Variables` button in the Azure DevOps Pipeline editor to store the GitHub Access Token for your GitHub Contaner Registry as a secret](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2cbatch&WT.mc_id=DOP-MVP-5001511#secret-variables).
- * [Set the correct dependencies between the stages](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml&WT.mc_id=DOP-MVP-5001511#specify-dependencies) using the `dependsOn`.
- * Save your pipeline and run it until the environment is succesfully updated.
-
-To configure approvals we need to link the stages to an "Environment". We'll need to create an Environment in Azure Pipelines and update the second stage to target that environment:
-
- * [Create an environment called `production`](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops&WT.mc_id=DOP-MVP-5001511). Use Resource `None`.
- * [Open the environment and configure the Approval check to require manual approval to deploy](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/approvals?view=azure-devops&tabs=check-pass&WT.mc_id=DOP-MVP-5001511#approvals).
- * [Update the deploy stage in the `azure-pipelines.yml` to target the environment.](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops&WT.mc_id=DOP-MVP-5001511#target-an-environment-from-a-deployment-job).
- * Save your pipeline and run it until requires approvalr and updates the environment is succesfully.
-
+ 
 
 
