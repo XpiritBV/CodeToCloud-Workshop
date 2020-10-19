@@ -11,12 +11,6 @@ RUN if [ "${INSTALL_DOCKER}" = "true" ]; then \
     fi \
     && rm -rf /tmp/scripts && apt-get clean -y
 
-RUN export DEBIAN_FRONTEND=noninteractive \
-    && apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 \
-    && sudo apt-add-repository -u https://cli.github.com/packages \
-    && apt-get update \
-    && apt-get -y install --no-install-recommends gh 
-
 USER codespace
 
 RUN npm install -g @angular/cli 
@@ -26,3 +20,4 @@ RUN az extension add --name azure-devops \
     && az extension add --name portal
 
 ADD Microsoft.PowerShell_profile.ps1 /home/codespace/.config/powershell/Microsoft.PowerShell_profile.ps1
+ADD Microsoft.PowerShell_profile.ps1 /home/codespace/.config/powershell/Microsoft.VSCode_profile.ps1
