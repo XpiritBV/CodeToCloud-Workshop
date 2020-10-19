@@ -9,6 +9,7 @@ Furthermore, it happens that developers update the docker-compose file locally, 
 In this challenge you are going to replace the `:latest` tag in the docker-compose file with the build number from the pipeline. You will also add an automated check to the pipeline to validate if images are only coming from your own GitHub repository using an automated policy. 
 
 ## Validation
+
 * Pipeline contains script to deploy versioned containers
 * Production environment contains an [Evaluate Artifact] automated approval that checks if the container registry is on a whitelist
 
@@ -21,9 +22,11 @@ In this challenge you are going to replace the `:latest` tag in the docker-compo
 
 
 ## Links & Information
+
 * [Evaluate Artifact Policy](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/artifact-policy?view=azure-devops#check-allowed-registries)
 
 ## Solution
+
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
 ```powershell
@@ -45,6 +48,7 @@ After some research they find that GitHub Actions is very good at automation and
 In this challenge you are going to setup a CI/CD pipeline in Azure DevOps that gets the sources from GitHub. The pipeline will have 1 deployment stage that deploys to the production environment. This has an manual approval gate. 
 
 ## Validation
+
 * GitHub Actions are disabled
 * Azure DevOps YAML Pipeline created with a build stage, that uses docker compose to build and publish images to the GitHub Container Registry
 * Azure DevOps pipeline build sources from the GitHub repository
@@ -55,6 +59,7 @@ In this challenge you are going to setup a CI/CD pipeline in Azure DevOps that g
 
 
 ## Links & Information
+
 * [Disabling HitHub Action Triggers](https://github.community/t/how-can-i-disable-a-github-action/17049/3).
 * [Install the Azure Pipelines App into your GitHub account](https://github.com/apps/azure-pipelines/installations/new)
 * [Create a Docker Registry service connection](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml&WT.mc_id=DOP-MVP-5001511#sep-docreg).
@@ -66,24 +71,3 @@ In this challenge you are going to setup a CI/CD pipeline in Azure DevOps that g
 * [Variables in Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2cbatch&WT.mc_id=DOP-MVP-5001511#secret-variables).
 * [Dependencies between pipeline stages](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml&WT.mc_id=DOP-MVP-5001511#specify-dependencies) using the `dependsOn`.
 * [Manual Approval to deploy](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/approvals?view=azure-devops&tabs=check-pass&WT.mc_id=DOP-MVP-5001511#approvals).
-
-## Solution
-If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
-
-```powershell
-Workshop-Step Solution "CLOSELOOP-T003"
-```
-
-To read or view a step by step explanation of this challenge, please visit [this page](/Challenges/Module3-ClosingTheFeedbackLoop/Step-By-Step/CLOSELOOP-T003-SBS.md)
-
-### Next Step
-
-When you are done, move to the [next challenge](CLOSELOOP-T004)
-
-
-
-
-van de main branch
-and ALLOWsourced container registry
-
-  * set the correct version in the `prod.docker-compose.yml`. You can use a simple powershell script step to replace `:latest` with the `$(Build.BuildNumber)` variable.

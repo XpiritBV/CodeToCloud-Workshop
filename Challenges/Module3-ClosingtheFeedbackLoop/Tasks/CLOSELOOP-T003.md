@@ -9,6 +9,7 @@ After some research they find that GitHub Actions is very good at automation and
 In this challenge you are going to setup a CI/CD pipeline in Azure DevOps that gets the sources from GitHub. The pipeline will have 1 deployment stage that deploys to the production environment. This has an manual approval gate. 
 
 ## Validation
+
 * GitHub Actions are disabled
 * Azure DevOps YAML Pipeline created with a build stage, that uses docker compose to build and publish images to the GitHub Container Registry
 * Azure DevOps pipeline build sources from the GitHub repository
@@ -19,6 +20,7 @@ In this challenge you are going to setup a CI/CD pipeline in Azure DevOps that g
 
 
 ## Links & Information
+
 * [Disabling HitHub Action Triggers](https://github.community/t/how-can-i-disable-a-github-action/17049/3).
 * [Install the Azure Pipelines App into your GitHub account](https://github.com/apps/azure-pipelines/installations/new)
 * [Create a Docker Registry service connection](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml&WT.mc_id=DOP-MVP-5001511#sep-docreg).
@@ -32,6 +34,7 @@ In this challenge you are going to setup a CI/CD pipeline in Azure DevOps that g
 * [Manual Approval to deploy](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/approvals?view=azure-devops&tabs=check-pass&WT.mc_id=DOP-MVP-5001511#approvals).
 
 ## Solution
+
 If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
 
 ```powershell
@@ -42,4 +45,4 @@ To read or view a step by step explanation of this challenge, please visit [this
 
 ### Next Step
 
-When you are done, move to the [next challenge](CLOSELOOP-T004)
+When you are done, move to the [next challenge](CLOSELOOP-T004.md)

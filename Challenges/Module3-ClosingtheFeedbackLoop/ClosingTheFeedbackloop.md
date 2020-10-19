@@ -18,15 +18,12 @@ Together with the DevOps team you need to address these issues ASAP!
 *	Set up a CI/CD pipeline with Azure DevOps to automatically deploy containers
 *	Set up an manual and automatic approval gate in the release pipeline, to control the release of new versions
 
+## Tasks
 
-# Exercises
-
- * Ex-2
-  * task 8
-  * https://github.com/XpiritBV/ContainerWorkshop/blob/master/Lab9-Prometheus.md
-* Azdo release pipeline
-* Container scanning
-* Helm chart .. why?
+* [CLOSELOOP-T001 Getting insights in to your application](Tasks/CLOSELOOP-T001.md)
+* [CLOSELOOP-T002 Setup Continuous Deployment with GitHub Actions](Tasks/CLOSELOOP-T002.md)
+* [CLOSELOOP-T003 Increase control with Azure DevOps CI/CD](Tasks/CLOSELOOP-T003.md)
+* [CLOSELOOP-T004 Deploy latest validated version with automated approvals](Tasks/CLOSELOOP-T004.md)
 
 # Video
 

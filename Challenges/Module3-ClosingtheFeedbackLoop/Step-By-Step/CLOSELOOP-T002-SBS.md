@@ -2,7 +2,7 @@
 
 In this task your are going to create a continuous deployment pipeline in GitHub Actions that triggers after the Continuous Integration build has been completed. 
 
->This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
+> This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
 >
 > In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prerequisites/Readme.md) first!
 
@@ -121,6 +121,8 @@ Copy the complete JSON output to your clipboard.
 ```
 
 10. Commit the workflow file. The GitHub Action will trigger.
+
+> When you do not want to type all commands try the solution Pull Request by running
 
 ```
 Workshop-Step Solution "CLOSELOOP-T002"

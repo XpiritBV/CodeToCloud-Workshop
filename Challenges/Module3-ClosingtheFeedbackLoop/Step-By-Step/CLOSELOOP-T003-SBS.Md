@@ -1,7 +1,9 @@
 # Step by Step CLOSELOOP-T003
+
 In this challenge you are going to setup a CI/CD pipeline in Azure DevOps that gets the sources from GitHub. The pipeline will have 1 deployment stage that deploys to the production environment. This has an manual approval gate.
 
 ## Disable GitHub Actions
+
 When we commit a change to our repository, we want to make sure, the Azure DevOps pipeline will build and deploy the changes. The already existing GitHub Actions should not be triggered anymore. 
 
 1. In your GitHub Codespace, open the `docker-publish.yml` workflow file. Replace `branches: ...` with the following statement
@@ -13,6 +15,7 @@ on:
       - '**'
 ```
 ## Configure an Azure DevOps Pipeline
+
 1. Navigate to your Azure DevOps Project that was created in the [prerequisites setup](/Challenges/Prequisites/Readme.md), and create a new Pipeline
 
 ![](/Assets/NewPipeline.png)
@@ -29,6 +32,7 @@ on:
 ![](/Assets/starterpipeline.png)
 
 ## Setup Service Connection in your Azure DevOps Project
+
 Before we can start building the build and release pipelines, we need to setup a connection between Azure DevOps and the GitHub Container Registry so that we can push our Docker images when they have been built.
 
 1. Navigate to your Azure DevOps Project that was created in the [prerequisites setup](/Challenges/Prequisites/Readme.md). In the Project Settings, open the Service Connections Tab.
@@ -44,6 +48,7 @@ Before we can start building the build and release pipelines, we need to setup a
 ![](/Assets/NewServiceConnectionDetails.png)
 
 ## Create the Build Stage
+
 First we need to create the build stage in the Azure DevOps pipeline. Instead of using command line options like in GitHub Actions, Azure DevOps has a marketplace task that can run docker compose commands in a secure manner.
 
 1. In your Azure DevOps Project, Edit the pipeline you created in the previous step.
@@ -89,6 +94,7 @@ First we need to create the build stage in the Azure DevOps pipeline. Instead of
 6. Run the build. This builds and pushes a latest version to the GitHub Container registry.
 
 ## Adding Stages to the pipeline
+
 Now we have all steps (checkout, build and push) complete we can focus on deployment. But before we do that, we need to create 2 stages in our pipeline to distinguish between what is done during build and during deployment.
 
 1. Open the pipeline in edit mode, and add the following snippet to create 2 stages. A build stage, with the existing steps, and an empty deploy stage
@@ -106,10 +112,10 @@ stages:
 ```
 
 ## Adding deployment to Azure 
+
 Now that we have split the build and deployment we need to add the deployment steps to the pipeline. Before we can deploy anything to Azure, we need to create an Azure Service Connection.
 
 1. Navigate to your Azure DevOps Project that was created in the [prerequisites setup](/Challenges/Prequisites/Readme.md). In the Project Settings, open the Service Connections Tab.
-
 2. Create a new [Azure Resource Manager] Service Connection and choose Service Principal (automatic)
 3. Choose your target subscription and resource group and set the Service Connection name to [Fabrikam-Azure]
 4. Save the Service Connection
@@ -145,9 +151,10 @@ Add a secret variable CR_PAT and set it to secret.
 ![](/Assets/secretVar.png)
 
 ## Adding Manual Approval
+
 Now that we have a pipeline that builds and deploys, we can add a manual approval. In the `DeployProd` stage, there is an environment called `production`. This environment represents a physical target. 
 
-1. In the menu under pipelines, select [Environments] and select production
+1. In the menu under pipelines, select `[Environments]` and select production
 
 ![](/Assets/2020-10-16-15-30-29.png)
 
@@ -157,6 +164,13 @@ Now that we have a pipeline that builds and deploys, we can add a manual approva
 3. Choose Approvals and Checks. Add a user, and press Create
 
 4. Run the pipeline and notice how the pipeline waits before moving to the DeployProd stage
+
+
+> When you do not want to type all commands try the solution Pull Request by running
+
+```
+Workshop-Step Solution "MOVECLOUD-T003"
+```
 
 
  * [Create 2 stages](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml&WT.mc_id=DOP-MVP-5001511). One to build & publish the docker images. One to update the azure app service.

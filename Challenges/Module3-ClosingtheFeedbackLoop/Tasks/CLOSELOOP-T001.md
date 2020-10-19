@@ -44,4 +44,4 @@ To read or view a step by step explanation of this challenge, please visit [this
 
 ### Next Step
 
-When you are done, move to the [next challenge](CLOSELOOP-T002)
+When you are done, move to the [next challenge](CLOSELOOP-T002.md)
