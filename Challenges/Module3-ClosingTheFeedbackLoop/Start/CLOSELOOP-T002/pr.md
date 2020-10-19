@@ -12,6 +12,7 @@ Modified the deployment script to have the prefix as a parameter and added the G
 
 
 ```PowerShell
-$env:CR_PAT="Your Pat Here"
+# Personal Access Token should be pre-configured by setup.
+# $env:CR_PAT="Your Pat Here" 
 ./infrastructure/deploy-infrastructure.ps1
 ```

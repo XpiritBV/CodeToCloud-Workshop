@@ -11,7 +11,8 @@ linktoworkitem: Module3
 Modified the deployment script to have the prefix as a parameter and added the GitHub Secret environment variable instead of a local variable. To run the deployment locally, add a environment variable first that contains the GitHub Personal Access Token to pull images from the GitHub Container Registry.
 
 ```PowerShell
-$env:CR_PAT="Your Pat Here"
+# Personal Access Token should be pre-configured by setup.
+# $env:CR_PAT="Your Pat Here" 
 ./infrastructure/deploy-infrastructure.ps1
 ```
 

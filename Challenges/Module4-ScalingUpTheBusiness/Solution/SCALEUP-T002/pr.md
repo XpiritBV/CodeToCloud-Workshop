@@ -13,7 +13,8 @@ Added all Kubernetes files to deploy INIT, WEB and API.
 You need to add 2 secrets to Kubernetes. One for the CosmosDB and one for the GitHub Container Registry. Make sure you add the /contentdb part to the mongoDB connectionstring. You can get the connectionstring from the Azure Portal
 
 ```powershell
-$mongodbConnectionString="mongodb://<mongoDBConnectionstring>:10255/contentdb?ssl=true&replicaSet=globaldb"
+# mongodb://<mongoDBConnectionstring>:10255/contentdb?ssl=true&replicaSet=globaldb
+$mongodbConnectionString=Read-Host -Prompt "Primary Mongodb connectionstring"
 $ghpat=Read-Host -Prompt "Github Personal Access Token"
 
 kubectl create secret docker-registry pullsecret --docker-server=https://ghcr.io/ --docker-username=notneeded --docker-password=$ghpat
