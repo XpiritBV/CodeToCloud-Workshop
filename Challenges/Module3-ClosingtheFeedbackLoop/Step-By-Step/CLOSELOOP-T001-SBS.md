@@ -17,7 +17,6 @@ To enable Application Insights we need an Application Insights Resource in our r
       $resourcegroupName = "fabmedical-rg-" + $studentsuffix
       $location1 = "westeurope"
       $appInsights = "fabmedicalai-" + $studentsuffix
-      ```
 
       az extension add --name application-insights
       $ai = az monitor app-insights component create --app $appInsights --location $location1 --kind web -g $resourcegroupName --application-type web --retention-time 120 | ConvertFrom-Json
