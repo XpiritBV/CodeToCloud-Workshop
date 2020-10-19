@@ -56,8 +56,37 @@ Workshop-Step Start "DEVWF-T00X"
 When you see this, execute the following steps
 
 * In your Codespace, open a `pwsh` terminal
-* Run the command `Workshop-Step Start "DEVWF-T00X"`
+* Run the command specified, in this case `Workshop-Step Start "DEVWF-T00X"`
 * A Pull Request with scripts and instructions will be created for you.
+
+You can open the pull request by following the link on the last line the logs:
+
+```
+git push origin users/donovan/update-deployment-file --force
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.21 KiB | 1.21 MiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'users/donovan/update-deployment-file' on GitHub by visiting:
+remote:      https://github.com/jessehouwing/CodeToCloud-Source/pull/new/users/donovan/update-deployment-file
+remote:
+remote:
+remote:
+remote: GitHub found 17 vulnerabilities on jessehouwing/CodeToCloud-Source's default branch (6 high, 4 moderate, 7 low). To find out more, visit:   
+remote:      https://github.com/jessehouwing/CodeToCloud-Source/network/alerts
+remote:
+To https://github.com/jessehouwing/CodeToCloud-Source.git
+ * [new branch]      users/donovan/update-deployment-file -> users/donovan/update-deployment-file
+ 
+Creating pull request for users/donovan/update-deployment-file into main in yourorganisation/CodeToCloud-Source
+
+https://github.com/yourorganisation/CodeToCloud-Source/pull/14
+```
+
 
 ## Variables
 In some scripts we use variables like `$resourceGroupName` and `$webappName`. Based on the settings.json file, that is stored in your `.workshop` folder, we generated a PowerShell Profile for you. The values stored in `settings.json` are automatically loaded into your powershell console.
@@ -74,6 +103,12 @@ $location1             # azure datacenter region
 $location2             # azure datacenter region
 $appInsights           # app insights instance name
 $CR_PAT                # GitHub container registry accerr token
+```
+
+If you ever manually change the values in the `settings.json`, opening a fresh PowerShell console should load the new values automatically. Alternatively, run:
+
+```
+Invoke-expression $profile
 ```
 
 ### Next Step
