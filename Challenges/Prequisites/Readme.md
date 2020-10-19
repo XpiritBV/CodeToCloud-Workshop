@@ -26,25 +26,25 @@ To set this up, you need to perform these steps
 * Create Azure DevOps Personal Access Token
 * Setup your settings file and PowerShell Profile
 
-### Create GitHub Personal Access Token
-1. Login to your GitHub Account
-1. Create a Personal Access Token as [described here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token)
-1. Keep this Personal Access token somewhere safe for later use
-[Permissions GH](Permissions-GH.png)
-
-### Create Azure DevOps Personal Access Token
-1. Login to https://dev.azure.com/youraccount or create a new account on https://dev.azure.com
-1. Create a Personal Access Token as [described here](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
-1. Keep this Personal Access token somewhere safe for later use
-
 ### Setup your settings file and PowerShell Profile
 1. Open your GitHub Codespace 
 1. In the terminal type `pwsh`
 1. Then run `.workshop/setup.ps1`
     1. As part of the workflow you'll be asked to create a Personal Access Token for GitHub. For more information, see below.
     2. As part of the workflow you'll be asked to create a Personal Access Token for Azure DevOps. For more information, see below.
-1. A local `settings.json` file has been created in the `.workshop` folder. **DO NOT COMMIT THIS TO YOUR REPO!**
-1. This file shall be used in later exercises
+1. A local `settings.json` file has been created in the `.workshop` folder and is automatically ignored by git. **DO NOT COMMIT THIS TO YOUR REPO!**
+1. This file is automatically loaded by the containers PowerShell Profile and pre-populates a number of global variables.
+
+#### Create GitHub Personal Access Token
+1. Login to your GitHub Account
+1. Create a Personal Access Token as [described here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token)
+1. Keep this Personal Access token somewhere safe for later use. **DO NOT COMMIT THIS TO YOUR REPO!**
+[Permissions GH](Permissions-GH.png)
+
+#### Create Azure DevOps Personal Access Token
+1. Login to https://dev.azure.com/youraccount or create a new account on https://dev.azure.com
+1. Create a Personal Access Token as [described here](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
+1. Keep this Personal Access token somewhere safe for later use. **DO NOT COMMIT THIS TO YOUR REPO!**
 
 ## Run Start and Solution Scripts
 When you go through the challenges or step by steps, you will see something like this
@@ -56,12 +56,25 @@ Workshop-Step Start "DEVWF-T00X"
 When you see this, execute the following steps
 
 * In your Codespace, open a `pwsh` terminal
-* Navigate to the root of your repository 
 * Run the command `Workshop-Step Start "DEVWF-T00X"`
 * A Pull Request with scripts and instructions will be created for you.
 
 ## Variables
-In some scripts we use variables like `$resourceGroupName` and `$webappName`. Based on the settings.json file, that is stored in your .workshop folder, we generated a PowerShell Profile for you. This profile contains the PowerShell variables that are used with the values you provide in the settings.json
+In some scripts we use variables like `$resourceGroupName` and `$webappName`. Based on the settings.json file, that is stored in your `.workshop` folder, we generated a PowerShell Profile for you. The values stored in `settings.json` are automatically loaded into your powershell console.
+
+Available variables (loaded into `$global:` and `$env` scopes):
+
+```powershell
+$studentsuffix         # short lowercase string of letters unique to you.
+$resourcegroupName     # the name of the resource group that will be created for you
+$cosmosDBName          # the name of the cosmosdb used by the webapp
+$webappName            # web app service name
+$planName              # web app service plan
+$location1             # azure datacenter region
+$location2             # azure datacenter region
+$appInsights           # app insights instance name
+$CR_PAT                # GitHub container registry accerr token
+```
 
 ### Next Step
 When you are done, move to the [first challenge](/Challenges/Module0-Introduction/Introduction.md)
