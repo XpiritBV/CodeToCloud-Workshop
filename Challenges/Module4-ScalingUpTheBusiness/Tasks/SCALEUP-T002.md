@@ -75,4 +75,4 @@ Workshop-Step Solution "SCALEUP-T002"
 
 ### Next Step
 
-When you are done, move to the [next challenge](/Challenges/Module3-ClosingtheFeedbackLoop/ClosingTheFeedbackLoop.md)
+When you are done, move to the [next challenge](/Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackLoop.md)
