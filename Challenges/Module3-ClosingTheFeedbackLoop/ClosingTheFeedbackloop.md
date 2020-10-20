@@ -12,11 +12,11 @@ Together with the DevOps team you need to address these issues ASAP!
 
 ## Learning Objectives
 
-*	Implement Application Insights in the application
-*	Monitor the containers and the platform
-*	Implement Continuous Delivery in GitHub Actions
-*	Set up a CI/CD pipeline with Azure DevOps to automatically deploy containers
-*	Set up an manual and automatic approval gate in the release pipeline, to control the release of new versions
+* Implement Application Insights in the application
+* Monitor the containers and the platform
+* Implement Continuous Delivery in GitHub Actions
+* Set up a CI/CD pipeline with Azure DevOps to automatically deploy containers
+* Set up an manual and automatic approval gate in the release pipeline, to control the release of new versions
 
 ## Tasks
 
