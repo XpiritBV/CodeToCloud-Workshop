@@ -8,9 +8,9 @@ This workshop focusses on the Code to Cloud journey. When you want to dive in to
 
 ## Challenges
 
-* [Prerequisites - Do this first!](Challenges/Prequisites/Readme.md)
-* [Module 0 - Introduction](Challenges/Module0-Introduction/Introduction.md)
-* [Module 1 - Improving the Developer Workflow](Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
-* [Module 2 - Moving to the Cloud](Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
-* [Module 3 - Closing the Feedback Loop](Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
-* [Module 4 - Scaling up the business](Challenges/Module4-ScalingUpTheBusiness/ScalingUpTheBusiness.md)
+* [Prerequisites - Do this first!](Prequisites/Readme.md)
+* [Module 0 - Introduction](Module0-Introduction/Introduction.md)
+* [Module 1 - Improving the Developer Workflow](Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
+* [Module 2 - Moving to the Cloud](Module2-MovingToTheCloud/MovingToTheCloud.md)
+* [Module 3 - Closing the Feedback Loop](Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
+* [Module 4 - Scaling up the business](Module4-ScalingUpTheBusiness/ScalingUpTheBusiness.md)

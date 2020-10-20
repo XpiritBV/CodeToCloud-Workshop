@@ -41,18 +41,8 @@ When a student is unable to finish the module in time, they can run a tool to au
    - Challenge
    - Presentation & Discussion
  - Closing
- 
+
 ## Challenges
-
-### Prerequisites
-
-This workshop is targeted for students in a instructor-led training. To make it challenging for the students, the workshop contains challenges that can also be done individually. To make sure students do not get stuck, there are scripts available with instructions to "automatically" fix a challenge, so students can continue. The workshop also contains extensive Step-By-Step videos and written instructions. There are also videos that explain the concepts that are used in the exercises.
-
-Students will be guided to clone the CodeToCloud source repository to their own account, setup Azure DevOps, create a GitHub Codespace and provision a settingsfile used to drive some of the automation.
-
-[![Prerequisites Instructions](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
-- [Instructions](Challenges/Prequisites/Readme.md)
 
 ### Module 0 - Introduction
 
@@ -63,6 +53,16 @@ To set the stage the students collaborate to use the different services of Azure
 As facilitator you can have them read the instuctions or role-play the part of VP of Engineering at Fabrikam, Susan Withers.
 
 [![Prerequisites Instructions](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
+### Prerequisites
+
+This workshop is targeted for students in a instructor-led training. To make it challenging for the students, the workshop contains challenges that can also be done individually. To make sure students do not get stuck, there are scripts available with instructions to "automatically" fix a challenge, so students can continue. The workshop also contains extensive Step-By-Step videos and written instructions. There are also videos that explain the concepts that are used in the exercises.
+
+Students will be guided to clone the CodeToCloud source repository to their own account, setup Azure DevOps, create a GitHub Codespace and provision a settingsfile used to drive some of the automation.
+
+[![Prerequisites Instructions](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
+- [Instructions](Challenges/Prequisites/Readme.md)
 
 ### Module 1 - Improving the Developer Workflow
 
