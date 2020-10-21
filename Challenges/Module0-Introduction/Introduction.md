@@ -54,10 +54,10 @@ To address the issues and progress towards the goals, Susan asks a high-end cons
 * Choose a suitable platform for their conference solution. The platform choice should:
   * Make it easy to deploy and manage infrastructure.
   * Provide tooling to help them with monitoring and managing container health and security.
-  * Make it easier to manage the variable scale requirements of the different tenants, so that they no longer have to allocate tenants to a specific load balanced set of machines.
   * Provide a vendor neutral solution so that a specific on-premises or cloud environment does not become a new dependency.
   * Start with Azure since that is already in their Enterprise Agreement
 * Migrate data from MongoDB on-premises to CosmosDB with the least change possible to the application code.
+* Make use of GitHub and / or Azure DevOps for Development Lifecycle
 * Use Git repositories for source control and integrate into a CICD workflow.
 * Embed code review and security scanning in to the development workflow
 * Solution that does not incur a direct vendor-lock in

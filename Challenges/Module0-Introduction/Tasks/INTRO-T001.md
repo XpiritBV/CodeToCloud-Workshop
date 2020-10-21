@@ -4,7 +4,9 @@ You and your team are hired by Fabrikam Medical Conferences to help them with th
 
 ## Challenge
 
-In this challenge you will prepare a 15-minute chalk-talk style presentation to the customer. For this you need to design a proposed solution for Fabrikam Medical Conferences that covers the topics from the business design framework. Write your solution on a flipchart.
+In this challenge you will prepare a 15-minute chalk-talk style presentation to the customer. For this you need to design a proposed solution for Fabrikam Medical Conferences that covers the topics from the business design framework. Write your solution on a flipchart. 
+
+Think of the following topics you need to cover.
 
 * Business needs
   * Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
@@ -14,7 +16,6 @@ In this challenge you will prepare a 15-minute chalk-talk style presentation to 
   * High-level architecture
     * Would a microservices architecture be suitable?
     * What container solution would you propose to run the new microservices architecture for a single conference tenant?
-    * Without getting into the details (the following sections will address the particular details), diagram your initial vision of the container platform, the containers that should be deployed (for a single tenant), and the data tier.
 
 * Choosing a container platform on Azure
   * List the potential platform choices for deploying containers to Azure.
@@ -28,18 +29,12 @@ In this challenge you will prepare a 15-minute chalk-talk style presentation to 
     * The Container Registry.
     * The Deployment Process.
     * The Release Process.
-  * What options does the customer have for a Docker image registry and container scanning, and what would you recommend?
+  * What options does the customer have for a Docker image registry and security scanning, and what would you recommend?
 
 * DevOps workflows
   * Describe how to set up continuous integration and deployment workflows 
   * Describe how to Infrastructure as Code can help Fabrikam to meet customer demand
   * Describe the recommended approach for keeping the container platform and code base up to date with the latest security patches 
-
-When you are done with the design, review your design, considering the following questions:
-
-* Identify any customer needs that are not addressed with the proposed solution.
-* Identify the benefits of your solution.
-* Determine how you will respond to the customer's objections.
 
 ## Links & Information
 
