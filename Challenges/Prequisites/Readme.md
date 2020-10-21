@@ -21,7 +21,7 @@ The workshop is built with and targeted at development with GitHub Codespace. A 
 
 ![](Codespace-creation.png)
 
-Visual Studio Code doesn't pass a couple of specific of keystrokes to the terminal, this may make it harder to quit docker once you've started a container interacticely. You can add the [custom keybindings specified here](/.devcontainer/keybindings.json) to [your Visual Studio Code settings](https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization). This remaps `ctrl-q` and `ctrl-p` when the terminal has focus.
+Visual Studio Code doesn't pass a couple of specific of keystrokes to the terminal, this may make it harder to quit docker once you've started a container interactively. You can add the [custom keybindings specified here](/.devcontainer/keybindings.json) to [your Visual Studio Code settings](https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization). This remaps `ctrl-q` and `ctrl-p` when the terminal has focus.
 
 ## Set up workshop scripts
 
@@ -45,13 +45,13 @@ To set this up, you need to perform these steps
        * write:packages
        * read:org
        * workflow
-    3. The name of your Azure DevOps organiration
+    3. The name of your Azure DevOps organization
     4. Your Azure DevOps Personal Access Token with the following scopes:
        * Work Items: Read & Write
        * Build: Read & Execute
        * Project & Team: Read, Write & Manage
-    5. The name of the Project in Azure DevOps. The project will be automatically created if it doesn't exist yet. If the students must use pre-created projects, make sure they are using the Basic Process foa Azure Boards.
-    6. Your unique suffix (short, oinly lower case letters). This will be used to create the name of the resource group and resources in Azure.
+    5. The name of the Project in Azure DevOps. The project will be automatically created if it doesn't exist yet. If the students must use pre-created projects, make sure they are using the Basic Process for Azure Boards.
+    6. Your unique suffix (short, only lower case letters). This will be used to create the name of the resource group and resources in Azure.
     7. Whether to create/recreate work items in Azure Boards to which the commits and pull-requests will be linked.
 
 1. A local `settings.json` file has been created in the `.workshop` folder and is automatically ignored by git. **DO NOT COMMIT THIS TO YOUR REPO!**
@@ -117,7 +117,7 @@ https://github.com/yourorganisation/CodeToCloud-Source/pull/14
 
 ## Variables
 
-In some scripts we use variables like `$resourceGroupName` and `$webappName`. Based on the settings.json file, that is stored in your `.workshop` folder, we generated a PowerShell Profile for you. The values stored in `settings.json` are automatically loaded into your powershell console.
+In some scripts we use variables like `$resourceGroupName` and `$webappName`. Based on the settings.json file, that is stored in your `.workshop` folder, we generated a PowerShell Profile for you. The values stored in `settings.json` are automatically loaded into your PowerShell console.
 
 Available variables (loaded into `$global:` and `$env` scopes):
 

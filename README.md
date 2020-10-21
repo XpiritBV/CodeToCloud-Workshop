@@ -52,7 +52,7 @@ Duration: XXX
 
 To set the stage the students collaborate to use the different services of Azure, GitHub and Azure DevOps to design a architectural roadmap for Fabrikam Medical.
 
-As facilitator you can have them read the instuctions or role-play the part of VP of Engineering at Fabrikam, Susan Withers.
+As facilitator you can have them read the instructions or role-play the part of VP of Engineering at Fabrikam, Susan Withers.
 
 [![Instructions](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 

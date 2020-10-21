@@ -14,7 +14,7 @@ In this challenge you are going to replace the `:latest` tag in the docker-compo
 * Production environment contains an [Evaluate Artifact] automated approval that checks if the container registry is on a whitelist
 
 > Tips:
-> Use the powershell task in the Azure Pipeline to replace the :latest tag in the docker-compose file with the version of the build
+> Use the PowerShell task in the Azure Pipeline to replace the :latest tag in the docker-compose file with the version of the build
 >
 > ```YAML
 > - powershell: (gc .\docker-compose.yml) -replace ':latest',':$(Build.BuildNumber)' | set-content .\docker-compose.yml

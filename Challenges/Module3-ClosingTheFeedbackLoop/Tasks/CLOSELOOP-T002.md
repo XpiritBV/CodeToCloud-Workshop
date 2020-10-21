@@ -21,7 +21,7 @@ In this challenge your are going to create a continuous deployment pipeline that
 
 * Added a build.docker-compose.yml that can build the containers with docker-compose
 * GitHub Action added that uses docker-compose to build and publish the containers to the Container Registry
-* GitHub secret `AZURE_CREDENTIALS` added that contains the credentials of a Servide Principal to deploy application and infrastructure to Azure
+* GitHub secret `AZURE_CREDENTIALS` added that contains the credentials of a Service Principal to deploy application and infrastructure to Azure
 * Application deployed to Azure with `deploy-infrastructure.ps1` script
 
 ## Links & Information
