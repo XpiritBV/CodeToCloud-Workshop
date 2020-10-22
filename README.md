@@ -18,7 +18,7 @@ When a student is unable to finish the module in time, they can run a tool to au
 
 ## Class flow
 
- - Module 0
+ - Module 0 - Introduction
    - Introduction by Instructor
    - Introduction of Students
    - Design Cloud Architecture and DevOps Roadmap for Fabrikam Medical Conferences
@@ -26,19 +26,19 @@ When a student is unable to finish the module in time, they can run a tool to au
 
  - Setup Prerequisites
 
- - Module 1
+ - Module 1 - Improving the Developer Workflow
    - Instruction by Instructor
    - Challenge
    - Presentation & Discussion
 
  - Lunch break
 
- - Module 2
+ - Module 2 - Moving to the Cloud
    - Instruction by Instructor
    - Challenge
    - Presentation & Discussion
 
- - Module 3
+ - Module 3 - Closing the Feedback Loop
    - Instruction by Instructor
    - Challenge
    - Presentation & Discussion
@@ -48,7 +48,7 @@ When a student is unable to finish the module in time, they can run a tool to au
 
 ### Module 0 - Introduction
 
-Duration: XXX
+Duration: 120 minutes
 
 To set the stage the students collaborate to use the different services of Azure, GitHub and Azure DevOps to design a architectural roadmap for Fabrikam Medical.
 
@@ -72,7 +72,7 @@ Students will be guided to clone the CodeToCloud source repository to their own 
 
 ### Module 1 - Improving the Developer Workflow
 
-Duration: XXX
+Duration: 120 minutes
 
 #### Learning Objectives
 
@@ -110,7 +110,7 @@ Or show the following video:
 
 ### Module 2 - Moving to the Cloud
 
-Duration: XXX
+Duration: 90 minutes
 
 #### Learning Objectives
 
@@ -138,7 +138,7 @@ Or show the following video:
 
 ### Module 3 - Closing the Feedback Loop
 
-Duration: XXX
+Duration: 120 minutes
 
 #### Learning Objectives
 
