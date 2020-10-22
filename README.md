@@ -59,8 +59,6 @@ To set the stage the students collaborate to use the different services of Azure
 
 As facilitator you can have them read the instructions or role-play the part of VP of Engineering at Fabrikam, Susan Withers.
 
-[![Instructions](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
 - [Instructions](Challenges/Module0-Introduction/Introduction.md)
 
 ### Prerequisites
@@ -70,8 +68,6 @@ Duration: 20 minutes
 This workshop is targeted for students in a instructor-led training. To make it challenging for the students, the workshop contains challenges that can also be done individually. To make sure students do not get stuck, there are scripts available with instructions to "automatically" fix a challenge, so students can continue. The workshop also contains extensive Step-By-Step videos and written instructions. There are also videos that explain the concepts that are used in the exercises.
 
 Students will be guided to clone the CodeToCloud source repository to their own account, setup Azure DevOps, create a GitHub Codespace and provision a settingsfile used to drive some of the automation.
-
-[![Prerequisites Instructions](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 - [Instructions](Challenges/Prequisites/Readme.md)
 
@@ -109,7 +105,7 @@ Present the following topics to make the students familiar with:
 
 Or show the following video:
 
-[![Prerequisites Instructions](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[![Prerequisites Instructions](https://img.youtube.com/vi/v1XCEHDA3jE/0.jpg)](https://www.youtube.com/watch?v=v1XCEHDA3jE)
 
 - [Instructions](Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
 
@@ -137,7 +133,7 @@ Present the following topics to make the students familiar with:
 
 Or show the following video:
 
-[![Prerequisites Instructions](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[![Prerequisites Instructions](https://img.youtube.com/vi/vFU2sQ8D3l0/0.jpg)](https://www.youtube.com/watch?v=vFU2sQ8D3l0)
 
 - [Instructions](Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
 
@@ -165,6 +161,6 @@ Present the following topics to make the students familiar with:
 
 Or show the following video:
 
-[![Prerequisites Instructions](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[![Prerequisites Instructions](https://img.youtube.com/vi/Nk-Llbp9vdE/0.jpg)](https://www.youtube.com/watch?v=Nk-Llbp9vdE)
 
 - [Instructions](Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
