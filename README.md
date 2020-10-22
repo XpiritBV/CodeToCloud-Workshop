@@ -6,6 +6,7 @@ To make it challenging for the students, the workshop contains challenges that c
 
 This workshop focusses on the Code to Cloud journey. When you want to dive in to Cloud Native and the setup and configuration of Kubernetes, you can continue your learning journey with the [Cloud Native Workshop Workshop of Microsoft](https://github.com/microsoft/Cloud-Native-In-a-Day), which build upon the same sources. 
 
+
 ## Class setup
 
 The class is primarily setup to let participants figure out how to perform the steps themselves and provides links to the relevant docs and tutorials to guide them on their way. While this can take significantly longer, it greatly improves the learning. Possibly more than a single day.
@@ -45,6 +46,10 @@ When a student is unable to finish the module in time, they can run a tool to au
  - Closing
 
 ## Challenges
+All challenges can be found in the [Challenges](/Challenges/README.md) folder. These are also represented in another Git Repository that can be offered to the students. There is also a Git Repository that contains all sources. This can be found [here](https://github.com/XpiritBV/CodeToCloud-source).
+
+## Trainer Materials
+There are also trainer materials that can be used by the trainers to present the various concepts and agenda of the Day. These trainer materials can be found in the [Trainer Materials](/Trainer Materials/README.md) folder. 
 
 ### Module 0 - Introduction
 
