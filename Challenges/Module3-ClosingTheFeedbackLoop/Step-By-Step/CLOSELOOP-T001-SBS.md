@@ -53,13 +53,20 @@ To enable Application Insights we need an Application Insights Resource in our r
 
 ## Deploy new version of the container to the cluster
 
-1. When the GitHub Action CI completed, (re)deploy the web container to the cluster. Re-deploy the web application by deleting the pod(s). Kubernetes will automatically pull the latest version.
+1. When the GitHub Action CI completed, (re)deploy the web container to the web application.
 
-   ```powershell
-   kubectl get pods
-   #Find the web pods
-   kubectl delete pods web-6cdb....-l...
-   ```
+To update the website from a command line run the following command
+
+```
+az webapp config container set `
+--docker-registry-server-password <yourgithub personal access token> `
+--docker-registry-server-url https://ghcr.io `
+--docker-registry-server-user notapplicable `
+--multicontainer-config-file docker-compose.yml `
+--multicontainer-config-type COMPOSE `
+--name $webappName `
+--resource-group $resourcegroupName 
+```
 
 2. Visit the website and check Application Insights in the Azure Portal to see instrumentation data.
 
