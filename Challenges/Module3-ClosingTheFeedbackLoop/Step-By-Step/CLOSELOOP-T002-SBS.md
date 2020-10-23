@@ -42,7 +42,7 @@ services:
     build: ./content-web
 ```
 
-2. To use docker compose in our build, we are going to add a new GitHub Action workflow. In your GutHub repository, open the [Actions] Tab and create a new GitHub Action.
+2. To use docker compose in our build, we are going to add a new GitHub Action workflow. In your GitHub repository, open the [Actions] Tab and create a new GitHub Action.
 
 ![](NewGHAction.png)
 
