@@ -205,7 +205,7 @@ function Run {
     Invoke-Git commit -m $markDown.Properties.CommitMessage
     Invoke-Git push origin $branch --force
 
-    Invoke-GitHub pr create --repo $targetRepo --base main --body "$($markDown.Content)" --title "$($markDown.Properties.Title)"
+    Invoke-GitHub pr create --repo $targetRepo --base main --body "$($markDown.Content)" --title "$($markDown.Properties.Title)" --head $branch
     popd
 }
 
