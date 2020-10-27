@@ -25,6 +25,7 @@ jobs:
           git config --global user.email "training@xpirit.com"
           git config --global user.name "CodiToCloud Workshop"
           git config --global credential.helper "!f() { echo \`"username=`${GIT_USER}`npassword=`${GIT_PASS}\`"; }; f"
+        shell: pwsh
           
       # Runs a set of commands using the runners shell
       - name: Force update Source repo
