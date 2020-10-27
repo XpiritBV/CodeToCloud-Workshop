@@ -1,0 +1,12 @@
+{
+    "Student" : "personx",
+    "AzDoPAT": "",
+    "AzDoOrganization": "OrganizationName",
+    "AzDoProject": "CodeToCloud-Workshop",
+    "TargetRepo":"",
+    "GithubToken": "",
+    "WorkItemIdModule1": "",
+    "WorkItemIdModule2": "",
+    "WorkItemIdModule3": "",
+    "WorkItemIdModule4": ""
+}
