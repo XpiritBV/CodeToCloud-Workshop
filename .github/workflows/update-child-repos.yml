@@ -78,4 +78,19 @@ jobs:
           git branch -M main
           git push origin main --force
         shell: pwsh
+        
+      - name: Force update Solution repo
+        run: |
+          mkdir $env:HOME/CodeToCloud-Solution
+          cd $env:HOME/CodeToCloud-Solution
+          git init
+          git remote add origin https://github.com/XpiritBV/CodeToCloud-Solution.git
+          copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
+          remove-item -include @("Tasks", "Step-by-Step") * -Recurse -Force
+          copy $env:GITHUB_WORKSPACE/README.md .
+          git add .
+          git commit -m "Code-To-Cloud workshop solutions"
+          git branch -M main
+          git push origin main --force
+        shell: pwsh
   
