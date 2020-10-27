@@ -11,7 +11,11 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  update: 
+    env:
+      GIT_USER: "jesse.houwing@gmail.com"
+      GIT_PASS: ${{ secrets.PUSH }}
+
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -19,7 +23,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       - name: Setup git
         run: |
           git config --global user.email "training@xpirit.com"
@@ -33,16 +36,14 @@ jobs:
           mkdir $env:HOME/CodeToCloud-Source
           cd $env:HOME/CodeToCloud-Source
           git init
-          git remote add origin https://$($env:push_secret)@github.com/XpiritBV/CodeToCloud-SourceTest.git
+          git remote add origin https://github.com/XpiritBV/CodeToCloud-Source.git
           copy $env:GITHUB_WORKSPACE/Sources/* . -recurse -force
           git add .
           git commit -m "Clean starter solution for Code-To-Cloud workshop"
           git branch -M main
           git push origin main --force
         shell: pwsh      
-        env:
-          GIT_USER: "jesse.houwing@gmail.com"
-          GIT_PASS: ${{ secrets.PUSH }}
+        if: ${{ false }}
 
       # Runs a set of commands using the runners shell
       - name: Force update Student repo
@@ -50,7 +51,7 @@ jobs:
           mkdir $env:HOME/CodeToCloud-Student
           cd $env:HOME/CodeToCloud-Student
           git init
-          git remote add origin https://$($env:push_secret)@github.com/XpiritBV/CodeToCloud-Student.git
+          git remote add origin https://github.com/XpiritBV/CodeToCloud-Student.git
           copy $env:GITHUB_WORKSPACE/Assets . -recurse -force
           copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
           copy $env:GITHUB_WORKSPACE/README.md .
@@ -59,16 +60,13 @@ jobs:
           git branch -M main
           git push origin main --force
         shell: pwsh
-        env:
-          GIT_USER: "jesse.houwing@gmail.com"
-          GIT_PASS: ${{ secrets.PUSH }}
 
       - name: Force update Trainer repo
         run: |
           mkdir $env:HOME/CodeToCloud-Trainer
           cd $env:HOME/CodeToCloud-Trainer
           git init
-          git remote add origin https://$($env:push_secret)@github.com/XpiritBV/CodeToCloud-Trainer.git
+          git remote add origin https://github.com/XpiritBV/CodeToCloud-Trainer.git
           copy $env:GITHUB_WORKSPACE/Assets . -recurse -force
           copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
           copy "$env:GITHUB_WORKSPACE/Trainer Materials" . -recurse -force
@@ -78,6 +76,4 @@ jobs:
           git branch -M main
           git push origin main --force
         shell: pwsh
-        env:
-          GIT_USER: "jesse.houwing@gmail.com"
-          GIT_PASS: ${{ secrets.PUSH }}
+  
