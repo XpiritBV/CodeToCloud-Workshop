@@ -1,5 +1,8 @@
 # Step by Step DEVWF-T005
 
+If you rather watch a video with step by step instructions, you can do that here
+[![Step by Step Video](https://img.youtube.com/vi/Ky--Q3nzqKY/0.jpg)](https://www.youtube.com/watch?v=Ky--Q3nzqKY)
+
 In this task, you will enable the GitHub security features for your repository.
 
 1. In your GitHub repository, navigate to the [Security] Tab. Press the [Enable Dependabot alerts] button and the [Set up Code Scanning] button

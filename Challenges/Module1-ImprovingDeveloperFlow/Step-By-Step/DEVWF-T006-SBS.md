@@ -1,5 +1,8 @@
 # Step by Step DEVWF-T006
 
+If you rather watch a video with step by step instructions, you can do that here
+[![Step by Step Video](https://img.youtube.com/vi/7JiIWAnQ_T0/0.jpg)](https://www.youtube.com/watch?v=7JiIWAnQ_T0)
+
 In this task you are going to create a new Docker Compose file that contains the MongoDB, the API and the Web Application.
 
 >This task has a Starter solution, that creates a Pull Request containing some files and instructions. 

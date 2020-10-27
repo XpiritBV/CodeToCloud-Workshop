@@ -30,6 +30,8 @@ jobs:
 
       - name: Deploy Infrastructure
         shell: pwsh
+        env:
+          CR_PAT: ${{ secrets.CR_PAT }}        
         run: |
           .\infrastructure\deploy-infrastructure.ps1 -studentprefix <your abbreviation>
           

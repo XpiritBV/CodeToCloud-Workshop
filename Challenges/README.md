@@ -8,7 +8,7 @@ This workshop focusses on the Code to Cloud journey. When you want to dive in to
 
 ## Challenges
 
-* [Prerequisites - Do this first!](Prequisites/Readme.md)
+* [Prerequisites - Do this first!](Prerequisites/Readme.md)
 * [Module 0 - Introduction](Module0-Introduction/Introduction.md)
 * [Module 1 - Improving the Developer Workflow](Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
 * [Module 2 - Moving to the Cloud](Module2-MovingToTheCloud/MovingToTheCloud.md)

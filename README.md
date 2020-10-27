@@ -19,27 +19,27 @@ When a student is unable to finish the module in time, they can run a tool to au
 
 ## Class flow
 
- - Module 0 - Introduction
+ - [Module 0 - Introduction](/Challenges/Module0-Introduction/Introduction.md)
    - Introduction by Instructor
    - Introduction of Students
    - Design Cloud Architecture and DevOps Roadmap for Fabrikam Medical Conferences
    - Presentations
 
- - Setup Prerequisites
+ - [Setup Prerequisites](/Challenges/Prerequisites/Readme.md)
 
- - Module 1 - Improving the Developer Workflow
+ - [Module 1 - Improving the Developer Workflow](/Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
    - Instruction by Instructor
    - Challenge
    - Presentation & Discussion
 
  - Lunch break
 
- - Module 2 - Moving to the Cloud
+ - [Module 2 - Moving to the Cloud](/Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
    - Instruction by Instructor
    - Challenge
    - Presentation & Discussion
 
- - Module 3 - Closing the Feedback Loop
+ - [Module 3 - Closing the Feedback Loop](/Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
    - Instruction by Instructor
    - Challenge
    - Presentation & Discussion
@@ -49,7 +49,7 @@ When a student is unable to finish the module in time, they can run a tool to au
 All challenges can be found in the [Challenges](/Challenges/README.md) folder. These are also represented in another Git Repository that can be offered to the students. There is also a Git Repository that contains all sources. This can be found [here](https://github.com/XpiritBV/CodeToCloud-source).
 
 ## Trainer Materials
-There are also trainer materials that can be used by the trainers to present the various concepts and agenda of the Day. These trainer materials can be found in the [Trainer Materials](/Trainer Materials/README.md) folder. 
+There are also trainer materials that can be used by the trainers to present the various concepts and agenda of the Day. These trainer materials can be found in the [Trainer Materials](/TrainerMaterials/README.md) folder. 
 
 ### Module 0 - Introduction
 
@@ -60,6 +60,7 @@ To set the stage the students collaborate to use the different services of Azure
 As facilitator you can have them read the instructions or role-play the part of VP of Engineering at Fabrikam, Susan Withers.
 
 - [Instructions](Challenges/Module0-Introduction/Introduction.md)
+- [Outline of the Day](/TrainerMaterials/Presentations/Outline of the Day.pptx)
 
 ### Prerequisites
 
@@ -69,7 +70,8 @@ This workshop is targeted for students in a instructor-led training. To make it 
 
 Students will be guided to clone the CodeToCloud source repository to their own account, setup Azure DevOps, create a GitHub Codespace and provision a settingsfile used to drive some of the automation.
 
-- [Instructions](Challenges/Prequisites/Readme.md)
+- [Instructions](Challenges/Prerequisites/Readme.md)
+- [Step by Step Instructions](Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
 
 ### Module 1 - Improving the Developer Workflow
 
@@ -105,9 +107,12 @@ Present the following topics to make the students familiar with:
 
 Or show the following video:
 
-[![Prerequisites Instructions](https://img.youtube.com/vi/v1XCEHDA3jE/0.jpg)](https://www.youtube.com/watch?v=v1XCEHDA3jE)
+[![Module 1 - Improving Developer Workflow - Theoretical Concepts](https://img.youtube.com/vi/v1XCEHDA3jE/0.jpg)](https://www.youtube.com/watch?v=v1XCEHDA3jE)
 
+- [Concept Presentation](TrainerMaterials/Presentations/Module01-Improving Developer Workflow.pptx)
 - [Instructions](Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
+- [Step by Step Instructions](Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/DEVWF-SBS-Readme.md)
+
 
 ### Module 2 - Moving to the Cloud
 
@@ -133,9 +138,11 @@ Present the following topics to make the students familiar with:
 
 Or show the following video:
 
-[![Prerequisites Instructions](https://img.youtube.com/vi/vFU2sQ8D3l0/0.jpg)](https://www.youtube.com/watch?v=vFU2sQ8D3l0)
+[![Module 2 - Moving to the Cloud - Theoretical Concepts](https://img.youtube.com/vi/vFU2sQ8D3l0/0.jpg)](https://www.youtube.com/watch?v=vFU2sQ8D3l0)
 
+- [Concept Presentation](TrainerMaterials/Presentations/Module02-MovingToTheCloud.pptx)
 - [Instructions](Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
+- [Step by Step Instructions](Challenges/Module2-MovingToTheCloud/Step-By-Step/MOVECLOUD-SBS-Readme.md)
 
 ### Module 3 - Closing the Feedback Loop
 
@@ -161,6 +168,9 @@ Present the following topics to make the students familiar with:
 
 Or show the following video:
 
-[![Prerequisites Instructions](https://img.youtube.com/vi/Nk-Llbp9vdE/0.jpg)](https://www.youtube.com/watch?v=Nk-Llbp9vdE)
+[![Module 3 - Closing the Feedback Loop - Theoretical Concepts](https://img.youtube.com/vi/Nk-Llbp9vdE/0.jpg)](https://www.youtube.com/watch?v=Nk-Llbp9vdE)
 
+- [Concept Presentation](TrainerMaterials/Presentations/Module03-ClosingTheFeedbackLoop.pptx)
 - [Instructions](Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
+- [Step by Step Instructions](Challenges/Module3-ClosingTheFeedbackLoop/Step-By-Step/CLOSELOOP-SBS-Readme.md)
+

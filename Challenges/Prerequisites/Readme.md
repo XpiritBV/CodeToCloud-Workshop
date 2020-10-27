@@ -2,6 +2,10 @@
 
 This workshop is targeted for students in a instructor-led training. To make it challenging for the students, the workshop contains challenges that can also be done individually. To make sure students do not get stuck, there are scripts available with instructions to "automatically" fix a challenge, so students can continue. The workshop also contains extensive Step-By-Step videos and written instructions. There are also videos that explain the concepts that are used in the exercises.
 
+# Video
+If you rather watch a video with step by step instructions, you can do that here
+[![Step by Step Video](https://img.youtube.com/vi/vFU2sQ8D3l0/0.jpg)](https://www.youtube.com/watch?v=vFU2sQ8D3l0)
+
 ## Code base
 
 The workshop builds upon an existing code base. Before you start the workshop, this code base needs to be forked or cloned. 
@@ -15,11 +19,11 @@ The workshop is built with and targeted at development with GitHub Codespace. A 
 1. Navigate to your forked repository on GitHub
 2. Create a Code Space in your forked repo
 
-![](CodeSpace.png)
+![](/Assets/CodeSpace.png)
 
 3. Your GitHub Codespace will be created
 
-![](Codespace-creation.png)
+![](/Assets/Codespace-creation.png)
 
 Visual Studio Code doesn't pass a couple of specific of keystrokes to the terminal, this may make it harder to quit docker once you've started a container interactively. You can add the [custom keybindings specified here](/.devcontainer/keybindings.json) to [your Visual Studio Code settings](https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization). This remaps `ctrl-q` and `ctrl-p` when the terminal has focus.
 
@@ -63,7 +67,7 @@ To set this up, you need to perform these steps
 1. Create a Personal Access Token as [described here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token)
 1. Keep this Personal Access token somewhere safe for later use. **DO NOT COMMIT THIS TO YOUR REPO!**
 
-![Permissions GH](Permissions-GH.png)
+![Permissions GH](/Assets/Permissions-GH.png)
 
 #### Create Azure DevOps Personal Access Token
 

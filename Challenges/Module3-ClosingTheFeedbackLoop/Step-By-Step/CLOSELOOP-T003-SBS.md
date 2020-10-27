@@ -1,5 +1,8 @@
 # Step by Step CLOSELOOP-T003
 
+If you rather watch a video with step by step instructions, you can do that here
+[![Step by Step Video](https://img.youtube.com/vi/t9-PHxRDi1E/0.jpg)](https://www.youtube.com/watch?v=t9-PHxRDi1E)
+
 In this challenge you are going to setup a CI/CD pipeline in Azure DevOps that gets the sources from GitHub. The pipeline will have 1 deployment stage that deploys to the production environment. This has an manual approval gate.
 
 ## Disable GitHub Actions
@@ -16,7 +19,7 @@ on:
 ```
 ## Configure an Azure DevOps Pipeline
 
-1. Navigate to your Azure DevOps Project that was created in the [prerequisites setup](/Challenges/Prequisites/Readme.md), and create a new Pipeline
+1. Navigate to your Azure DevOps Project that was created in the [prerequisites setup](/Challenges/Prerequisites/Readme.md), and create a new Pipeline
 
 ![](/Assets/NewPipeline.png)
 
@@ -35,7 +38,7 @@ on:
 
 Before we can start building the build and release pipelines, we need to setup a connection between Azure DevOps and the GitHub Container Registry so that we can push our Docker images when they have been built.
 
-1. Navigate to your Azure DevOps Project that was created in the [prerequisites setup](/Challenges/Prequisites/Readme.md). In the Project Settings, open the Service Connections Tab.
+1. Navigate to your Azure DevOps Project that was created in the [prerequisites setup](/Challenges/Prerequisites/Readme.md). In the Project Settings, open the Service Connections Tab.
 
 ![](/Assets/ServiceConnection.png)
 
@@ -115,7 +118,7 @@ stages:
 
 Now that we have split the build and deployment we need to add the deployment steps to the pipeline. Before we can deploy anything to Azure, we need to create an Azure Service Connection.
 
-1. Navigate to your Azure DevOps Project that was created in the [prerequisites setup](/Challenges/Prequisites/Readme.md). In the Project Settings, open the Service Connections Tab.
+1. Navigate to your Azure DevOps Project that was created in the [prerequisites setup](/Challenges/Prerequisites/Readme.md). In the Project Settings, open the Service Connections Tab.
 2. Create a new [Azure Resource Manager] Service Connection and choose Service Principal (automatic)
 3. Choose your target subscription and resource group and set the Service Connection name to [Fabrikam-Azure]
 4. Save the Service Connection

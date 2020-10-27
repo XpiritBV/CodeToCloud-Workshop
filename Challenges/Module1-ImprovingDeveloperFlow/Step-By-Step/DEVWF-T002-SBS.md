@@ -1,5 +1,8 @@
 # Step by Step DEVWF-T002
 
+If you rather watch a video with step by step instructions, you can do that here
+[![Step by Step Video](https://img.youtube.com/vi/rTwJRlXZxH4/0.jpg)](https://www.youtube.com/watch?v=rTwJRlXZxH4)
+
 1. From your GitHub repository open your Codespace
 
     ![](/Assets/OpenCodeSpace.png)
