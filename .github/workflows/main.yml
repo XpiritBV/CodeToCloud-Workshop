@@ -24,6 +24,7 @@ jobs:
         run: |
           git config --global user.email "training@xpirit.com"
           git config --global user.name "CodiToCloud Workshop"
+          git config --global credential.helper "!f() { echo \`"username=`${GIT_USER}`npassword=`${GIT_PASS}\`"; }; f"
           
       # Runs a set of commands using the runners shell
       - name: Force update Source repo
@@ -38,9 +39,10 @@ jobs:
           git branch -M main
           git push origin main --force
         shell: pwsh
-        if: ${{ false }}
+        if: ${{ false }}        
         env:
-          push_secret: ${{ secrets.GITHUB_PUSH }}
+          GIT_USER: "jesse.houwing@gmail.com"
+          GIT_PASS: ${{ secrets.GITHUB_PUSH }}
 
       # Runs a set of commands using the runners shell
       - name: Force update Student repo
@@ -58,7 +60,8 @@ jobs:
           git push origin main --force
         shell: pwsh
         env:
-          push_secret: ${{ secrets.GITHUB_PUSH }}
+          GIT_USER: "jesse.houwing@gmail.com"
+          GIT_PASS: ${{ secrets.GITHUB_PUSH }}
 
       - name: Force update Trainer repo
         run: |
@@ -76,4 +79,5 @@ jobs:
           git push origin main --force
         shell: pwsh
         env:
-          push_secret: ${{ secrets.GITHUB_PUSH }}
+          GIT_USER: "jesse.houwing@gmail.com"
+          GIT_PASS: ${{ secrets.GITHUB_PUSH }}
