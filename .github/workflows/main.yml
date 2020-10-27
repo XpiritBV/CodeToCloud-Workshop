@@ -43,7 +43,7 @@ jobs:
         if: ${{ false }}        
         env:
           GIT_USER: "jesse.houwing@gmail.com"
-          GIT_PASS: ${{ secrets.GITHUB_PUSH }}
+          GIT_PASS: ${{ secrets.PUSH }}
 
       # Runs a set of commands using the runners shell
       - name: Force update Student repo
@@ -62,7 +62,7 @@ jobs:
         shell: pwsh
         env:
           GIT_USER: "jesse.houwing@gmail.com"
-          GIT_PASS: ${{ secrets.GITHUB_PUSH }}
+          GIT_PASS: ${{ secrets.PUSH }}
 
       - name: Force update Trainer repo
         run: |
@@ -81,4 +81,4 @@ jobs:
         shell: pwsh
         env:
           GIT_USER: "jesse.houwing@gmail.com"
-          GIT_PASS: ${{ secrets.GITHUB_PUSH }}
+          GIT_PASS: ${{ secrets.PUSH }}
