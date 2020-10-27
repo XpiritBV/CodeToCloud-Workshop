@@ -31,7 +31,7 @@ jobs:
           mkdir $env:HOME/CodeToCloud-Source
           cd $env:HOME/CodeToCloud-Source
           git init
-          git remote add origin https://.:$($env:push_secret)@github.com/XpiritBV/CodeToCloud-Source.git
+          git remote add origin https://$($env:push_secret)@github.com/XpiritBV/CodeToCloud-Source.git
           copy $env:GITHUB_WORKSPACE/Sources/* .
           git add .
           git commit -m "clean starter solution for Code-To-Cloud workshop"
@@ -48,7 +48,7 @@ jobs:
           mkdir $env:HOME/CodeToCloud-Student
           cd $env:HOME/CodeToCloud-Student
           git init
-          git remote add origin https://.:$($env:push_secret)@github.com/XpiritBV/CodeToCloud-Student.git
+          git remote add origin https://$($env:push_secret)@github.com/XpiritBV/CodeToCloud-Student.git
           copy $env:GITHUB_WORKSPACE/Assets .
           copy $env:GITHUB_WORKSPACE/Challenges .
           copy $env:GITHUB_WORKSPACE/README.md .
@@ -65,7 +65,7 @@ jobs:
           mkdir $env:HOME/CodeToCloud-Trainer
           cd $env:HOME/CodeToCloud-Trainer
           git init
-          git remote add origin https://.:$($env:push_secret)@github.com/XpiritBV/CodeToCloud-Trainer.git
+          git remote add origin https://$($env:push_secret)@github.com/XpiritBV/CodeToCloud-Trainer.git
           copy $env:GITHUB_WORKSPACE/Assets .
           copy $env:GITHUB_WORKSPACE/Challenges .
           copy "$env:GITHUB_WORKSPACE/Trainer Materials" .
