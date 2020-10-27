@@ -33,14 +33,13 @@ jobs:
           mkdir $env:HOME/CodeToCloud-Source
           cd $env:HOME/CodeToCloud-Source
           git init
-          git remote add origin https://$($env:push_secret)@github.com/XpiritBV/CodeToCloud-Source.git
+          git remote add origin https://$($env:push_secret)@github.com/XpiritBV/CodeToCloud-SourceTest.git
           copy $env:GITHUB_WORKSPACE/Sources/* . -recurse
           git add .
           git commit -m "Clean starter solution for Code-To-Cloud workshop"
           git branch -M main
           git push origin main --force
-        shell: pwsh
-        if: ${{ false }}        
+        shell: pwsh      
         env:
           GIT_USER: "jesse.houwing@gmail.com"
           GIT_PASS: ${{ secrets.PUSH }}
