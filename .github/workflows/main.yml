@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Update child repositories
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
@@ -20,6 +20,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Setup git
+        run: |
+          git config --global user.email "training@xpirit.com"
+          git config --global user.name "CodiToCloud Workshop"
+          
       # Runs a set of commands using the runners shell
       - name: Force update Source repo
         run: |
