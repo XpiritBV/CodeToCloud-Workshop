@@ -23,7 +23,7 @@ jobs:
       - name: Setup git
         run: |
           git config --global user.email "training@xpirit.com"
-          git config --global user.name "CodiToCloud Workshop"
+          git config --global user.name "CodeToCloud Workshop"
           git config --global credential.helper "!f() { echo \`"username=`${GIT_USER}`npassword=`${GIT_PASS}\`"; }; f"
         shell: pwsh
           
@@ -36,7 +36,7 @@ jobs:
           git remote add origin https://$($env:push_secret)@github.com/XpiritBV/CodeToCloud-Source.git
           copy $env:GITHUB_WORKSPACE/Sources/* . -recurse
           git add .
-          git commit -m "clean starter solution for Code-To-Cloud workshop"
+          git commit -m "Clean starter solution for Code-To-Cloud workshop"
           git branch -M main
           git push origin main --force
         shell: pwsh
@@ -56,7 +56,7 @@ jobs:
           copy $env:GITHUB_WORKSPACE/Challenges . -recurse
           copy $env:GITHUB_WORKSPACE/README.md .
           git add .
-          git commit -m "clean starter solution for Code-To-Cloud workshop"
+          git commit -m "Code-To-Cloud workshop"
           git branch -M main
           git push origin main --force
         shell: pwsh
@@ -75,7 +75,7 @@ jobs:
           copy "$env:GITHUB_WORKSPACE/Trainer Materials" . -recurse
           copy $env:GITHUB_WORKSPACE/README.md .
           git add .
-          git commit -m "clean starter solution for Code-To-Cloud workshop"
+          git commit -m "Code-To-Cloud workshop"
           git branch -M main
           git push origin main --force
         shell: pwsh
