@@ -13,4 +13,3 @@ This workshop focusses on the Code to Cloud journey. When you want to dive in to
 * [Module 1 - Improving the Developer Workflow](Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
 * [Module 2 - Moving to the Cloud](Module2-MovingToTheCloud/MovingToTheCloud.md)
 * [Module 3 - Closing the Feedback Loop](Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
-* [Module 4 - Scaling up the business](Module4-ScalingUpTheBusiness/ScalingUpTheBusiness.md)

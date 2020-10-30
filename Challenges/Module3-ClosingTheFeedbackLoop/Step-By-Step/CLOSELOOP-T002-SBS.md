@@ -114,11 +114,13 @@ Copy the complete JSON output to your clipboard.
       creds: ${{secrets.AZURE_CREDENTIALS}}
 ```          
 
-9. Add a script task to the workflow, that executes the `deploy-infrastrucuture.ps1` file
+9. Add a script task to the workflow, that executes the `deploy-infrastrucuture.ps1` file. Take note of the ENV variable you need to add to the stage to get access to the secret variable.
 
 ```YAML
       - name: Deploy Infrastructure
         shell: pwsh
+        env:
+            CR_PAT: ${{ secrets.CR_PAT }}        
         run: |
           .\infrastructure\deploy-infrastructure.ps1 -studentprefix <your abbreviation here>
 ```
