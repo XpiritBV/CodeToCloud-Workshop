@@ -54,7 +54,7 @@ jobs:
           copy $env:GITHUB_WORKSPACE/Assets . -recurse -force
           copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
           remove-item -include @("start", "solution") * -Recurse -Force
-          copy $env:GITHUB_WORKSPACE/README.md .
+          copy $env:GITHUB_WORKSPACE/README-Student.md README.md
           git add .
           git commit -m "Code-To-Cloud workshop"
           git branch -M main
@@ -71,7 +71,7 @@ jobs:
           copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
           remove-item -include @("start", "solution") * -Recurse -Force
           copy "$env:GITHUB_WORKSPACE/Trainer Materials" . -recurse -force
-          copy $env:GITHUB_WORKSPACE/README.md .
+          copy $env:GITHUB_WORKSPACE/README-Trainer.md README.md
           git add .
           git commit -m "Code-To-Cloud workshop"
           git branch -M main
@@ -86,7 +86,7 @@ jobs:
           git remote add origin https://github.com/XpiritBV/CodeToCloud-Solution.git
           copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
           remove-item -include @("Tasks", "Step-by-Step") * -Recurse -Force
-          copy $env:GITHUB_WORKSPACE/README.md .
+          copy $env:GITHUB_WORKSPACE/README-Solution.md README.md
           git add .
           git commit -m "Code-To-Cloud workshop solutions"
           git branch -M main
