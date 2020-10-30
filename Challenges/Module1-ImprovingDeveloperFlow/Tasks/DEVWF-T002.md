@@ -15,8 +15,6 @@ In this challenge you are going to Dockerize the MongoDB and fill this with init
 
 > ### Tips and Hints
 >
-> Create the /data folder on the host in the root of the [CodeToCloud-Source] repository
->
 > Run a Mongo container (from the root) with the command `docker run -ti --name mongo --network fabrikam -p 27017:27017 mongo`
 >
 > Build and start the content-init by using `npm install` and `node .\server.js`

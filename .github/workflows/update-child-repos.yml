@@ -1,0 +1,95 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Update child repositories
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  update: 
+    env:
+      GIT_USER: "jesse.houwing@gmail.com"
+      GIT_PASS: ${{ secrets.PUSH }}
+
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Setup git
+        run: |
+          git config --global user.email "training@xpirit.com"
+          git config --global user.name "CodeToCloud Workshop"
+          git config --global credential.helper "!f() { echo \`"username=`${GIT_USER}`npassword=`${GIT_PASS}\`"; }; f"
+        shell: pwsh
+          
+      # Runs a set of commands using the runners shell
+      - name: Force update Source repo
+        run: |
+          mkdir $env:HOME/CodeToCloud-Source
+          cd $env:HOME/CodeToCloud-Source
+          git init
+          git remote add origin https://github.com/XpiritBV/CodeToCloud-Source.git
+          copy $env:GITHUB_WORKSPACE/Sources/* . -recurse -force
+          git add .
+          git commit -m "Clean starter solution for Code-To-Cloud workshop"
+          git branch -M main
+          git push origin main --force
+        shell: pwsh      
+
+      # Runs a set of commands using the runners shell
+      - name: Force update Student repo
+        run: |
+          mkdir $env:HOME/CodeToCloud-Student
+          cd $env:HOME/CodeToCloud-Student
+          git init
+          git remote add origin https://github.com/XpiritBV/CodeToCloud-Student.git
+          copy $env:GITHUB_WORKSPACE/Assets . -recurse -force
+          copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
+          remove-item -include @("start", "solution") * -Recurse -Force
+          copy $env:GITHUB_WORKSPACE/README.md .
+          git add .
+          git commit -m "Code-To-Cloud workshop"
+          git branch -M main
+          git push origin main --force
+        shell: pwsh
+
+      - name: Force update Trainer repo
+        run: |
+          mkdir $env:HOME/CodeToCloud-Trainer
+          cd $env:HOME/CodeToCloud-Trainer
+          git init
+          git remote add origin https://github.com/XpiritBV/CodeToCloud-Trainer.git
+          copy $env:GITHUB_WORKSPACE/Assets . -recurse -force
+          copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
+          remove-item -include @("start", "solution") * -Recurse -Force
+          copy "$env:GITHUB_WORKSPACE/Trainer Materials" . -recurse -force
+          copy $env:GITHUB_WORKSPACE/README.md .
+          git add .
+          git commit -m "Code-To-Cloud workshop"
+          git branch -M main
+          git push origin main --force
+        shell: pwsh
+        
+      - name: Force update Solution repo
+        run: |
+          mkdir $env:HOME/CodeToCloud-Solution
+          cd $env:HOME/CodeToCloud-Solution
+          git init
+          git remote add origin https://github.com/XpiritBV/CodeToCloud-Solution.git
+          copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
+          remove-item -include @("Tasks", "Step-by-Step") * -Recurse -Force
+          copy $env:GITHUB_WORKSPACE/README.md .
+          git add .
+          git commit -m "Code-To-Cloud workshop solutions"
+          git branch -M main
+          git push origin main --force
+        shell: pwsh
+  

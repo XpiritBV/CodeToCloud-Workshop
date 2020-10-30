@@ -12,7 +12,6 @@ In this task you will run the WEB and API application as a multi-container appli
 
  ```
  $mongodbConnectionString="connectionString=mongodb://xxx.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb"
- kubectl create secret generic cosmosdb --from-literal=db=$mongodbConnectionString
  ```
 3. Fill the cosmos DB by running the init container
 
