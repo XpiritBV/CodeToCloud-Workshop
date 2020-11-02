@@ -70,7 +70,7 @@ jobs:
           copy $env:GITHUB_WORKSPACE/Assets . -recurse -force
           copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
           remove-item -include @("start", "solution") * -Recurse -Force
-          copy "$env:GITHUB_WORKSPACE/Trainer Materials" . -recurse -force
+          copy "$env:GITHUB_WORKSPACE/TrainerMaterials" . -recurse -force
           copy $env:GITHUB_WORKSPACE/README-Trainer.md README.md
           git add .
           git commit -m "Code-To-Cloud workshop"
