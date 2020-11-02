@@ -1,5 +1,8 @@
 # Step by Step DEVWF-T004
 
+If you rather watch a video with step by step instructions, you can do that here
+[![Step by Step Video](https://img.youtube.com/vi/jjsnPS7cNZw/0.jpg)](https://www.youtube.com/watch?v=jjsnPS7cNZw)
+
 In this task, you will merge the Pull Request containing 3 multi-staged Docker files to your main branch, while linking to an Azure Boards project. The multi-staged Docker files will be used to build a new version of your WEB, API and INIT container.
 
 >This task has a Starter solution, that creates a Pull Request containing some files and instructions. 
