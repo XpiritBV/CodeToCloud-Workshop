@@ -52,7 +52,7 @@ This workshop is targeted for students in a instructor-led training. To make it 
 Students will be guided to clone the CodeToCloud source repository to their own account, setup Azure DevOps, create a GitHub Codespace and provision a settingsfile used to drive some of the automation.
 
 - [Instructions](Challenges/Prerequisites/Readme.md)
-- [Step by Step Instructions](Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
+- [Step by Step Instructions](Challenges/Prerequisites/Readme.md)
 
 ### Module 1 - Improving the Developer Workflow
 

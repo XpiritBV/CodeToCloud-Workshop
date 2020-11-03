@@ -4,7 +4,7 @@ This workshop is targeted for students in a instructor-led training. To make it 
 
 # Video
 If you rather watch a video with step by step instructions, you can do that here
-[![Step by Step Video](https://img.youtube.com/vi/vFU2sQ8D3l0/0.jpg)](https://www.youtube.com/watch?v=vFU2sQ8D3l0)
+[![Step by Step Video](https://img.youtube.com/vi/YOZAGmuYNZM/0.jpg)](https://www.youtube.com/watch?v=YOZAGmuYNZM)
 
 ## Code base
 
