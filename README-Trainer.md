@@ -52,7 +52,6 @@ This workshop is targeted for students in a instructor-led training. To make it 
 Students will be guided to clone the CodeToCloud source repository to their own account, setup Azure DevOps, create a GitHub Codespace and provision a settingsfile used to drive some of the automation.
 
 - [Instructions](Challenges/Prerequisites/Readme.md)
-- [Step by Step Instructions](Challenges/Prerequisites/Readme.md)
 
 ### Module 1 - Improving the Developer Workflow
 
@@ -92,7 +91,7 @@ Or show the following video:
 
 - [Concept Presentation](TrainerMaterials/Presentations/Module01-ImprovingDeveloperWorkflow.pptx)
 - [Instructions](Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
-- [Step by Step Instructions](Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/DEVWF-SBS-Readme.md)
+- [Step by Step Instructions](Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/Readme.md)
 
 
 ### Module 2 - Moving to the Cloud
@@ -123,7 +122,7 @@ Or show the following video:
 
 - [Concept Presentation](TrainerMaterials/Presentations/Module02-MovingToTheCloud.pptx)
 - [Instructions](Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
-- [Step by Step Instructions](Challenges/Module2-MovingToTheCloud/Step-By-Step/MOVECLOUD-SBS-Readme.md)
+- [Step by Step Instructions](Challenges/Module2-MovingToTheCloud/Step-By-Step/Readme.md)
 
 ### Module 3 - Closing the Feedback Loop
 
@@ -153,16 +152,16 @@ Or show the following video:
 
 - [Concept Presentation](TrainerMaterials/Presentations/Module03-ClosingTheFeedbackLoop.pptx)
 - [Instructions](Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
-- [Step by Step Instructions](Challenges/Module3-ClosingTheFeedbackLoop/Step-By-Step/CLOSELOOP-SBS-Readme.md)
+- [Step by Step Instructions](Challenges/Module3-ClosingTheFeedbackLoop/Step-By-Step/Readme.md)
 
 
 ## Class flow
  
   - [Module 0 - Introduction](/Challenges/Module0-Introduction/Introduction.md)
-   - Introduction by Instructor
-   - Introduction of Students
-   - Design Cloud Architecture and DevOps Roadmap for Fabrikam Medical Conferences
-   - Presentations
+    - Introduction by Instructor
+    - Introduction of Students
+    - Design Cloud Architecture and DevOps Roadmap for Fabrikam Medical Conferences
+    - Presentations
   
  - [Setup Prerequisites](/Challenges/Prerequisites/Readme.md)
  

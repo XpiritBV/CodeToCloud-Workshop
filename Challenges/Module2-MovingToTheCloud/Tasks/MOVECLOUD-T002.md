@@ -55,4 +55,5 @@ To read or view a step by step explanation of this challenge, please visit [this
 
 ### Next Step
 
-When you are done, move to the [next challenge](/Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackLoop.md)
+When you are done, move to the [next challenge](/Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
+                                                 

@@ -25,5 +25,3 @@ Together with the DevOps team you need to address these issues ASAP!
 * [CLOSELOOP-T003 Increase control with Azure DevOps CI/CD](Tasks/CLOSELOOP-T003.md)
 * [CLOSELOOP-T004 Deploy latest validated version with automated approvals](Tasks/CLOSELOOP-T004.md)
 
-# Video
-

@@ -53,13 +53,13 @@ When you have set up your prerequisites you can start with the modules.
 
 ### Module 1 - Improving the Developer Workflow
 - [Instructions](Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
-- [Step by Step Instructions](Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/DEVWF-SBS-Readme.md)
+- [Step by Step Instructions](Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/Readme.md)
 
 ### Module 2 - Moving to the Cloud
 - [Instructions](Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
-- [Step by Step Instructions](Challenges/Module2-MovingToTheCloud/Step-By-Step/MOVECLOUD-SBS-Readme.md)
+- [Step by Step Instructions](Challenges/Module2-MovingToTheCloud/Step-By-Step/Readme.md)
 
 ### Module 3 - Closing the Feedback Loop
 - [Instructions](Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
-- [Step by Step Instructions](Challenges/Module3-ClosingTheFeedbackLoop/Step-By-Step/CLOSELOOP-SBS-Readme.md)
+- [Step by Step Instructions](Challenges/Module3-ClosingTheFeedbackLoop/Step-By-Step/Readme.md)
 

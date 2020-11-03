@@ -145,4 +145,4 @@ Invoke-expression $profile
 
 ### Next Step
 
-When you are done, move to the [first challenge](/Challenges/Module0-Introduction/Introduction.md)
+When you are done, move to the [first challenge](/Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
