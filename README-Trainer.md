@@ -6,7 +6,6 @@ To make it challenging for the students, the workshop contains challenges that c
 
 This workshop focusses on the Code to Cloud journey. When you want to dive in to Cloud Native and the setup and configuration of Kubernetes, you can continue your learning journey with the [Cloud Native Workshop Workshop of Microsoft](https://github.com/microsoft/Cloud-Native-In-a-Day), which build upon the same sources. 
 
-
 ## Class setup
 
 The class is primarily setup to let participants figure out how to perform the steps themselves and provides links to the relevant docs and tutorials to guide them on their way. While this can take significantly longer, it greatly improves the learning. Possibly more than a single day.
@@ -17,39 +16,21 @@ Student must perform all modules in order.
 
 When a student is unable to finish the module in time, they can run a tool to automatically perform the required code-changes on their environment, preparing them for the next module.
 
-## Class flow
+## Repository Setup
 
- - [Module 0 - Introduction](/Challenges/Module0-Introduction/Introduction.md)
-   - Introduction by Instructor
-   - Introduction of Students
-   - Design Cloud Architecture and DevOps Roadmap for Fabrikam Medical Conferences
-   - Presentations
+This repository is the "trainer" copy of the workshop. Including this repository, the workshop consists of 4 repositories that all have a specific purpose.
 
- - [Setup Prerequisites](/Challenges/Prerequisites/Readme.md)
-
- - [Module 1 - Improving the Developer Workflow](/Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
-   - Instruction by Instructor
-   - Challenge
-   - Presentation & Discussion
-
- - Lunch break
-
- - [Module 2 - Moving to the Cloud](/Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
-   - Instruction by Instructor
-   - Challenge
-   - Presentation & Discussion
-
- - [Module 3 - Closing the Feedback Loop](/Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
-   - Instruction by Instructor
-   - Challenge
-   - Presentation & Discussion
- - Closing
-
-## Challenges
-All challenges can be found in the [Challenges](/Challenges/README.md) folder. These are also represented in another Git Repository that can be offered to the students. There is also a Git Repository that contains all sources. This can be found [here](https://github.com/XpiritBV/CodeToCloud-Source). Students need to fork this repo to get started. This is also described in the [prerequisites](Challenges/Prerequisites/Readme.md)
+* [CodeToCloud-Student][https://github.com/XpiritBV/CodeToCloud-Student]
+  * STUDENT REPOSITORY - This contains the exercises and challenges for the students. Provide this link to the students.
+* [CodeToCloud-Source](https://github.com/XpiritBV/CodeToCloud-Source)
+  * STUDENT REPOSITORY - This contains the starter solution source code that students can fork. Provide this link to the students.
+* [CodeToCloud-Trainer](https://github.com/XpiritBV/CodeToCloud-Trainer)
+  * TRAINER REPOSITORY - Current repository. This contains the trainer materials, slide decks, solution files and exercises
+* [CodeToCloud-Solution](https://github.com/XpiritBV/CodeToCloud-Solution)
+  * TRAINER REPOSITORY - This contains the Start and Solution files that are used in the auto-fix scripts. Should not be touched.
 
 ## Trainer Materials
-There are also trainer materials that can be used by the trainers to present the various concepts and agenda of the Day. These trainer materials can be found in the [Trainer Materials](/TrainerMaterials/README.md) folder. 
+There are trainer materials that can be used by the trainers to present the various concepts and agenda of the Day. These trainer materials can be found in the [Trainer Materials](/TrainerMaterials/README.md) folder. The [Outline presentation](TrainerMaterials\Presentations\Outline of the Day.pptx) contains the agenda and introduction of the day to the students.
 
 ### Module 0 - Introduction
 
@@ -173,4 +154,37 @@ Or show the following video:
 - [Concept Presentation](TrainerMaterials/Presentations/Module03-ClosingTheFeedbackLoop.pptx)
 - [Instructions](Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
 - [Step by Step Instructions](Challenges/Module3-ClosingTheFeedbackLoop/Step-By-Step/CLOSELOOP-SBS-Readme.md)
+
+
+## Class flow
+ 
+  - [Module 0 - Introduction](/Challenges/Module0-Introduction/Introduction.md)
+   - Introduction by Instructor
+   - Introduction of Students
+   - Design Cloud Architecture and DevOps Roadmap for Fabrikam Medical Conferences
+   - Presentations
+  
+ - [Setup Prerequisites](/Challenges/Prerequisites/Readme.md)
+ 
+ - [Module 1 - Improving the Developer Workflow](/Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
+   - Instruction by Instructor
+   - Challenge
+   - Presentation & Discussion
+
+ - Lunch break
+
+ - [Module 2 - Moving to the Cloud](/Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
+   - Instruction by Instructor
+   - Challenge
+   - Presentation & Discussion
+
+ - [Module 3 - Closing the Feedback Loop](/Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
+   - Instruction by Instructor
+   - Challenge
+   - Presentation & Discussion
+ - Closing
+
+
+## Challenges
+All challenges can be found in the [Challenges](/Challenges/README.md) folder. These are also represented in another Git Repository that can be offered to the students. There is also a Git Repository that contains all sources. This can be found [here](https://github.com/XpiritBV/CodeToCloud-Source). Students need to fork this repo to get started. This is also described in the [prerequisites](Challenges/Prerequisites/Readme.md)
 
