@@ -4,8 +4,8 @@ This folder contains the trainer materials for a workshop targeted at students i
 
 ## Materials
 
-* [Outline of the Day](OutlineOfTheDay.pptx)
-* [Module 1 - Improving the Developer Workflow](Module01-ImprovingDeveloperWorkflow.pptx)
-* [Module 2 - Moving to the Cloud](Module02-MovingToTheCloud.pptx)
-* [Module 3 - Closing the Feedback Loop](Module03-ClosingTheFeedbackLoop.pptx)
-* [Module 4 - Scaling up the business](Module4-ScalingUpTheBusiness/ScalingUpTheBusiness.md)
+* [Outline of the Day](Presentations/OutlineOfTheDay.pptx)
+* [Module 1 - Improving the Developer Workflow](Presentations/Module01-ImprovingDeveloperWorkflow.pptx)
+* [Module 2 - Moving to the Cloud](Presentations/Module02-MovingToTheCloud.pptx)
+* [Module 3 - Closing the Feedback Loop](Presentations/Module03-ClosingTheFeedbackLoop.pptx)
+* [Module 4 - Scaling up the business](Presentations/Module4-ScalingUpTheBusiness/ScalingUpTheBusiness.md)
