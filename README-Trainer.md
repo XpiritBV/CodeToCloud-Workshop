@@ -20,7 +20,7 @@ When a student is unable to finish the module in time, they can run a tool to au
 
 This repository is the "trainer" copy of the workshop. Including this repository, the workshop consists of 4 repositories that all have a specific purpose.
 
-* [CodeToCloud-Student][https://github.com/XpiritBV/CodeToCloud-Student]
+* [CodeToCloud-Student](https://github.com/XpiritBV/CodeToCloud-Student)
   * STUDENT REPOSITORY - This contains the exercises and challenges for the students. Provide this link to the students.
 * [CodeToCloud-Source](https://github.com/XpiritBV/CodeToCloud-Source)
   * STUDENT REPOSITORY - This contains the starter solution source code that students can fork. Provide this link to the students.
