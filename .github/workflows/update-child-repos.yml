@@ -38,6 +38,7 @@ jobs:
           git init
           git remote add origin https://github.com/XpiritBV/CodeToCloud-Source.git
           copy $env:GITHUB_WORKSPACE/Sources/* . -recurse -force
+          copy $env:GITHUB_WORKSPACE/CONTRIBUTING.md .
           git add .
           git commit -m "Clean starter solution for Code-To-Cloud workshop"
           git branch -M main
@@ -55,6 +56,7 @@ jobs:
           copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
           remove-item -include @("start", "solution") * -Recurse -Force
           copy $env:GITHUB_WORKSPACE/README-Student.md README.md
+          copy $env:GITHUB_WORKSPACE/CONTRIBUTING.md .
           git add .
           git commit -m "Code-To-Cloud workshop"
           git branch -M main
@@ -72,6 +74,7 @@ jobs:
           remove-item -include @("start", "solution") * -Recurse -Force
           copy "$env:GITHUB_WORKSPACE/TrainerMaterials" . -recurse -force
           copy $env:GITHUB_WORKSPACE/README-Trainer.md README.md
+          copy $env:GITHUB_WORKSPACE/CONTRIBUTING.md .
           git add .
           git commit -m "Code-To-Cloud workshop"
           git branch -M main
@@ -87,6 +90,7 @@ jobs:
           copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
           remove-item -include @("Tasks", "Step-by-Step") * -Recurse -Force
           copy $env:GITHUB_WORKSPACE/README-Solution.md README.md
+          copy $env:GITHUB_WORKSPACE/CONTRIBUTING.md .
           git add .
           git commit -m "Code-To-Cloud workshop solutions"
           git branch -M main
