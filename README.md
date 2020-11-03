@@ -10,14 +10,15 @@ This workshop focusses on the Code to Cloud journey. When you want to dive in to
 
 This repository is the "working" copy of the workshop. A pipeline `update-child-repos.yml` has been set up to create 3 repositories out of this working copy that can be used by the trainers and students of this workshop.
 
-* [CodeToCloud-Trainer](https://github.com/XpiritBV/CodeToCloud-Trainer)
-  * This contains the trainer materials, slide decks, solution files and exercises
-* [CodeToCloud-Student][https://github.com/XpiritBV/CodeToCloud-Student]
-  * This contains the exercises and challenges for the students
+* [CodeToCloud-Student](https://github.com/XpiritBV/CodeToCloud-Student)
+  * STUDENT REPOSITORY - This contains the exercises and challenges for the students. Provide this link to the students.
 * [CodeToCloud-Source](https://github.com/XpiritBV/CodeToCloud-Source)
-  * This contains the starter solution source code that students can fork
+  * STUDENT REPOSITORY - This contains the starter solution source code that students can fork. Provide this link to the students.
+* [CodeToCloud-Trainer](https://github.com/XpiritBV/CodeToCloud-Trainer)
+  * TRAINER REPOSITORY - Current repository. This contains the trainer materials, slide decks, solution files and exercises
 * [CodeToCloud-Solution](https://github.com/XpiritBV/CodeToCloud-Solution)
-  * This contains the Start and Solution files that are used in the auto-fix scripts
+  * TRAINER REPOSITORY - This contains the Start and Solution files that are used in the auto-fix scripts. Should not be touched.
+
 
 ## Containers
 In the Containers folder, you find 3 containers. 2 base containers and 1 container `ghws-fix` that does the actual work. The container uses the settings file of a student, that he or she can setup by running through the setup scripts, and creates a Pull Request in their forked repository with instructions and scripts to auto-fix or quickstart an exercise. The containers are published in a GitHub Action to the GitHub Container Registry of Xpirit.
