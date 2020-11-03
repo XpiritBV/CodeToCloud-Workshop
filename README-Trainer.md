@@ -30,7 +30,7 @@ This repository is the "trainer" copy of the workshop. Including this repository
   * TRAINER REPOSITORY - This contains the Start and Solution files that are used in the auto-fix scripts. Should not be touched.
 
 ## Trainer Materials
-There are trainer materials that can be used by the trainers to present the various concepts and agenda of the Day. These trainer materials can be found in the [Trainer Materials](/TrainerMaterials/README.md) folder. The [Outline presentation](TrainerMaterials\Presentations\Outline of the Day.pptx) contains the agenda and introduction of the day to the students.
+There are trainer materials that can be used by the trainers to present the various concepts and agenda of the Day. These trainer materials can be found in the [Trainer Materials](/TrainerMaterials/README.md) folder. The [Outline presentation](TrainerMaterials\Presentations\OutlineOfTheDay.pptx) contains the agenda and introduction of the day to the students.
 
 ### Module 0 - Introduction
 
@@ -41,7 +41,7 @@ To set the stage the students collaborate to use the different services of Azure
 As facilitator you can have them read the instructions or role-play the part of VP of Engineering at Fabrikam, Susan Withers.
 
 - [Instructions](Challenges/Module0-Introduction/Introduction.md)
-- [Outline of the Day](/TrainerMaterials/Presentations/Outline of the Day.pptx)
+- [Outline of the Day](TrainerMaterials/Presentations/OutlineOfTheDay.pptx)
 
 ### Prerequisites
 
@@ -90,7 +90,7 @@ Or show the following video:
 
 [![Module 1 - Improving Developer Workflow - Theoretical Concepts](https://img.youtube.com/vi/v1XCEHDA3jE/0.jpg)](https://www.youtube.com/watch?v=v1XCEHDA3jE)
 
-- [Concept Presentation](TrainerMaterials/Presentations/Module01-Improving Developer Workflow.pptx)
+- [Concept Presentation](TrainerMaterials/Presentations/Module01-ImprovingDeveloperWorkflow.pptx)
 - [Instructions](Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
 - [Step by Step Instructions](Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/DEVWF-SBS-Readme.md)
 

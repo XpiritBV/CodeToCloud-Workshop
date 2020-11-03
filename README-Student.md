@@ -45,7 +45,7 @@ When you have set up your prerequisites you can start with the modules.
 
 ### Module 0 - Introduction
 - [Instructions](Challenges/Module0-Introduction/Introduction.md)
-- [Outline of the Day](/TrainerMaterials/Presentations/Outline of the Day.pptx)
+- [Outline of the Day](/TrainerMaterials/Presentations/OutlineOfTheDay.pptx)
 
 ### Prerequisites
 - [Instructions](Challenges/Prerequisites/Readme.md)
