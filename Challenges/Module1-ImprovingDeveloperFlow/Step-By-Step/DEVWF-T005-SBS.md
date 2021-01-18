@@ -1,7 +1,7 @@
 # Step by Step DEVWF-T005
 
 If you rather watch a video with step by step instructions, you can do that here
-[![Step by Step Video](https://img.youtube.com/vi/Ky--Q3nzqKY/0.jpg)](https://www.youtube.com/watch?v=Ky--Q3nzqKY)
+[![Step by Step Video](https://img.youtube.com/vi/rjdF-JjZm6Q/0.jpg)](https://www.youtube.com/watch?v=rjdF-JjZm6Q)
 
 In this task, you will enable the GitHub security features for your repository.
 

@@ -7,7 +7,7 @@
 * [CLOSELOOP-T004 Deploy latest validated version with automated approvals](CLOSELOOP-T004-SBS.md)
 
 ## Video Step by Steps
-* [CLOSELOOP-T001 Getting insights in to your application](https://youtu.be/xsxXijp-WWo)
-* [CLOSELOOP-T002 Setup Continuous Deployment with GitHub Actions](https://youtu.be/TFHpnJ8SmQs)
-* [CLOSELOOP-T003 Increase control with Azure DevOps CI/CD](https://youtu.be/t9-PHxRDi1E)
-* [CLOSELOOP-T004 Deploy latest validated version with automated approvals](https://youtu.be/2K0S-YldvuQ)
+* [CLOSELOOP-T001 Getting insights in to your application](https://youtu.be/x7pidn6Uk6I)
+* [CLOSELOOP-T002 Setup Continuous Deployment with GitHub Actions](https://youtu.be/KeucYraZ5Qo)
+* [CLOSELOOP-T003 Increase control with Azure DevOps CI/CD](https://youtu.be/uvtSyui9l_I)
+* [CLOSELOOP-T004 Deploy latest validated version with automated approvals](https://youtu.be/4CPX2A3DR9I)

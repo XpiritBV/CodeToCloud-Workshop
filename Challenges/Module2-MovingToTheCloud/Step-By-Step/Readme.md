@@ -5,5 +5,5 @@
 * [MOVECLOUD-T002 Running containers in an Azure WebApp](MOVECLOUD-T002-SBS.md)
 
 ## Video Step by Steps
-* [MOVECLOUD-T001 Setting up a cloud infrastructure](https://youtu.be/4Ikw1k4Wovo)
-* [MOVECLOUD-T002 Running containers in an Azure WebApp](https://youtu.be/6nMlxXN4EFs)
+* [MOVECLOUD-T001 Setting up a cloud infrastructure](https://youtu.be/Q2H9LFzWetQ)
+* [MOVECLOUD-T002 Running containers in an Azure WebApp](https://youtu.be/mKH21IgKUSc)

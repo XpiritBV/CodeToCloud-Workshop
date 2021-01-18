@@ -10,10 +10,10 @@
 * [DEVWF-T007 Set up Continuous Integration to push container images to GitHub Registry](DEVWF-T007-SBS.md)
 
 ## Video Step by Steps
-* [DEVWF-T001 Get started with the work and create visibility](https://youtu.be/vcXU7R1xb6s)
-* [DEVWF-T002 Running the application locally](https://youtu.be/rTwJRlXZxH4)
-* [DEVWF-T003 Containerize the Application](https://youtu.be/CHeO9gaBQcY)
-* [DEVWF-T004 Optimize containers with a multi staged Docker File](https://youtu.be/jjsnPS7cNZw)
-* [DEVWF-T005 Catching Security Vulnerabilities](https://youtu.be/Ky--Q3nzqKY)
-* [DEVWF-T006 Setting up a local infrastructure](https://youtu.be/7JiIWAnQ_T0)
-* [DEVWF-T007 Set up Continuous Integration to push container images to GitHub Registry](https://youtu.be/T4efkbsG3Vw)
+* [DEVWF-T001 Get started with the work and create visibility](https://youtu.be/mrY42ZK6IoM)
+* [DEVWF-T002 Running the application locally](https://youtu.be/afTf3JLlEyE)
+* [DEVWF-T003 Containerize the Application](https://youtu.be/dHYOyyfUhNQ)
+* [DEVWF-T004 Optimize containers with a multi staged Docker File](https://youtu.be/w80WzGtWpVc)
+* [DEVWF-T005 Catching Security Vulnerabilities](https://youtu.be/rjdF-JjZm6Q)
+* [DEVWF-T006 Setting up a local infrastructure](https://youtu.be/ADth4SspHxE)
+* [DEVWF-T007 Set up Continuous Integration to push container images to GitHub Registry](https://youtu.be/2FgK5SNVFCA)

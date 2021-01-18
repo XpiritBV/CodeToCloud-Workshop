@@ -1,7 +1,7 @@
 # Step by Step DEVWF-T001
 
 If you rather watch a video with step by step instructions, you can do that here
-[![Step by Step Video](https://img.youtube.com/vi/vcXU7R1xb6s/0.jpg)](https://www.youtube.com/watch?v=vcXU7R1xb6s)
+[![Step by Step Video](https://img.youtube.com/vi/mrY42ZK6IoM/0.jpg)](https://www.youtube.com/watch?v=mrY42ZK6IoM)
 
 In this task you are going to setup an integration between GitHub and Azure Boards, to be able to link work items and code commits.
 

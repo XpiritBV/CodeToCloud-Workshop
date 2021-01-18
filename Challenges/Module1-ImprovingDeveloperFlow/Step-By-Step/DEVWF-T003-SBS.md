@@ -1,7 +1,7 @@
 # Step by Step DEVWF-T003
 
 If you rather watch a video with step by step instructions, you can do that here
-[![Step by Step Video](https://img.youtube.com/vi/CHeO9gaBQcY/0.jpg)](https://www.youtube.com/watch?v=CHeO9gaBQcY)
+[![Step by Step Video](https://img.youtube.com/vi/dHYOyyfUhNQ/0.jpg)](https://www.youtube.com/watch?v=dHYOyyfUhNQ)
 
 In this task, you will create 3 Dockerfiles that will be used to build and run the WEB, API and INIT application as a containerized application.
 

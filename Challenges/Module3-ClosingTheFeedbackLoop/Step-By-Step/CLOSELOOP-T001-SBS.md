@@ -1,7 +1,7 @@
 # Step by Step CLOSELOOP-T001
 
 If you rather watch a video with step by step instructions, you can do that here
-[![Step by Step Video](https://img.youtube.com/vi/xsxXijp-WWo/0.jpg)](https://www.youtube.com/watch?v=xsxXijp-WWo)
+[![Step by Step Video](https://img.youtube.com/vi/x7pidn6Uk6I/0.jpg)](https://www.youtube.com/watch?v=x7pidn6Uk6I)
 
 In this task you will set up Application Insights to monitor your application and underlying infrastructure. You need to create an Application Insights Azure resource by adding this to your Infrastructure as Code scripts and connect this to your cluster. Furthermore, you need to add Application Insights in your Web Application to gain insights in usage.
 

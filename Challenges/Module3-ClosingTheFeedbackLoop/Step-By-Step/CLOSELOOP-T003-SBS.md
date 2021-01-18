@@ -1,7 +1,7 @@
 # Step by Step CLOSELOOP-T003
 
 If you rather watch a video with step by step instructions, you can do that here
-[![Step by Step Video](https://img.youtube.com/vi/t9-PHxRDi1E/0.jpg)](https://www.youtube.com/watch?v=t9-PHxRDi1E)
+[![Step by Step Video](https://img.youtube.com/vi/uvtSyui9l_I/0.jpg)](https://www.youtube.com/watch?v=uvtSyui9l_I)
 
 In this challenge you are going to setup a CI/CD pipeline in Azure DevOps that gets the sources from GitHub. The pipeline will have 1 deployment stage that deploys to the production environment. This has an manual approval gate.
 

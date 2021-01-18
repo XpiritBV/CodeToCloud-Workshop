@@ -1,7 +1,7 @@
 # Step by Step CLOSELOOP-T002
 
 If you rather watch a video with step by step instructions, you can do that here
-[![Step by Step Video](https://img.youtube.com/vi/TFHpnJ8SmQs/0.jpg)](https://www.youtube.com/watch?v=TFHpnJ8SmQs)
+[![Step by Step Video](https://img.youtube.com/vi/KeucYraZ5Qo/0.jpg)](https://www.youtube.com/watch?v=KeucYraZ5Qo)
 
 In this task your are going to create a continuous deployment pipeline in GitHub Actions that triggers after the Continuous Integration build has been completed. 
 

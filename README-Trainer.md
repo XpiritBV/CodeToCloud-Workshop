@@ -87,7 +87,7 @@ Present the following topics to make the students familiar with:
 
 Or show the following video:
 
-[![Module 1 - Improving Developer Workflow - Theoretical Concepts](https://img.youtube.com/vi/v1XCEHDA3jE/0.jpg)](https://www.youtube.com/watch?v=v1XCEHDA3jE)
+[![Module 1 - Improving Developer Workflow - Theoretical Concepts](https://img.youtube.com/vi/EBNaQDY1-9g/0.jpg)](https://www.youtube.com/watch?v=EBNaQDY1-9g)
 
 - [Concept Presentation](TrainerMaterials/Presentations/Module01-ImprovingDeveloperWorkflow.pptx)
 - [Instructions](Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
@@ -118,7 +118,7 @@ Present the following topics to make the students familiar with:
 
 Or show the following video:
 
-[![Module 2 - Moving to the Cloud - Theoretical Concepts](https://img.youtube.com/vi/vFU2sQ8D3l0/0.jpg)](https://www.youtube.com/watch?v=vFU2sQ8D3l0)
+[![Module 2 - Moving to the Cloud - Theoretical Concepts](https://img.youtube.com/vi/S0fbsUHCpxE/0.jpg)](https://www.youtube.com/watch?v=S0fbsUHCpxE)
 
 - [Concept Presentation](TrainerMaterials/Presentations/Module02-MovingToTheCloud.pptx)
 - [Instructions](Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
@@ -148,7 +148,7 @@ Present the following topics to make the students familiar with:
 
 Or show the following video:
 
-[![Module 3 - Closing the Feedback Loop - Theoretical Concepts](https://img.youtube.com/vi/Nk-Llbp9vdE/0.jpg)](https://www.youtube.com/watch?v=Nk-Llbp9vdE)
+[![Module 3 - Closing the Feedback Loop - Theoretical Concepts](https://img.youtube.com/vi/MLO08rUiZ-k/0.jpg)](https://www.youtube.com/watch?v=MLO08rUiZ-k)
 
 - [Concept Presentation](TrainerMaterials/Presentations/Module03-ClosingTheFeedbackLoop.pptx)
 - [Instructions](Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)

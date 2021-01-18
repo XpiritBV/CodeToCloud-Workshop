@@ -1,7 +1,7 @@
 # Step by Step MOVECLOUD-T001
 
 If you rather watch a video with step by step instructions, you can do that here
-[![Step by Step Video](https://img.youtube.com/vi/4Ikw1k4Wovo/0.jpg)](https://www.youtube.com/watch?v=4Ikw1k4Wovo)
+[![Step by Step Video](https://img.youtube.com/vi/Q2H9LFzWetQ/0.jpg)](https://www.youtube.com/watch?v=Q2H9LFzWetQ)
 
 In this task you are going to create cloud infrastructure, so that your application can run on a cluster in the cloud. For this task we are going to create:
 
