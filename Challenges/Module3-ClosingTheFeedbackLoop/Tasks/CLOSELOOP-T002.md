@@ -4,7 +4,7 @@ After setting up monitoring, nothing happened. After some investigation it showe
 
 ## Before you start this challenge
 
-This challenge needs some prerequisites. Run the following command in your Terminal windows of your GitHub Codespace to set this up.
+This challenge needs some prerequisites. Run the following command in your PowerShell Terminal window of your GitHub Codespace to set this up.
 
 ```bash
 Workshop-Step Start "CLOSELOOP-T002"
@@ -31,7 +31,7 @@ In this challenge your are going to create a continuous deployment pipeline that
 
 ## Solution
 
-If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command from the PowerShell Terminal, a Pull Request with the files and instructions will be created for you. 
 
 ```powershell
 Workshop-Step Solution "CLOSELOOP-T002"

@@ -36,7 +36,7 @@ In this challenge you will set up an Azure Resource Group containing a CosmosDB 
 
 ## Solution
 
-If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you. 
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command from the PowerShell Terminal, a Pull Request with the files and instructions will be created for you. 
 
 ```powershell
 Workshop-Step Solution "MOVECLOUD-T001"

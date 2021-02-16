@@ -37,7 +37,7 @@ In this challenge you are going to Dockerize the MongoDB and fill this with init
 
 ## Solution
 
-If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command, a Pull Request with the files and instructions will be created for you.
+If you are stuck or you want to progress to the next challenge, there is a solution prepared for you. When you run the following command from the PowerShell Terminal from a PowerShell terminal, a Pull Request with the files and instructions will be created for you.
 
 ```powershell
 Workshop-Step Solution "DEVWF-T002"

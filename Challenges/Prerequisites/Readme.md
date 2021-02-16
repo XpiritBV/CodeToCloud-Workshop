@@ -79,7 +79,7 @@ To set this up, you need to perform these steps
 
 When you go through the challenges or step by steps, you will see something like this
 
->This challenge needs some prerequisites. Run the following command in your Terminal windows of your GitHub >Codespace to set this up.
+>This challenge needs some prerequisites. Run the following command in your PowerShell Terminal window of your GitHub >Codespace to set this up.
 
 ```
 Workshop-Step Start "DEVWF-T00X"
