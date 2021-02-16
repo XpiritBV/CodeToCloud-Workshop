@@ -131,13 +131,13 @@ Available variables (loaded into `$global:` and `$env` scopes):
 ```powershell
 $studentsuffix         # short lowercase string of letters unique to you.
 $resourcegroupName     # the name of the resource group that will be created for you
-$cosmosDBName          # the name of the cosmosdb used by the webapp
+$cosmosDBName          # the name of the cosmos db used by the webapp
 $webappName            # web app service name
 $planName              # web app service plan
-$location1             # azure datacenter region
-$location2             # azure datacenter region
+$location1             # azure data center region
+$location2             # azure data center region
 $appInsights           # app insights instance name
-$CR_PAT                # GitHub container registry accerr token
+$CR_PAT                # GitHub container registry access token
 ```
 
 If you ever manually change the values in the `settings.json`, opening a fresh PowerShell terminal should load the new values automatically. Alternatively, run:

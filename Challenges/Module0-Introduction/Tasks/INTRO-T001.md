@@ -14,8 +14,8 @@ Think of the following topics you need to cover.
 
 * Design
   * High-level architecture
-    * Would a microservices architecture be suitable?
-    * What container solution would you propose to run the new microservices architecture for a single conference tenant?
+    * Would a micro services architecture be suitable?
+    * What container solution would you propose to run the new micro services architecture for a single conference tenant?
 
 * Choosing a container platform on Azure
   * List the potential platform choices for deploying containers to Azure.

@@ -74,7 +74,7 @@ This step uses the docker-compose.yml and build.docker-compose.yml to build the 
 
 6. Now that the containers have been built and pushed, the Azure Web Application needs to be updated. Before you can interact with Azure, you need to have access to the Azure API with the Azure CLI. Using the Azure Login Task, we can login securely in Azure using a GitHub secret.
 
-In your Codespace terminal, execute the following script to login to Azure, set your subscription and create a Service Principal with access to your resourcegroup.
+In your Codespace terminal, execute the following script to login to Azure, set your subscription and create a Service Principal with access to your resource group.
 
 ```PowerShell
 $studentprefix ="your abbreviation here"

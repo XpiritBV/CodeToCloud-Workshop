@@ -58,7 +58,7 @@ To address the issues and progress towards the goals, Susan asks a high-end cons
   * Start with Azure since that is already in their Enterprise Agreement
 * Migrate data from MongoDB on-premises to CosmosDB with the least change possible to the application code.
 * Make use of GitHub and / or Azure DevOps for Development Lifecycle
-* Use Git repositories for source control and integrate into a CICD workflow.
+* Use Git repositories for source control and integrate into a CI/CD workflow.
 * Embed code review and security scanning in to the development workflow
 * Solution that does not incur a direct vendor-lock in
 * As much re-use of existing code base

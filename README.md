@@ -21,7 +21,7 @@ This repository is the "working" copy of the workshop. A pipeline `update-child-
 
 
 ## Containers
-In the Containers folder, you find 3 containers. 2 base containers and 1 container `ghws-fix` that does the actual work. The container uses the settings file of a student, that he or she can setup by running through the setup scripts, and creates a Pull Request in their forked repository with instructions and scripts to auto-fix or quickstart an exercise. The containers are published in a GitHub Action to the GitHub Container Registry of Xpirit.
+In the Containers folder, you find 3 containers. 2 base containers and 1 container `ghws-fix` that does the actual work. The container uses the settings file of a student, that he or she can setup by running through the setup scripts, and creates a Pull Request in their forked repository with instructions and scripts to auto-fix or quick start an exercise. The containers are published in a GitHub Action to the GitHub Container Registry of Xpirit.
 
 ## Module flow
 

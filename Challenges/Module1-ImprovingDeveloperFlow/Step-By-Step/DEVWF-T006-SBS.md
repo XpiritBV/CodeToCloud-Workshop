@@ -19,7 +19,7 @@ In this task you are going to create a new Docker Compose file that contains the
 
 3. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
 
-4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing `AB#` followed by the workitem id for Module 1 (example: `AB#123`) in the title or description of the Pull Request Commit Message. 
+4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing `AB#` followed by the work item id for Module 1 (example: `AB#123`) in the title or description of the Pull Request Commit Message. 
 
     ![Shows the button for merging a Pull Request in GitHub](/Assets/mergePullRequest.png)
 

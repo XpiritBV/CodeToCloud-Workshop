@@ -39,7 +39,7 @@ This workshop focusses on the Code to Cloud journey. When you want to dive in to
 ## Challenges & Sources
 All challenges can be found in the [Challenges](/Challenges/README.md) folder. This repository is supported by a Git Repository that contains all sources. This can be found [here](https://github.com/XpiritBV/CodeToCloud-Source). 
 
-To get started with the workshop, please go ahead to the [Set up Prerequisites](/Challenges/Prequisites/Readme.md) page.
+To get started with the workshop, please go ahead to the [Set up Prerequisites](/Challenges/Prerequisites/Readme.md) page.
 
 When you have set up your prerequisites you can start with the modules.
 

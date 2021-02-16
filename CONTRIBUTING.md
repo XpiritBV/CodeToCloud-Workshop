@@ -12,7 +12,7 @@ the rights to use your contribution. For details, visit https://cla.microsoft.co
 
 When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
 a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+provided by the bot. You will only need to do this once across all repositories using our CLA.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
@@ -37,8 +37,8 @@ The Code to Cloud project is distributed across multiple repositories. Before yo
 
 If you find your issue already exists, make relevant comments and add your [reaction](https://github.com/blog/2119-add-reactions-to-pull-requests-issues-and-comments). Use a reaction in place of a "+1" comment:
 
-* 👍 - upvote
-* 👎 - downvote
+* 👍 - up vote
+* 👎 - down vote
 
 
 If you cannot find an existing issue that describes your bug or feature, create a new issue using the guidelines below.
