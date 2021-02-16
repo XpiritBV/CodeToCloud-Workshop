@@ -79,16 +79,19 @@ To set this up, you need to perform these steps
 
 When you go through the challenges or step by steps, you will see something like this
 
->This challenge needs some prerequisites. Run the following command in your PowerShell Terminal window of your GitHub >Codespace to set this up.
+> This challenge needs some prerequisites. Run the following command in your PowerShell Terminal window of your GitHub 
+> Codespace to set this up.
 
-```
-Workshop-Step Start "DEVWF-T00X"
-```
+> Example:
+
+> ```powershell
+> Workshop-Step Start "DEVWF-T00X"
+> ```
 
 When you see this, execute the following steps
 
 * In your Codespace, open a `pwsh` terminal
-* Run the command specified, in this case `Workshop-Step Start "DEVWF-T00X"`
+* Run the command specified, in this case `Workshop-Step Start "DEVWF-T00X"`. `T00X` will be specific to the current task you are working on.
 * A Pull Request with scripts and instructions will be created for you.
 
 You can open the pull request by following the link on the last line the logs:
@@ -137,7 +140,7 @@ $appInsights           # app insights instance name
 $CR_PAT                # GitHub container registry accerr token
 ```
 
-If you ever manually change the values in the `settings.json`, opening a fresh PowerShell console should load the new values automatically. Alternatively, run:
+If you ever manually change the values in the `settings.json`, opening a fresh PowerShell terminal should load the new values automatically. Alternatively, run:
 
 ```powershell
 Invoke-expression $profile

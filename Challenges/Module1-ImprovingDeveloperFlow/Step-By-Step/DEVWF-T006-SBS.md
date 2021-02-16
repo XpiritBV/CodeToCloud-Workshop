@@ -11,7 +11,7 @@ In this task you are going to create a new Docker Compose file that contains the
 
 1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 2 Docker compose files will be created
 
-    ```bash
+    ```powershell
     Workshop-Step Start "DEVWF-T006"
     ```
 
@@ -29,14 +29,21 @@ Now your repository contains 3 new "Docker Compose" files.
 
     ![](/Assets/2020-10-05-12-10-11.png)
 
-7. Change the <yourgithubaccount> in the docker-compose files to your GitHub Account. Open your PowerShell terminal window. From the root folder, start the application.
+7. Change the <yourgithubaccount> in the docker-compose files to your GitHub Account. Open your PowerShell terminal window. 
+
+8. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers, except the `cloudenvimage` and the `mongo` container. The `cloudenvimage` contains your GitHub Codespace and the `mongo` contains your populated database.
+
+      ```
+      docker rm -f <containername or id>
+      ```
+9. From the root folder, start the application.
 
     ```bash
     docker-compose -f docker-compose.yml -f local.docker-compose.yml -f docker-compose.init.yml build
     docker-compose -f docker-compose.yml -f local.docker-compose.yml -f docker-compose.init.yml up
     ```
 
-8. To include the web application to the docker-compose file, add the following YAML snippet to the `docker-compose.yml`
+10. To include the web application to the docker-compose file, add the following YAML snippet to the `docker-compose.yml`
 
     ```YAML
     web:
@@ -57,18 +64,18 @@ Now your repository contains 3 new "Docker Compose" files.
         image: local-fabrikam-web
     ```
 
-9. Build and run the docker-compose file again 
+11. Build and run the docker-compose file again 
 
     ```bash
     docker-compose -f docker-compose.yml -f local.docker-compose.yml -f docker-compose.init.yml build
     docker-compose -f docker-compose.yml -f local.docker-compose.yml -f docker-compose.init.yml up
     ```
 
-10. Test the web application using the port forward method. In the Remote Explorer, forward port 3000 and open the browser by clicking the globe icon next to the port. 
+12. Test the web application using the port forward method. In the Remote Explorer, forward port 3000 and open the browser by clicking the globe icon next to the port. 
 
     ![](/Assets/OpenBrowser.png)
 
-11. When you are done, commit and push your changes to your GitHub repository.
+13. When you are done, commit and push your changes to your GitHub repository.
 
     ![](/Assets/commitandpush.png)
 
