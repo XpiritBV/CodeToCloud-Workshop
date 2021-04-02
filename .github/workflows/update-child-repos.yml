@@ -38,6 +38,7 @@ jobs:
           git init
           git remote add origin https://github.com/XpiritBV/CodeToCloud-Source.git
           copy $env:GITHUB_WORKSPACE/Sources/* . -recurse -force
+          copy $env:GITHUB_WORKSPACE/.devcontainer . -recurse -force
           copy $env:GITHUB_WORKSPACE/CONTRIBUTING.md .
           git add .
           git commit -m "Clean starter solution for Code-To-Cloud workshop"

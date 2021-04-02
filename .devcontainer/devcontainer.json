@@ -1,0 +1,29 @@
+{
+	"build": { "dockerFile": "Dockerfile" },
+	"settings": {
+		"go.useGoProxyToCheckForToolUpdates": false,
+		"go.useLanguageServer": true,
+		"go.toolsGopath": "/go/bin"
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"MS-vsliveshare.vsliveshare",
+		"VisualStudioExptTeam.vscodeintellicode",
+		"angular.ng-template",
+		"ms-vscode.azure-account",
+		"ms-vscode.azurecli",
+		"ms-azure-devops.azure-pipelines",
+		"ms-azuretools.vscode-docker",
+		"ms-kubernetes-tools.vscode-kubernetes-tools",
+		"ms-vscode.typescript-javascript-grammar",
+		"ms-vscode.powershell",
+		"redhat.vscode-yaml",
+		"cschleiden.vscode-github-actions"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		3000,
+		3001
+	]
+}
