@@ -4,7 +4,7 @@
 		"dockerfile": "Dockerfile"
 	},
 	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash",
+		"terminal.integrated.shell.linux": "/usr/bin/pwsh",
 		"go.useGoProxyToCheckForToolUpdates": false,
 		"go.useLanguageServer": true,
 		"go.gopath": "/go",
