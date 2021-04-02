@@ -44,7 +44,6 @@
 		"ms-azure-devops.azure-pipelines",
 		"ms-azuretools.vscode-docker",
 		"ms-kubernetes-tools.vscode-kubernetes-tools",
-		"ms-vscode.typescript-javascript-grammar",
 		"ms-vscode.powershell",
 		"redhat.vscode-yaml",
 		"cschleiden.vscode-github-actions"
