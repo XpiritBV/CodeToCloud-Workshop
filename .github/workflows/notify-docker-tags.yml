@@ -1,10 +1,7 @@
 name: "Find docker tags"
 on:
-  push:
-    branches:
-      - main
   schedule:
-  - cron: "* 9 * * *"
+  - cron: "* 7 * * *"
 
 jobs:
   check_docker_versions_job:
