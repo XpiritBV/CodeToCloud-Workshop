@@ -1,5 +1,8 @@
 name: "Find docker tags"
 on:
+  push:
+    branches:
+      - main
   schedule:
   - cron: "* 9 * * *"
 
@@ -29,12 +32,10 @@ jobs:
             fi
           done
 
-          if [ $higherversionfound=true ]; then
-            echo "::set-output name=higherversionfound::true"
-            echo "::set-output name=higherversions::${higherversions}"
-          else
-            echo "::set-output name=higherversionfound::false"
-          fi
+          echo ${higherversionfound}
+          echo "::set-output name=higherversionfound::${higherversionfound}"
+          echo "::set-output name=higherversions::${higherversions}"
+
       - name: Retrieve parameters
         run: |
           higestversionfound=${{ steps.dockertags.outputs.higestversionfound }}
