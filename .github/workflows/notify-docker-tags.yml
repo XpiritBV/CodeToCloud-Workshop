@@ -33,6 +33,7 @@ jobs:
           done
 
           echo ${higherversionfound}
+          echo ${higherversions}
           echo "::set-output name=higherversionfound::${higherversionfound}"
           echo "::set-output name=higherversions::${higherversions}"
 
