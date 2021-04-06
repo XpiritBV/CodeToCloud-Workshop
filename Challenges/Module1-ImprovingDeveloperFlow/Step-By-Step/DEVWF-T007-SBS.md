@@ -7,13 +7,13 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
 
 1. In your GitHub repository, and select the [Settings] tab.
 
-2. From the left menu, select [Secrets].
+1. From the left menu, select [Secrets].
 
-3. Select the [New secret] button.
+1. Select the [New secret] button.
 
     ![Settings link, Secrets link, and New secret button are highlighted.](/Assets/2020-08-24-21-45-42.png "GitHub Repository secrets")
 
-4. In the [New secret] form, enter the name `CR_PAT` and for the value, paste in a GitHub Personal Access Token, with the following scopes.
+1. In the [New secret] form, enter the name `CR_PAT` and for the value, paste in a GitHub Personal Access Token, with the following scopes.
 
     * repo
     * write:packages
@@ -25,16 +25,16 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
 
     ![A screen that show how to add a new secret](/Assets/newsecret.png)
 
-5. Navigate to the GitHub Actions in your repository and select [New Workflow]
+1. Navigate to the GitHub Actions in your repository and select [New Workflow]
 
     ![A screen that shows how to start a new Workflow for GitHub Actions](/Assets/newworkflow.png)
 
-6. Under the Continuous Integration Workflows, find the [Publish Docker Container] workflow and choose [Set up this workflow]
+1. Under the Continuous Integration Workflows, find the [Publish Docker Container] workflow and choose [Set up this workflow]
 
     ![A screenshot of the GitHub Action for Publishing Docker Files](/Assets/PublishDocker.png)
 
-7. Rename the file to `fabrikam-web.yml`
-8. Change the image name to fabrikam-web. This is the name of the container image that will be pushed to the GitHub Container Registry
+1. Rename the file to `fabrikam-web.yml`
+1. Change the image name to fabrikam-web. This is the name of the container image that will be pushed to the GitHub Container Registry
 
     ```YAML
     env:
@@ -42,7 +42,7 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
       IMAGE_NAME: fabrikam-web
     ```
 
-9. Add a working directory to the [Build Image] and [Push image to GitHub Container Registry] step. This ensure the Docker file can be found
+1. Add a working directory to the [Build Image] and [Push image to GitHub Container Registry] step. This ensure the Docker file can be found
 
     ```YAML
             - name: Build image
@@ -53,7 +53,7 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
                 working-directory: content-web
     ```
 
-10. Remove the test job from YAML since we do not need it. Also remove the dependency in the push stage `needs: test`
+1. Remove the test job from YAML since we do not need it. Also remove the dependency in the push stage `needs: test`
     <s>
     ```YAML
     # Run tests.
@@ -75,16 +75,16 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
     ```
     </s>
 
-11. Commit the file to the repository
-12. The GitHub Action is now running and automatically builds and pushes the container
+1. Commit the file to the repository
+1. The GitHub Action is now running and automatically builds and pushes the container
 
     ![Screen that shows that the GitHub action build succeeded](/Assets/buildsucceed.png)
 
-13. Next, setup the `content-api` workflow and the `content-init` workflow. Call the files `fabrikam-api.yml` and `fabrikam-init.yml` and change the container names also to `fabrikam-api` and `fabrikam-init`
+1. Next, setup the `content-api` workflow and the `content-init` workflow. Call the files `fabrikam-api.yml` and `fabrikam-init.yml` and change the container names also to `fabrikam-api` and `fabrikam-init`
 
-14. Navigate to the packages in your GitHub account and see if the container images are present.
+1. Navigate to the packages in your GitHub account and see if the container images are present.
     ![Overview of all packages of a GitHub account](/Assets/packages.png)
 
-15. When you are done, pull the changes from your GitHub repository.
+1. When you are done, pull the changes from your GitHub repository.
 
     ![](/Assets/2020-10-05-12-10-11.png)

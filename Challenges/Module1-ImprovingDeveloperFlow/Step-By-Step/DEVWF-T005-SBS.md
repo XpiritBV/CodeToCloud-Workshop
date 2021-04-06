@@ -9,34 +9,34 @@ In this task, you will enable the GitHub security features for your repository.
 
     ![Enable Dependabot and Code Scanning Alerts](/Assets/securityfeatures.png)
 
-2. In the Dependabot features, enable Dependabot Alerts and Dependabot security updates
+1. In the Dependabot features, enable Dependabot Alerts and Dependabot security updates
 
-3. In the Code Scanning features, select the CodeQL Analysis workflow. This workflow is a GitHub Action that runs every time you check in some code to the main branch
+1. In the Code Scanning features, select the CodeQL Analysis workflow. This workflow is a GitHub Action that runs every time you check in some code to the main branch
 
     ![Setup this Workflow in CodeQL](/Assets/CodeQLAction.png)
 
-4. Save the workflow by pressing the [Start Commit] button
+1. Save the workflow by pressing the [Start Commit] button
 
-5. To solve a Dependabot issue, navigate to the Security Tab and press View Dependabot Alerts. when there is nothing to see, the Dependabot engine is still running. Wait a few minutes and refresh the screen
+1. To solve a Dependabot issue, navigate to the Security Tab and press View Dependabot Alerts. when there is nothing to see, the Dependabot engine is still running. Wait a few minutes and refresh the screen
 
     ![](/Assets/2020-10-05-12-51-55.png)
 
-6. Find the [handlebars] vulnerability and open this by clicking on the title.
+1. Find the [handlebars] vulnerability and open this by clicking on the title.
 
     ![](/Assets/handlebars.png)
 
-7. Press the Create Dependabot Security update button. This may take a couple of seconds.
+1. Press the Create Dependabot Security update button. This may take a couple of seconds.
 
     ![](/Assets/2020-10-05-13-03-26.png)
 
-8. In the Pull Requests, find the the Dependabot Security patch, and merge the Pull Request to your main branch
+1. In the Pull Requests, find the the Dependabot Security patch, and merge the Pull Request to your main branch
 
-9. To solve a Code Scanning issue, navigate to the Security Tab and press View Alerts next to Code Scanning alerts.
+1. To solve a Code Scanning issue, navigate to the Security Tab and press View Alerts next to Code Scanning alerts.
 
-10. Select an issue. In the details select "Won't Fix"
+1. Select an issue. In the details select "Won't Fix"
 
     ![](/Assets/2020-10-05-13-10-25.png)
 
-11. When you are done, pull the changes from your GitHub repository.
+1. When you are done, pull the changes from your GitHub repository.
 
     ![](/Assets/2020-10-05-12-10-11.png)

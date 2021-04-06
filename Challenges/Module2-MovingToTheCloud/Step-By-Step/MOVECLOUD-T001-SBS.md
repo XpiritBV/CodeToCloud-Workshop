@@ -24,13 +24,13 @@ az account set --subscription <your subscription guid>
 
    ![](/Assets/OpenCodeSpace.png)
 
-2. In the file explorer, create a new folder called `infrastructure`
+1. In the file explorer, create a new folder called `infrastructure`
 
-3. Create a new file called `deploy-infrastructure.ps1`
+1. Create a new file called `deploy-infrastructure.ps1`
 
    ![](/Assets/newfolderinfra.png)
 
-4. To make automation of all resources a bit easier, add these variables in the `deploy-infrastructure.ps1`file
+1. To make automation of all resources a bit easier, add these variables in the `deploy-infrastructure.ps1`file
 
    ```Powershell
    $studentprefix = "your 3 letter abbreviation here"
@@ -51,14 +51,14 @@ Create an Azure Resource Group to hold the resources that you create in this han
    ```PowerShell
    az group create -l $location1 -n $resourcegroupName
    ```
-2. Save the PowerShell file and run it from the terminal:
+1. Save the PowerShell file and run it from the terminal:
 
       ```powershell
       pushd infrastructure
       ./deploy-infrastructure.ps1
       ```
 
-3. When this completes, the Azure Portal shows your Resource Group.
+1. When this completes, the Azure Portal shows your Resource Group.
 
    ![Resource group created](/Assets/2020-10-09_16-36-24.png) 
 
@@ -82,7 +82,7 @@ Azure CosmosDB is a geo-replicated database service running in Azure. This can a
 
    > This creates a CosmosDB with 2 failover location with a MongoDB API. 
 
-2. Save the PowerShell file and run it from the terminal:
+1. Save the PowerShell file and run it from the terminal:
 
       ```powershell
       pushd infrastructure
@@ -100,14 +100,14 @@ In this section, you create and configure an App Service Plan and an Azure Web A
    az appservice plan create --name $planName --resource-group $resourcegroupName --sku S1 --is-linux
    ```
 
-2. In your `deploy-infrastructure.ps1` file add the following command to create an Web App. The Web App can be an application running as files a container, or a multi-container application. To create the Web App initially, create it with a single, NGINX container.
+1. In your `deploy-infrastructure.ps1` file add the following command to create an Web App. The Web App can be an application running as files a container, or a multi-container application. To create the Web App initially, create it with a single, NGINX container.
 
    ```
    #Create a Azure Web App with NGINX container
    az webapp create --resource-group $resourcegroupName --plan $planName --name $webappName -i nginx
    ```
 
-3. Save the PowerShell file and run it from the terminal:
+1. Save the PowerShell file and run it from the terminal:
 
       ```powershell
       pushd infrastructure
@@ -118,14 +118,14 @@ In this section, you create and configure an App Service Plan and an Azure Web A
 
 You have already run the separate steps from the steps a number of times. The fact you can do this over and over again, is called idempotency. If you have not run all the lines in the `deploy-infrastructure.ps1` file, run it now.
 
-1. In your terminal window of the Codespace, open a PowerShell terminal by typing `pwsh` and run the `az login` command to login to your azure subscription
+1. In your terminal window of the Codespace, Powershell has been opened (if not: type `pwsh`). Then run the `az login` command to login to your azure subscription
 
    ```powershell
    az login
    az account set --subscription <your subscription guid>
    ```
 
-2. After logging in, run the `deploy-infrastructure.ps1` file.
+1. After logging in, run the `deploy-infrastructure.ps1` file.
 
    ```powershell
       pushd infrastructure

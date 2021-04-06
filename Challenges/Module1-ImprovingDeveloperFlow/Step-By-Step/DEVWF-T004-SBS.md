@@ -9,29 +9,29 @@ In this task, you will merge the Pull Request containing 3 multi-staged Docker f
 >
 > In order to run the automated Starter Solution, you need to go through the [Setup prerequisites](/Challenges/Prerequisites/Readme.md) first!
 
-1. In your GitHub Codespace, open a PowerShell Terminal and run the starter solution. A Pull Request with 3 Docker files will be created
+1. In your GitHub Codespace, run the starter solution in a PowerShell Terminal. A Pull Request with 3 Docker files will be created
 
       ```
       Workshop-Step Start "DEVWF-T004"
       ```
 
-2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with DEVWF-T004 in the title
+1. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with DEVWF-T004 in the title
 
       ![Shows the menu item for navigating to the Pull Request](/Assets/PullRequestDEVWF-T004.png)
 
-3. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
+1. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
 
-4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
+1. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
 
       ![Shows the button for merging a Pull Request in GitHub](/Assets/mergePullRequest.png)
 
 Now your repository contains 3 new "multi-staged" docker file.
 
-6. In your GitHub Codespace, update your files to the latest version by pulling them.
+1. In your GitHub Codespace, update your files to the latest version by pulling them.
 
       ![](/Assets/2020-10-05-12-10-11.png)
 
-7. Open your PowerShell terminal window. From the content-api folder containing the API application files and the new Dockerfile, type the following command to create a Docker image for the API application. This command does the following:
+1. Open your PowerShell terminal window. From the content-api folder containing the API application files and the new Dockerfile, type the following command to create a Docker image for the API application. This command does the following:
 
       - Executes the Docker build command to produce the image
       - Tags the resulting image with the name content-api (-t)
@@ -42,7 +42,7 @@ Now your repository contains 3 new "multi-staged" docker file.
       docker build -t fabrikam-api .
       ```
 
-8. Do the same for the `content-web` and the `content-init` containers
+1. Do the same for the `content-web` and the `content-init` containers
 
       ```bash
       cd ../content-init
@@ -52,19 +52,19 @@ Now your repository contains 3 new "multi-staged" docker file.
       docker build -t fabrikam-web .
       ```
 
-9. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers, except the `cloudenvimage` and the `mongo` container. The `cloudenvimage` contains your GitHub Codespace and the `mongo` contains your populated database.
+1. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers, except the `cloudenvimage` and the `mongo` container. The `cloudenvimage` contains your GitHub Codespace and the `mongo` contains your populated database.
 
       ```
       docker rm -f <containername or id>
       ```
 
-10. Run all containers and check whether the application still works as expected
+1. Run all containers and check whether the application still works as expected
 
       ```bash
       docker run -d --name api -p 3001:3001 --net fabrikam fabrikam-api
       docker run -d --name web -p 3000:80 --net fabrikam fabrikam-web
       ```
 
-11. When you are done, commit and push your changes to your GitHub repository.
+1. When you are done, commit and push your changes to your GitHub repository.
 
       ![Push from Visual Studio Code](/Assets/commitandpush.png)

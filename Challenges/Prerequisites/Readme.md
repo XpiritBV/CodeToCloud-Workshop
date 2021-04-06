@@ -40,7 +40,6 @@ To set this up, you need to perform these steps
 ### Setup your settings file and PowerShell Profile
 
 1. Open your GitHub Codespace 
-1. In the terminal type `pwsh`
 1. Then run `.workshop/setup.ps1` which will ask for:
     1. The location of your repository
     2. Your GitHub Personal Access Token with the following scopes (see instructions below):

@@ -7,8 +7,6 @@ If you rather watch a video with step by step instructions, you can do that here
 
     ![](/Assets/OpenCodeSpace.png)
 
-1. In the Terminal window, open a PowerShell Terminal by typing `pwsh`
-
 1. Type the following command to create a Docker network named `fabmedical`:
 
    ```bash
