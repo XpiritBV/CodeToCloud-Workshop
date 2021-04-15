@@ -72,15 +72,15 @@ Azure CosmosDB is a geo-replicated database service running in Azure. This can a
 
    ```powershell
    #Then create a CosmosDB
-   az cosmosdb create --name $cosmosDBName `
-   --resource-group $resourcegroupName `
-   --locations regionName=$location1 failoverPriority=0 isZoneRedundant=False `
-   --locations regionName=$location2 failoverPriority=1 isZoneRedundant=True `
-   --enable-multiple-write-locations `
+   az cosmosdb create --name $cosmosDBName \
+   --resource-group $resourcegroupName \
+   --locations regionName=$location1 failoverPriority=0 isZoneRedundant=False \
+   --locations regionName=$location2 failoverPriority=1 isZoneRedundant=True \
+   --enable-multiple-write-locations \
    --kind MongoDB 
    ```
 
-   > This creates a CosmosDB with 2 failover location with a MongoDB API. 
+   > This creates a CosmosDB with 2 failover locations with a MongoDB API. 
 
 1. Save the PowerShell file and run it from the terminal:
 
