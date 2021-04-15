@@ -1,6 +1,6 @@
 # Step by Step MOVECLOUD-T002
 
-If you rather watch a video with step by step instructions, you can do that here
+If you'd rather watch a video with step by step instructions, you can do that here
 [![Step by Step Video](https://img.youtube.com/vi/mKH21IgKUSc/0.jpg)](https://www.youtube.com/watch?v=mKH21IgKUSc)
 
 In this task you will run the WEB and API application as a multi-container application within an Azure Web App while it connects with the CosmosDB. The INIT container, that was pushed to the registry as well, can be used to populate the CosmosDB. 
