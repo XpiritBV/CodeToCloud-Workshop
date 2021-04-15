@@ -25,7 +25,7 @@ docker run -ti  -e MONGODB_CONNECTION="mongodb://xxx.documents.azure.com:10255/c
 
 ![](/Assets/AppSetting.png)
 
-If you rather want to run this as code, you can use the command
+If you'd rather want to run this as code, you can use the command
 
 ```
 az webapp config appsettings set -n $webappName -g $resourcegroupName --settings MONGODB_CONNECTION="mongodb://xxx.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb"
@@ -42,7 +42,7 @@ As file, choose the `docker-compose.yml` file that you created earlier, and pres
 
 ![](/Assets/containerblade.png)
 
-6. The Azure Web App will no create two containers in the web app. Navigate to the Web app https://$webappname.azurewebsites.net to validate if the application is working
+6. The Azure Web App will now create two containers in the web app. Navigate to the Web app https://$webappname.azurewebsites.net to validate if the application is working
 
 7. To update the website from a command line run the following command
 
