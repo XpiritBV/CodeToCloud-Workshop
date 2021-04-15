@@ -11,17 +11,13 @@ In this task you will run the WEB and API application as a multi-container appli
     az cosmosdb keys list -n $cosmosDBName -g $resourceGroupName --type connection-strings
     ```
 
-2. Add the contentdb database as part of the connectionstring and add it as as a Kubernetes secret. `....documents.azure.com:10255/contentdb?ssl=true`
-
- ```
- $mongodbConnectionString="connectionString=mongodb://xxx.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb"
- ```
-3. Fill the cosmos DB by running the init container
+2. Fill the cosmos DB by running the init container from the Github Container Registry (ghcr)
 
 ```
-docker run -ti  -e MONGODB_CONNECTION="mongodb://xxx.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb" ghcr.io/<yourgithubaccount>/fabrikam-init
+docker run -ti  -e MONGODB_CONNECTION="mongodb://xxx.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb" ghcr.io/<your-github-account>/fabrikam-init
+
 ```
-4. In the Azure Portal, navigate to the Web Application and open the Configuration Blade. In the configuration blade add a new Application Setting and call this MONGODB_CONNECTION. Add the MongoDB Connection String as a value.
+3. In the Azure Portal, navigate to the Web Application and open the Configuration Blade. In the configuration blade add a new Application Setting and call this MONGODB_CONNECTION. Add the MongoDB Connection String as a value.
 
 ![](/Assets/AppSetting.png)
 
@@ -31,7 +27,7 @@ If you'd rather want to run this as code, you can use the command
 az webapp config appsettings set -n $webappName -g $resourcegroupName --settings MONGODB_CONNECTION="mongodb://xxx.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb"
 ```
 
-5. In the Azure Portal, navigate to the Web Application and open the Container Blade. In the Container blade, select the Docker Compose Tab. Select Private Registry under Image Source. 
+4. In the Azure Portal, navigate to the Web Application and open the Container Blade. In the Container blade, select the Docker Compose Tab. Select Private Registry under Image Source. 
 
 Fill in the following data:
 * Server URL: https://ghcr.io
@@ -42,9 +38,9 @@ As file, choose the `docker-compose.yml` file that you created earlier, and pres
 
 ![](/Assets/containerblade.png)
 
-6. The Azure Web App will now create two containers in the web app. Navigate to the Web app https://$webappname.azurewebsites.net to validate if the application is working
+5. The Azure Web App will now create two containers in the web app. Navigate to the Web app https://$webappname.azurewebsites.net to validate if the application is working
 
-7. To update the website from a command line run the following command
+6. To update the website from a command line run the following command
 
 ```PowerShell
 az webapp config container set `
