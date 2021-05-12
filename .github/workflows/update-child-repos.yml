@@ -89,7 +89,7 @@ jobs:
           git init
           git remote add origin https://github.com/XpiritBV/CodeToCloud-Solution.git
           copy $env:GITHUB_WORKSPACE/Challenges . -recurse -force
-          remove-item -include @("Tasks", "Step-by-Step") * -Recurse -Force
+          remove-item -include @("Step-by-Step") * -Recurse -Force
           copy $env:GITHUB_WORKSPACE/README-Solution.md README.md
           copy $env:GITHUB_WORKSPACE/CONTRIBUTING.md .
           git add .
