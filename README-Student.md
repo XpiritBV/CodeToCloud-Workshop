@@ -49,7 +49,6 @@ When you have set up your prerequisites you can start with the modules.
 
 ### Prerequisites
 - [Instructions](Challenges/Prerequisites/Readme.md)
-- [Step by Step Instructions](Challenges/Module2-MovingToTheCloud/MovingToTheCloud.md)
 
 ### Module 1 - Improving the Developer Workflow
 - [Instructions](Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
