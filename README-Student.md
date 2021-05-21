@@ -62,3 +62,5 @@ When you have set up your prerequisites you can start with the modules.
 - [Instructions](Challenges/Module3-ClosingTheFeedbackLoop/ClosingTheFeedbackloop.md)
 - [Step by Step Instructions](Challenges/Module3-ClosingTheFeedbackLoop/Step-By-Step/Readme.md)
 
+## We'd appreciate your feedback!
+In case you find any issues, make sure to provide feedback on the Workshop in the CodeToCloud Feedback repository: https://github.com/XpiritBV/CodeToCloud-Feedback. This way the developers get a good idea of issues that were encountered by students, and the workshop will be improved further. You can also make suggestions that you think would bring the workshop to a higher level!
