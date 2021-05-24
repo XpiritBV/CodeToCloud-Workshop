@@ -62,6 +62,8 @@ When you already used the Azure Boards integration, you need to manually link th
 
     ![](/Assets/2020-10-05-11-32-09.png)
 
+1. Now do a `git pull` from your terminal so you pull in this change locally too. Otherwise you are behind the master, which means you cannot commit local changes.
+
 1. In Azure Boards, find the work item, and see that the code commit has been linked to the work item
 
     ![](/Assets/2020-10-05-11-33-26.png)
