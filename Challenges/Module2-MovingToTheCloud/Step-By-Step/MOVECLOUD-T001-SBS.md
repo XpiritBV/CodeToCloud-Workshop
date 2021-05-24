@@ -80,7 +80,7 @@ Azure CosmosDB is a geo-replicated database service running in Azure. This can a
    --kind MongoDB 
    ```
 
-   > This creates a CosmosDB with 2 failover locations with a MongoDB API. 
+   > This creates a CosmosDB with 2 failover locations with a MongoDB API.
 
 1. Save the PowerShell file and run it from the terminal:
 
@@ -88,6 +88,7 @@ Azure CosmosDB is a geo-replicated database service running in Azure. This can a
       pushd infrastructure
       ./deploy-infrastructure.ps1
       ```
+ > The deployment of Cosmos DB may take up to 10 minutes!
 
 ### Create an Azure Web App and App Service Plan
 
