@@ -17,6 +17,7 @@ This workshop focusses on the Code to Cloud journey. When you want to dive in to
    - Presentations
 
  - [Setup Prerequisites](/Challenges/Prerequisites/Readme.md)
+ > These prerequisites have to be performed before starting the modules! This will take approximately 30 minutes.
 
  - [Module 1 - Improving the Developer Workflow](/Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
    - Instruction by Instructor
@@ -49,7 +50,7 @@ When you have set up your prerequisites you can start with the modules.
 
 ### Prerequisites
 - [Instructions](Challenges/Prerequisites/Readme.md)
-
+> These prerequisites have to be performed before starting the modules! This will take approximately 30 minutes.
 ### Module 1 - Improving the Developer Workflow
 - [Instructions](Challenges/Module1-ImprovingDeveloperFlow/ImprovingDeveloperWorkflow.md)
 - [Step by Step Instructions](Challenges/Module1-ImprovingDeveloperFlow/Step-By-Step/Readme.md)
