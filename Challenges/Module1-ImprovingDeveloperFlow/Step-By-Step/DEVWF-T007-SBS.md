@@ -45,12 +45,12 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
 1. Add a working directory to the [Build Image] and [Push image to GitHub Container Registry] step. This ensure the Docker file can be found
 
     ```YAML
-            - name: Build image
-                working-directory: content-web
-                run: docker build . --file Dockerfile --tag $IMAGE_NAME
+    - name: Build image
+        working-directory: content-web
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
-            - name: Push image to GitHub Container Registry
-                working-directory: content-web
+    - name: Push image to GitHub Container Registry
+        working-directory: content-web
     ```
 
 1. Remove the test job from YAML since we do not need it. Also remove the dependency in the push stage `needs: test`
@@ -59,19 +59,19 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
     # Run tests.
     # See also https://docs.docker.com/docker-hub/builds/automated-testing/
     test:
-        runs-on: ubuntu-latest
+      runs-on: ubuntu-latest
 
     steps:
-        - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-        - name: Run tests
-            run: |
-            if [ -f docker-compose.test.yml ]; then
-                docker-compose --file docker-compose.test.yml build
-                docker-compose --file docker-compose.test.yml run sut
-            else
-                docker build . --file Dockerfile
-            fi
+      - name: Run tests
+        run: |
+        if [ -f docker-compose.test.yml ]; then
+            docker-compose --file docker-compose.test.yml build
+            docker-compose --file docker-compose.test.yml run sut
+        else
+            docker build . --file Dockerfile
+        fi
     ```
     </s>
 
