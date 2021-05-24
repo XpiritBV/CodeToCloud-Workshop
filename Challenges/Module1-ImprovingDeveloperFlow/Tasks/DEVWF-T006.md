@@ -23,9 +23,9 @@ The Pull Request called `Docker compose file for running API and MongoDB (DEVWF-
 * Docker compose file builds and runs the MongoDB, the API and the Web Application
 * Application can be started via `docker-compose up`
 
-> Tips
-> Run the command `docker rm -f` to remove running containers that have a port already in use
-> Set the environment variable CONTENT_API_URL for the web container to `http://api:3001`
+> ### Tips:
+> - Run the command `docker rm -f` to remove running containers that have a port already in use (you may have to stop and remove the web and api containers).
+> - Set the environment variable CONTENT_API_URL for the web container to `http://api:3001`.
 
 ## Links & Information
 
