@@ -52,7 +52,7 @@ Now your repository contains 3 new "multi-staged" docker file.
       docker build -t fabrikam-web .
       ```
 
-1. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers, except the `cloudenvimage` and the `mongo` container. The `cloudenvimage` contains your GitHub Codespace and the `mongo` contains your populated database.
+1. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers, except the `mongo` container (and except the `cloudenvimage` container - in case this is shown - which contains you GitHub Codespace). The `mongo` container contains your populated database.
 
       ```
       docker rm -f <containername or id>
