@@ -45,7 +45,7 @@ In this task, you will create 3 Docker files that will be used to build and run 
 
 Now that you have created 3 Docker images for your application, it is time to run the application.
 
-1. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers (with exception of `cloudenvimage` (in case this is shown), which contains you GitHub Codespace). 
+1. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers (with exception of `cloudenvimage` (in case this is shown), which contains your GitHub Codespace). 
 
     ```bash
     docker rm -f <containername or id>

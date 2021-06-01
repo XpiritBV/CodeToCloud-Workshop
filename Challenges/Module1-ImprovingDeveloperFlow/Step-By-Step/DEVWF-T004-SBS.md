@@ -19,7 +19,7 @@ In this task, you will merge the Pull Request containing 3 multi-staged Docker f
 
       ![Shows the menu item for navigating to the Pull Request](/Assets/PullRequestDEVWF-T004.png)
 
-1. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
+1. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and go through the instructions and changes.
 
 1. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
 
@@ -30,17 +30,18 @@ Now your repository contains 3 new "multi-staged" docker file.
 1. In your GitHub Codespace, update your files to the latest version by pulling them.
 
       ![](/Assets/2020-10-05-12-10-11.png)
+Also you could use `git pull` from the command line.
 
-1. Open your PowerShell terminal window. From the content-api folder containing the API application files and the new Dockerfile, type the following command to create a Docker image for the API application. This command does the following:
-
-      - Executes the Docker build command to produce the image
-      - Tags the resulting image with the name content-api (-t)
-      - The final dot (".") indicates to use the Dockerfile in this current directory context. By default, this file is expected to have the name "Dockerfile" (case sensitive).
-
-
+1. Open your PowerShell terminal window. From the content-api folder containing the API application files and the new Dockerfile, type the following command to create a Docker image for the API application. 
       ```bash
       docker build -t fabrikam-api .
       ```
+      This command does the following:
+      - Executes the Docker build command to produce the image.
+      - Tags the resulting image (`-t <name>`), in this case with the name content-api.
+      - The final dot (`.`) indicates to use the Dockerfile in this current directory context. By default, this file is expected to have the name "Dockerfile" (case sensitive).
+
+
 
 1. Do the same for the `content-web` and the `content-init` containers
 
@@ -52,7 +53,7 @@ Now your repository contains 3 new "multi-staged" docker file.
       docker build -t fabrikam-web .
       ```
 
-1. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers, except the `mongo` container (and except the `cloudenvimage` container - in case this is shown - which contains you GitHub Codespace). The `mongo` container contains your populated database.
+1. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers, except the `mongo` container (and except the `cloudenvimage` container - in case this is shown - which contains your GitHub Codespace). The `mongo` container contains your populated database.
 
       ```
       docker rm -f <containername or id>

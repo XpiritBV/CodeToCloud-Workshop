@@ -1,6 +1,8 @@
 # DEVWF-T002 Running the application locally
 
-Fabrikam already run their conference websites in their on-premises data center. To get a quick glance of how such an application looks like, you and your team start by running one of the customer implementations. This will also serve as the pilot project to move towards the cloud. The conference website uses a MongoDB database. For development purposes Fabrikam runs a few MongoDB instances on their local network as well. But, now that there is so much demand from different customers there are not enough MongoDB instances and developers are sharing databases for different customers. This results in all kinds of strange behavior because the data structures differ. You and your team decides to solve this issue first.
+Fabrikam already ran their conference websites in their on-premises data center. To get a quick glance of how such an application looks like, you and your team start by running one of the customer implementations. This will also serve as the pilot project to move towards the cloud. 
+
+The conference website uses a MongoDB database. For development purposes Fabrikam runs a few MongoDB instances on their local network as well. However, now that there is so much demand from different customers, there are not enough MongoDB instances available and developers are sharing databases for different customers. This results in all kinds of strange behavior because the data structures differ. You and your team decide to solve this issue first.
 
 ## Challenge
 
@@ -25,7 +27,7 @@ In this challenge you are going to Dockerize the MongoDB and fill this with init
 >
 > Build and start the content-web by using `npm install` and `node .\app.js`
 >
-> Make sure your that Port forwarding is working in your Codespace for port 3000 and 3001 (Remote Explorer -> Port Forwarding)
+> Make sure your that Port forwarding is working in your Codespace for port 3000 and 3001
 
 ## Links & Information
 

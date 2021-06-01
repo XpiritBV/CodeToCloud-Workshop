@@ -17,7 +17,7 @@ In this task your are going to create a continuous deployment pipeline in GitHub
 
 2. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with CLOSELOOP-T002 in the title
 
-3. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
+3. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and go through the instructions and changes.
 
 4. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 3 by typing AB#Module1WorkItemID in the title or description of the Pull Request Commit Message. 
 
