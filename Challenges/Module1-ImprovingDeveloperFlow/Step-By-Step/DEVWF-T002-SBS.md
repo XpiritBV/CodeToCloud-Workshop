@@ -64,6 +64,8 @@ If you rather watch a video with step by step instructions, you can do that here
 
    ![This screenshot of the console window shows the data output.](/Assets/Ex1-Task1.8.png)
 
+   Now press `Ctrl+D` to leave the container's shell.
+
 1. Now navigate to the `content-api` directory and run npm install.
 
    ```bash
@@ -79,15 +81,15 @@ If you rather watch a video with step by step instructions, you can do that here
 
     ![In this screenshot, node ./server.js & has been typed and run at the command prompt, which starts the API as a background process.](/Assets/image47.png)
 
-1. Test the API using your browser. In the GitHub Codespace navigate to the Remote Explorer and create a new Forwarded Port
+1. Test the API using your browser. In the GitHub Codespace click `ports` next to your terminal
 
-    ![Setup port forwarding ](/Assets/PortForward.png)
+    ![Setup port forwarding ](/Assets/Ports.png)
 
 1. Next to the Forwarded Port, click the the global icon. The forwarded website api will be opened in a new browser window
 
 1. Add `/speakers` to the URL.
 
-    ![In this screenshot, made a request to view speakers.](![In this screenshot, made a request to view speakers.](/Assets/SpeakersAPI.png)
+    ![In this screenshot, made a request to view speakers.](/Assets/SpeakersAPI.png)
 
 1. Navigate to the web application directory, run `npm install` and `ng build`.
 
