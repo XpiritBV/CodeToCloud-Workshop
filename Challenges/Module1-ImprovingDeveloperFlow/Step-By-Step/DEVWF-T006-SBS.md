@@ -17,7 +17,7 @@ In this task you are going to create a new Docker Compose file that contains the
 
 1. In your GitHub repository, navigate to the Tab Pull Requests and open the Pull Request with DEVWF-T006 in the title
 
-1. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and got through the instructions and changes.
+1. In the Pull Request, check the conversation, Commits, Checks and Files Changed Tabs, and go through the instructions and changes.
 
 1. On the Conversation Tab, press the Merge Pull Request Button, to merge the files in to the main branch. Link the Pull Request to your Azure Boards Work item for Module 1 by typing `AB#` followed by the work item id for Module 1 (example: `AB#123`) in the title or description of the Pull Request Commit Message. 
 
@@ -29,9 +29,9 @@ Now your repository contains 3 new "Docker Compose" files.
 
     ![](/Assets/2020-10-05-12-10-11.png)
 
-1. Change the <yourgithubaccount> in the docker-compose files to your GitHub Account. Open your PowerShell terminal window. 
+1. Change the `<yourgithubaccount>` in the docker-compose files to your GitHub Account.
 
-1. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers, except the `mongo` container (and except the `cloudenvimage` container - in case this is shown - which contains you GitHub Codespace). The `mongo` container contains your populated database.
+1. Make sure you remove all running images to avoid conflict with ports in use. When you run `docker ps -a` you see all containers that are running or are stopped. Remove all containers, except the `mongo` container (and except the `cloudenvimage` container - in case this is shown - which contains your GitHub Codespace). The `mongo` container contains your populated database.
 
       ```
       docker rm -f <containername or id>
@@ -47,7 +47,7 @@ Now your repository contains 3 new "Docker Compose" files.
 
     ```YAML
     web:
-        image: ghcr.io/renevanosnabrugge/fabrikam-web:latest
+        image: ghcr.io/<yourgithubaccount>/fabrikam-web:latest
         depends_on:
             - api
         environment:
@@ -71,12 +71,10 @@ Now your repository contains 3 new "Docker Compose" files.
     docker-compose -f docker-compose.yml -f local.docker-compose.yml -f docker-compose.init.yml up
     ```
 
-1. Test the web application using the port forward method. In the Remote Explorer, forward port 3000 and open the browser by clicking the globe icon next to the port. 
+1. Test the web application by opening the browser by clicking the globe icon next to the port. 
 
     ![](/Assets/OpenBrowser.png)
 
 1. When you are done, commit and push your changes to your GitHub repository.
 
     ![](/Assets/commitandpush.png)
-
-
