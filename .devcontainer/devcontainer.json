@@ -4,7 +4,6 @@
 		"dockerfile": "Dockerfile"
 	},
 	"settings": {
-		"terminal.integrated.shell.linux": "/usr/bin/pwsh",
 		"go.useGoProxyToCheckForToolUpdates": false,
 		"go.useLanguageServer": true,
 		"go.gopath": "/go",
@@ -25,7 +24,13 @@
 		"lldb.executable": "/usr/bin/lldb",
 		"files.watcherExclude": {
 			"**/target/**": true
-		}
+		},
+		"terminal.integrated.profiles.linux": {
+			"Powershell (login)": {
+			  "path": "/usr/bin/pwsh",
+			  "args": [""]
+			}
+		  },
 	},
 	"remoteUser": "codespace",
 	"overrideCommand": false,
