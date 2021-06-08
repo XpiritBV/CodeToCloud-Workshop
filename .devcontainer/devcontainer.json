@@ -27,7 +27,7 @@
 		},
 		"terminal.integrated.profiles.linux": {
 			"Powershell (login)": {
-			  "path": "/usr/bin/pwsh",
+			  "path": "pwsh",
 			  "args": [""]
 			}
 		  },
