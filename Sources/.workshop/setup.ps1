@@ -49,7 +49,8 @@ function Request-Settings {
   }
   if (-not ($current.GithubToken))
   {
-    Write-Host "Please go to https://github.com/settings/tokens/new and create a new Oauth token with the following scopes:"
+    Write-Host "Please go to https://github.com/settings/tokens/new?description=github-with-azure&scopes=repo,read:packages,write:packages,read:org,workflow"
+    Write-Host "Here you can create a new Oauth token with the following scopes:"
     Write-Host " + repo"
     Write-Host " + read:packages"
     Write-Host " + write:packages"
