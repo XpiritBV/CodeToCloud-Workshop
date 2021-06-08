@@ -2,7 +2,8 @@ FROM mcr.microsoft.com/vscode/devcontainers/universal:1.3.3-linux
 
 USER codespace
 
-RUN npm install -g @angular/cli 
+RUN npm install -g npm \
+    && npm install -g @angular/cli 
     
 RUN az extension add --name azure-devops \
     && az extension add --name application-insights \
