@@ -26,11 +26,11 @@
 			"**/target/**": true
 		},
 		"terminal.integrated.profiles.linux": {
-			"Powershell (login)": {
-			  "path": "pwsh",
-			  "args": [""]
+			"pwsh": {
+				"path": "/usr/bin/pwsh"
 			}
-		  },
+		},
+		"terminal.integrated.defaultProfile.linux": "pwsh"
 	},
 	"remoteUser": "codespace",
 	"overrideCommand": false,
