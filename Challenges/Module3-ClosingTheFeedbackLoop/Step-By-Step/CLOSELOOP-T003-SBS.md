@@ -45,7 +45,7 @@ Before we can start building the build and release pipelines, we need to setup a
 2. Create a new [Docker Registry] Service Connection, and set the values
 * Docker Registry = https://ghcr.io
 * Docker ID = notrelevant
-* Docker Password = <Your GitHub Personal Access Token>
+* Docker Password = `<Your GitHub Personal Access Token>`
 * Service connection name = GitHub Container Registry
 
 ![](/Assets/NewServiceConnectionDetails.png)
