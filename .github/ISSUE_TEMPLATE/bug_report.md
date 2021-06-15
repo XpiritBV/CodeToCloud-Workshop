@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to get rid of an annoying bug in the CodeToCloud worksho
+about: Create a report to get rid of a bug that bothered you in the CodeToCloud workshop
 title: ''
 labels: Continuous Improvement, Community feedback
 assignees: cdijkstra
