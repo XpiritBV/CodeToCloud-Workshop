@@ -1,0 +1,14 @@
+name: Test CodeToCloud workshop
+on: push
+
+jobs:
+  pester-test:
+    name: Pester test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Perform a Pester test from the Tests.ps1 file
+        shell: pwsh
+        run: |
+          Invoke-Pester Tests/UnitTests.ps1 -Passthru
