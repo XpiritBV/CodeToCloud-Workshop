@@ -1,8 +1,8 @@
 ---
-name: Bug report
+name: 🐛 Bug report
 about: Create a report to get rid of a bug that bothered you in the CodeToCloud workshop
-title: ''
-labels: Continuous Improvement, Community feedback
+title: "[BUG]"
+labels: Continuous Improvement, Community feedback, bug
 assignees: cdijkstra
 
 ---

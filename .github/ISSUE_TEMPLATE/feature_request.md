@@ -1,5 +1,5 @@
 ---
-name: Feature request
+name: 🚀 Feature request
 about: Suggest an idea to make the CodeToCloud workshop even more epic
 title: "[FEATURE]"
 labels: Continuous Improvement
