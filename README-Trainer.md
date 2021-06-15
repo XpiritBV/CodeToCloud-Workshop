@@ -188,4 +188,6 @@ Or show the following video:
 All challenges can be found in the [Challenges](/Challenges/README.md) folder. These are also represented in another Git Repository that can be offered to the students. There is also a Git Repository that contains all sources. This can be found [here](https://github.com/XpiritBV/CodeToCloud-Source). Students need to fork this repo to get started. This is also described in the [prerequisites](Challenges/Prerequisites/Readme.md)
 
 ## Student feedback
-Encourage students to leave feedback on the Workshop! This can be done along the way (when issues are encountered) and after finishing it. Feedback can be given in the CodeToCloud Workshop repository: https://github.com/XpiritBV/CodeToCloud-Workshop. This way we get a good idea of issues that were encountered by students, and the workshop can be further improved!
+Encourage students to leave feedback on the Workshop! This can be done along the way (when issues are encountered) and after finishing it. Feedback can be given in the CodeToCloud Workshop repository: https://github.com/XpiritBV/CodeToCloud-Workshop. This way we get a good idea of issues that were encountered by students, and the workshop can be further improved! They (and you) can also come up with enhancement proposals that would bring the workshop to a higher level!
+![](Assets/CreateIssue.png)
+![](Assets/IssueTemplate.png)
