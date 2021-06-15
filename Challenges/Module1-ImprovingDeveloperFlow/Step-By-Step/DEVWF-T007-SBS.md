@@ -133,7 +133,7 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
 
     ![Screen that shows that the GitHub action build succeeded](/Assets/buildsucceed.png)
 
-1. Next, setup the `content-api` workflow and the `content-init` workflow. Call the files `fabrikam-api.yml` and `fabrikam-init.yml` and change the container names also to `fabrikam-api` and `fabrikam-init`.
+1. Next, setup the `content-api` workflow and the `content-init` workflow. Call the files `fabrikam-api.yml` and `fabrikam-init.yml` and change the container names also into `fabrikam-api` and `fabrikam-init`.
 *These workflows are very similar to the one shown above, but `fabrikam-web` should be replaced by `fabrikam-api` et cetera.*
 
 1. Navigate to the packages in your GitHub account and see if the container images are present.
