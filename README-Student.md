@@ -67,3 +67,5 @@ When you have set up your prerequisites you can start with the modules.
 In case you find any issues, make sure to provide feedback on the Workshop in the CodeToCloud Workshop repository: https://github.com/XpiritBV/CodeToCloud-Workshop. This way the developers get a good idea of issues that were encountered by students, and the workshop will be improved further. You can also come up with enhancement proposals that you think would bring the workshop to a higher level!
 ![](Assets/CreateIssue.png)
 ![](Assets/IssueTemplate.png)
+
+Issues and pull requests have been disabled for this repo. These can be added to the [parent repository](https://github.com/XpiritBV/CodeToCloud-Workshop) and will be reflected in this repo! 
