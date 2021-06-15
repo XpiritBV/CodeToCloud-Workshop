@@ -71,7 +71,7 @@ Now that you have created 3 Docker images for your application, it is time to ru
     docker run -d --name web -p 3000:80 --net fabrikam fabrikam-web
     ```
 
-1. In your GitHub Codespace, navigate to the Remote Explorer and forward the ports `3000` and `3001` to make them available on the web. Click the Globe Icon to navigate to the Web Application (port 3000).
+1. In your GitHub Codespace, navigate to the ports tab check if the ports `3000` and `3001` are forwarded (if not; do so!) to make them available on the web. Click the Globe Icon to navigate to the Web Application (port 3000).
 
     ![![Screen showing the remote explorer where ports 3000 and 3001 are forwarded.]](/Assets/OpenBrowser.png)
 

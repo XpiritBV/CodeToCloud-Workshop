@@ -105,7 +105,7 @@ If you rather watch a video with step by step instructions, you can do that here
     node ./app.js &
     ```
 
-1. Test the web application using the port forward method. In the Remote Explorer, forward port 3000 and open the browser by clicking the globe icon next to the port. 
+1. Test the web application using the port forward method. In ports tab next to the terminal, forward port 3000 and open the browser by clicking the globe icon next to the port. 
 
     ![Open the running app in your browser](/Assets/OpenBrowser.png)
 
