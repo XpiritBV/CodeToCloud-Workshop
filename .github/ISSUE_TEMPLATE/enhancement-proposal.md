@@ -1,5 +1,5 @@
 ---
-name: 🏗 Enhancement Proposal
+name: 🧑‍🏭 Enhancement Proposal
 about: Proposals for code cleanup, refactor and improvements in general
 title: "[ENHANCEMENT]"
 labels: Continuous Improvement
