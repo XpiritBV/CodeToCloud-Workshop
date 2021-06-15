@@ -71,7 +71,7 @@ az webapp config container set `
 --resource-group $resourcegroupName 
 ```
 
-2. Visit the website and check Application Insights in the Azure Portal to see instrumentation data.
+2. Visit the website and check Application Insights in the [Azure Portal](http://portal.azure.com/) to see instrumentation data.
 
 > When you do not want to type all commands try the solution Pull Request by running
 

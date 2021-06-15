@@ -5,7 +5,7 @@ If you'd rather watch a video with step by step instructions, you can do that he
 
 In this task you will run the WEB and API application as a multi-container application within an Azure Web App while it connects with the CosmosDB. The INIT container, that was pushed to the registry as well, can be used to populate the CosmosDB. 
 
-1. To be able to access the CosmosDB, you need to add the connectionstring as environment variable to the Azure Web App. Retrieve the connectionstring to the CosmosDB in the portal or use the following command and use the Primary MongoDB ConnectionString.
+1. To be able to access the CosmosDB, you need to add the connectionstring as environment variable to the Azure Web App. Retrieve the connectionstring to the CosmosDB in the [portal](http://portal.azure.com/) or use the following command and use the Primary MongoDB ConnectionString.
 
     ```
     az cosmosdb keys list -n $cosmosDBName -g $resourceGroupName --type connection-strings
@@ -17,7 +17,7 @@ In this task you will run the WEB and API application as a multi-container appli
 docker run -ti  -e MONGODB_CONNECTION="mongodb://xxx.documents.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb" ghcr.io/<your-github-account>/fabrikam-init
 
 ```
-3. In the Azure Portal, navigate to the Web Application and open the Configuration Blade. In the configuration blade add a new Application Setting and call this MONGODB_CONNECTION. Add the MongoDB Connection String as a value.
+3. In the [Azure Portal](http://portal.azure.com/), navigate to the Web Application and open the Configuration Blade. In the configuration blade add a new Application Setting and call this MONGODB_CONNECTION. Add the MongoDB Connection String as a value.
 
 ![](/Assets/AppSetting.png)
 

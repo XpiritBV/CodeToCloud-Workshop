@@ -58,7 +58,7 @@ Create an Azure Resource Group to hold the resources that you create in this han
       ./deploy-infrastructure.ps1
       ```
 
-1. When this completes, the Azure Portal shows your Resource Group.
+1. When this completes, the [Azure Portal](http://portal.azure.com/) shows your Resource Group.
 
    ![Resource group created](/Assets/2020-10-09_16-36-24.png) 
 
@@ -135,6 +135,9 @@ You have already run the separate steps from the steps a number of times. The fa
 
 ## Browse to the Azure Portal
 
-1. Open the Azure Portal, and validate if the CosmosDB, the App Service Plan and Azure Web App have been created. 
+1. Open the [Azure Portal](http://portal.azure.com/), and validate if the following cloud services have been created: 
+* CosmosDB,
+* App Service Plan,
+* Azure Web App. 
 
 ![Resources created in Azure](/Assets/2020-10-15-10-32-42.png)
