@@ -2,7 +2,7 @@
 
 Developers are working locally with their images to quickly develop the software. However, when they published their containers to start testing, the team notices that there is a lot of differences with their development environments. 
 
-After some research, they find that small bugs occur because the latest version was not used. Main reason is that everybody is building their own container images, and there is not a "golden image" that can be used for testing purposes. You and your team suggest to implement Continuous Integration and to push the latest version of the container image to a Container Registry hosted on GitHub after every change. This container registry can then serve as the repository that contains the latest images to use and deploy on the various environments for testing etc.
+After some research, they find that small bugs occur because the latest version was not used. Main reason is that everybody is building their own container images, and there is not a "golden image" that can be used for testing purposes. You and your team suggest to implement Continuous Integration and to push the latest version of the container image to a Container Registry hosted on GitHub after every change. This container registry can then serve as the repository that contains the latest images. These can be used and deployed on the various environments for testing and production purposes.
 
 ## Challenge
 
@@ -10,10 +10,10 @@ In this challenge you are going to shorten the feedback loop and ensure that sta
 
 ## Validation
 
-* GitHub Container Registry populated with 3 docker images. [fabrikam-init], [fabrikam-web] and [fabrikam-api]
-* GitHub Action workflow created that builds and pushes the [fabrikam-web] (from the content-web) image to the GitHub Container Registry
-* GitHub Action workflow created that builds and pushes the [fabrikam-api] (from the content-api) image to the GitHub Container Registry
-* GitHub Action workflow created that builds and pushes the [fabrikam-init] (from the content-init) image to the GitHub Container Registry
+* GitHub Container Registry populated with 3 docker images. [`fabrikam-init`], [`fabrikam-web`] and [`fabrikam-api`]
+* GitHub Action workflow created that builds and pushes the [`fabrikam-web`] image (from the content-web) to the GitHub Container Registry
+* GitHub Action workflow created that builds and pushes the [`fabrikam-api`] image (from the content-api) to the GitHub Container Registry
+* GitHub Action workflow created that builds and pushes the [`fabrikam-init`] image (from the content-init) to the GitHub Container Registry
 * Added a GitHub Secret called `CR_PAT` that contains the Personal Access Token to push and pull containers to the GitHub Container registry
 
 > Tips
@@ -24,9 +24,7 @@ In this challenge you are going to shorten the feedback loop and ensure that sta
 >
 > ![](/Assets/GithubAction-DockerPublish.png)
 >
-> Remove the `test` job from the generated GitHub Action
->
-> Make sure you add a `working-directory` to all the Docker steps in your GitHub Action
+> Try to set some useful tags and labels in the `Extract metadata` step
 
 ## Links & Information
 

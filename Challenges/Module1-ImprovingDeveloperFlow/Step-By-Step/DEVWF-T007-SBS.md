@@ -38,94 +38,94 @@ In this task, you will use YAML to define 3 GitHub Actions workflows that builds
 
     ```YAML
     env:
+      # Use Github Container Registry (ghcr)
+      REGISTRY: ghcr.io
       # TODO: Change variable to your image's name.
       IMAGE_NAME: fabrikam-web
     ```
 
-1. Add a working directory to the [Build Image] and [Push image to GitHub Container Registry] step. This ensure the Docker file can be found
+1. The Publish Docker Container template consists of three jobs:
+* https://github.com/docker/login-action
+* https://github.com/docker/metadata-action
+* https://github.com/docker/build-push-action
+Ensure to provide the right values for the registry, username and password (`${{ env.REGISTRY }}`, `${{ github.actor }}` and `${{ secrets.CR_PAT }}`)
 
-    ```YAML
-    - name: Build image
-        working-directory: content-web
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME
-
-    - name: Push image to GitHub Container Registry
-        working-directory: content-web
-    ```
+1. In the metadata step, make sure to set some tags and labels.
 
 1. The workflow for fabrikam-web should look as follows:
+
     ```yaml
-    name: Fabrikam Web Build
+        name: Fabrikam Web Build
 
-    on:
-    push:
-        # Publish `main` as Docker `latest` image.
-        branches:
-        - main
-        paths:
-        - 'content-web/**'
-        - '.github/workflows/fabrikam-web.yml'
+        # This workflow uses actions that are not certified by GitHub.
+        # They are provided by a third-party and are governed by
+        # separate terms of service, privacy policy, and support
+        # documentation.
 
+        on:
+        push:
+          # Publish `main` as Docker `latest` image.
+          branches: [ main ]
+          paths:
+          - 'content-web/**'
+          - '.github/workflows/fabrikam-web.yml'
+          # Publish `v1.2.3` tags as releases.
+          tags: [ 'v*.*.*' ]
+        pull_request:
+          branches: [ main ]
 
-        # Publish `v1.2.3` tags as releases.
-        tags:
-        - v*
+        env:
+          # Use docker.io for Docker Hub if empty
+          REGISTRY: ghcr.io
+          # github.repository as <account>/<repo>
+          IMAGE_NAME: fabrikam-web
 
-    # Run tests for any PRs.
-    pull_request:
+        jobs:
+        build:
+          runs-on: ubuntu-latest
+          if: github.event_name == 'push'
+          permissions:
+            contents: read
+            packages: write
 
-    env:
-    # TODO: Change variable to your image name.
-    IMAGE_NAME: fabrikam-web
+          steps:
+          - name: Checkout repository
+              uses: actions/checkout@v2
 
-    jobs:
-    # Push image to GitHub Packages.
-    # See also https://docs.docker.com/docker-hub/builds/
-    push:
-        runs-on: ubuntu-latest
-        if: github.event_name == 'push'
+          # Login against a Docker registry except on PR
+          # https://github.com/docker/login-action
+          - name: Log into registry ${{ env.REGISTRY }}
+              if: github.event_name != 'pull_request'
+              uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
+              with:
+                registry: ${{ env.REGISTRY }}
+                username: ${{ github.actor }}
+                password: ${{ secrets.CR_PAT }}
 
-        steps:
-        - uses: actions/checkout@v2
+          # Extract metadata (tags, labels) for Docker
+          # https://github.com/docker/metadata-action
+          - name: Extract Docker metadata
+              id: meta
+              uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+              with:
+                images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+                tags: |
+                  type=semver,pattern={{version}}
+                  # output 0.1.2
+                labels: |
+                  org.opencontainers.image.title=Fabrikam Web Build
+                  org.opencontainers.image.description=CodeToCloud Fabrikam Container
+                  org.opencontainers.image.vendor=MyCompany
 
-        - name: Build image
-            working-directory: content-web
-            run: docker build . --file Dockerfile --tag $IMAGE_NAME
-
-        - name: Log into GitHub Container Registry
-            run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
-
-        - name: Push image to GitHub Container Registry
-            working-directory: content-web
-            run: |
-            IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
-            VERSION=${{ github.ref }}
-
-            echo IMAGE_ID=$IMAGE_ID
-            echo VERSION=$VERSION
-
-            docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
-            docker push $IMAGE_ID:$VERSION
-    ```
-
-    where the last step can be optimized by putting the image id in lowerscore letters and removing the git ref prefix from version (but this is not mandatory):
-    ```
-    - name: Push image to GitHub Container Registry
-            working-directory: content-web
-            run: |
-            IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
-            # Change all uppercase to lowercase
-            IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-            # Strip git ref prefix from version
-            VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
-            # Strip "v" prefix from tag name
-            [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-            # Use Docker `latest` tag convention
-            [ "$VERSION" == "main" ] && VERSION=latest
-            echo IMAGE_ID=$IMAGE_ID
-            echo VERSION=$VERSION
-            docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
-            docker push $IMAGE_ID:$VERSION
+          # Build and push Docker image with Buildx (don't push on PR)
+          # https://github.com/docker/build-push-action
+          - name: Build and push Docker image
+              uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+              with:
+                context: .
+                push: ${{ github.event_name != 'pull_request' }}
+                tags: ${{ steps.meta.outputs.tags }}
+                labels: ${{ steps.meta.outputs.labels }}
     ```
 
 1. Commit the file to the repository
