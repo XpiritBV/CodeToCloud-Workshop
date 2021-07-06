@@ -3,6 +3,8 @@
 If you rather watch a video with step by step instructions, you can do that here
 [![Step by Step Video](https://img.youtube.com/vi/2FgK5SNVFCA/0.jpg)](https://www.youtube.com/watch?v=2FgK5SNVFCA)
 
+*Note*: the Publish Docker Container template has been updated in Github, the video is based on an older template. The description below is more accurate when creating a new template.
+
 In this task, you will use YAML to define 3 GitHub Actions workflows that builds your Docker images and pushes it to a GitHub Container Registry automatically.
 
 1. In your GitHub repository, and select the [Settings] tab.
