@@ -37,7 +37,7 @@ To enable Application Insights we need an Application Insights Resource in our r
    npm install applicationinsights --save
    ```
 
-2. To let the application know where to send the instrumentation data, open the `app.js` file in the content-web folder and add the following lines immediately after `express` is instantiated, substitute `AI Instrumentation Key` with the Instrumentation Key from the output of the `setup-appinsights.ps1` script. The Instrumentation Key can also be obtained [from the Azure portal as follows](https://dailydotnettips.com/getting-an-application-insights-instrumentation-key-inside-visual-studio-itself/).
+2. To let the application know where to send the instrumentation data, open the `app.js` file in the content-web folder and add the following lines immediately after `express` is instantiated, substitute `AI Instrumentation Key` with the Instrumentation Key from the output of the `setup-appinsights.ps1` script. The Instrumentation Key can be obtained [from the Azure portal as follows](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-resources-app-insights-keys?view=azure-bot-service-4.0#instrumentation-key).
 
    ```javascript
    const appInsights = require("applicationinsights");
