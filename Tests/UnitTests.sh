@@ -18,3 +18,38 @@
     }
   }
 }
+
+@test "The setup script should set variables in settings.json" {
+    cat InputSetupScript.txt | pwsh ../Sources/.workshop/setup.ps1
+    [ $? -eq 0 ]
+
+    settings="$(cat ../Sources/.workshop/settings.json)"
+    properties=("Student" 
+                "AzDoPAT"
+                "AzDoOrganization"
+                "AzDoProject"
+                "TargetRepo"
+                "GithubToken"
+                "WorkItemIdModule1"
+                "WorkItemIdModule2"
+                "WorkItemIdModule3"
+                "WorkItemIdModule4")
+    for property in $properties
+    {
+      content="$(echo $settings | jq .$property)"
+      # Check that properties are not empty
+      [[ "${content}" != "null" ]]
+    }
+}
+
+# @test "Second run of setup script overwrites variables in settings.json" {
+#     cat SecondInputSetupScript.txt | pwsh ../Sources/.workshop/setup.ps1
+#     [ $? -eq 0 ]
+
+#     settings="$(cat ../Sources/.workshop/settings.json)"
+#     ghtoken="$(echo $settings | jq .GithubToken)"
+#     azdotoken="$(echo $settings | jq .AzDoPAT)"
+    
+#     [[ "$ghtoken" == "newghtoken" ]]
+#     [[ "$azdotoken" == "newazdotoken" ]]
+# }

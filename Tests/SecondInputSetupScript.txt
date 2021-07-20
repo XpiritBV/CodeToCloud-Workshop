@@ -1,0 +1,9 @@
+git@github.com:cdijkstra/CodeToCloud-Workshop.git
+Y
+newghtoken
+cdijkstra
+Y
+newazdotoken
+CodeToCloud-Workshop
+Casper
+Y
