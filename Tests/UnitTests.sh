@@ -1,7 +1,8 @@
-#!/usr/bin/env bats
+# !/usr/bin/env bats
+# Don't run from CodeToCloud-Workshop directory
 
 @test "The Challenges directory should contain Challenges" {
-  result="$(ls ../Challenges | grep Module | wc -w)"
+  result="$(ls Challenges | grep Module | wc -w)"
   [ "$result" -eq 4 ]
 }
 
@@ -12,7 +13,7 @@
   {
     for dir in "$directories"
     {
-      file="../Challenges/Module$modulenumber/$dir"
+      file="Challenges/Module$modulenumber/$dir"
       # Ensure that directories exist
       [ -d "$file" ]
     }
@@ -20,10 +21,10 @@
 }
 
 @test "The setup script should set variables in settings.json" {
-    cat InputSetupScript.txt | pwsh ../Sources/.workshop/setup.ps1
+    cat InputSetupScript.txt | pwsh Sources/.workshop/setup.ps1
     [ $? -eq 0 ]
 
-    settings="$(cat ../Sources/.workshop/settings.json)"
+    settings="$(cat Sources/.workshop/settings.json)"
     properties=("Student" 
                 "AzDoPAT"
                 "AzDoOrganization"
@@ -43,10 +44,10 @@
 }
 
 # @test "Second run of setup script overwrites variables in settings.json" {
-#     cat SecondInputSetupScript.txt | pwsh ../Sources/.workshop/setup.ps1
+#     cat SecondInputSetupScript.txt | pwsh Sources/.workshop/setup.ps1
 #     [ $? -eq 0 ]
 
-#     settings="$(cat ../Sources/.workshop/settings.json)"
+#     settings="$(cat Sources/.workshop/settings.json)"
 #     ghtoken="$(echo $settings | jq .GithubToken)"
 #     azdotoken="$(echo $settings | jq .AzDoPAT)"
     
