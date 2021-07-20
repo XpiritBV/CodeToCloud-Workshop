@@ -1,9 +1,6 @@
 name: Test CodeToCloud workshop using Bats
 
-on: 
-  push:
-    tags:
-      - main
+on: push
 
 jobs:
   pester-test:
