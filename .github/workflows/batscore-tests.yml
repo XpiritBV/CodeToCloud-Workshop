@@ -30,4 +30,4 @@ jobs:
         shell: bash
           
       - name: Test
-        run: bats Tests/UnitTests.sh.sh
+        run: bats Tests/UnitTests.sh
