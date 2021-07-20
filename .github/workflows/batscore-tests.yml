@@ -1,6 +1,9 @@
 name: Test CodeToCloud workshop using Bats
 
-on: push
+on: 
+  push:
+  schedule:
+    - cron: "0 8 * * *"
 
 jobs:
   pester-test:
