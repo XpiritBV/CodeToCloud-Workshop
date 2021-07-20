@@ -3,7 +3,7 @@ on: push
 
 jobs:
   pester-test:
-    name: Pester test
+    name: Bats core test
     runs-on: ubuntu-latest
     steps:
       - name: Setup BATS testing framework
@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v2
           
       - name: Test
-        run: bats Tests/tests.sh
+        run: bats Tests/UnitTests.sh.sh
