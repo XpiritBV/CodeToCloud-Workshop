@@ -24,6 +24,10 @@ jobs:
         env:
           ghtoken: ${{secrets.GHTOKEN}}
           azdotoken: ${{secrets.AZDOTOKEN}}
+
+      - name: Display the path
+        run: cat Tests/InputSetupScript.txt
+        shell: bash
           
       - name: Test
         run: bats Tests/UnitTests.sh.sh
