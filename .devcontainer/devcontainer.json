@@ -30,13 +30,20 @@
 				"path": "/usr/bin/pwsh"
 			}
 		},
-		"terminal.integrated.defaultProfile.linux": "pwsh"
+		"terminal.integrated.defaultProfile.linux": "pwsh",
+		"terminal.integrated.automationShell.linux": "/usr/bin/pwsh"
 	},
 	"remoteUser": "codespace",
 	"overrideCommand": false,
-	"workspaceMount": "source=${localWorkspaceFolder},target=/home/codespace/workspace,type=bind,consistency=cached",
+	"mounts": ["source=codespaces-linux-var-lib-docker,target=/var/lib/docker,type=volume"],
 	"workspaceFolder": "/home/codespace/workspace",
-	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined", "--privileged", "--init" ],
+	"runArgs": [ 
+		"--cap-add=SYS_PTRACE", 
+		"--security-opt", 
+		"seccomp=unconfined", 
+		"--privileged", 
+		"--init" 
+	],
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
@@ -61,5 +68,5 @@
 	  ],
 
 	// "oryx build" will automatically install your dependencies and attempt to build your project
-	"postCreateCommand": "oryx build -p virtualenv_name=.venv --log-file /tmp/oryx-build.log || echo 'Could not auto-build. Skipping.'"
+	"postCreateCommand": "oryx build -p virtualenv_name=.venv --log-file /tmp/oryx-build.log --manifest-dir /tmp || echo 'Could not auto-build. Skipping.'"
 }
