@@ -29,7 +29,7 @@ Visual Studio Code doesn't pass a couple of specific of keystrokes to the termin
 
 ## Set up workshop scripts
 
-Furthermore, the workshop provides starter and solution scripts. These scripts are served as a Pull Request with instructions in your Git Repository. In order to make this work, and to make the scripts work we have set up a container and some helper scripts, that you can execute in the workshop.
+Furthermore, the workshop provides *Starter* and *Solution scripts*. These scripts are served as a Pull Request with instructions in your Git Repository. In order to make this work, and to make the scripts work we have set up a container and some helper scripts, that you can execute in the workshop. (How these scripts work exactly is described below in the section `Run Start and Solution Scripts`, first we have to set up the prerequisites for the workshop!).
 
 To set this up, you need to perform these steps
 
@@ -120,6 +120,11 @@ To https://github.com/yourorganisation/CodeToCloud-Source.git
 Creating pull request for users/donovan/update-deployment-file into main in yourorganisation/CodeToCloud-Source
 
 https://github.com/yourorganisation/CodeToCloud-Source/pull/14
+```
+
+Similarly, solution scripts can be called when you get stuck on an exercise. When this is possible, this will be mentioned in the exercise!
+```powershell
+Workshop-Step Solution "DEVWF-T002"
 ```
 
 ## Variables
