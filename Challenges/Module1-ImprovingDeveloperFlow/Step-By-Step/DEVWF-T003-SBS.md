@@ -16,7 +16,7 @@ In this task, you will create 3 Docker files that will be used to build and run 
 1. In your Terminal window, navigate to the `content-api` directory
 
     ```bash
-    pushd content-api
+    cd content-api
     ```
 
 1. From the content-api folder containing the API application files and the new Dockerfile you created, type the following command to create a Docker image for the API application. This command does the following:
