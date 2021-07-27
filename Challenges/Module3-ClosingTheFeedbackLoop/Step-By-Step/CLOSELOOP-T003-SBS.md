@@ -91,7 +91,7 @@ First we need to create the build stage in the Azure DevOps pipeline. Instead of
           dockerComposeFile: '**/docker-compose.yml'
           additionalDockerComposeFiles: 'build.docker-compose.yml'
           action: 'Push services'
-          additionalImageTags: '$(Build.BuildNumber)
+          additionalImageTags: '$(Build.BuildNumber)'
 ```
 
 6. Run the build. This builds and pushes a latest version to the GitHub Container registry.
