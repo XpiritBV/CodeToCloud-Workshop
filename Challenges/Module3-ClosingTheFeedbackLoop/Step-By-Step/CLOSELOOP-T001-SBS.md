@@ -11,7 +11,7 @@ We can create all these resources manually, but since we want to do this "the De
 
 To enable Application Insights we need an Application Insights Resource in our resource group
 
-1. In your Codespace, open the file `deploy-infrastructure.ps1` in your infrastructure folder.
+1. In your Codespace, create a new Powershell file (e.g. `setup-appinsights.ps1`) in the same directory as `deploy-infrastructure.ps1`.
 
 2. Add this code snippet to the file
 
