@@ -33,13 +33,15 @@ Your comments and feedback are welcome, and the project team is available via ha
 Have you identified a reproducible problem in a workshop? Have a feature request? We want to hear about it! Here's how you can make reporting your issue as effective as possible.
 
 ### Look For an Existing Issue
-The Code to Cloud project is distributed across multiple repositories. Before you create a new issue, please do a search in [open issues](https://github.com/orgs/XpiritBV/projects/1) to see if the issue or feature request has already been filed.
+The Code to Cloud project is distributed across multiple repositories. Before you create a new issue, please do a search in [open issues](https://github.com/XpiritBV/CodeToCloud-Workshop/issues) to see if the issue or feature request has already been filed.
+
+New issues can be created using one of the following templates:
+![](/Assets/IssueTemplate.png)
 
 If you find your issue already exists, make relevant comments and add your [reaction](https://github.com/blog/2119-add-reactions-to-pull-requests-issues-and-comments). Use a reaction in place of a "+1" comment:
 
 * 👍 - up vote
 * 👎 - down vote
-
 
 If you cannot find an existing issue that describes your bug or feature, create a new issue using the guidelines below.
 
@@ -49,7 +51,7 @@ File a single issue per problem and feature request. Do not enumerate multiple b
 
 Do not add your issue as a comment to an existing issue unless it's for the identical input. Many issues look similar, but have different causes.
 
-The more information you can provide, the more likely someone will be successful reproducing the issue and finding a fix.  Please use the template for each issue.
+The more information you can provide, the more likely someone will be successful reproducing the issue and finding a fix. Please use the template for each issue.
 
 ### Final Checklist
 
