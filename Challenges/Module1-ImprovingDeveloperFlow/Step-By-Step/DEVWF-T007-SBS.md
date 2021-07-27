@@ -56,7 +56,7 @@ Ensure to provide the right values for the registry, username and password (`${{
 
 1. The workflow for fabrikam-web should look as follows:
 
-```yaml
+```YAML
 name: Fabrikam Web Build
 
 # This workflow uses actions that are not certified by GitHub.

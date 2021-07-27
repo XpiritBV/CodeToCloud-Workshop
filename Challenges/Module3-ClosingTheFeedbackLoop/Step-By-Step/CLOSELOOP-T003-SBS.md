@@ -11,7 +11,7 @@ When we commit a change to our repository, we want to make sure, the Azure DevOp
 
 1. In your GitHub Codespace, open the `docker-publish.yml` workflow file. Replace `branches: ...` with the following statement
 
-```yaml
+```YAML
 on:
   push:
     branches-ignore:

@@ -27,7 +27,7 @@ In this challenge you will run the WEB and API application in an Azure Web App, 
 >
 > * Make sure you add the environment variable `CONTENT_API_URL` to the web service in the docker compose file
 >
->    ```yaml
+>    ```YAML
 >    environment:
 >      CONTENT_API_URL: http://api:3001
 >    ```
