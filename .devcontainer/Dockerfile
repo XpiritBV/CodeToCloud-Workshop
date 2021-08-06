@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/universal:1.5.0-linux
+FROM mcr.microsoft.com/vscode/devcontainers/universal:1.6.1-linux
 
 USER codespace
 
