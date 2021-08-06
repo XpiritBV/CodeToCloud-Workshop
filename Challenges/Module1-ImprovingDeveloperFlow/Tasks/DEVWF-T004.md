@@ -26,6 +26,8 @@ In this challenge you will merge the Pull Request [Example for Multi-Staged Dock
 * New Container for WEB, API and INIT built and run
 
 > Tip
+> If you get merge conflicts while pulling, solve the merge conflicts by pressing "Accept incoming change in VsCode"
+>
 > Use the `docker ps -a` command to see which containers are running and stopped on your system
 >
 > Use the `docker rm` command to remove containers that have run earlier
