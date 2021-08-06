@@ -169,3 +169,8 @@ else {
   Request-Settings
   Apply-Settings
 }
+
+# Set useful git settings (pull.rebase false since too complicated for this course)
+git config --global pull.rebase false
+git config --global fetch.prune true
+git config --global diff.colorMoved zebra
