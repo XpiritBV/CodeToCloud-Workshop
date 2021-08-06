@@ -12,8 +12,8 @@ In this challenge you are going to use your [CodeToCloud-Source] repository that
 
 - Azure Boards connected to the [CodeToCloud-Source] Git repository with [this extension](https://github.com/marketplace/azure-boards)
 - 4 work items are present in Azure Boards. These are called [Module 1], [Module 2], [Module 3] and [Module 4]
-- 1 commit in the Git repository linked to a work item 
-    > Use AB#<WorkItemID> in the commit message or description to link a work item
+- 1 commit in the Git repository linked to an Azure Boards (AB) work item 
+    > Use `AB#<N>` in the commit message or description to link the commit to work item `<N>` (for instance  `AB#1`).
 
 ## Links & Information
 
