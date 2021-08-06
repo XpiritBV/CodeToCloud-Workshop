@@ -37,3 +37,4 @@ docker run -ti --network fabrikam fabrikam-init
 docker run -d --name api -p 3001:3001 --network fabrikam fabrikam-api
 docker run -d --name web -p 3000:80 --network fabrikam fabrikam-web
 ```
+Now you can open the web application by right clicking the running process on port 3000 from the Ports tab in your Codespace.
