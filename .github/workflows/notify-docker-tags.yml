@@ -1,4 +1,4 @@
-name: "Find docker tags"
+name: "Find devcontainer tags"
 on:
   schedule:
   - cron: "0 7 * * *"
@@ -10,7 +10,7 @@ jobs:
       - name: Check_docker_tags
         id: dockertags
         run: |
-          currentversion="1.6.1"
+          currentversion="1.6.4"
           dockertagsurl="https://mcr.microsoft.com/v2/vscode/devcontainers/universal/tags/list"
 
           allversions=`curl -s -L $dockertagsurl`
