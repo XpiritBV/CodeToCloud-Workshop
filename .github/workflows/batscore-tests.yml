@@ -13,10 +13,6 @@ jobs:
       - name: Build devcontainer
         run: docker build -f .devcontainer/Dockerfile -t devcontainer .
 
-      - name: Build devcontainer
-        uses: PowerShell@2
-        run: docker build -f .devcontainer/Dockerfile -t devcontainer .
-
       - name: Check out repository code
         uses: actions/checkout@v2
 
