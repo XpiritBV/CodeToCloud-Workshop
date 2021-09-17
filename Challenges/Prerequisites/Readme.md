@@ -17,8 +17,7 @@ The workshop builds upon an existing code base. Before you start the workshop, t
 The workshop is built with and targeted at development with GitHub Codespace. A full featured IDE in the cloud. In order to start working you need to create a Codespace.
 
 1. Navigate to your forked repository on GitHub
-2. Create a Code Space in your forked repo
-
+2. Create a *Codespace* in your forked repo. This is done by pressing Code and going to the Codespaces tab.
 ![](/Assets/CodeSpace.png)
 
 3. Your GitHub Codespace will be created
