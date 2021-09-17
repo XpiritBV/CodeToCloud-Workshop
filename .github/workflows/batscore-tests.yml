@@ -10,9 +10,6 @@ jobs:
     name: Bats core test
     runs-on: ubuntu-latest
     steps:
-      - name: Build devcontainer
-        run: docker build -f .devcontainer/Dockerfile -t devcontainer .
-
       - name: Check out repository code
         uses: actions/checkout@v2
 
@@ -40,3 +37,6 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_MESSAGE: One of the CodeToCloud bats tests failed
+
+    # - name: Build devcontainer
+    #   run: docker build -f .devcontainer/Dockerfile -t devcontainer .
