@@ -10,12 +10,12 @@ jobs:
     name: Bats core test
     runs-on: ubuntu-latest
     steps:
-      - name: Build devcontainer
-        run: docker build -f .devcontainer/Dockerfile -t devcontainer .
-
       - name: Check out repository code
         uses: actions/checkout@v2
 
+      - name: Build devcontainer
+        run: docker build -f .devcontainer/Dockerfile -t devcontainer .
+        
       - name: Setup BATS testing framework
         uses: mig4/setup-bats@v1.2.0
         with:
