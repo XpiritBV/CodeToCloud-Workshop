@@ -1,23 +1,24 @@
-# Dockerfile for content-web
-# This is the base image that can be used
-FROM node:dubnium AS build
-#This is the environment variable with connection to the API. Can be overriden in the docker run command with the -e switch
-ENV CONTENT_API_URL=http://api:3001
-# This is the port that the container exposes
-ENV PORT=80
-# This is the port that the container exposes
-EXPOSE 80
-# Run the NPM install command to install Angular
-RUN npm install -g @angular/cli@~8.3.4
-# This is the directory within the container where commands will be executed
+FROM node:dubnium-alpine AS base
+RUN apk -U add curl
 WORKDIR /usr/src/app
-# Copy the package json file to the workdir
+ENV PORT=80
+EXPOSE 80
+ENV CONTENT_API_URL=http://api:3001
+
+FROM node:dubnium AS build
+RUN npm install -g @angular/cli@~8.3.4
+
+WORKDIR /usr/src/app
+
+# Install app dependencies
 COPY package.json /usr/src/app/
-# Run the NPM install command to build the application
 RUN npm install
-# Copy the rest of the sources
+
+# Bundle app source
 COPY . /usr/src/app
-# Build the Angular Application
 RUN ng build 
-# Start the application
+
+FROM base as final
+WORKDIR /usr/src/app
+COPY --from=build /usr/src/app .
 CMD [ "node", "app.js" ]
