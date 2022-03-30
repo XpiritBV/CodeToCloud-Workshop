@@ -79,7 +79,7 @@ First we need to create the build stage in the Azure DevOps pipeline. Instead of
       - task: DockerCompose@0
         inputs:
           containerregistrytype: 'Container Registry'
-          dockerRegistryEndpoint: 'My GitHub Container Registry'
+          dockerRegistryEndpoint: 'GitHub Container Registry'
           dockerComposeFile: '**/docker-compose.yml'
           additionalDockerComposeFiles: 'build.docker-compose.yml'
           action: 'Build services'
@@ -87,7 +87,7 @@ First we need to create the build stage in the Azure DevOps pipeline. Instead of
       - task: DockerCompose@0
         inputs:
           containerregistrytype: 'Container Registry'
-          dockerRegistryEndpoint: 'My GitHub Container Registry'
+          dockerRegistryEndpoint: 'GitHub Container Registry'
           dockerComposeFile: '**/docker-compose.yml'
           additionalDockerComposeFiles: 'build.docker-compose.yml'
           action: 'Push services'
