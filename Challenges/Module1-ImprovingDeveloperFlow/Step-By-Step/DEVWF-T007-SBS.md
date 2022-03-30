@@ -59,75 +59,67 @@ Ensure to provide the right values for the registry, username and password (`${{
 ```YAML
 name: Fabrikam Web Build
 
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
 on:
   push:
     # Publish `main` as Docker `latest` image.
-    branches: [ main ]
+    branches:
+      - main
     paths:
-    - 'content-web/**'
-    - '.github/workflows/fabrikam-web.yml'
+      - 'content-web/**'
+      - '.github/workflows/fabrikam-web.yml'
+      
+
     # Publish `v1.2.3` tags as releases.
-    tags: [ 'v*.*.*' ]
+    tags:
+      - v*
+
+  # Run tests for any PRs.
   pull_request:
-    branches: [ main ]
 
 env:
-  # Use docker.io for Docker Hub if empty
+  # TODO: Change variable to your image's name.
   REGISTRY: ghcr.io
-  # github.repository as <account>/<repo>
   IMAGE_NAME: fabrikam-web
 
 jobs:
-  build:
+  # Push image to GitHub Packages.
+  # See also https://docs.docker.com/docker-hub/builds/
+  push:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
-    permissions:
-      contents: read
-      packages: write
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    # Login against a Docker registry except on PR
-    # https://github.com/docker/login-action
-    - name: Log into registry ${{ env.REGISTRY }}
-      if: github.event_name != 'pull_request'
-      uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
-      with:
-        registry: ${{ env.REGISTRY }}
-        username: ${{ github.actor }}
-        password: ${{ secrets.CR_PAT }}
+      - name: Build image
+        working-directory: content-web
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
-    # Extract metadata (tags, labels) for Docker
-    # https://github.com/docker/metadata-action
-    - name: Extract Docker metadata
-      id: meta
-      uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-      with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-        tags: |
-          type=semver,pattern={{version}}
-          # output 0.1.2
-        labels: |
-          org.opencontainers.image.title=Fabrikam Web Build
-          org.opencontainers.image.description=CodeToCloud Fabrikam Container
-          org.opencontainers.image.vendor=MyCompany
+      - name: Log into GitHub Container Registry
+        run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
 
-    # Build and push Docker image with Buildx (don't push on PR)
-    # https://github.com/docker/build-push-action
-    - name: Build and push Docker image
-      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
-      with:
-        context: .
-        push: ${{ github.event_name != 'pull_request' }}
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
+      - name: Push image to GitHub Container Registry
+        working-directory: content-web
+        run: |
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+
+          # Change all uppercase to lowercase
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+
+          # Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+
+          # Use Docker `latest` tag convention
+          [ "$VERSION" == "main" ] && VERSION=latest
+
+          echo IMAGE_ID=$IMAGE_ID
+          echo VERSION=$VERSION
+
+          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID:$VERSION
 ```
 
 1. Commit the file to the repository
